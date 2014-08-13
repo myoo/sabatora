@@ -50,6 +50,7 @@ gem "squeel"
 gem 'paranoia'
 
 gem 'devise'
+gem 'cancancan'
 
 group :development, :test do
   gem "rspec"
