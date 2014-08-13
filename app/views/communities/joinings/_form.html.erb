@@ -1,0 +1,21 @@
+<%= simple_form_for(@communities_joining, url: community_joinings_path) do |f| %>
+  <% if @communities_joining.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@communities_joining.errors.count, "error") %> prohibited this communities_joining from being saved:</h2>
+
+      <ul>
+      <% @communities_joining.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+      <%= f.input :role_id, collection: Role.all, :selected => 3 %>
+    <%= f.input :comment %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

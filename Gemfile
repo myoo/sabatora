@@ -52,6 +52,8 @@ gem 'paranoia'
 gem 'devise'
 gem 'cancancan'
 
+gem 'simple_form'
+
 group :development, :test do
   gem "rspec"
   gem 'rspec-rails'

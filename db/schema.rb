@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813030456) do
+ActiveRecord::Schema.define(version: 20140813065944) do
+
+  create_table "communities", force: true do |t|
+    t.string   "name"
+    t.text     "about"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "joinings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.integer  "role_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "joinings", ["community_id"], name: "index_joinings_on_community_id"
+  add_index "joinings", ["role_id"], name: "index_joinings_on_role_id"
+  add_index "joinings", ["user_id"], name: "index_joinings_on_user_id"
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

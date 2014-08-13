@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= @communities_joining.user.email %>
+
+
+<%= link_to 'Edit', edit_community_joining_path(@communities_joining.community, @communities_joining) %> |
+<%= link_to 'Back', community_joinings_path %>
