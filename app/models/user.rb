@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :joinings
   has_many :communities, through: :joinings
-
+  has_many :players
+  has_many :rooms, through: :players
 
   def joined?(community)
     Joining.where(user_id: self.id, community_id: community).count > 0

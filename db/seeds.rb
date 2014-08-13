@@ -11,3 +11,9 @@ roles = Role.create([
                      { name: 'administrator' },
                      { name: 'member' },
                     ])
+
+player_roles = PlayerRole.create([
+                     { name: 'player'},
+                     { name: 'master' },
+                     { name: 'read_only' },
+                                 ])

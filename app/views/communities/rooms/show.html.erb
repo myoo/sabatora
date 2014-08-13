@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= @room.name %>
+<%= @room.about %>
+<%= @room.owner.name %>
+<%= link_to 'Edit', edit_community_room_path(@community, @room) %> |
+<%= link_to 'Back', community_rooms_path(@community) %>

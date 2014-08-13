@@ -53,6 +53,13 @@
 
 <div class="container">
 
+  <% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+
 <%= yield %>
 
 </div> <!-- /container -->
