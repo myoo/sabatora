@@ -83,3 +83,7 @@ group :development, :test do
 
   gem 'did_you_mean'
 end
+
+group :development do
+  gem "letter_opener"
+end
