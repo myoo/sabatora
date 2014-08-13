@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :communities do
-    resources :joinings, controller: "communities/joinings"
-    resources :rooms, to: "communities/rooms"
+    resources :joinings, to: "communities/joinings"
+    resources :rooms, to: "communities/rooms" do
+      resources :players, to: "communities/rooms/players"
+    end
   end
 
   resources :characters
