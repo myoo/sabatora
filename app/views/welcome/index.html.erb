@@ -1,11 +1,107 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<div class="row">
+	    	<div class="col-md-7">
+				<h1>Sabatora</h1>
+		        <p>TRPGオンラインセッション用ツール"さばとら"</p>
+		        <div class="alert alert-warning alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				   現在テスト中です。
+				</div>
+				<p>さばとらtwitter：<a href="https://twitter.com/sabatora_dev">sabatora_dev</a></p>
+				<p>TOP画像(スペシャルサンクス)：<a href="https://twitter.com/popopokko">黒色さま（twitter:@popopokko）</a></p>
+	    	</div>
+	        <div class="col-md-5">
+			    <%= image_tag 'sabatora_top.png', :class=>"img-responsive", :alt=>"sabatora" %>
+			</div>
+		</div>
+		<div class="space01"></div>
 
-
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+		<div class="row">
+	    	<div class="col-xs-12 col-md-offset-4 col-md-4">
+		        <p>
+		        	<%= link_to 'さばとらをはじめる', new_user_registration_path, :class=>"btn btn-block btn-lg btn-primary" %>
+		        </p>
+		    </div>
+	    </div>
+	    <div class="space01"></div>
+	    <!-- Main component for a primary marketing message or call to action -->
+	    	
+	        <div class="panel-group" id="accordion">
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#step1">
+			          現在できることリスト
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="step1" class="panel-collapse collapse in">
+			      <div class="panel-body">
+			        <p>・ユーザー登録　<span class="label label-success">クリア</span></p>
+			        <p>・マイページが作成される</p>
+			        <p>・セッション参加記録がつく</p>
+			        <p>・アバターが登録できる</p>
+			        <p>・コミュニティに登録できる　<span class="label label-success">クリア</span></p>
+			        <p>・コミュニティページが作成できる</p>
+			        <p>・コミュニティページにメンバーページが作成できる</p>
+			        <p>・コミュニティに登録できる</p>
+			        <p>・セッション部屋が作成できる　<span class="label label-success">クリア</span></p>
+			        <p>・作成したキャラを登録できる</p>
+			        <p>・背景が登録できる</p>
+			        <p>・マップが作成できる</p>
+			        <p>・シーン管理ができる</p>
+			        <p>・キャラが作成できる　<span class="label label-success">クリア</span></p>
+			        <p>・キャラシートが作成できる</p>
+			        <p>・画像がアップロードできる</p>
+			        <p>・能力値を記録できる</p>
+			        <p>・メモ欄がある</p>
+			        <p>・セッション部屋内でチャットができる</p>
+			        <p>・ロビーでチャットができる</p>
+			        <p>・個人チャットができる</p>
+			        <p>・ダイスが振れる（値に偏りがない）</p>
+			        <p>・ダイスを振ると、成功・失敗したかの判定が出る</p>
+			        <p>・システム上でキャラの能力値を最低限作成できる</p>
+			        <p>・セッションログがダウンロードできる</p>
+			        <p>・セッションログのHTML出力ができる</p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+			          将来的に実装する仕様リスト
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse">
+			      <div class="panel-body">
+			        <p>・コミュニティを公開・非公開設定ができる</p>		        
+			        <p>・コミュニティ掲示板作成</p>
+			        <p>・コミュニティ専用スケジュールの作成</p>
+			        <p>・コミュニティ専用wikiの作成</p>
+			        <p>・セッション部屋に立ち絵・BGM・効果音実装</p>
+			        <p>・セッション部屋にアバターアイコン・エモーションアイコン実装</p>
+			        <p>・セッションを動画記録できるようにする</p>
+			        <p>・セッション部屋でNPCを作成できる</p>
+			        <p>・背景設定に動画を使用できる</p>
+			        <p>・セッション部屋で動画が再生できる</p>
+			        <p>・セッションをROMできる（ROMメンバーは参加中メンバーには見えない）</p>
+			        <p>・セッションログの長期保存（半年〜１年ほど）</p>
+			        <p>・ユーザー用スケジュール作成</p>
+			        <p>・ユーザー同士で送り合えるメッセージ機能</p>
+			        <p>・フレンド機能</p>
+			        <p>・称号ページ作成</p>
+			        <p>・シナリオ管理機能作成</p>
+			        <p>・デフォルトシナリオを用意する</p>
+			        <p>・公開シナリオを作れる</p>
+			        <p>・作成されたシナリオをダウンロードできる</p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
     </div>
+</div>
+<div class="space01"></div>
+	    	
