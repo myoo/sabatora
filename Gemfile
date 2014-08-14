@@ -52,7 +52,7 @@ gem 'paranoia'
 gem 'devise'
 gem 'cancancan'
 
-gem 'simple_form'
+gem 'simple_form', '~>3.1.0.rc1'
 
 group :development, :test do
   gem "rspec"

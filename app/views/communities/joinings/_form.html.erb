@@ -12,10 +12,16 @@
 
   <% end %>
 
+  <div class="row">
+    <div class="col-sm-offset-1 col-sm-10">
       <%= f.input :role_id, collection: Role.all, :selected => 3 %>
-    <%= f.input :comment %>
+      <%= f.input :comment %>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="space01"></div>
+
+      <div class="actions">
+        <%= f.submit :class=>"btn btn-default" %>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
