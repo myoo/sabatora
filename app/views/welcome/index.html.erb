@@ -17,13 +17,15 @@
 		</div>
 		<div class="space01"></div>
 
-		<div class="row">
-	    	<div class="col-xs-12 col-md-offset-4 col-md-4">
-		        <p>
-		        	<%= link_to 'さばとらをはじめる', new_user_registration_path, :class=>"btn btn-block btn-lg btn-primary" %>
-		        </p>
-		    </div>
-	    </div>
+	    <% if user_signed_in? %>
+	        <% else %>
+	        <div class="row">
+	    		<div class="col-xs-12 col-md-offset-4 col-md-4">           
+	           <%= link_to 'さばとらをはじめる', new_user_registration_path, :class=>"btn btn-block btn-lg btn-primary" %>
+	           </div>
+	   		 </div>
+	    <% end %>
+		    
 	    <div class="space01"></div>
 	    <!-- Main component for a primary marketing message or call to action -->
 	    	
@@ -77,6 +79,7 @@
 			    </div>
 			    <div id="collapseTwo" class="panel-collapse collapse">
 			      <div class="panel-body">
+			      	<p>・デザイン適用</p>	
 			        <p>・コミュニティを公開・非公開設定ができる</p>		        
 			        <p>・コミュニティ掲示板作成</p>
 			        <p>・コミュニティ専用スケジュールの作成</p>

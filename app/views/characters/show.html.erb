@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<%= @character.name %>
+<%= @character.about %>
+<%= @character.user.name %>
+
+<%= link_to '編集', edit_character_path(@character) %> |
+<%= link_to '戻る', characters_path %>

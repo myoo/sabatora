@@ -1,0 +1,19 @@
+<%= simple_form_for([@community, @room, @player]) do |f| %>
+  <%= f.error_notification %>
+
+<h2><%= @room.name %>参加プレイヤーの編集</h2>
+<div class="space01"></div>
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <div class="form-inputs">
+      <%= f.input :room_id, as: :hidden %>
+      <%= f.input :player_role_id, collection: PlayerRole.all %>
+      <%= f.input :character_id, collection: Character.owned(current_user)%>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+    <% end %>
+  </div>
+</div>

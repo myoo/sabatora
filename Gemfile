@@ -50,6 +50,9 @@ gem "squeel"
 gem 'paranoia'
 
 gem 'devise'
+gem 'cancancan'
+
+gem 'simple_form', '~>3.1.0.rc1'
 
 group :development, :test do
   gem "rspec"
@@ -79,4 +82,8 @@ group :development, :test do
   gem 'webmock'
 
   gem 'did_you_mean'
+end
+
+group :development do
+  gem "letter_opener"
 end
