@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Communities::Rooms::PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
   before_action :set_community_and_rooms
@@ -60,9 +61,9 @@ class Communities::Rooms::PlayersController < ApplicationController
   # DELETE /communities/rooms/players/1
   # DELETE /communities/rooms/players/1.json
   def destroy
-    @communities_rooms_player.destroy
+    @player.destroy
     respond_to do |format|
-      format.html { redirect_to communities_rooms_players_url, notice: 'Player was successfully destroyed.' }
+      format.html { redirect_to community_room_players_url(@community, @room), notice: '参加を辞退しました' }
       format.json { head :no_content }
     end
   end
