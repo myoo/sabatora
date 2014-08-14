@@ -1,0 +1,2 @@
+module Communities::JoiningsHelper
+end

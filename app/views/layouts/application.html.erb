@@ -38,7 +38,10 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-            Signed in as <%= current_user.email %>. <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <li class="head">ログインなう <%= current_user.email %>. <li>
+            <li><%= link_to "Communities", communities_path %></li>
+            <li><%= link_to "My page", edit_user_registration_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
             <% else %>           
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
@@ -51,6 +54,13 @@
 </div>
 
 <div class="container">
+
+  <% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
 
 <%= yield %>
 
