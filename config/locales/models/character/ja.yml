@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      character: キャラクター
+
+
+    attributes:
+      community:
+        name: キャラクター名
+        about: キャラクター概要
+
+
