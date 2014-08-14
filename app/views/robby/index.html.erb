@@ -1,0 +1,10 @@
+<h1>Robby#index</h1>
+<p>Find me in app/views/robby/index.html.erb</p>
+
+<p id="username"><%= current_user.name %></p>
+
+<%= form_tag({id: :chat}) do %>
+  <%= text_field :chat, :message %>
+  <%= submit_tag :送信, id: "send" %>
+<% end %>
+<div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></div>

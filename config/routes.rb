@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'robby/index'
+
+  get :robby, to: 'robby#index'
+
   devise_for :users
   get 'welcome/index'
 
