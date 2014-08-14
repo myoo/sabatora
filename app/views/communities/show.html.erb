@@ -1,19 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @community.name %>
-</p>
-
+	<small>
+	  <%= @community.about %>
+	</small>
+  <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs" %> 
+</h1>
 <p>
-  <strong>About:</strong>
-  <%= @community.about %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @community.description %>
 </p>
+<div class="space01"></div>
 
-<%= link_to 'Edit', edit_community_path(@community) %> |
-<%= link_to 'Back', communities_path %>
+<div class="row">
+	<div class="col-sm-3 col-xs-12">
+  		<%= link_to "メンバー一覧", community_joinings_path(@community), :class=>"btn btn-default btn-block" %>
+  </div>
+	<div class="col-sm-3 col-xs-12">
+  		<%= link_to "セッションルーム一覧", community_rooms_path(@community), :class=>"btn btn-default btn-block"  %>
+  </div>
+</div>
+<div class="space01"></div>
+<div class="row">
+  <div class="col-sm-4 col-xs-12">
+      <%= link_to "このコミュニティに参加する", new_community_joining_path(@community), :class=>"btn btn-success btn-block btn-lg" %>
+  </div>
+</div>
+
+
+<div class="space01"></div>
+<%= link_to 'コミュニティ一覧に戻る', communities_path %>
+<div class="space01"></div>

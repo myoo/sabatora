@@ -1,25 +1,36 @@
-<h1>Listing characters</h1>
+<h1>キャラクター一覧</h1>
+<p>登録したキャラクターの一覧です。</p>
+<div class="space01"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>キャラクター名</th>
+          <th>説明</th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @characters.each do |character| %>
-      <tr>
-	<td><%= character.name %></td>
-	<td><%= character.about %></td>
-        <td><%= link_to 'Show', character %></td>
-        <td><%= link_to 'Edit', edit_character_path(character) %></td>
-        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @characters.each do |character| %>
+          <tr>
+    	<td><%= character.name %></td>
+    	<td><%= character.about %></td>
+            <td class="center"><%= link_to '表　示', character, :class=>"btn btn-success btn-sm"%>
+            <%= link_to '編　集', edit_character_path(character), :class=>"btn btn-warning btn-sm" %>
+            <%= link_to '削　除', character, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, :class=>"btn btn-danger btn-sm" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<br>
+<div class="space01"></div>
 
-<%= link_to 'New Character', new_character_path %>
+<%= link_to '新しくキャラクターを作成する', new_character_path, :class=>"btn btn-info btn-md" %>
+<div class="space01"></div>
+<%= link_to "My pageに戻る", edit_user_registration_path %>
+<div class="space01"></div>

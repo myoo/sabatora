@@ -1,26 +1,42 @@
-<h1><%= @community.name %>の部屋一覧</h1>
+<h1><%= @community.name %>のセッションルーム一覧</h1>
+<p>コミュニティ『<%= @community.name %>』が作成したセッションルームの一覧です。</p>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="space01"></div>
 
-  <tbody>
-    <% @rooms.each do |room| %>
-      <tr>
-	<td><%= room.name %></td>
-	<td><%= room.owner.name %></td>
-	<td><%= room.about %></td>
-        <td><%= link_to 'Show', [@community, room] %></td>
-        <td><%= link_to 'Edit', edit_community_room_path(@community, room) %></td>
-        <td><%= link_to 'Destroy', [@community, room], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>セッションルーム名</th>
+          <th>ルームオーナー</th>
+          <th>説明</th>
+          <th></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+        	<td><%= room.name %></td>
+        	<td><%= room.owner.name %></td>
+        	<td><%= room.about %></td>
+          <td class="center">
+            <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-sm" %>
+            <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-sm" %>
+            <%= link_to '削　除', [@community, room], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-sm" %>
+          </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<%= link_to 'New Room', new_community_room_path %>
+<div class="space01"></div>
+
+<%= link_to '新しくセッションルームを作成する', new_community_room_path, :class=>"btn btn-info" %>
+
+<div class="space01"></div>
+<%= link_to '戻る', @community %>
+<div class="space01"></div>

@@ -1,29 +1,39 @@
-<h1>Listing communities</h1>
+<h1>コミュニティ一覧</h1>
+<p>現在存在するコミュニティ一覧。</p>
+<div class="space01"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>About</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>コミュニティ名</th>
+          <th>コミュニティ概要</th>
+          <th>コミュニティ説明</th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @communities.each do |community| %>
-      <tr>
-        <td><%= community.name %></td>
-        <td><%= community.about %></td>
-        <td><%= community.description %></td>
-        <td><%= link_to 'Show', community %></td>
-        <td><%= link_to 'Edit', edit_community_path(community) %></td>
-        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @communities.each do |community| %>
+          <tr>
+            <td><%= community.name %></td>
+            <td ><%= community.about %></td>
+            <td><%= community.description %></td>
+            <td class="center">
+              <%= link_to '表　示', community, :class=>"btn btn-success btn-sm" %>
+              <%= link_to '編　集', edit_community_path(community), :class=>"btn btn-warning btn-sm" %>
+              <%= link_to '削　除', community, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Community', new_community_path %>
+<div class="space01"></div>
+<%= link_to '新しくコミュニティを作成する', new_community_path, :class=>"btn btn-info" %>
+<div class="space01"></div>
+<%= link_to "Home", welcome_index_path %>
+<div class="space01"></div>
