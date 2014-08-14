@@ -1,0 +1,7 @@
+<%= form_tag({id: :chat}) do %>
+  <%= hidden_field :user, :id, value: current_user.id %>
+  <%= text_field :chat, :message %>
+  <%= submit_tag :送信, id: "send" %>
+<% end %>
+<br />
+<div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></div>

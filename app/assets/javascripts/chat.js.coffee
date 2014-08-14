@@ -16,9 +16,10 @@ class @ChatClass
   sendMessage: (event) =>
     # サーバ側にsend_messageのイベントを送信
     # オブジェクトでデータを指定
+    user_id = $('#user_id').val()
     user_name = $('#username').text()
     msg_body = $('#chat_message').val()
-    @dispatcher.trigger 'new_message', { name: user_name , body: msg_body }
+    @dispatcher.trigger 'new_message', { id: user_id, name: user_name , body: msg_body }
     $('#chat_message').val('')
  
   receiveMessage: (message) =>

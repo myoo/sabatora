@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 source 'https://rubygems.org'
 
 
@@ -51,7 +52,11 @@ gem 'paranoia'
 
 gem 'devise'
 
+#リアルタイム通信
 gem 'websocket-rails'
+
+#チャットデータ保存
+gem 'mongoid'
 
 group :development, :test do
   gem "rspec"

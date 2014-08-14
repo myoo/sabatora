@@ -11,7 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813030456) do
+ActiveRecord::Schema.define(version: 20140814082914) do
+
+  create_table "characters", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "about"
+    t.integer  "system_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id"
+
+  create_table "communities", force: true do |t|
+    t.string   "name"
+    t.text     "about"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "joinings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.integer  "role_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "joinings", ["community_id"], name: "index_joinings_on_community_id"
+  add_index "joinings", ["role_id"], name: "index_joinings_on_role_id"
+  add_index "joinings", ["user_id"], name: "index_joinings_on_user_id"
+
+  create_table "player_roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "room_id"
+    t.integer  "player_role_id"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "players", ["character_id"], name: "index_players_on_character_id"
+  add_index "players", ["player_role_id"], name: "index_players_on_player_role_id"
+  add_index "players", ["user_id"], name: "index_players_on_user_id"
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rooms", force: true do |t|
+    t.string   "name"
+    t.string   "about"
+    t.integer  "owner_id"
+    t.integer  "system_id"
+    t.integer  "community_id"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +95,7 @@ ActiveRecord::Schema.define(version: 20140813030456) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
