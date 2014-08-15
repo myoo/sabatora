@@ -19,7 +19,7 @@ class ChatController < WebsocketRails::BaseController
     puts "enter room: #{message}"
     # 過去ログ表示
     Message.where(room_id: message[:room_id]).limit(500).each do |log|
-      WebsocketRails[message[:room_id]].trigger 'new_message', log
+      send_message :new_message, log
     end
   end
 

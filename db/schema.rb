@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140814082914) do
-=======
-ActiveRecord::Schema.define(version: 20140813105708) do
->>>>>>> e7a5bac5f95d3af2dca9f37641c4ea7873ab9476
+ActiveRecord::Schema.define(version: 20140815071044) do
 
   create_table "characters", force: true do |t|
     t.integer  "user_id"
@@ -104,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140813105708) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "channel_key"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

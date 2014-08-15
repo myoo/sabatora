@@ -6,16 +6,20 @@ class @ChatClass
     @channel = @dispatcher.subscribe(@channelCode)
     # イベントを監視
     @bindEvents()
-    # 入室イベント
     @dispatcher.trigger 'enter_room', { room_id: @channelCode }
 
- 
+  enterRoom: () =>
+    # 入室イベント
+    @channel.bind 'send_logs', @receiveMessage
+    @channel.bind 'end_of_logs', @endLogs
+    
   bindEvents: () =>
     # 送信ボタンが押されたらサーバへメッセージを送信
     $('form').on 'submit', (e) =>
       e.preventDefault()
       @sendMessage()
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行
+    @dispatcher.bind 'new_message', @receiveMessage
     @channel.bind 'new_message', @receiveMessage
 
   setChannelCode: () =>
@@ -37,7 +41,11 @@ class @ChatClass
   receiveMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "#{message.user_name} : #{message.body}<br/>"
-    
+
+  endLogs: (message) =>
+    @channel.unbind 'send_logs'
+    @channel.unbind 'end_of_logs'
+    console.log("enter room")
  
 $ ->
   window.chatClass = new ChatClass($('#chat').data('uri'), true)
