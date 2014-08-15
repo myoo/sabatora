@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      player_role: プレイヤーロール
+
+
+    attributes:
+      player_role:
+ 

@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      room: セッションルーム 
+
+
+    attributes:
+      room:
+        name: セッションルーム名
+        about: ルーム説明
+        started_at: 開始日

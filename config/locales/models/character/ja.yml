@@ -5,8 +5,6 @@ ja:
 
 
     attributes:
-      community:
+      character:
         name: キャラクター名
         about: キャラクター概要
-
-
