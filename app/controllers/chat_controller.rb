@@ -28,4 +28,13 @@ class ChatController < WebsocketRails::BaseController
     # ログ記録
     Message.create message
   end
+
+  def private_message
+    at_user_name = message[:body].match(/\A@(.+)\s/)
+    at_user = User.find_by!(name: at_user_name[1])
+    WebsocketRails[at_user.channel_key].trigger :new_message, message
+    send_message :new_message, message
+  rescue ActiveRecord::RecordNotFound => e
+    send_message :new_message, {user_name: "system", body: "ユーザーが存在しません"}
+  end
 end

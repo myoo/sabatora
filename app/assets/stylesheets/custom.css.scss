@@ -27,3 +27,14 @@ table{
 div.field{
 	padding-bottom: 10px;
 }
+
+
+/* chat */
+#chat {
+    span.private {
+	color: blue;
+    }
+    span.system {
+	color: green;
+    }
+}

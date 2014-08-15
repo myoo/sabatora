@@ -1,5 +1,6 @@
 <%= form_tag({id: :chat}) do %>
   <%= hidden_field :user, :id, value: current_user.id %>
+  <%= hidden_field :user, :channel_key, value: current_user.channel_key %>
 <p id="username"><%= current_user.name %></p>
   <%= text_field :chat, :message %>
   <%= submit_tag :送信, id: "send" %>
