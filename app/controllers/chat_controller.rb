@@ -4,27 +4,28 @@ class ChatController < WebsocketRails::BaseController
     # perform application setup here
     #controller_store[:message_count] = 0
     logger.debug "start chat session"
-
   end
-
+  
   def client_connected
     logger.debug "user connected"
     #過去ログ表示
-    RobbyMessage.all.asc(:created_at).limit(500).each do |message|
-      obj = { id: message.id, name: message.user_name, body: message.chat_message }
-      broadcast_message :new_message, obj
-    end
+    # Message.all.asc(:created_at).limit(500).each do |message|
+    #   obj = { room_id: message.room_id, user_id: message.user_id, name: message.user_name, body: message.body }
+    #   WebsocketRails[message.room_id].trigger :new_message, obj
+    # end
+  end
 
+  def enter_room
+    puts "enter room: #{message}"
+    # 過去ログ表示
+    Message.where(room_id: message[:room_id]).limit(500).each do |log|
+      WebsocketRails[message[:room_id]].trigger 'new_message', log
+    end
   end
 
   def new_message
     puts "called new_message: #{message}"
-   RobbyMessage.create(
-                       user_id: message[:id],
-                        user_name: message[:name],
-                        chat_message: message[:body]
-                       )
-    broadcast_message :new_message, message
-    puts "broadchasted"
+    # ログ記録
+    Message.create message
   end
 end

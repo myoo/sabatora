@@ -21,6 +21,10 @@ WebsocketRails.setup do |config|
   # multiple server instances.
   # * Requires Redis.
   config.synchronize = false
+  # if Rails.env.production?
+  #   redis_uri = Uri.parse(ENV['REDISCLOUD_URL'])
+  #   config.redis_options = {:host => redis_uri.host, :port => redis_uri.port, password: redis_uri.password}
+  # end
 
   # Prevent Thin from daemonizing (default is true)
   # config.daemonize = false
@@ -37,7 +41,7 @@ WebsocketRails.setup do |config|
   # config.keep_subscribers_when_private = false
 
   # Set to true if you wish to broadcast channel subscriber_join and
-  # subscriber_part events. All subscribers of a channel will be 
+  # subscriber_part events. All subscribers of a channel will be
   # notified when other clients join and part the channel. If you are
   # using the UserManager, the current_user object will be sent along
   # with the event.

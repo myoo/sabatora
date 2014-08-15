@@ -15,6 +15,7 @@ WebsocketRails::EventMap.describe do
   # The :client_connected method is fired automatically when a new client connects
   subscribe :client_connected, to: ChatController, with_method: :client_connected
 
+  subscribe :enter_room, to: ChatController, with_method: :enter_room
   subscribe :new_message, to: ChatController, with_method: :new_message
 
   # The :client_disconnected method is fired automatically when a client disconnects
