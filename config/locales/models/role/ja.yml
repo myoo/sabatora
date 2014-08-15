@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      role: 
+
+
+    attributes:
+      role:
+        name: 名前
+
+
+

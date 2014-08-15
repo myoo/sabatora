@@ -29,7 +29,7 @@
 <div class="space01"></div>
 
 <% unless current_user.joined?(@community) %>
-  <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-success btn-block btn-lg" %>
+  <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-success btn-lg" %>
 <% end %>
 <div class="space01"></div>
 <%= link_to '戻る', @community %>
