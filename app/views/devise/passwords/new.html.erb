@@ -1,15 +1,20 @@
-<h2>Forgot your password?</h2>
-
+<h2>パスワードを忘れた</h2>
+<p>パスワードの再設定案内メールを送る</p>
+<div class="space01"></div>
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
+<div class="row">
+  	<div class="col-sm-offset-1 col-sm-10">
+	  <div class="form-inputs">
+	    <%= f.input :email, required: true, autofocus: true %>
+	  </div>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
+	  <div class="form-actions">
+	    <%= f.button :submit, "パスワード再設定メールの送信" %>
+	  </div>
+	</div>
+</div>  
 <% end %>
-
+<div class="space01"></div>
 <%= render "devise/shared/links" %>
+<div class="space01"></div>
