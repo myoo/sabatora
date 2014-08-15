@@ -1,9 +1,9 @@
 <%= form_tag({id: :chat}) do %>
   <%= hidden_field :user, :id, value: current_user.id %>
 
-
 <div class="row">
-	<div class="col-sm-2 col-xs-12">
+  <%= hidden_field :user, :channel_key, value: current_user.channel_key %>
+<p id="username"><%= current_user.name %></p>	<div class="col-sm-2 col-xs-12">
 		<p id="username"><strong><%= current_user.name %></strong></p>
 	</div>
 	<div class="col-sm-8 col-xs-12">
@@ -15,6 +15,7 @@
 	</div>
 </div>
 <div class="space01"></div>
+
 <div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></div>
 <div class="space01"></div>
 <%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>

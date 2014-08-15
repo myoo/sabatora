@@ -9,7 +9,19 @@ class User < ActiveRecord::Base
   has_many :players
   has_many :rooms, through: :players
 
+  validates :name, :email, uniqueness: true
+
+  before_create :generate_channel_key
+
   def joined?(community)
     Joining.where(user_id: self.id, community_id: community).count > 0
+  end
+
+  private
+  def generate_channel_key
+    begin
+      key = SecureRandom.urlsafe_base64
+    end while User.where(:channel_key => key).exists?
+    self.channel_key = key
   end
 end

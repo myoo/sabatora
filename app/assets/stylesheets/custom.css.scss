@@ -28,6 +28,7 @@ div.field{
 	padding-bottom: 10px;
 }
 
+
 #chat{
 	padding: 12px 16px;
 	font-size: 15px;
@@ -38,6 +39,12 @@ div.field{
 
 	p{
 		font-weight: bold;
-	}
+
+    span.private {
+	color: blue;
+    }
+    span.system {
+	color: green;
+    }
 
 }

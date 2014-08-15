@@ -19,7 +19,7 @@ class ChatController < WebsocketRails::BaseController
     puts "enter room: #{message}"
     # 過去ログ表示
     Message.where(room_id: message[:room_id]).limit(500).each do |log|
-      WebsocketRails[message[:room_id]].trigger 'new_message', log
+      send_message :new_message, log
     end
   end
 
@@ -27,5 +27,14 @@ class ChatController < WebsocketRails::BaseController
     puts "called new_message: #{message}"
     # ログ記録
     Message.create message
+  end
+
+  def private_message
+    at_user_name = message[:body].match(/\A@(.+)\s/)
+    at_user = User.find_by!(name: at_user_name[1])
+    WebsocketRails[at_user.channel_key].trigger :new_message, message
+    send_message :new_message, message
+  rescue ActiveRecord::RecordNotFound => e
+    send_message :new_message, {user_name: "system", body: "ユーザーが存在しません"}
   end
 end

@@ -1,8 +1,12 @@
+<h2><%= @character.name %>詳細</h2>
+<p>作成したキャラクターの詳細情報です。</p>
 <p id="notice"><%= notice %></p>
+<div class="space01"></div>
+<p><strong>キャラクター名：</strong><%= @character.name %></p>
+<p><strong>説明：</strong><%= @character.about %></p>
+<p><strong>キャラ作成者：</strong><%= @character.user.name %></p>
 
-<%= @character.name %>
-<%= @character.about %>
-<%= @character.user.name %>
-
+<div class="space01"></div>
 <%= link_to '編集', edit_character_path(@character) %> |
 <%= link_to '戻る', characters_path %>
+<div class="space01"></div>

@@ -18,6 +18,7 @@ WebsocketRails::EventMap.describe do
   subscribe :enter_room, to: ChatController, with_method: :enter_room
   subscribe :new_message, to: ChatController, with_method: :new_message
 
+  subscribe :private_message, to: ChatController, with_method: :private_message
   # The :client_disconnected method is fired automatically when a client disconnects
  # subscribe :client_disconnected, to: ChatController, with_method: :delete_user
 end
