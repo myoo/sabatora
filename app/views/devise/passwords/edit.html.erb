@@ -9,12 +9,10 @@
   <div class="col-sm-offset-1 col-sm-10">
       <%= f.input :reset_password_token, as: :hidden %>
       <%= f.full_error :reset_password_token %>
-
       <div class="form-inputs">
         <%= f.input :password, label: "新しいパスワード", required: true, autofocus: true %>
         <%= f.input :password_confirmation, label: "新しいパスワードをもう一度入力してください", required: true %>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "パスワードを変更する", :class=>"btn btn-default btn-lg" %>
       </div>
