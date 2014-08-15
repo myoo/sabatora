@@ -27,3 +27,17 @@ table{
 div.field{
 	padding-bottom: 10px;
 }
+
+#chat{
+	padding: 12px 16px;
+	font-size: 15px;
+	height: 400px;
+	width: 100%;
+	overflow-y: scroll; 
+	overflow-x: hidden;
+
+	p{
+		font-weight: bold;
+	}
+
+}

@@ -1,8 +1,21 @@
 <%= form_tag({id: :chat}) do %>
   <%= hidden_field :user, :id, value: current_user.id %>
-<p id="username"><%= current_user.name %></p>
-  <%= text_field :chat, :message %>
-  <%= submit_tag :送信, id: "send" %>
-<% end %>
-<br />
+
+
+<div class="row">
+	<div class="col-sm-2 col-xs-12">
+		<p id="username"><strong><%= current_user.name %></strong></p>
+	</div>
+	<div class="col-sm-8 col-xs-12">
+	  <%= text_field :chat, :message, :class=>"form-control" %>
+	</div>
+	<div class="col-sm-2 col-xs-6">
+	  <%= submit_tag :送　信, id: "send", :class=>"btn btn-primary btn-block" %>
+	<% end %>
+	</div>
+</div>
+<div class="space01"></div>
 <div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></div>
+<div class="space01"></div>
+<%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
+<div class="space01"></div>
