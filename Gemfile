@@ -54,6 +54,9 @@ gem 'cancancan'
 
 gem 'simple_form', '~>3.1.0.rc1'
 
+gem 'redis-objects'
+gem 'redis-namespace'
+
 group :development, :test do
   gem "rspec"
   gem 'rspec-rails'
