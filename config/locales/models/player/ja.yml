@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      player: プレイヤー
+
+
+    attributes:
+      player:
+        player_role_id: 役割
+        character_id: キャラクター名

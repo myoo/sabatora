@@ -1,0 +1,24 @@
+<h2>パスワードの変更</h2>
+<p>パスワードを変更する</p>
+<div class="space01"></div>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+      <%= f.input :reset_password_token, as: :hidden %>
+      <%= f.full_error :reset_password_token %>
+      <div class="form-inputs">
+        <%= f.input :password, label: "新しいパスワード", required: true, autofocus: true %>
+        <%= f.input :password_confirmation, label: "新しいパスワードをもう一度入力してください", required: true %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "パスワードを変更する", :class=>"btn btn-default btn-lg" %>
+      </div>
+  </div>
+</div>
+<% end %>
+<div class="space01"></div>
+<%= render "devise/shared/links" %>
+<div class="space01"></div>

@@ -1,0 +1,23 @@
+<h2>ロックの解除</h2>
+<p>ロックされたアカウントを解放します。</p>
+<div class="space01"></div>
+
+<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.full_error :unlock_token %>
+<div class="row">
+  	<div class="col-sm-offset-1 col-sm-10">
+	  <div class="form-inputs">
+	    <%= f.input :email, required: true, autofocus: true %>
+	  </div>
+		<div class="space01"></div>
+	  <div class="form-actions">
+	    <%= f.button :submit, "ロックを解除する", :class=>"btn btn-default" %>
+	  </div>
+	</div>
+</div>
+<% end %>
+
+<div class="space01"></div>
+<%= render "devise/shared/links" %>
+<div class="space01"></div>

@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      player: プレイヤー
+
+
+    attributes:
+      player:
+

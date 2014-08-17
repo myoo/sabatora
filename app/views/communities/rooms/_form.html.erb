@@ -1,0 +1,28 @@
+<%= simple_form_for([@community, @room]) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-10">
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :community_id, as: :hidden %>
+          <%= f.input :about %>
+          <%= f.input :started_at %>
+        </div>
+        <div class="space01"></div>
+        <div class="form-actions">
+          <%= f.button :submit, :class=>"btn btn-default" %>
+        </div>
+        <% end %>
+      </div>
+    </div>

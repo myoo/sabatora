@@ -1,0 +1,7 @@
+<p><%= @resource.email %></p>
+
+<p>パスワードが規定回数以上間違えられたため、あなたのアカウントはロックされました。</p>
+
+<p>解除するには、下記のリンクをクリックしてください。</p>
+
+<p><%= link_to 'ロックを解除する', unlock_url(@resource, unlock_token: @token) %></p>

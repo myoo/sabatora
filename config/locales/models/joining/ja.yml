@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      joining: コミュニティメンバー
+
+
+    attributes:
+      joining:
+        comment: コメント
+        role_id: 役割

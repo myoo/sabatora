@@ -1,0 +1,2 @@
+module Communities::RoomsHelper
+end

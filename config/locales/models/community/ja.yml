@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      community: コミュニティ
+
+
+    attributes:
+      community:
+        name: コミュニティ名
+        about: コミュニティ概要
+        description: コミュニティ説明

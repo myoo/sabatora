@@ -1,0 +1,37 @@
+<h1><%= @room.name %>参加者一覧</h1>
+<p><%= @room.name %>の参加者一覧です</p>
+
+<div class="space01"></div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ユーザー名</th>
+              <th>役割</th>
+              <th>キャラクター名</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @players.each do |player| %>
+              <tr>
+              	<td><%= player.user.name %></td>
+              	<td><%= player.player_role.name %></td>
+              	<td><%= player.character.name unless player.character.nil? %></td>
+                <td class="center"><%= link_to '表　示', [@community, @room, player], :class=>"btn btn-success btn-sm" %>
+                <%= link_to '編　集', edit_community_room_player_path(@community, @room, player), :class=>"btn btn-warning btn-sm" %>
+                <%= link_to '参加辞退', [@community, @room, player], method: :delete, data: { confirm: '本当に参加をやめますか？' }, :class=>"btn btn-danger btn-sm" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, @room), :class=>"btn btn-success btn-lg" %>
+
+<div class="space01"></div>
+<%= link_to '戻る', community_room_path(@community, @room) %>
+<div class="space01"></div>
