@@ -14,4 +14,23 @@ RSpec.describe Character do
      expect(subject.instance_variable_get(:@random)).to eq(@dice.instance_variable_get(:@random))
     end
   end
+
+  describe "#roll_and_plus" do
+    let(:dice){ Dice.new }
+    let (:roll_set) {
+      [{
+         operand: "+",
+         number_of_dice: 2,
+         number_of_face: 6
+       },
+       {
+         operand: "+",
+         number_of_dice: 3,
+         number_of_dice: 4
+       }
+      ]
+    }
+
+    it "2d6+3d4が正しく出力されること"
+  end
 end
