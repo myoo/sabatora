@@ -19,7 +19,7 @@ class @ChatClass
     @dispatcher.bind 'new_message', @receiveMessage
     @channel.bind 'new_message', @receiveSystemMessage
     @privateChannel.bind 'new_message', @receivePrivateMessage
-
+  
   setChannelCode: () =>
     $('#room_id').val() unless at_user?
 
@@ -43,15 +43,23 @@ class @ChatClass
  
   receiveMessage: (message) =>
     # 受け取ったデータをappend
-    $('#chat').append "#{message.user_name} : #{message.body}<br/>"
+    $('#chat').append "<dt>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
+    height = 0
+    $('#chat dd').each ->
+      height += $(this).height()
+    $('#chat dt').each ->
+      height += $(this).height()
+    console.log height 
+    $('#chat').scrollTo('+=400', $('#chat').offset().top + height)
+    console.log($('#chat').offset().top)
 
   receivePrivateMessage: (message) =>
     # 受け取ったデータをappend
-    $('#chat').append "<span class='private'>#{message.user_name} : #{message.body}</span><br/>"
+    $('#chat').append "<DT class='private'>#{message.user_name} :</DT> <DD>#{message.body}</DD>"
 
   receiveSystemMessage: (message) =>
     # 受け取ったデータをappend
-    $('#chat').append "<span class='system'>#{message.user_name} : #{message.body}</span><br/>"    
- 
+    $('#chat').append "<DT class='system'>#{message.user_name} :</DT> <DD>#{message.body}</DD>"    
+
 $ ->
   window.chatClass = new ChatClass($('#chat').data('uri'), true)
