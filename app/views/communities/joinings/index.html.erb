@@ -29,11 +29,7 @@
 <div class="space01"></div>
 
 <% unless current_user.joined?(@community) %>
-<<<<<<< HEAD
-  <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-primary btn-block btn-lg" %>
-=======
-  <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-success btn-lg" %>
->>>>>>> 85e913f984ce85be24cf0d77e2cbfcc5dc87758a
+  <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-primary btn-lg" %>
 <% end %>
 <div class="space01"></div>
 <%= link_to '戻る', @community %>

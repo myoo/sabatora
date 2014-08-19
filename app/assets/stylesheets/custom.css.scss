@@ -37,10 +37,21 @@ div.field{
 	overflow-y: scroll; 
 	overflow-x: hidden;
 
-    span.private {
+	dt{
+		border-bottom: dotted 1px #666;
+		padding: 5px;
+		background: white;
+	}
+
+	dd{
+		border-bottom: dotted 1px #666;
+		padding: 5px 30px;
+	}
+
+    dt.private {
 	color: blue;
     }
-    span.system {
+    dt.system {
 	color: green;
     }
 

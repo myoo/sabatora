@@ -41,6 +41,8 @@ class @ChatClass
 
     $('#chat_message').val('')
  
+  
+
   receiveMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "<dt>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
@@ -50,16 +52,15 @@ class @ChatClass
     $('#chat dt').each ->
       height += $(this).height()
     console.log height 
-    $('#chat').scrollTo('+=400', $('#chat').offset().top + height)
-    console.log($('#chat').offset().top)
+    $('#chat').animate({scrollTop: $('#chat').prop("scrollHeight") }, 500);
 
   receivePrivateMessage: (message) =>
     # 受け取ったデータをappend
-    $('#chat').append "<DT class='private'>#{message.user_name} :</DT> <DD>#{message.body}</DD>"
+    $('#chat').append "<dt class='private'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
 
   receiveSystemMessage: (message) =>
     # 受け取ったデータをappend
-    $('#chat').append "<DT class='system'>#{message.user_name} :</DT> <DD>#{message.body}</DD>"    
+    $('#chat').append "<dt class='system'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
 
 $ ->
   window.chatClass = new ChatClass($('#chat').data('uri'), true)
