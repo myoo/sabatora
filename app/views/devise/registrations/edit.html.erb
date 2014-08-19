@@ -14,7 +14,6 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <%= f.input :name, required: true %>
-
         <%= f.input :password, autocomplete: "off", hint: "パスワードを変更したくない場合は空白のままにしてください。", required: false %>
         <%= f.input :password_confirmation, required: false %>
         <%= f.input :current_password, hint: "変更するには、現在のパスワードを入力してください。", required: true %>
@@ -39,5 +38,7 @@
 
 <p><%= link_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, :class=>"btn btn-danger btn-md" %></p>
 <div class="space01"></div>
-<%= link_to "Home", welcome_index_path %>
+
+<%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
+
 <div class="space01"></div>

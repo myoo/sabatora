@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require websocket_rails/main
+//= require jquery.scrollTo.min
 //= require chat
 
