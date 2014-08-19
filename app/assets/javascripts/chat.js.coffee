@@ -16,8 +16,8 @@ class @ChatClass
       e.preventDefault()
       @sendMessage()
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行
-    @dispatcher.bind 'new_message', @receiveMessage
-    @channel.bind 'new_message', @receiveSystemMessage
+    @dispatcher.bind 'new_message', @receiveSystemMessage
+    @channel.bind 'new_message', @receiveMessage
     @privateChannel.bind 'new_message', @receivePrivateMessage
   
   setChannelCode: () =>
@@ -51,16 +51,17 @@ class @ChatClass
       height += $(this).height()
     $('#chat dt').each ->
       height += $(this).height()
-    console.log height 
-    $('#chat').animate({scrollTop: $('#chat').prop("scrollHeight") }, 500);
+    $('#chat').scrollTo('+=100px', 500)
 
   receivePrivateMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "<dt class='private'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
+    $('#chat').scrollTo('+=100px', 500)
 
   receiveSystemMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "<dt class='system'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
+    $('#chat').stop().scrollTo('100%', 1500) 
 
 $ ->
   window.chatClass = new ChatClass($('#chat').data('uri'), true)
