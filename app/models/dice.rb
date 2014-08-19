@@ -35,4 +35,10 @@ class Dice
     #    "#{result_number}: #{result_roll}"
     {result: result_number, dice: result_roll}
   end
+
+  def normal_judge(comparison, target, number_set)
+    result = roll_and_plus(number_set)
+    judge = comparison.to_proc.call(target, result[:result])
+    return {judge: judge, result: result}
+  end
 end

@@ -3,6 +3,7 @@ module ChatParser
   extend ActiveSupport::Concern
 
   @@command_set = [
+                   { reg: /\b(\d+)d(\d+).*(=?[>|<]=?)(\d+)\b/, func: "normal_judge" },
                    { reg: /\b(\d+)d(\d+)[+|-](\d+)|(\d+)d(\d+)\b/, func: "ndm_dice_plus" },
                    { reg: /\b(\d+)d(\d+)/, func: "ndm_dice" }
                  ]
@@ -31,8 +32,8 @@ module ChatParser
       if command[:reg].match src
         return self.send(command[:func], src, dice)
       end
-      return src
     end
+    return src
   end
 
   def ndm_dice(line, dice)
@@ -43,7 +44,30 @@ module ChatParser
   end
 
   def ndm_dice_plus(line, dice)
+    result = roll_and_plus(line, dice)
+    "【#{line}】結果：#{result[:result]},　#{result[:dice]}"
+  end
+
+  def normal_judge(line, dice)
+    number_src, comparison, target = line.split(/(=?[>|<]=?)/)
     number_set = []
+    parse_number_set(number_src, number_set)
+    result = dice.normal_judge(comparison.to_sym, target.to_i, number_set)
+    unless result[:judge]
+      "成功！：【#{line}】　結果: #{result[:result][:result]},　#{result[:result][:dice]}"
+    else
+      "失敗：【#{line}】　結果: #{result[:result][:result]},　#{result[:result][:dice]}"
+    end
+  end
+
+  private
+  def roll_and_plus(line, dice)
+    number_set = []
+    parse_number_set(line, number_set)
+    dice.roll_and_plus(number_set)
+  end
+
+  def parse_number_set(line, number_set)
     commands = ["+"]            # 前方のオペランドを参照するため挿入しておく
     commands << line.split(/([+|-])/)
     commands.flatten.each_slice(2) do |operand, command|
@@ -64,7 +88,5 @@ module ChatParser
         }
       end
     end
-    result = dice.roll_and_plus(number_set)
-    "【#{line}】結果：#{result[:result]},　#{result[:dice]}"
   end
 end
