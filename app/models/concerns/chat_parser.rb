@@ -24,6 +24,8 @@ module ChatParser
   end
 
   def parse_command(line, dice)
+    return line if dice.nil?
+
     @@command_set.each do |command|
       src = line.downcase
       if command[:reg].match src
@@ -36,7 +38,7 @@ module ChatParser
   def ndm_dice(line, dice)
     line.gsub!(/\b(\d+)d(\d+)\b/) {
       result = dice.roll($1.to_i, $2.to_i)
-      "【#{$1}D#{$2}】 合計:#{result[0]}, #{result[1]}"
+      "【#{$1}D#{$2}】 合計:#{result[0]},　#{result[1]}"
     }
   end
 
@@ -59,10 +61,10 @@ module ChatParser
               alone_number: $4.to_i
             }
           end
-        }        
+        }
       end
     end
     result = dice.roll_and_plus(number_set)
-    "【#{line}】結果：#{result[:result]}, #{result[:dice]}"
+    "【#{line}】結果：#{result[:result]},　#{result[:dice]}"
   end
 end

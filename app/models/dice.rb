@@ -21,7 +21,6 @@ class Dice
 
   # [[operand, number_of_dice, number_of_face, alone_number],...]
   def roll_and_plus(number_set)
-    binding.pry
     result_number = 0
     result_roll = []
     number_set.each do |set|

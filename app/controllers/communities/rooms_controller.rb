@@ -1,6 +1,8 @@
 class Communities::RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :update, :destroy, :playspace]
   before_action :set_community
+
+  before_filter :authenticate_user!
 
   # GET /communities/rooms
   # GET /communities/rooms.json
@@ -62,6 +64,10 @@ class Communities::RoomsController < ApplicationController
       format.html { redirect_to community_rooms_path(@community), notice: 'Room was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def playspace
+    
   end
 
   private
