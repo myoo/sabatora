@@ -33,6 +33,10 @@ class ChatController < WebsocketRails::BaseController
   def room_message
     puts "called room_message"
     parse(message)
+
+    # ログ記録
+    Message.create message
+
     WebsocketRails[message[:room_id]].trigger(:room_message, message)
   end
 
