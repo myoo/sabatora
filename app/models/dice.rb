@@ -24,6 +24,7 @@ class Dice
         result_number = set[:operand].to_proc.call(result_number, set[:alone_number])
       end
     end
-    "#{result_number}: #{result_roll}"
+    #    "#{result_number}: #{result_roll}"
+    {result: result_number, dice: result_roll}
   end
 end

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 source 'https://rubygems.org'
 
 
@@ -56,6 +57,9 @@ gem 'simple_form', '~>3.1.0.rc1'
 
 gem 'redis-objects'
 gem 'redis-namespace'
+
+# サニタイザー
+gem 'obscenity', :git => '/Users/mio/works/trpg/obscenity', branch: 'custom_for_japanese'
 
 group :development, :test do
   gem "rspec"

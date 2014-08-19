@@ -1,3 +1,10 @@
+GIT
+  remote: /Users/mio/works/trpg/obscenity
+  revision: 1439a4c3a3309abf92caf73cbeb3f352643b03fb
+  branch: custom_for_japanese
+  specs:
+    obscenity (1.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -307,6 +314,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener
+  obscenity!
   paranoia
   poltergeist
   pry-byebug
