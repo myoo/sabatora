@@ -59,7 +59,7 @@ gem 'redis-objects'
 gem 'redis-namespace'
 
 # サニタイザー
-gem 'obscenity', :git => '/Users/mio/works/trpg/obscenity', branch: 'custom_for_japanese'
+gem 'obscenity', :github => 'myoo/obscenity', branch: 'custom_for_japanese'
 
 group :development, :test do
   gem "rspec"

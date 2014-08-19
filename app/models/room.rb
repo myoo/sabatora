@@ -13,7 +13,7 @@ class Room < ActiveRecord::Base
 
   attr_reader :dice
 
-  after_create :initialize_dice
+  after_initialize :initialize_dice
 
 
   def initialize_dice
