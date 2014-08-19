@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'robby/index'
+
+  get :robby, to: 'robby#index'
+
   devise_for :users
   get 'welcome/index'
 
@@ -12,6 +16,10 @@ Rails.application.routes.draw do
     resources :joinings, to: "communities/joinings"
     resources :rooms, to: "communities/rooms" do
       resources :players, to: "communities/rooms/players"
+
+      member do
+        get :playspace
+      end
     end
   end
 

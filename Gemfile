@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 source 'https://rubygems.org'
 
 
@@ -54,6 +55,13 @@ gem 'cancancan'
 
 gem 'simple_form', '~>3.1.0.rc1'
 
+#リアルタイム通信
+gem 'websocket-rails'
+
+#チャットデータ保存
+gem 'mongoid'
+
+# Redis
 gem 'redis-objects'
 gem 'redis-namespace'
 
