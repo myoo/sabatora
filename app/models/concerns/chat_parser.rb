@@ -14,7 +14,7 @@ module ChatParser
     until lines.empty?
       buf.push parse_line(lines.shift, dice)
     end
-    buf
+    buf.join("\n")
   end
 
   private

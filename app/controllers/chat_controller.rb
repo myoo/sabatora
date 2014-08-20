@@ -25,7 +25,7 @@ class ChatController < WebsocketRails::BaseController
 
   def new_message
     puts "called new_message: #{message}"
-    parse(message) unless message[:room_id] == '0'
+    parse(message)
     # ログ記録
     Message.create message
   end

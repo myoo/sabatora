@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 class Room < ActiveRecord::Base
   include Redis::Objects
-  include ChatParser
 
   belongs_to :community
   belongs_to :owner, class_name: "User", foreign_key: :owner_id
@@ -9,16 +9,25 @@ class Room < ActiveRecord::Base
 
   value :stored_dice
 
-  validates :name, :about, :community, :owner, presence: true
+  validates :name, :about, :community, :owner, :system_id, presence: true
 
   attr_reader :dice
 
-  after_initialize :initialize_dice
+  after_initialize :initialize_system
+  after_create :initialize_dice
 
+
+  def initialize_system
+    @system_tytle = System::TITLES.key(system_id)
+    klass = Module.const_get("#{@system_tytle.capitalize}System")
+    @system = klass.new(self, system_id)
+
+    initialize_dice unless self.id.nil?         # new直後は実行しない
+  end
 
   def initialize_dice
     if stored_dice.nil?
-      @dice = Dice.new
+      @dice = @system.dice
     else
       @dice = Marcial.load(stored_dice)
     end
