@@ -38,14 +38,22 @@ div.field{
 	overflow-x: hidden;
 
 	dt{
-		border-bottom: dotted 1px #666;
+		border: solid 1px #666;
+
+		border-bottom: none;
 		padding: 5px;
+		padding-left: 10px;
 		background: white;
+		font-weight: normal;
 	}
 
 	dd{
-		border-bottom: dotted 1px #666;
-		padding: 5px 30px;
+		border: solid 1px #666;
+
+		border-top: none;
+		padding: 5px 35px;
+		background: white;
+		font-weight: bold;
 	}
 
     dt.private {
