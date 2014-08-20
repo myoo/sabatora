@@ -8,11 +8,14 @@
 <div class="row">
 	<div class="col-sm-3 col-xs-12">
   		<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room), :class=>"btn btn-default btn-block" %>
-  </div>
+  	</div>
 </div>
-
 <div class="space01"></div>
-<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, @room), :class=>"btn btn-primary btn-lg" %>
+<div class="row">
+	<div class="col-sm-3 col-xs-12">
+  		<%= link_to "セッションルームに行く", playspace_community_room_path(@community, @room), :class=>"btn btn-primary btn-block btn-lg" %>
+  	</div>
+</div>
 <div class="space01"></div>
 
 <%= link_to '戻る', community_rooms_path(@community) %>
