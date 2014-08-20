@@ -6,7 +6,9 @@ module CthuluParser
     super
     @@default_reg = /\b([^\d]+.*?)[:：]\s*(\d+)\b/
     @@regist_reg = /[\[【]([^\d]*?\d*?)[:：]?\s*(\d+)\s*vs\s*([^\d]*?\d*?)[:：]?\s*(\d+)[\]】]/
+    @@combine_reg =  /\b([^\d]+.*?)[:：]\s*(\d+)\s*and\s*([^\d]+.*?)[:：]\s*(\d+)\b/
     @@command_set.unshift(
+                          { reg: @@combine_reg, func: "combine_judge" },
                           { reg: @@regist_reg, func: "regist_judge" },
                           { reg: @@default_reg, func: "default_judge" }
                           )
@@ -39,5 +41,23 @@ module CthuluParser
     buf += "　成功率: #{result[:judge][:target]}%"  if result[:judge][:target] > 5 and result[:judge][:target] < 95
 
     return buf
+  end
+
+  def combine_judge(line, dice)
+    puts "combine judge"
+
+    commands = line.split(/\s*and\s*/)
+    targets = []
+    skills = []
+    commands.each do |command|
+      command.gsub!(@@default_reg) {
+        skills << $1
+        targets << $2.to_i
+      }
+    end
+
+    dice_result = dice.combine_judge(targets)
+
+    "【#{skills.join(" and ")}】 #{dice_result[:result][:judge]}  目標値: #{dice_result[:target]}  結果: #{dice_result[:result][:result]}"
   end
 end

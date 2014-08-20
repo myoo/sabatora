@@ -33,4 +33,9 @@ class CthuluDice < Dice
       return { judge: "失敗", target: target, result: result[0] }
     end
   end
+
+  def combine_judge(targets)
+    target = targets.min
+    { target: target, result: default_judge(target)}
+  end
 end
