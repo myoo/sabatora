@@ -65,6 +65,9 @@ gem 'mongoid'
 gem 'redis-objects'
 gem 'redis-namespace'
 
+# 外部制約追加
+gem 'foreigner'
+
 # サニタイザー
 gem 'obscenity', :github => 'myoo/obscenity', branch: 'custom_for_japanese'
 
