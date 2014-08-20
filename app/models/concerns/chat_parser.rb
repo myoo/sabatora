@@ -2,11 +2,13 @@
 module ChatParser
   extend ActiveSupport::Concern
 
-  @@command_set = [
-                   { reg: /\b(\d+)d(\d+).*(=?[>|<]=?)(\d+)\b/, func: "normal_judge" },
-                   { reg: /\b(\d+)d(\d+)[+|-](\d+)|(\d+)d(\d+)\b/, func: "ndm_dice_plus" },
-                   { reg: /\b(\d+)d(\d+)/, func: "ndm_dice" }
-                 ]
+  def self.included(mod)
+    @@command_set = [
+                     { reg: /\b(\d+)d(\d+).*(=?[>|<]=?)(\d+)\b/, func: "normal_judge" },
+                     { reg: /\b(\d+)d(\d+)[+|-](\d+)|(\d+)d(\d+)\b/, func: "ndm_dice_plus" },
+                     { reg: /\b(\d+)d(\d+)/, func: "ndm_dice" }
+                    ]
+  end
 
   def parse(str, dice)
     lines = str.rstrip.split(/\r?\n/).map {|line| line.chomp }
@@ -60,7 +62,6 @@ module ChatParser
     end
   end
 
-  private
   def roll_and_plus(line, dice)
     number_set = []
     parse_number_set(line, number_set)
