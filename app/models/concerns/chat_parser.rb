@@ -27,8 +27,8 @@ module ChatParser
   def parse_command(line, dice)
     return line if dice.nil?
 
+    src = line.downcase
     @@command_set.each do |command|
-      src = line.downcase
       if command[:reg].match src
         return self.send(command[:func], src, dice)
       end
