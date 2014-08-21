@@ -1,11 +1,13 @@
 body {
-  
+  background: none repeat scroll 0 0 #fdfdfd;
 }
 
+/*  */
 .navbar-static-top {
   margin-bottom: 19px;
 }
-/* ヘッダー部分の文字の感覚調整 */
+
+/* ヘッダー部分の文字の間隔調整 */
 .head{
 	padding: 16px;
 }
@@ -28,7 +30,7 @@ div.field{
 	padding-bottom: 10px;
 }
 
-
+/* チャット部分のデザイン */
 #chat{
 	padding: 12px 16px;
 	font-size: 15px;
@@ -39,7 +41,6 @@ div.field{
 
 	dt{
 		border: solid 1px #666;
-
 		border-bottom: none;
 		padding: 5px;
 		padding-left: 10px;
@@ -49,7 +50,6 @@ div.field{
 
 	dd{
 		border: solid 1px #666;
-
 		border-top: none;
 		padding: 5px 35px;
 		background: white;
@@ -63,5 +63,818 @@ div.field{
 	color: green;
     }
 
+}
 
+/*
+	bootstrap 補足
+*/
+.accordion {
+    margin-bottom: 20px;
+}
+.accordion-group {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-bottom: 2px;
+}
+.accordion-heading {
+    border-bottom: 0 none;
+}
+.accordion-heading .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+}
+.accordion-toggle {
+    cursor: pointer;
+}
+.accordion-inner {
+    border-top: 1px solid #e5e5e5;
+    padding: 9px 15px;
+}
+
+/* 
+	Ergoからパクって来たやつ
+*/
+/* h１〜h５　p */
+h1, h2, h3, h4, h5, h6 {
+    color: #7c7c7c;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+h1.glyphicons, h2.glyphicons, h3.glyphicons, h4.glyphicons, h5.glyphicons, h6.glyphicons {
+    color: #7c7c7c;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    color: #afafaf;
+    font-style: italic;
+    font-weight: 400;
+    padding: 0 5px;
+}
+h1 span, h2 span, h3 span {
+    font-size: 50%;
+    font-weight: 400;
+    padding: 0;
+    position: relative;
+    text-transform: none;
+    top: -3px;
+}
+h1, h2, h3 {
+    line-height: 30px;
+}
+.heading-buttons h1, .heading-buttons h2, .heading-buttons h3, .heading-buttons h4, .heading-buttons h5, .heading-buttons h6 {
+    display: inline-block;
+    margin: 0 15px;
+}
+.heading-buttons h1.glyphicons, .heading-buttons h2.glyphicons, .heading-buttons h3.glyphicons, .heading-buttons h4.glyphicons, .heading-buttons h5.glyphicons, .heading-buttons h6.glyphicons {
+    display: inline-block;
+}
+.heading-buttons .buttons {
+    margin-right: 15px;
+    margin-top: 3px;
+    text-align: right;
+}
+.heading-buttons .btn {
+    margin-right: 15px;
+}
+.heading-buttons .btn:last-child {
+    margin-right: 0;
+}
+p {
+    line-height: normal;
+    margin: 0 0 10px;
+}
+
+/* ボタン関連 */
+.btn {
+    font-weight: 600;
+}
+.btn-block {
+    width: 100%;
+}
+.btn + .btn:not(.btn-block) {
+    margin: 0 0 0 5px;
+}
+.btn-group .btn + .btn:not(.btn-block) {
+    margin: 0;
+}
+.btn-default {
+    background-color: #efefef;
+    background-image: linear-gradient(to bottom, #f4f4f4, #e7e7e7);
+    background-repeat: repeat-x;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 1px 0 0 #ffffff inset, 0 0 0 1px #cecece;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    text-shadow: 0 1px 0 #fff;
+}
+.btn-group.open .btn-default.dropdown-toggle, .btn-default.disabled, .btn-default[disabled], .btn-default:hover, .btn-default:focus {
+    background: none repeat scroll 0 0 #e8e8e8;
+}
+.btn-default:active, .btn-default.active {
+    background: none repeat scroll 0 0 #e8e8e8;
+    color: #fff;
+    text-shadow: none;
+}
+.btn-default .caret {
+    border-top-color: rgba(0, 0, 0, 0.5);
+}
+.btn-warning {
+    background-color: #b6895e;
+    background-image: linear-gradient(to bottom, #be946b, #ab7a4b);
+    background-repeat: repeat-x;
+    border: 1px solid #ab7a4b;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #88613b;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-warning.glyphicons i:before {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+}
+.btn-group.open .btn-warning.dropdown-toggle, .btn-warning.disabled, .btn-warning[disabled], .btn-warning:hover, .btn-warning:focus {
+    background: none repeat scroll 0 0 #ab7a4b;
+    color: #fff;
+}
+.btn-warning:active, .btn-warning.active {
+    background: none repeat scroll 0 0 #ab7a4b;
+    color: #fff;
+}
+.btn-warning .caret {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+    border-top-color: rgba(255, 255, 255, 0.7);
+}
+.btn-info {
+    background: none repeat scroll 0 0 #93b9d8;
+    border: 1px solid #93b9d8;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-info.glyphicons i:before {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+}
+.btn-group.open .btn-info.dropdown-toggle, .btn-info.disabled, .btn-info[disabled], .btn-info:hover, .btn-info:focus {
+    background: none repeat scroll 0 0 #93b9d8;
+    color: #fff;
+}
+.btn-info:active, .btn-info.active {
+    background: none repeat scroll 0 0 #93b9d8;
+    color: #fff;
+}
+.btn-info .caret {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+    border-top-color: rgba(255, 255, 255, 0.7);
+}
+.btn-danger {
+    background-color: #ca4741;
+    background-image: linear-gradient(to bottom, #d3534c, #bd362f);
+    background-repeat: repeat-x;
+    border: 1px solid #bd362f;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #942a25;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-danger.glyphicons i:before {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+}
+.btn-group.open .btn-danger.dropdown-toggle, .btn-danger.disabled, .btn-danger[disabled], .btn-danger:hover, .btn-danger:focus {
+    background: none repeat scroll 0 0 #bd362f;
+    color: #fff;
+}
+.btn-danger:active, .btn-danger.active {
+    background: none repeat scroll 0 0 #bd362f;
+    color: #fff;
+}
+.btn-danger .caret {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+    border-top-color: rgba(255, 255, 255, 0.7);
+}
+.btn-primary {
+    background-color: #9dce6e;
+    background-image: linear-gradient(to bottom, #a8d37d, #8ec657);
+    background-repeat: repeat-x;
+    border: 1px solid #8ec657;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #74af3b;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-primary.glyphicons i:before {
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: none;
+}
+.btn-group.open .btn-primary.dropdown-toggle, .btn-primary.disabled, .btn-primary[disabled], .btn-primary:hover, .btn-primary:focus {
+    background: none repeat scroll 0 0 #8ec657;
+    color: #fff;
+}
+.btn-primary:active, .btn-primary.active {
+    background: none repeat scroll 0 0 #8ec657;
+    color: #fff;
+}
+.btn-primary .caret {
+    border-bottom-color: #ffffff;
+    border-top-color: #ffffff;
+}
+.btn-inverse {
+    background-color: #53575d;
+    background-image: linear-gradient(to bottom, #5d6168, #45484d);
+    background-repeat: repeat-x;
+    border: 1px solid #45484d;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #2d2f32;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-inverse.glyphicons i:before {
+    color: #919293;
+    text-shadow: none;
+}
+.btn-group.open .btn-inverse.dropdown-toggle, .btn-inverse.disabled, .btn-inverse[disabled], .btn-inverse:hover, .btn-inverse:focus {
+    background: none repeat scroll 0 0 #45484d;
+    color: #fff;
+}
+.btn-inverse:active, .btn-inverse.active {
+    background: none repeat scroll 0 0 #45484d;
+    color: #fff;
+}
+.btn-inverse .caret {
+    border-bottom-color: #fff;
+    border-top-color: #fff;
+}
+.btn-success {
+    background-color: #6fa45f;
+    background-image: linear-gradient(to bottom, #79ae69, #609450);
+    background-repeat: repeat-x;
+    border: 1px solid #609450;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #4b733e;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-success.glyphicons i:before {
+    color: #a2bc9b;
+    text-shadow: none;
+}
+.btn-group.open .btn-success.dropdown-toggle, .btn-success.disabled, .btn-success[disabled], .btn-success:hover, .btn-success:focus {
+    background: none repeat scroll 0 0 #609450;
+    color: #fff;
+}
+.btn-success:active, .btn-success.active {
+    background: none repeat scroll 0 0 #609450;
+    color: #fff;
+}
+.btn-success .caret {
+    border-bottom-color: #fff;
+    border-top-color: #fff;
+}
+.btn-group .btn-primary:not(.dropdown-toggle) {
+    margin-right: 2px;
+}
+.btn-group-vertical.block {
+    display: block;
+}
+.btn-group.btn-block {
+    padding: 0;
+    position: relative;
+}
+.btn-group.btn-block .leadcontainer {
+    left: 0;
+    position: absolute;
+    right: 29px;
+}
+.btn-group.btn-block .leadcontainer > .btn:first-child {
+    border-radius: 4px 0 0 4px;
+    margin-left: 0;
+    text-align: left;
+}
+.btn-group.btn-block .dropdown-lead {
+    box-sizing: border-box;
+    width: 100%;
+}
+.btn-group.btn-block .dropdown-toggle {
+    box-sizing: border-box;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    width: 30px;
+}
+.btn-icon-stacked {
+    padding: 5px 5px 5px 45px;
+    text-align: left;
+}
+.btn-icon-stacked i {
+    display: block;
+    height: 24px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 24px;
+}
+.btn-icon-stacked i:before {
+    left: auto;
+    position: relative;
+    text-align: center;
+    top: auto;
+}
+.btn-icon-stacked span {
+    display: block;
+    font-size: 13px;
+    line-height: normal;
+}
+.btn-facebook {
+    background-color: #728dc0;
+    background-image: linear-gradient(to bottom, #8098c6, #5d7cb6);
+    background-repeat: repeat-x;
+    border: 1px solid #5d7cb6;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #46639a;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.btn-facebook i:before {
+    color: #fff;
+}
+.btn-facebook:hover {
+    background: none repeat scroll 0 0 #8098c6;
+    color: #fff;
+}
+.btn-google {
+    background-color: #b24343;
+    background-image: linear-gradient(to bottom, #bf4a4a, #9e3838);
+    background-repeat: repeat-x;
+    border: 1px solid #9e3838;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #782b2b;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.btn-google i:before {
+    color: #fff;
+}
+.btn-google:hover {
+    background: none repeat scroll 0 0 #bf4a4a;
+    color: #fff;
+}
+.btn-toggle-code {
+    border-radius: 0;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+.btn-toggle-code.outside {
+    bottom: -24px;
+}
+#demo_buttons .btn-block {
+    margin: 0 auto;
+    max-width: 200px;
+}
+#demo_buttons thead th {
+    width: 25%;
+}
+
+/* 間隔調整 */
+.separator {
+    display: block;
+    padding: 15px 0;
+}
+.separator.bottom {
+    padding: 0 0 15px;
+}
+.separator.top {
+    padding: 15px 0 0;
+}
+
+/* hr */
+hr {
+    border-bottom: medium none;
+    border-top-color: #d8d8d8;
+    margin: 15px 0;
+}
+hr.separator {
+    padding: 0;
+}
+hr.separator.top {
+    margin: 15px 0 0;
+}
+hr.separator.bottom {
+    margin: 0 0 15px;
+}
+
+/* スペシャルサンクスwell */
+.well {
+    background: none repeat scroll 0 0 #fafafa;
+    border-color: #d8d8d8;
+    border-radius: 0;
+    margin: 0 0 10px;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+.margin-none {
+    margin: 0 !important;
+}
+*, a:focus {
+    outline: medium none !important;
+}
+
+/* サイトからのお知らせの */
+.tickertape {
+    background-color: #f9f9f9;
+    background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
+    background-repeat: repeat-x;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+    color: #7c7c7c;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 0 15px;
+    padding: 0 10px 0 0;
+    position: relative;
+}
+.tickertape .title {
+    display: block;
+    float: left;
+    height: 32px;
+    left: 0;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    width: 80px;
+}
+.tickertape .marquee {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #d8d8d8;
+    box-shadow: -2px 0 5px -4px #d8d8d8 inset, 2px 0 5px -4px #d8d8d8 inset;
+    box-sizing: border-box;
+    display: block;
+    font-size: 11px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 90px;
+    margin-top: 6px;
+    overflow: hidden;
+    padding: 0 5px;
+    position: relative;
+    white-space: nowrap;
+}
+.tickertape .marquee span {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    transform: translateX(100%);
+    white-space: nowrap;
+    width: 100%;
+}
+.tickertape .marquee span:nth-child(1) {
+    animation: 20s ease 0s normal none infinite marquee-one;
+}
+.tickertape .marquee span:nth-child(2) {
+    animation: 20s ease 0s normal none infinite marquee-two;
+}
+@keyframes marquee-one {
+0% {
+    transform: translateX(105%);
+}
+10% {
+    transform: translateX(0px);
+}
+40% {
+    transform: translateX(0px);
+}
+50% {
+    transform: translateX(-105%);
+}
+100% {
+    transform: translateX(-105%);
+}
+}
+@keyframes marquee-one {
+0% {
+    transform: translateX(105%);
+}
+10% {
+    transform: translateX(0px);
+}
+40% {
+    transform: translateX(0px);
+}
+50% {
+    transform: translateX(-105%);
+}
+100% {
+    transform: translateX(-105%);
+}
+}
+@keyframes marquee-two {
+0% {
+    transform: translateX(105%);
+}
+50% {
+    transform: translateX(105%);
+}
+60% {
+    transform: translateX(0px);
+}
+90% {
+    transform: translateX(0px);
+}
+100% {
+    transform: translateX(-105%);
+}
+}
+@keyframes marquee-two {
+0% {
+    transform: translateX(105%);
+}
+50% {
+    transform: translateX(105%);
+}
+60% {
+    transform: translateX(0px);
+}
+90% {
+    transform: translateX(0px);
+}
+100% {
+    transform: translateX(-105%);
+}
+}
+
+/* トップページ新着お知らせに使用 */
+.widget {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+    margin: 0 auto 15px;
+    position: relative;
+}
+.widget .tab-content {
+    padding: 0;
+}
+.widget .widget-head {
+    background-color: #f9f9f9;
+    background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #d8d8d8;
+    box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+    height: 35px;
+    line-height: 35px;
+    overflow: hidden;
+    padding: 0 15px 0 0;
+    position: relative;
+}
+.widget .widget-head.progress {
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+.widget .widget-head > .glyphicons, .widget .widget-head ul .glyphicons {
+    height: 30px;
+    padding: 0;
+    width: 30px;
+}
+.widget .widget-head > .glyphicons i:before, .widget .widget-head ul .glyphicons i:before {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    height: 30px;
+    line-height: 23px;
+    text-align: center;
+    width: 30px;
+}
+.widget .widget-head .heading {
+    color: #7c7c7c;
+    float: left;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0;
+    padding: 0 15px;
+}
+.widget .widget-head .heading.glyphicons {
+    display: block;
+    padding: 0 0 0 35px;
+    width: auto;
+}
+.widget .widget-head .heading.glyphicons i:before {
+    color: #7c7c7c;
+    font-size: 16px;
+    font-weight: normal;
+    height: 35px;
+    left: 0;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-shadow: none;
+    top: 0;
+    width: 35px;
+}
+.widget .widget-head a {
+    text-shadow: none;
+}
+.widget .widget-head .dropdown-menu li > a:hover, .widget .widget-head .dropdown-menu li > a:focus, .widget .widget-head .dropdown-submenu:hover > a {
+    background-color: #8ec657;
+    background-image: linear-gradient(to bottom, #8ec657, #d24343);
+    background-repeat: repeat-x;
+}
+.widget .details {
+    color: #7c7c7c;
+    font-size: 8pt;
+}
+.widget .widget-body {
+    padding: 15px;
+}
+.widget .widget-body form {
+    margin: 0;
+}
+.widget .widget-body > pre:last-child, .widget .widget-body > p:last-child {
+    margin: 0;
+}
+.widget .widget-body.list {
+    color: #7c7c7c;
+    padding: 0;
+}
+.widget .widget-body.list .count {
+    font-size: 15pt;
+    font-weight: 400;
+}
+.widget .widget-body.list ul {
+    list-style: none outside none;
+    margin: 0;
+}
+.widget .widget-body.list ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    clear: both;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 10px;
+    text-align: left;
+}
+.widget .widget-body.list ul li:first-child {
+    border-top: medium none;
+}
+.widget .widget-body.list ul li:last-child {
+    border-bottom: medium none;
+}
+.widget .widget-body.list ul li .count {
+    color: #8ec657;
+    float: right;
+}
+.widget .widget-body.list ul li .sparkline {
+    margin-left: 5px;
+    position: relative;
+    top: 5px;
+}
+.widget .widget-body.list.products li {
+    height: 60px;
+    line-height: 60px;
+}
+.widget .widget-body.list.products .img {
+    background: none repeat scroll 0 0 #272729;
+    border-radius: 3px;
+    color: #818181;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 10pt;
+    font-weight: 600;
+    height: 44px;
+    line-height: 44px;
+    margin: 8px 8px 0 0;
+    text-align: center;
+    width: 48px;
+}
+.widget .widget-body.list.products .title {
+    display: inline-block;
+    line-height: normal;
+    padding: 13px 0 0;
+    text-transform: uppercase;
+}
+.widget .widget-body.list.products .title strong {
+    font-family: "Open Sans",sans-serif;
+    text-transform: none;
+}
+.widget .widget-body.list.fluid ul li {
+    height: auto;
+    line-height: normal;
+    padding: 10px;
+}
+
+.widget .widget-footer {
+    background: none repeat scroll 0 0 #fafafa;
+    border-top: 1px solid #ebebeb;
+    height: 25px;
+    line-height: 25px;
+}
+
+.widget .widget-footer .glyphicons {
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    padding: 0;
+    width: 25px;
+}
+.widget .widget-footer .glyphicons i:before {
+    color: #c3c3c3;
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffffff;
+    width: 20px;
+}
+.widget .widget-footer .glyphicons:hover i:before {
+    color: rgba(0, 0, 0, 0.5);
+}
+.widget.margin-bottom-none {
+    margin-bottom: 0;
+}
+.widget.widget-gray {
+    background: none repeat scroll 0 0 #f5f5f5;
+}
+.widget.widget-gray .widget-head {
+    background: none repeat scroll 0 0 #e9e9e9;
+    border-color: #d1d2d3;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6) inset, -1px -1px 1px rgba(0, 0, 0, 0) inset;
+}
+.widget.widget-gray .widget-head .heading {
+    color: #555555;
+    text-shadow: 0 1px 0 #fff;
+}
+.widget.widget-gray .widget-head .heading.glyphicons i:before {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #555;
+}
+
+/* アコーディオン */
+.accordion {
+    margin: 0 0 10px;
+    position: relative;
+}
+.accordion .accordion-group {
+    border-color: #d8d8d8;
+    border-radius: 0;
+    box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+}
+.accordion .accordion-inner {
+    background: none repeat scroll 0 0 #ffffff;
+    border-color: #d8d8d8;
+    border-radius: 0;
+    font-size: 13px;
+}
+.accordion .accordion-heading .accordion-toggle {
+    background-color: #f9f9f9;
+    background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
+    background-repeat: repeat-x;
+    border-radius: 0;
+    color: #7c7c7c;
+    font-weight: 600;
+    height: 29px;
+    line-height: 29px;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+/* Ergoからパクって来たやつ終わり */
+
+
+/* 
+	Ergoからパクって来たやつここだけ改造 
+*/
+/* top画面のフッター */
+.widget .widget-top-footer {
+    background: none repeat scroll 0 0 #fafafa;
+    border-top: 1px solid #ebebeb;
+    height: auto;
+    line-height: 25px;
+    padding: 5px;
+   	text-align: right;
+}
+
+/* btn-info */
+.btn-info {
+    background-color: #93b9d8;
+    background-image: linear-gradient(to bottom, #a7ddf6, #4db8ea);
+    background-repeat: repeat-x;
+    border: 1px solid #93b9d8;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #1da3e2;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-info.glyphicons i:before {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+}
+.btn-group.open .btn-info.dropdown-toggle, .btn-info.disabled, .btn-info[disabled], .btn-info:hover, .btn-info:focus {
+    background: none repeat scroll 0 0 #93b9d8;
+    color: #fff;
+}
+.btn-info:active, .btn-info.active {
+    background: none repeat scroll 0 0 #93b9d8;
+    color: #fff;
+}
+.btn-info .caret {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+    border-top-color: rgba(255, 255, 255, 0.7);
 }
