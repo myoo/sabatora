@@ -3,19 +3,26 @@
 	<div class="col-md-offset-1 col-md-10">
 		<div class="row">
 	    	<div class="col-md-7">
+	    		<div class="space-top hidden-xs hidden-sm"></div>
 				<h1>Sabatora</h1>
-		        <p>TRPGオンラインセッション用ツール"さばとら"</p>
-		        <div class="alert alert-warning alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				   現在テスト中です。
+				<br>
+				<div class="alert alert-primary">
+					<button class="close" data-dismiss="alert" type="button">×</button>
+					<strong>Warning!</strong>
+					現在テスト中です。
 				</div>
+		        <p>TRPGオンラインセッション用ツール"さばとら"<br>
+		        ”さばとら”はオンラインセッションのためのツールです。<br>
+		        面倒なサーバーの用意、設置は必要ありません！<br>
+		        誰でも簡単に、メンバー登録するだけでオンラインセッションが始められます。</p>
+		        <hr>
 				<p>さばとらtwitter：<a href="https://twitter.com/sabatora_dev">sabatora_dev</a></p>
-				
 	    	</div>
 	        <div class="col-md-5">
 			    <%= image_tag 'sabatora_top.png', :class=>"img-responsive", :alt=>"sabatora" %>
 			</div>
 		</div>
+
 		<div class="space01"></div>
 
 	    <% if user_signed_in? %>
