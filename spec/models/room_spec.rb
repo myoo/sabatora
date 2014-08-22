@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Room, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "parse chat messages" do
+    it_behaves_like "parse chat"
+  end
 end

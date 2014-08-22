@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817081354) do
+ActiveRecord::Schema.define(version: 20140815071044) do
 
   create_table "characters", force: true do |t|
     t.integer  "user_id"
@@ -31,14 +31,6 @@ ActiveRecord::Schema.define(version: 20140817081354) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "dices", force: true do |t|
-    t.integer  "room_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "dices", ["room_id"], name: "index_dices_on_room_id"
 
   create_table "joinings", force: true do |t|
     t.integer  "user_id"
@@ -81,14 +73,17 @@ ActiveRecord::Schema.define(version: 20140817081354) do
   create_table "rooms", force: true do |t|
     t.string   "name"
     t.string   "about"
-    t.integer  "owner_id"
-    t.integer  "system_id"
-    t.integer  "community_id"
+    t.integer  "owner_id",                 null: false
+    t.integer  "system_id",    default: 0
+    t.integer  "community_id",             null: false
     t.datetime "started_at"
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "rooms", ["community_id"], name: "index_rooms_on_community_id"
+  add_index "rooms", ["owner_id"], name: "index_rooms_on_owner_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
