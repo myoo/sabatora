@@ -5,7 +5,7 @@ class ChatController < WebsocketRails::BaseController
     #controller_store[:message_count] = 0
     logger.debug "start chat session"
   end
-  
+
   def client_connected
     logger.debug "user connected"
     #過去ログ表示
@@ -25,16 +25,47 @@ class ChatController < WebsocketRails::BaseController
 
   def new_message
     puts "called new_message: #{message}"
+    parse(message)
     # ログ記録
     Message.create message
+  end
+
+  def room_message
+    puts "called room_message"
+    parse(message)
+
+    # ログ記録
+    Message.create message
+
+    WebsocketRails[message[:room_id]].trigger(:room_message, message)
   end
 
   def private_message
     at_user_name = message[:body].match(/\A@(.+)\s/)
     at_user = User.find_by!(name: at_user_name[1])
     WebsocketRails[at_user.channel_key].trigger :new_message, message
+    parse message
     send_message :new_message, message
   rescue ActiveRecord::RecordNotFound => e
     send_message :new_message, {user_name: "system", body: "ユーザーが存在しません"}
+  end
+
+  private
+  def room(room_id)
+    unless message[:room_id] == '0'
+      @room ||= Room.find(room_id)
+      return @room
+    else
+      @room = nil
+    end
+  end
+
+  def parse(message)
+    unless message[:room_id] == '0'
+      message[:body] = room(message[:room_id]).parse(message[:body], room(message[:room_id]).dice)
+    else                        # ロビーはダイスなし
+      message[:body] = Obscenity.sanitize(message[:body])
+    end
+    return message
   end
 end

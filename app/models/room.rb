@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Room < ActiveRecord::Base
   include Redis::Objects
 
@@ -8,22 +9,43 @@ class Room < ActiveRecord::Base
 
   value :stored_dice
 
-  validates :name, :about, :community, :owner, presence: true
+  validates :name, :about, :community, :owner, :system_id, presence: true
 
-  attr_reader :dice
+  attr_reader :dice, :system
 
+  after_initialize :initialize_system
   after_create :initialize_dice
+  after_update :change_system, if: Proc.new { |a| a.system_id_changed? }
 
+
+  def initialize_system
+    set_system
+    initialize_dice unless self.id.nil?         # new直後は実行しない
+  end
+
+  def change_system
+    set_system
+    @dice = @system.dice
+    store_dice
+  end
 
   def initialize_dice
     if stored_dice.nil?
-      @dice = Dice.new
+      @dice = @system.dice
+      store_dice
     else
-      @dice = Marcial.load(stored_dice)
+      @dice = Marshal.load(stored_dice)
     end
   end
 
   def store_dice
-    stored_dice = Marcial.dump(@dice)
+    stored_dice = Marshal.dump(@dice)
+  end
+
+  private
+  def set_system
+    @system_tytle = System::TITLES.key(system_id)
+    klass = Module.const_get("#{@system_tytle.capitalize}System")
+    @system = klass.new(self, system_id)
   end
 end

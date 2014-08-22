@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/myoo/obscenity.git
+  revision: 1439a4c3a3309abf92caf73cbeb3f352643b03fb
+  branch: custom_for_japanese
+  specs:
+    obscenity (1.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,6 +113,8 @@ GEM
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.1)
     ffi (1.9.3)
+    foreigner (1.6.1)
+      activerecord (>= 3.0.0)
     formatador (0.2.5)
     fssm (0.2.10)
     guard (2.6.1)
@@ -335,6 +344,7 @@ DEPENDENCIES
   did_you_mean
   factory_girl_rails
   faker
+  foreigner
   guard-rspec
   hirb
   hirb-unicode
@@ -342,6 +352,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   mongoid
+  obscenity!
   paranoia
   poltergeist
   pry-byebug

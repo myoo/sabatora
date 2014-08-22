@@ -17,7 +17,7 @@ class @ChatClass
       @sendMessage()
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行
     @dispatcher.bind 'new_message', @receiveSystemMessage
-    @channel.bind 'new_message', @receiveMessage
+    @channel.bind 'room_message', @receiveMessage
     @privateChannel.bind 'new_message', @receivePrivateMessage
   
   setChannelCode: () =>
@@ -31,13 +31,12 @@ class @ChatClass
     msg_body = $('#chat_message').val()
 
     message =  { room_id: @channelCode, user_id: user_id, user_name: user_name , body: msg_body }
-
-    # 個人チャット
-    if at_user = $('#chat_message').val().match(/^@.+\s|^@.+$/)
+    console.log(message)
+    if at_user = $('#chat_message').val().match(/^@.+\s|^@.+$/)    # 個人チャット
       @dispatcher.trigger 'private_message', message
     else
-      @dispatcher.trigger 'new_message', message
-      @channel.trigger 'new_message', message
+      # @dispatcher.trigger 'new_message', message
+      @dispatcher.trigger 'room_message', message
 
     $('#chat_message').val('')
  
