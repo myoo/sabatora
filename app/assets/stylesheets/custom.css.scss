@@ -70,6 +70,27 @@ div.field{
 
 }
 
+/*
+	コミュニティトップ
+*/
+section.community-top{
+	background: none repeat scroll 0 0 #64625f;
+	color: #fff;
+    font-size: 14px;
+    padding: 16px;
+
+    h1{
+    	color:white;
+    	small{
+    		color:#aaa;
+    	}
+    }
+}
+section.community-main{
+	background: none repeat scroll 0 0 #ffffff;
+    font-size: 14px;
+    padding: 15px;
+}
 
 /*
 	bootstrap 補足
@@ -95,6 +116,12 @@ div.field{
 .accordion-inner {
     border-top: 1px solid #e5e5e5;
     padding: 9px 15px;
+}
+.pagination-centered {
+    text-align: center;
+}
+.pagination-right {
+    text-align: right;
 }
 
 /* 
