@@ -1,20 +1,28 @@
+<div class="space01"></div>
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
 		<div class="row">
 	    	<div class="col-md-7">
+	    		<div class="space-top hidden-xs hidden-sm"></div>
 				<h1>Sabatora</h1>
-		        <p>TRPGオンラインセッション用ツール"さばとら"</p>
-		        <div class="alert alert-warning alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				   現在テスト中です。
+				<br>
+				<div class="alert alert-primary">
+					<button class="close" data-dismiss="alert" type="button">×</button>
+					<strong>Warning!</strong>
+					現在テスト中です。
 				</div>
+		        <p>TRPGオンラインセッション用ツール"さばとら"<br>
+		        ”さばとら”はオンラインセッションのためのツールです。<br>
+		        面倒なサーバーの用意、設置は必要ありません！<br>
+		        誰でも簡単に、メンバー登録するだけでオンラインセッションが始められます。</p>
+		        <hr>
 				<p>さばとらtwitter：<a href="https://twitter.com/sabatora_dev">sabatora_dev</a></p>
-				<p>TOP画像(スペシャルサンクス)：<a href="https://twitter.com/popopokko">黒色さま（twitter:@popopokko）</a></p>
 	    	</div>
 	        <div class="col-md-5">
 			    <%= image_tag 'sabatora_top.png', :class=>"img-responsive", :alt=>"sabatora" %>
 			</div>
 		</div>
+
 		<div class="space01"></div>
 
 	    <% if user_signed_in? %>
@@ -27,81 +35,146 @@
 	    <% end %>
 		    
 	    <div class="space01"></div>
-	    <!-- Main component for a primary marketing message or call to action -->
-	    	
-	        <div class="panel-group" id="accordion">
-			  <div class="panel panel-default">
-			    <div class="panel-heading">
-			      <h4 class="panel-title">
-			        <a data-toggle="collapse" data-parent="#accordion" href="#step1">
-			          現在できることリスト
-			        </a>
-			      </h4>
-			    </div>
-			    <div id="step1" class="panel-collapse collapse in">
-			      <div class="panel-body">
-			        <p>・ユーザー登録　<span class="label label-success">済</span></p>
-			        <p>・マイページが作成される　<span class="label label-success">済</span></p>
-			        <p>・セッション参加記録がつく</p>
-			        <p>・アバターが登録できる</p>
-			        <p>・コミュニティに登録できる　<span class="label label-success">済</span></p>
-			        <p>・コミュニティページが作成できる</p>
-			        <p>・コミュニティページにメンバーページが作成できる</p>
-			        <p>・セッション部屋が作成できる　<span class="label label-success">済</span></p>
-			        <p>・作成したキャラを登録できる</p>
-			        <p>・背景が登録できる</p>
-			        <p>・マップが作成できる</p>
-			        <p>・シーン管理ができる</p>
-			        <p>・キャラが作成できる　<span class="label label-success">済</span></p>
-			        <p>・キャラシートに画像がアップロードできる</p>
-			        <p>・キャラシートに能力値を記録できる</p>
-			        <p>・キャラシートにメモ欄がある</p>
-			        <p>・セッション部屋内でチャットができる</p>
-			        <p>・ロビーでチャットができる　<span class="label label-success">済</span></p>
-			        <p>・個人チャットができる</p>
-			        <p>・チャットでダイスが振れる（値に偏りがない）</p>
-			        <p>・ダイスを振ると、成功・失敗したかの判定が出る</p>
-			        <p>・システム上でキャラの能力値を最低限作成できる</p>
-			        <p>・セッションログがダウンロードできる</p>
-			        <p>・セッションログのHTML出力ができる</p>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="panel panel-default">
-			    <div class="panel-heading">
-			      <h4 class="panel-title">
-			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-			          将来的に実装する仕様リスト
-			        </a>
-			      </h4>
-			    </div>
-			    <div id="collapseTwo" class="panel-collapse collapse">
-			      <div class="panel-body">
-			      	<p>・デザインテンプレート「Ergo」適用</p>	
-			        <p>・コミュニティを公開・非公開設定ができる</p>		        
-			        <p>・コミュニティ掲示板作成</p>
-			        <p>・コミュニティ専用スケジュールの作成</p>
-			        <p>・コミュニティ専用wikiの作成</p>
-			        <p>・セッション部屋に立ち絵・BGM・効果音実装</p>
-			        <p>・セッション部屋にアバターアイコン・エモーションアイコン実装</p>
-			        <p>・セッションを動画記録できるようにする</p>
-			        <p>・セッション部屋でNPCを作成できる</p>
-			        <p>・背景設定に動画を使用できる</p>
-			        <p>・セッション部屋で動画が再生できる</p>
-			        <p>・セッションをROMできる（ROMメンバーは参加中メンバーには見えない）</p>
-			        <p>・セッションログの長期保存（半年〜１年ほど）</p>
-			        <p>・ユーザー用スケジュール作成</p>
-			        <p>・ユーザー同士で送り合えるメッセージ機能</p>
-			        <p>・フレンド機能</p>
-			        <p>・称号ページ作成</p>
-			        <p>・シナリオ管理機能作成</p>
-			        <p>・デフォルトシナリオを用意する</p>
-			        <p>・公開シナリオを作れる</p>
-			        <p>・作成されたシナリオをダウンロードできる</p>
-			      </div>
-			    </div>
-			  </div>
+	    <div class="tickertape">
+			<strong class="title">お知らせ</strong>
+			<span class="marquee">
+				<span>
+				<strong>2014.8.21</strong>
+				ちょこちょこデザイン適応
+				</span>
+			</span>
+		</div>
+
+		<div class="widget">
+			<div class="widget-head">
+				<h4 class="heading">New Communities　<small>あたらしいコミュニティ</small></h4>
 			</div>
+			<div class="widget-body list">
+				<ul>
+					<li>新しいコミュニティのお知らせ</li>
+				</ul>
+			</div>
+			<div class="widget-top-footer">
+				<div class="clearfix">
+				<%= link_to "コミュニティを全て見る", communities_path, :class=>"btn btn-primary btn-xs" %>
+				</div>
+			</div>
+		</div>
+		<div class="widget">
+			<div class="widget-head">
+				<h4 class="heading">New Session　<small>あたらしいセッション</small></h4>
+			</div>
+			<div class="widget-body list">
+				<ul>
+					<li>新しいセッションのお知らせ</li>
+				</ul>
+			</div>
+		</div>
+		<div class="widget">
+			<div class="widget-head">
+				<h4 class="heading">New Event　<small>あたらしいイベント</small></h4>
+			</div>
+			<div class="widget-body list">
+				<ul>
+					<li>新しいイベントのお知らせ</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="widget">
+			<div class="widget-head">
+				<h4 class="heading">New System　<small>新しく対応したTRPGシステム</small></h4>
+			</div>
+			<div class="widget-body list">
+				<ul>
+					<li>2014.8.20 <strong>ダイスシステムがクトゥルフTRPGに対応しました</strong></li>
+				</ul>
+			</div>
+		</div>
+
+	    <!-- Main component for a primary marketing message or call to action -->
+	    <div id="accordion" class="accordion">
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle collapsed" href="#collapse-1" data-parent="#accordion" data-toggle="collapse"> 現在できることリスト </a>
+				</div>
+				<div id="collapse-1" class="accordion-body collapse in">
+					<div class="accordion-inner"> 
+						<p>・ユーザー登録　<span class="label label-success">済</span></p>
+				        <p>・マイページが作成される　<span class="label label-success">済</span></p>
+				        <p>・セッション参加記録がつく</p>
+				        <p>・アバターが登録できる</p>
+				        <p>・コミュニティに登録できる　<span class="label label-success">済</span></p>
+				        <p>・コミュニティページが作成できる</p>
+				        <p>・コミュニティページにメンバーページが作成できる</p>
+				        <p>・セッション部屋が作成できる　<span class="label label-success">済</span></p>
+				        <p>・作成したキャラを登録できる</p>
+				        <p>・背景が登録できる</p>
+				        <p>・マップが作成できる</p>
+				        <p>・シーン管理ができる</p>
+				        <p>・キャラが作成できる　<span class="label label-success">済</span></p>
+				        <p>・キャラシートに画像がアップロードできる</p>
+				        <p>・キャラシートに能力値を記録できる</p>
+				        <p>・キャラシートにメモ欄がある</p>
+				        <p>・セッション部屋内でチャットができる　<span class="label label-success">済</span></p>
+				        <p>・ロビーでチャットができる　<span class="label label-success">済</span></p>
+				        <p>・個人チャットができる　<span class="label label-success">済</span></p>
+				        <p>・チャットでダイスが振れる（値に偏りがない）　<span class="label label-success">済</span></p>
+				        <p>・ダイスを振ると、成功・失敗したかの判定が出る　<span class="label label-success">済</span></p>
+				        <p>・システム上でキャラの能力値を最低限作成できる</p>
+				        <p>・セッションログがダウンロードできる</p>
+				        <p>・セッションログのHTML出力ができる</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle collapsed" href="#collapse-2" data-parent="#accordion" data-toggle="collapse"> 将来的に実装する仕様リスト </a>
+				</div>
+				<div id="collapse-2" class="accordion-body collapse" style="height: 0px;">
+					<div class="accordion-inner"> 
+						<p>・デザインテンプレート「Ergo」適用</p>	
+				        <p>・コミュニティを公開・非公開設定ができる</p>		        
+				        <p>・コミュニティ掲示板作成</p>
+				        <p>・コミュニティ専用スケジュールの作成</p>
+				        <p>・コミュニティ専用wikiの作成</p>
+				        <p>・セッション部屋に立ち絵・BGM・効果音実装</p>
+				        <p>・セッション部屋にアバターアイコン・エモーションアイコン実装</p>
+				        <p>・セッションを動画記録できるようにする</p>
+				        <p>・セッション部屋でNPCを作成できる</p>
+				        <p>・背景設定に動画を使用できる</p>
+				        <p>・セッション部屋で動画が再生できる</p>
+				        <p>・セッションをROMできる（ROMメンバーは参加中メンバーには見えない）</p>
+				        <p>・セッションログの長期保存（半年〜１年ほど）</p>
+				        <p>・ユーザー用スケジュール作成</p>
+				        <p>・ユーザー同士で送り合えるメッセージ機能</p>
+				        <p>・フレンド機能</p>
+				        <p>・称号ページ作成</p>
+				        <p>・シナリオ管理機能作成</p>
+				        <p>・デフォルトシナリオを用意する</p>
+				        <p>・公開シナリオを作れる</p>
+				        <p>・作成されたシナリオをダウンロードできる</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- スペシャルサンクス -->
+		<div class ="row">
+			<div class="col-sm-offset-6 col-sm-6 col-xs-12">
+				<div class="well margin-none">
+					<address class="margin-none">
+						<h2 class="margin-none">Special Thanks</h2>
+						<br>
+						<strong>黒色さま</strong>(TOP画像)
+						<abbr title="Work email">twitter:</abbr>
+						<a href="https://twitter.com/popopokko">@popopokko</a>
+						<br>
+					</address>
+				</div>
+			</div>
+		</div>
+
     </div>
 </div>
 <div class="space01"></div>
