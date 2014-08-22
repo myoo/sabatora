@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,6 +46,9 @@ gem 'compass-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# db
+gem 'pg'
 
 gem "squeel"
 gem 'paranoia'
@@ -104,3 +107,5 @@ end
 group :development do
   gem "letter_opener"
 end
+
+gem 'rails_12factor', group: :production
