@@ -20,11 +20,11 @@ WebsocketRails.setup do |config|
   # Change to true to enable channel synchronization between
   # multiple server instances.
   # * Requires Redis.
-  config.synchronize = false
-  # if Rails.env.production?
-  #   redis_uri = Uri.parse(ENV['REDISCLOUD_URL'])
-  #   config.redis_options = {:host => redis_uri.host, :port => redis_uri.port, password: redis_uri.password}
-  # end
+  config.synchronize = true
+  if Rails.env.production?
+    redis_uri = URI.parse(ENV['REDISCLOUD_URL'])
+    config.redis_options = {:host => redis_uri.host, :port => redis_uri.port, password: redis_uri.password}
+  end
 
   # Prevent Thin from daemonizing (default is true)
   # config.daemonize = false
