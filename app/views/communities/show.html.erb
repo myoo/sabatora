@@ -1,33 +1,92 @@
-<p id="notice"><%= notice %></p>
+<section class="community-top bottom">
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="row">
+  <div class="col-sm-1 col-xs-12">
+     <%= image_tag 'sabatora_top.png', :class=>"img-responsive center-block", :alt=>"sabatora" %>
+  </div>
+  <div class="col-sm-9 col-xs-12">
+    <h1><%= @community.name %></h1>
+    <p><%= @community.about %></p>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs" %>
 
-<h1>
-  <%= @community.name %>
-	<small>
-	  <%= @community.about %>
-	</small>
-  <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs" %> 
-</h1>
-<p>
+  </div> 
+</div>
+</section>
+<section class="community-main">
   <%= @community.description %>
-</p>
-<div class="space01"></div>
-
-<div class="row">
-	<div class="col-sm-3 col-xs-12">
-  		<%= link_to "メンバー一覧", community_joinings_path(@community), :class=>"btn btn-default btn-block" %>
+  <br>
+  <div class="pagination">
+    <a href="#" class="btn btn-default btn-xs"><%= @community.name %>掲示板</a>
+    <a href="#" class="btn btn-default btn-xs"><%= @community.name %>Wiki</a>
   </div>
-	<div class="col-sm-3 col-xs-12">
-  		<%= link_to "セッションルーム一覧", community_rooms_path(@community), :class=>"btn btn-default btn-block"  %>
-  </div>
-</div>
-<div class="space01"></div>
-<div class="row">
-  <div class="col-sm-4 col-xs-12">
-      <%= link_to "このコミュニティに参加する", new_community_joining_path(@community), :class=>"btn btn-primary btn-block btn-lg" %>
-  </div>
-</div>
 
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4 col-xs-12">
+        <%= link_to "このコミュニティに参加する", new_community_joining_path(@community), :class=>"btn btn-primary  btn-lg" %>
+    </div>
+  </div>
 
+  <div class="space01"></div>
+
+  <div class="widget">
+    <div class="widget-head">
+      <h4 class="heading">New Event <small>新しいイベント</small></h4>
+    </div>
+    <div class="widget-body list">
+      <ul>
+        <li>新しいイベントのお知らせ</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-xs-12">
+      <div class="widget">
+        <div class="widget-head">
+          <h4 class="heading">New room　<small>新しいセッションルーム</small></h4>
+        </div>
+        <div class="widget-body list">
+          <ul>
+            <li>新しいセッションルーム１</li>
+            <li>新しいセッションルーム２</li>
+            <li>新しいセッションルーム３</li>
+            <li>新しいセッションルーム４</li>
+            <li>新しいセッションルーム５</li>
+          </ul>
+        </div>
+        <div class="widget-top-footer">
+          <div class="clearfix">
+          <%= link_to "全て見る", community_rooms_path(@community), :class=>"btn btn-info btn-xs"  %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  	<div class="col-sm-4 col-xs-12">
+      <div class="widget">
+        <div class="widget-head">
+          <h4 class="heading">New member　<small>新しいメンバー</small></h4>
+        </div>
+        <div class="widget-body list">
+          <ul>
+            <li>メンバー１</li>
+            <li>メンバー２</li>
+            <li>メンバー３</li>
+            <li>メンバー４</li>
+            <li>メンバー５</li>
+          </ul>
+        </div>
+        <div class="widget-top-footer">
+          <div class="clearfix">
+          <%= link_to "全て見る", community_joinings_path(@community), :class=>"btn btn-info btn-xs" %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+</section>
 <div class="space01"></div>
 <%= link_to 'コミュニティ一覧に戻る', communities_path %>
 <div class="space01"></div>
