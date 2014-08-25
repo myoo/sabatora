@@ -45,7 +45,7 @@ class Room < ActiveRecord::Base
   private
   def set_system
     @system_tytle = System::TITLES.key(system_id)
-    klass = Module.const_get("#{@system_tytle.capitalize}System")
+    klass = Module.const_get("System::#{@system_tytle.capitalize}System")
     @system = klass.new(self, system_id)
   end
 end

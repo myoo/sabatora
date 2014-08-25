@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class CthuluSystem < System
+class System::CthuluSystem < System
 
   private
     ###### TRPGタイトル #####
@@ -31,7 +31,7 @@ EOS
   end
 
   def new_dice
-    CthuluDice.new
+    Dice::CthuluDice.new
   end
 
   def include_parser(room)

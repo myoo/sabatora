@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class CthuluDice < Dice
+class Dice::CthuluDice < Dice
 
   ############### クトゥルフ神話TRPGダイス ###############
 
