@@ -18,7 +18,7 @@
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
-        	<td><%= room.name %></td>
+        	<td><%= link_to room.name, playspace_community_room_path(@community, room) %></td>
         	<td><%= room.owner.name %></td>
         	<td><%= room.about %></td>
           <td class="center">

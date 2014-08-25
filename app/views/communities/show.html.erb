@@ -49,11 +49,18 @@
         </div>
         <div class="widget-body list">
           <ul>
-            <li>新しいセッションルーム１</li>
-            <li>新しいセッションルーム２</li>
-            <li>新しいセッションルーム３</li>
-            <li>新しいセッションルーム４</li>
-            <li>新しいセッションルーム５</li>
+            <% @community.rooms.each do |room| %>
+              <li>
+                <span>
+                <%= link_to room.name, playspace_community_room_path(@community, room) %>
+                　オーナー：<%= room.owner.name %>
+                <span class="right">
+                  <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-xs" %>
+                  <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-xs" %>
+                  <%= link_to '削　除', [@community, room], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-xs" %>
+              </span>
+              </li>
+            <% end %>
           </ul>
         </div>
         <div class="widget-top-footer">
@@ -85,6 +92,8 @@
       </div>  
     </div>
   </div>
+
+  
 
 </section>
 <div class="space01"></div>
