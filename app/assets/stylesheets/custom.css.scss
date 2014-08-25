@@ -2,11 +2,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$font-size-base: 13px !default;
+
 
 body {
    	background: none repeat scroll 0 0 #fdfdfd;
 	color: #7c7c7c;
-	font-size: 13px;
 }
 
 /*  */
@@ -43,7 +44,7 @@ div.field{
 /* チャット部分のデザイン */
 #chat{
 	padding: 12px 16px;
-	font-size: 15px;
+	font-size: 120%;
 	height: 400px;
 	width: 100%;
 	overflow-y: scroll; 
@@ -75,13 +76,17 @@ div.field{
 
 }
 
+span.right{
+	text-align: right;
+}
+
 /*
 	コミュニティトップ
 */
 section.community-top{
 	background: none repeat scroll 0 0 #64625f;
 	color: #fff;
-    font-size: 14px;
+    font-size: 110%;
     padding: 16px;
 
     h1{
@@ -93,7 +98,7 @@ section.community-top{
 }
 section.community-main{
 	background: none repeat scroll 0 0 #ffffff;
-    font-size: 14px;
+    font-size: 110%;
     padding: 15px;
 }
 

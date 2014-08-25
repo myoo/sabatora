@@ -1,3 +1,4 @@
+<div class="container">
 <section class="community-top bottom">
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="row">
@@ -49,16 +50,10 @@
         </div>
         <div class="widget-body list">
           <ul>
-            <% @community.rooms.each do |room| %>
+            <% @community.rooms.limit(5).each do |room| %>
               <li>
-                <span>
                 <%= link_to room.name, playspace_community_room_path(@community, room) %>
                 　オーナー：<%= room.owner.name %>
-                <span class="right">
-                  <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-xs" %>
-                  <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-xs" %>
-                  <%= link_to '削　除', [@community, room], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-xs" %>
-              </span>
               </li>
             <% end %>
           </ul>
@@ -77,11 +72,10 @@
         </div>
         <div class="widget-body list">
           <ul>
-            <li>メンバー１</li>
-            <li>メンバー２</li>
-            <li>メンバー３</li>
-            <li>メンバー４</li>
-            <li>メンバー５</li>
+            <% @community.users.limit(5).each do |user| %>
+              <li>
+                <%= user.name %>
+            <% end %>
           </ul>
         </div>
         <div class="widget-top-footer">
@@ -93,9 +87,8 @@
     </div>
   </div>
 
-  
-
 </section>
 <div class="space01"></div>
 <%= link_to 'コミュニティ一覧に戻る', communities_path %>
 <div class="space01"></div>
+</div>

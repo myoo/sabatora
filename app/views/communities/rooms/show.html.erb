@@ -1,5 +1,5 @@
 <!-- <p id="notice"><%= notice %></p> -->
-
+<div class="container">
 <h1><%= @room.name %>　<small>オーナー：<%= @room.owner.name %></small>
 <%= link_to 'ルームの編集', edit_community_room_path(@community, @room), :class=>"btn btn-warning btn-xs" %> </h1>
 <p><%= @room.about %></p>
@@ -17,6 +17,6 @@
   	</div>
 </div>
 <div class="space01"></div>
-
 <%= link_to '戻る', community_rooms_path(@community) %>
 <div class="space01"></div>
+</div>

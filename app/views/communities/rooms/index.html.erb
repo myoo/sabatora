@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%= @community.name %>のセッションルーム一覧</h1>
 <p>コミュニティ『<%= @community.name %>』が作成したセッションルームの一覧です。</p>
 
@@ -18,9 +19,9 @@
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
-        	<td><%= link_to room.name, playspace_community_room_path(@community, room) %></td>
+        	<td><%= link_to room.name, [@community, room] %></td>
         	<td><%= room.owner.name %></td>
-        	<td><%= room.about %></td>
+        	<td><%= room.about %> <%= link_to 'セッションルームへ', playspace_community_room_path(@community, room), :class=>"btn btn-primary btn-xs" %></td>
           <td class="center">
             <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-sm" %>
             <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-sm" %>
@@ -40,3 +41,4 @@
 <div class="space01"></div>
 <%= link_to '戻る', @community %>
 <div class="space01"></div>
+</div>
