@@ -29,11 +29,13 @@ gem 'spring',        group: :development
 
 
 # Bootstrap
-
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
 gem 'compass-rails'
+
+gem 'less-rails'
+gem 'therubyracer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

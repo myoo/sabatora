@@ -16,5 +16,8 @@
 //= require bootstrap-sprockets
 //= require websocket_rails/main
 //= require jquery.scrollTo.min
+//= require ergo/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min
+//= require ergo/plugins/system/jquery.cookie
+//= require ergo/plugins/system/modernizr
 //= require chat
 

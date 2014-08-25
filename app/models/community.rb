@@ -7,3 +7,4 @@ class Community < ActiveRecord::Base
     self.joinings.where(user_id: user.id).length > 0
   end
 end
+q
