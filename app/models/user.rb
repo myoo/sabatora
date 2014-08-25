@@ -17,6 +17,17 @@ class User < ActiveRecord::Base
     Joining.where(user_id: self.id, community_id: community).count > 0
   end
 
+  def has_room_role?(room, name)
+    self_as = self.players.find(room.id)
+    self_as.player_role.name == name
+  rescue ActiveRecord::RecordNotFound
+    return false
+  end
+
+  def is_owner?(room)
+    room.owner == self
+  end
+
   private
   def generate_channel_key
     begin

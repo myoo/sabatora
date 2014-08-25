@@ -4,6 +4,10 @@ class Communities::RoomsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  # load_and_authorize_resource :community
+  # load_and_authorize_resource :room, :through => :community, :shallow => true
+  load_and_authorize_resource through: :community
+
   # GET /communities/rooms
   # GET /communities/rooms.json
   def index
