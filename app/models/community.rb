@@ -6,5 +6,9 @@ class Community < ActiveRecord::Base
   def has_member?(user)
     self.joinings.where(user_id: user.id).length > 0
   end
+
+  def is_owner?(user)
+    joinings = self.joinings.where(user: user)
+    joinings.length > 0 && joinings.joins(:role).where{role.name.eq "owner"}.length > 0
+  end
 end
-q

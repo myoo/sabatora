@@ -85,7 +85,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
-  gem 'better_errors'
+#  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'hirb'

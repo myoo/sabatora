@@ -4,7 +4,14 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-#    can :read, :all
+    can :read, :all
+
+    # Community
+    can :read, Community
+    can :manage, Community.all do |community|
+      community.is_owner?(user)
+    end
+    can :create, Community      # あとで制限追加
 
     # PlayRoom
     can :read, Room
