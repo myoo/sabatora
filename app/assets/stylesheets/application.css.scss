@@ -2,8 +2,11 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
+ *= require_self
+ *= require "bootstrap_and_overrides"
  *= require "ergo/glyphicons"
  *= require "ergo/plugins/forms/pixelmatrix-uniform/css/uniform.default"
  *= require "ergo/style-light"
- *= require "custom"
  */
+
+@import "custom";
