@@ -61,7 +61,7 @@ div.field{
 		padding: 5px;
 		padding-left: 10px;
 		font-weight: normal;
-        color:white;
+        color: green;
 	}
 
 	dd{
@@ -97,6 +97,12 @@ section.room{
         padding-left: 0;
         padding-right: 0;
         width: 100%; 
+    }
+
+    p.status{
+        margin: 10px;
+        color: white;
+        font-size: 80%;
     }
 }
 /*
@@ -202,3 +208,8 @@ section.community-main{
     border-top-color: rgba(255, 255, 255, 0.7);
 }
 
+/* チャット画面のプロフィール部分一旦改造 */
+#menu .profile {
+    box-sizing: content-box;
+    border-top: none!important;
+}
