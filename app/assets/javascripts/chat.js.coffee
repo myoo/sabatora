@@ -12,7 +12,7 @@ class @ChatClass
     
   bindEvents: () =>
     # 送信ボタンが押されたらサーバへメッセージを送信
-    $('form').on 'submit', (e) =>
+    $('form#chat_form').on 'submit', (e) =>
       e.preventDefault()
       @sendMessage()
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行

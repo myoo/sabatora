@@ -75,6 +75,14 @@ gem 'foreigner'
 # サニタイザー
 gem 'obscenity', :github => 'myoo/obscenity', branch: 'custom_for_japanese'
 
+#画像アップロード
+gem 'carrierwave'
+gem 'fog'
+gem "mini_magick"
+
+# config
+gem 'figaro'
+
 group :development, :test do
   gem "rspec"
   gem 'rspec-rails'
@@ -85,7 +93,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
-  gem 'better_errors'
+#  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'hirb'

@@ -17,6 +17,12 @@
 //= require ergo/plugins/system/jquery.cookie
 //= require ergo/plugins/system/modernizr
 //= require twitter/bootstrap
+//= require turbolinks
+//= require websocket_rails/main
+//= require jquery.scrollTo.min
+//= require chat
+//= require room
+
 //= require ergo/plugins/other/jquery-slimScroll/jquery.slimscroll.min
 //= require ergo/plugins/other/holder/holder
 //= require ergo/plugins/forms/pixelmatrix-uniform/jquery.uniform.min
@@ -39,8 +45,4 @@
 //= require ergo/plugins/color/farbtastic/farbtastic.js
 //= require ergo/plugins/forms/select2/select2.js
 //= require ergo/demo/form_elements.js
-//= require turbolinks
-//= require websocket_rails/main
-//= require jquery.scrollTo.min
-//= require chat
 

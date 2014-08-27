@@ -1,4 +1,4 @@
-<%= form_tag({id: :chat}) do %>
+<%= form_tag('#', {id: :chat_form}) do %>
   <%= hidden_field :user, :id, value: current_user.id %>
 
 <dl id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></dl>
@@ -22,4 +22,7 @@
 		</div>
 	</div>
 
+<div class="space01"></div>
+<%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
+<div class="space01"></div>
 

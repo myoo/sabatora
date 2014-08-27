@@ -48,7 +48,7 @@ class Communities::JoiningsController < ApplicationController
   def update
     respond_to do |format|
       if @communities_joining.update(communities_joining_params)
-        format.html { redirect_to @communities_joining, notice: 'Joining was successfully updated.' }
+        format.html { redirect_to [@community, @communities_joining], notice: 'Joining was successfully updated.' }
         format.json { render :show, status: :ok, location: @communities_joining }
       else
         format.html { render :edit }
@@ -71,6 +71,7 @@ class Communities::JoiningsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_communities_joining
       @communities_joining = Joining.find(params[:id])
+      @community = Community.find(params[:community_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
