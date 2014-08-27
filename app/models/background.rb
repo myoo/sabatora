@@ -12,4 +12,11 @@ class Background < ActiveRecord::Base
     USER_ONLY: 1,
     COMMUNITY_ONLY: 2
   }
+
+  after_create do
+    if room.active_background.nil?
+      room.active_background = self
+      room.save
+    end
+  end
 end
