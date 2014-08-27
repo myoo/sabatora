@@ -18,6 +18,7 @@
           <%= f.input :community_id, as: :hidden %>
           <%= f.input :about %>
 	  <%= f.input :system_id, collection: System::TITLES %>
+	  <%= f.input :active_background_id, collection: Background.where(room: @room) %>
           <%= f.input :started_at %>
         </div>
         <div class="space01"></div>

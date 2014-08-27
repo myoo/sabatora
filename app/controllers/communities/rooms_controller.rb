@@ -86,6 +86,6 @@ class Communities::RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :about, :started_at, :community_id, :system_id)
+      params.require(:room).permit(:name, :about, :started_at, :community_id, :system_id, :active_background_id)
     end
 end

@@ -2,6 +2,11 @@
 <p>セッションページです。</p>
 <div class="space01"></div>
 <%= hidden_field :room, :id, value: @room.id %>
+<div id="test" style="height: 50px; width: 200px; border: solid red 1px;">
+  
+</div>
 
+<%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
 <%= render "chat/chat_form" %>
 <div class="space01"></div>
+

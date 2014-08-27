@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @background.room %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @background.image_url(:thumb) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @background.name %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @background.about %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @background.user %>
+</p>
+
+<p>
+  <strong>Access:</strong>
+  <%= @background.access %>
+</p>
+
+<p>
+  <strong>Community:</strong>
+  <%= @background.community %>
+</p>
+
+<%= link_to 'Edit', edit_community_background_path(@community, @background) %> |
+<%= link_to 'Back', community_backgrounds_path %>
