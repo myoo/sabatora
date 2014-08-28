@@ -45,4 +45,4 @@
 //= require ergo/plugins/color/farbtastic/farbtastic.js
 //= require ergo/plugins/forms/select2/select2.js
 //= require ergo/demo/form_elements.js
-
+//= require bootstrap/extend/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js

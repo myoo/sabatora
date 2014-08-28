@@ -5,8 +5,30 @@
           
     <!-- Content -->
     <div id="content">
-      <h1>Listing backgrounds</h1>
-
+      <h3>背景画像一覧</h3>
+      <div data-collapse-closed="false" class="widget widget-gallery" data-toggle="collapse-widget">
+        <div class="widget-head">
+          <h4 class="heading">登録された画像一覧</h4>
+        </div>
+        <div style="height: auto;" class="widget-body in collapse">
+    
+          <!-- Gallery Layout -->
+          <div class="gallery gallery-2">
+            <ul class="row-fluid" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
+                <% @backgrounds.each do |background| %>
+                  <li class="span3">
+                    <a class="thumb" data-gallery="gallery" href="../../../../common/theme/images/gallery-2/8.jpg">
+                    <%= image_tag(background.image, :size=>"228x180") %>
+                    </a>
+                    
+                  </li>         
+                <% end %>
+            </ul>
+          </div>
+          <!-- // Gallery Layout END -->
+    
+        </div>
+      </div>
       <table>
         <thead>
           <tr>
@@ -39,7 +61,6 @@
         </tbody>
       </table>
 
-      <br>
 
     <%= link_to 'New Background', new_community_background_path %>
 
@@ -48,3 +69,5 @@
   </div>
 </div>
 </section>
+
+

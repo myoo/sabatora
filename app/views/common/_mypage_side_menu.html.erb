@@ -5,9 +5,6 @@
 			
 		<!-- Sidebar Profile -->
 		<span class="profile">
-		<% if @room.active_background %>
-		  <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
-		<% end %>
 			<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= current_user.name %></strong></p></a></p>
 			<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= image_tag("ergo/avatar-style-light.jpg") %></a>
 			<span>

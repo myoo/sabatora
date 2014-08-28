@@ -7,7 +7,8 @@ layout "playroom"
   # GET /backgrounds.json
   def index
     @community = Community.find(params[:community_id])
-    @backgrounds = Background.all
+    @backgrounds = @community.backgrounds
+
   end
 
   # GET /backgrounds/1
