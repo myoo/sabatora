@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -30,11 +31,14 @@ gem 'spring',        group: :development
 
 
 # Bootstrap
-
-gem 'bootstrap-sass', '~> 3.2.0'
+#gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
 gem 'compass-rails'
+
+gem 'less-rails'
+gem 'therubyracer'
+gem "twitter-bootstrap-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -75,6 +79,14 @@ gem 'foreigner'
 # サニタイザー
 gem 'obscenity', :github => 'myoo/obscenity', branch: 'custom_for_japanese'
 
+#画像アップロード
+gem 'carrierwave'
+gem 'fog'
+gem "mini_magick"
+
+# config
+gem 'figaro'
+
 group :development, :test do
   gem "rspec"
   gem 'rspec-rails'
@@ -85,7 +97,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
-  gem 'better_errors'
+#  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'hirb'

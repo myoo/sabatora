@@ -1,0 +1,15 @@
+<%= simple_form_for([@community, @background]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :room %>
+    <%= f.input :name %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :about %>
+    <%= f.input :access, collection: Background::ACCESS_LEVEL %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

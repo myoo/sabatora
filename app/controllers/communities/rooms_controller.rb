@@ -2,7 +2,11 @@ class Communities::RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy, :playspace]
   before_action :set_community
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index]
+
+  # load_and_authorize_resource :community
+  # load_and_authorize_resource :room, :through => :community, :shallow => true
+  load_and_authorize_resource through: :community
 
   # GET /communities/rooms
   # GET /communities/rooms.json
@@ -66,10 +70,6 @@ class Communities::RoomsController < ApplicationController
     end
   end
 
-  def playspace
-
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
@@ -82,6 +82,6 @@ class Communities::RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :about, :started_at, :community_id, :system_id)
+      params.require(:room).permit(:name, :about, :started_at, :community_id, :system_id, :active_background_id)
     end
 end

@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815071044) do
+ActiveRecord::Schema.define(version: 20140826070054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "backgrounds", force: true do |t|
+    t.integer  "room_id"
+    t.string   "image"
+    t.string   "name"
+    t.text     "about"
+    t.integer  "user_id"
+    t.integer  "access"
+    t.integer  "community_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "backgrounds", ["community_id"], name: "index_backgrounds_on_community_id", using: :btree
+  add_index "backgrounds", ["room_id"], name: "index_backgrounds_on_room_id", using: :btree
+  add_index "backgrounds", ["user_id"], name: "index_backgrounds_on_user_id", using: :btree
 
   create_table "characters", force: true do |t|
     t.integer  "user_id"
@@ -76,13 +92,14 @@ ActiveRecord::Schema.define(version: 20140815071044) do
   create_table "rooms", force: true do |t|
     t.string   "name"
     t.string   "about"
-    t.integer  "owner_id",                 null: false
-    t.integer  "system_id",    default: 0
-    t.integer  "community_id",             null: false
+    t.integer  "owner_id",                         null: false
+    t.integer  "system_id",            default: 0
+    t.integer  "community_id",                     null: false
     t.datetime "started_at"
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "active_background_id"
   end
 
   add_index "rooms", ["community_id"], name: "index_rooms_on_community_id", using: :btree

@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%= @community.name %>のセッションルーム一覧</h1>
 <p>コミュニティ『<%= @community.name %>』が作成したセッションルームの一覧です。</p>
 
@@ -18,13 +19,22 @@
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
-        	<td><%= room.name %></td>
+        	<td><%= link_to room.name, [@community, room] %>
+		  <% if (can? :create, Player) && !room.has_member?(current_user) %>
+        	    <%= link_to 'このセッションに参加する', new_community_room_player_path(@community, room), :class=>"btn btn-primary btn-xs" %></td>
+		<% end %>
         	<td><%= room.owner.name %></td>
-        	<td><%= room.about %></td>
+        	<td><%= room.about %>
+		  <% if can? :playspace, room %>
+		    <%= link_to 'セッションルームへ', playspace_community_room_path(@community, room), :class=>"btn btn-primary btn-xs", data: { no_turbolink: true } %>
+		  <% end %>
+		</td>
           <td class="center">
             <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-sm" %>
-            <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-sm" %>
-            <%= link_to '削　除', [@community, room], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-sm" %>
+	    <% if can? :manage, @room %>
+              <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-sm" %>
+              <%= link_to '削　除', [@community, room], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-sm" %>
+	    <% end %>
           </td>
           </tr>
         <% end %>
@@ -40,3 +50,4 @@
 <div class="space01"></div>
 <%= link_to '戻る', @community %>
 <div class="space01"></div>
+</div>

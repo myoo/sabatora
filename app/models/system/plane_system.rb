@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class PlaneSystem < System
+class System::PlaneSystem < System
 
   private
 
@@ -12,20 +12,22 @@ class PlaneSystem < System
   def set_about
     <<EOS
 
-基本のシステム。大小の判定のみ
-
-ToDo:説明をかく
+基本のシステム。
+ダイスが振れ、大小の判定が出来ます
 EOS
   end
 
   ###### ダイスヘルプ #####
   def set_help
     <<EOS
-とりあえず nDmでダイス振れる
-nDm+nDm+.......で合計値
-nDm>10 とかで成功・失敗判定
+nDmでダイスが振れます。
+例）1d100 2d6
 
-ToDo:説明かく
+nDm+nDm+.......で合計値が出せます。
+例）1d6+6
+
+nDm>x で成功・失敗判定
+例）1d100>50
 EOS
   end
 
