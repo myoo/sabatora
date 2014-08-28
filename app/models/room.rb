@@ -48,6 +48,10 @@ class Room < ActiveRecord::Base
     self.user_id == user.id
   end
 
+  def has_member?(user)
+    self.players.where(user_id: user.id).length > 0
+  end
+
   private
   def set_system
     @system_tytle = System::TITLES.key(system_id)
