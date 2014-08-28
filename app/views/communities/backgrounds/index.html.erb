@@ -1,37 +1,50 @@
-<h1>Listing backgrounds</h1>
+<section class="mypage">
+<div id="wrapper">
+  <div class="container-fluid fluid menu-left">
+    <%= render "common/mypage_side_menu" %>
+          
+    <!-- Content -->
+    <div id="content">
+      <h1>Listing backgrounds</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Room</th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>About</th>
-      <th>User</th>
-      <th>Access</th>
-      <th>Community</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <table>
+        <thead>
+          <tr>
+            <th>Room</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>About</th>
+            <th>User</th>
+            <th>Access</th>
+            <th>Community</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @backgrounds.each do |background| %>
-      <tr>
-        <td><%= background.room %></td>
-        <td><%= background.image %></td>
-        <td><%= background.name %></td>
-        <td><%= background.about %></td>
-        <td><%= background.user %></td>
-        <td><%= background.access %></td>
-        <td><%= background.community %></td>
-        <td><%= link_to 'Show', [@community, background] %></td>
-        <td><%= link_to 'Edit', edit_community_background_path(@community, background) %></td>
-        <td><%= link_to 'Destroy', [@community, background], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @backgrounds.each do |background| %>
+            <tr>
+              <td><%= background.room %></td>
+              <td><%= background.image %></td>
+              <td><%= background.name %></td>
+              <td><%= background.about %></td>
+              <td><%= background.user %></td>
+              <td><%= background.access %></td>
+              <td><%= background.community %></td>
+              <td><%= link_to 'Show', [@community, background] %></td>
+              <td><%= link_to 'Edit', edit_community_background_path(@community, background) %></td>
+              <td><%= link_to 'Destroy', [@community, background], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<br>
+      <br>
 
-<%= link_to 'New Background', new_community_background_path %>
+    <%= link_to 'New Background', new_community_background_path %>
+
+    </div>
+
+  </div>
+</div>
+</section>

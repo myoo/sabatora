@@ -2,6 +2,7 @@ class Communities::BackgroundsController < ApplicationController
   before_action :set_background, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
+layout "playroom"
   # GET /backgrounds
   # GET /backgrounds.json
   def index
