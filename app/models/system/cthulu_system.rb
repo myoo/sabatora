@@ -11,33 +11,33 @@ class System::CthuluSystem < System
   def set_about
     <<EOS
 
-    クトゥルフ神話TRPG
-    クトゥルフ神話TRPGのシステムで遊びます。
-    EOS
+クトゥルフ神話TRPG
+クトゥルフ神話TRPGのシステムで遊びます。
+EOS
   end
 
   ###### ダイスヘルプ #####
   def set_help
     <<EOS
-    nDmでダイスが振れます。
-    例）1d100 2d6
+nDmでダイスが振れます。
+例）1d100 2d6
 
-    nDm+nDm+.......で合計値が出せます。
-    例）1d6+6
+nDm+nDm+.......で合計値が出せます。
+例）1d6+6
 
-    nDm>x で成功・失敗判定
-    例）1d100>50
+nDm>x で成功・失敗判定
+例）1d100>50
 
-    技能名: x  (xは自分の技能値)で技能判定ができます。
-    例）目星: 25
+技能名: x  (xは自分の技能値)で技能判定ができます。
+例）目星: 25
 
-    [name:x vs name:y] or [x vs y] で抵抗ロール判定ができます。
-    例）[STR:10 vs STR:12]
+[name:x vs name:y] or [x vs y] で抵抗ロール判定ができます。
+例）[STR:10 vs STR:12]
 
-    技能名:x and 技能名:y で組み合わせロールができます。
-    例）目星:25 and 図書館:50
+技能名:x and 技能名:y で組み合わせロールができます。
+例）目星:25 and 図書館:50
 
-    EOS
+EOS
   end
 
   def new_dice

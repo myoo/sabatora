@@ -18,7 +18,7 @@
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
-        	<td><%= room.name %></td>
+        	<td><%= room.name %>　<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, room), :class=>"btn btn-primary btn-xs" %></td>
         	<td><%= room.owner.name %></td>
         	<td><%= room.about %></td>
           <td class="center">
