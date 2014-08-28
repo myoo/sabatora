@@ -13,10 +13,12 @@ class Ability
     end
     can :create, Community      # あとで制限追加
 
-    # PlayRoom
+    # Room
     can :read, Room
     can :create, Room, community: { joinings: { user_id: user.id  } } # コミュニティメンバーのみ
     can :manage, Room, owner: { id: user.id }
+
+    # Playspace
     can :playspace, Room, players: { user_id: user.id }
   end
 end

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140826070054) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "backgrounds", force: true do |t|
     t.integer  "room_id"
     t.string   "image"
@@ -25,9 +28,9 @@ ActiveRecord::Schema.define(version: 20140826070054) do
     t.datetime "updated_at"
   end
 
-  add_index "backgrounds", ["community_id"], name: "index_backgrounds_on_community_id"
-  add_index "backgrounds", ["room_id"], name: "index_backgrounds_on_room_id"
-  add_index "backgrounds", ["user_id"], name: "index_backgrounds_on_user_id"
+  add_index "backgrounds", ["community_id"], name: "index_backgrounds_on_community_id", using: :btree
+  add_index "backgrounds", ["room_id"], name: "index_backgrounds_on_room_id", using: :btree
+  add_index "backgrounds", ["user_id"], name: "index_backgrounds_on_user_id", using: :btree
 
   create_table "characters", force: true do |t|
     t.integer  "user_id"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140826070054) do
     t.datetime "updated_at"
   end
 
-  add_index "characters", ["user_id"], name: "index_characters_on_user_id"
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
   create_table "communities", force: true do |t|
     t.string   "name"
@@ -57,9 +60,9 @@ ActiveRecord::Schema.define(version: 20140826070054) do
     t.datetime "updated_at"
   end
 
-  add_index "joinings", ["community_id"], name: "index_joinings_on_community_id"
-  add_index "joinings", ["role_id"], name: "index_joinings_on_role_id"
-  add_index "joinings", ["user_id"], name: "index_joinings_on_user_id"
+  add_index "joinings", ["community_id"], name: "index_joinings_on_community_id", using: :btree
+  add_index "joinings", ["role_id"], name: "index_joinings_on_role_id", using: :btree
+  add_index "joinings", ["user_id"], name: "index_joinings_on_user_id", using: :btree
 
   create_table "player_roles", force: true do |t|
     t.string   "name"
@@ -76,9 +79,9 @@ ActiveRecord::Schema.define(version: 20140826070054) do
     t.datetime "updated_at"
   end
 
-  add_index "players", ["character_id"], name: "index_players_on_character_id"
-  add_index "players", ["player_role_id"], name: "index_players_on_player_role_id"
-  add_index "players", ["user_id"], name: "index_players_on_user_id"
+  add_index "players", ["character_id"], name: "index_players_on_character_id", using: :btree
+  add_index "players", ["player_role_id"], name: "index_players_on_player_role_id", using: :btree
+  add_index "players", ["user_id"], name: "index_players_on_user_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -99,8 +102,8 @@ ActiveRecord::Schema.define(version: 20140826070054) do
     t.integer  "active_background_id"
   end
 
-  add_index "rooms", ["community_id"], name: "index_rooms_on_community_id"
-  add_index "rooms", ["owner_id"], name: "index_rooms_on_owner_id"
+  add_index "rooms", ["community_id"], name: "index_rooms_on_community_id", using: :btree
+  add_index "rooms", ["owner_id"], name: "index_rooms_on_owner_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -123,8 +126,10 @@ ActiveRecord::Schema.define(version: 20140826070054) do
     t.string   "channel_key"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "rooms", "communities", name: "rooms_community_id_fk"
 
 end

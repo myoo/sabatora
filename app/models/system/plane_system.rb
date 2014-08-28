@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
-class CthuluSystem < System
+class System::PlaneSystem < System
 
   private
-    ###### TRPGタイトル #####
+
+  ###### TRPGタイトル #####
   def set_title
-    "クトゥルフ神話TRPG"
+    "基本システム"
   end
 
   ###### 説明 #####
   def set_about
     <<EOS
 
-クトゥルフ神話TRPG
+基本のシステム。大小の判定のみ
+
 ToDo:説明をかく
 EOS
   end
@@ -23,22 +25,17 @@ EOS
 nDm+nDm+.......で合計値
 nDm>10 とかで成功・失敗判定
 
-技能: 60  (数字は自分の技能値)とかで判定
-[str:12 vs str:8] or [12 vs 8] で抵抗ロール
-技能１:30 and 技能２:35 で組み合わせロール
 ToDo:説明かく
 EOS
   end
 
   def new_dice
-    CthuluDice.new
+    Dice.new
   end
 
   def include_parser(room)
     room.class_eval do
-      include CthuluParser
+      include ChatParser
     end
   end
-
-
 end

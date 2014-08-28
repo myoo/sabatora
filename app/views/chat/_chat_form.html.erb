@@ -2,10 +2,9 @@
   <%= hidden_field :user, :id, value: current_user.id %>
 
 <dl id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></dl>
-<div class="space01"></div>
 
   <%= hidden_field :user, :channel_key, value: current_user.channel_key %>
-  	<div class="input-chat">
+  	<div id="input-chat">
   		<div class="row">
 			<div class="col-sm-2 col-xs-12">
 				<p id="username"><strong><%= current_user.name %></strong></p>
@@ -21,8 +20,4 @@
 			</div>
 		</div>
 	</div>
-
-<div class="space01"></div>
-<%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
-<div class="space01"></div>
 

@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Sabatora</a>
+        <a class="navbar-brand" href="#">ぷれいるーむのれいあうとだよSabatora</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -39,9 +39,6 @@
             <li class="head">ログインなう <%= current_user.email %>. <li>
             <li><%= link_to "Chat", robby_path %></li>
             <li><%= link_to "Communities", communities_path %></li>
-	    <% unless @community.nil? %>
-	      <li><%= link_to "背景管理（あとでドロップダウンメニューにして項目ふやす）", community_backgrounds_path(@community) %></li>
-	     <% end %>
             <li><%= link_to "My page", edit_user_registration_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
             <% else %>           
@@ -62,12 +59,7 @@
     <p class="alert alert-error"><%= alert %></p>
   <% end %>
 
-  <div class="container">
-<div class="space01"></div>
-
 <%= yield %>
-
-</div>
 
 
 </body>

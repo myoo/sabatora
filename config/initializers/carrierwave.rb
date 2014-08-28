@@ -1,5 +1,6 @@
 CarrierWave.configure do |config|
   config.storage = Rails.env.production? ? :fog : :file
+  config.remove_previously_stored_files_after_update = true
 
   if Rails.env.production?
   config.root = Rails.root.join('tmp') # adding these...

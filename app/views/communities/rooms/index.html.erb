@@ -21,7 +21,7 @@
           <tr>
         	<td><%= link_to room.name, [@community, room] %></td>
         	<td><%= room.owner.name %></td>
-        	<td><%= room.about %> <%= link_to 'セッションルームへ', playspace_community_room_path(@community, room), :class=>"btn btn-primary btn-xs" %></td>
+        	<td><%= room.about %> <%= link_to 'セッションルームへ', playspace_community_room_path(@community, room), :class=>"btn btn-primary btn-xs", data: { no_turbolink: true } %></td>
           <td class="center">
             <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-sm" %>
             <%= link_to '編　集', edit_community_room_path(@community, room), :class=>"btn btn-warning btn-sm" %>

@@ -60,7 +60,8 @@ class @ChatClass
   receiveSystemMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "<dt class='system'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
-    $('#chat').stop().scrollTo('100%', 1500) 
+    $('#chat').stop().scrollTo('100%', 1500)
 
 $ ->
   window.chatClass = new ChatClass($('#chat').data('uri'), true)
+

@@ -13,6 +13,8 @@ class @RoomClass
     $('#background_select').on 'change', (e) =>
       @sendBackground()
     @channel.bind 'background_changed', @setBackground
+    # 背景高さ調整
+    $(window).resize @canvasResize
 
     
   setRoomId: () =>
@@ -28,11 +30,18 @@ class @RoomClass
     @dispatcher.trigger 'background_changed', message
 
   setBackground: (message) =>
-    target = $('#test')
+    target = $('#background')
     target.css "background-image", "url(#{message.background_url})"
+    $('#input-chat').css "background", "white"
 
   setRoomConfig: () =>
-    @sendBackground() 
+    @sendBackground()
+    @canvasResize()
+
+  canvasResize: () =>
+    $('#content').css "min-height", $(window).height() - 50
+    $('#chat').css "height", $(window).height() * 0.6
+    $(window).scrollTop = $(window).scrollHeight
 
 $ ->
   window.roomClass = new RoomClass($('#chat').data('uri'), true)

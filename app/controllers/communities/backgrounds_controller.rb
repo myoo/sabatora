@@ -47,6 +47,7 @@ class Communities::BackgroundsController < ApplicationController
   # PATCH/PUT /backgrounds/1.json
   def update
     respond_to do |format|
+
       if @background.update(background_params)
         format.html { redirect_to [@community, @background], notice: 'Background was successfully updated.' }
         format.json { render :show, status: :ok, location: @background }

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       resources :players, to: "communities/rooms/players"
 
       member do
-        get :playspace
+        get :playspace, to: "playroom"
       end
     end
   end

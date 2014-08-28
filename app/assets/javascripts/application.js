@@ -11,13 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require turbolinks
 //= require jquery_ujs
 //= require jquery-ui
+//= require twitter/bootstrap
 //= require ergo/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min
 //= require ergo/plugins/system/jquery.cookie
 //= require ergo/plugins/system/modernizr
-//= require twitter/bootstrap
-//= require turbolinks
 //= require websocket_rails/main
 //= require jquery.scrollTo.min
 //= require chat

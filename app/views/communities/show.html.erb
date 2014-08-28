@@ -52,7 +52,7 @@
           <ul>
             <% @community.rooms.limit(5).each do |room| %>
               <li>
-                <%= link_to room.name, playspace_community_room_path(@community, room) %>
+                <%= link_to room.name, playspace_community_room_path(@community, room), data: { no_turbolink: true } %>
                 　オーナー：<%= room.owner.name %>
               </li>
             <% end %>
