@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 class Communities::Rooms::PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
-  before_action :set_community_and_rooms
+  before_action :set_community_and_rooms, only: [:new, :create, :index]
 
   before_filter :authenticate_user!, except: [:index, :show]
+
+  load_and_authorize_resource :room
+  load_and_authorize_resource :player, through: :room
 
   # GET /communities/rooms/players
   # GET /communities/rooms/players.json
   def index
-    @players = Player.all
+    @players = @room.players
   end
 
   # GET /communities/rooms/players/1
@@ -32,6 +35,7 @@ class Communities::Rooms::PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     @player.user = current_user
+    @player.room = @room
 
     respond_to do |format|
       if @player.save

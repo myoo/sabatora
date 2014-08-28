@@ -6,6 +6,8 @@ class Room < ActiveRecord::Base
   belongs_to :owner, class_name: "User", foreign_key: :owner_id
   has_many :players
   has_many :users, through: :players
+  has_many :backgrounds
+  belongs_to :active_background, class_name: "Background", foreign_key: :active_background_id
 
   value :stored_dice
 
@@ -40,6 +42,20 @@ class Room < ActiveRecord::Base
 
   def store_dice
     stored_dice = Marshal.dump(@dice)
+  end
+
+  def owned?(user)
+    self.user_id == user.id
+  end
+
+  def has_member?(user)
+    self.players.where(user_id: user.id).length > 0
+  end
+
+  def character(user)
+    if player = self.players.find_by(user_id: user.id)
+      player.character
+    end
   end
 
   private

@@ -8,10 +8,11 @@
     <h1><%= @community.name %></h1>
     <p><%= @community.about %></p>
   </div>
-  <div class="col-sm-2 col-xs-12">
-    <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs" %>
-
-  </div> 
+  <% if can? :manage, Community %>
+    <div class="col-sm-2 col-xs-12">
+      <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs" %>
+    </div>
+  <% end %>
 </div>
 </section>
 <section class="community-main">
@@ -22,11 +23,9 @@
     <a href="#" class="btn btn-default btn-xs"><%= @community.name %>Wiki</a>
   </div>
 
-  <div class="row">
-    <div class="col-sm-offset-4 col-sm-4 col-xs-12">
-        <%= link_to "このコミュニティに参加する", new_community_joining_path(@community), :class=>"btn btn-primary  btn-lg" %>
-    </div>
-  </div>
+  <% unless current_user && @community.has_member?(current_user) %>
+    <%= render :partial => "entry_button" %>
+  <% end %>
 
   <div class="space01"></div>
 
@@ -49,11 +48,12 @@
         </div>
         <div class="widget-body list">
           <ul>
-            <li>新しいセッションルーム１</li>
-            <li>新しいセッションルーム２</li>
-            <li>新しいセッションルーム３</li>
-            <li>新しいセッションルーム４</li>
-            <li>新しいセッションルーム５</li>
+            <% @community.rooms.limit(5).each do |room| %>
+              <li>
+                <%= link_to room.name, playspace_community_room_path(@community, room), data: { no_turbolink: true } %>
+                　オーナー：<%= room.owner.name %>
+              </li>
+            <% end %>
           </ul>
         </div>
         <div class="widget-top-footer">
@@ -63,18 +63,17 @@
         </div>
       </div>  
     </div>
-  	<div class="col-sm-4 col-xs-12">
+  <div class="col-sm-4 col-xs-12">
       <div class="widget">
         <div class="widget-head">
           <h4 class="heading">New member　<small>新しいメンバー</small></h4>
         </div>
         <div class="widget-body list">
           <ul>
-            <li>メンバー１</li>
-            <li>メンバー２</li>
-            <li>メンバー３</li>
-            <li>メンバー４</li>
-            <li>メンバー５</li>
+            <% @community.joinings.limit(5).each do |member| %>
+              <li>
+                <%= member.user.name %>
+            <% end %>
           </ul>
         </div>
         <div class="widget-top-footer">

@@ -12,7 +12,7 @@ class @ChatClass
     
   bindEvents: () =>
     # 送信ボタンが押されたらサーバへメッセージを送信
-    $('form').on 'submit', (e) =>
+    $('form#chat_form').on 'submit', (e) =>
       e.preventDefault()
       @sendMessage()
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行
@@ -31,7 +31,7 @@ class @ChatClass
     msg_body = $('#chat_message').val()
 
     message =  { room_id: @channelCode, user_id: user_id, user_name: user_name , body: msg_body }
-    console.log(message)
+
     if at_user = $('#chat_message').val().match(/^@.+\s|^@.+$/)    # 個人チャット
       @dispatcher.trigger 'private_message', message
     else
@@ -60,4 +60,8 @@ class @ChatClass
   receiveSystemMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "<dt class='system'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
-    $('#chat').stop().scrollTo('100%', 1500) 
+    $('#chat').stop().scrollTo('100%', 1500)
+
+$ ->
+  window.chatClass = new ChatClass($('#chat').data('uri'), true)
+

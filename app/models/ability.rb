@@ -1,32 +1,35 @@
+# -*- coding: utf-8 -*-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    user ||= User.new # guest user (not logged in)
+#    can :read, :all
+
+    # Community
+    can :read, Community
+    can :manage, Community.all do |community|
+      community.is_owner?(user)
+    end
+    can :create, Community      # あとで制限追加
+
+    # Room
+    can :read, Room
+    can :join, Room, community: { joinings: { user_id: user.id  } } # コミュニティメンバーのみ
+    can :create, Room, community: { joinings: { user_id: user.id  } } # コミュニティメンバーのみ
+    can :manage, Room, owner: { id: user.id  }
+
+    # Player
+    can :read, Player
+    can :create, Player, room: { community: { joinings: { user_id: user.id } } }
+    can :update, Player, user_id: user.id
+    can :update, Player, room: { user_id: user.id }
+    can :destroy, Player, user_id: user.id
+    can :destroy, Player, room: { user_id: user.id }
+
+    # Playspace
+    can :playspace, Room do |room|
+      room.has_member?(user)
+    end
   end
 end

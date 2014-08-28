@@ -1,3 +1,4 @@
+<div class="container">
 <h1>コミュニティ一覧</h1>
 <p>現在存在するコミュニティ一覧。</p>
 <div class="space01"></div>
@@ -17,13 +18,16 @@
       <tbody>
         <% @communities.each do |community| %>
           <tr>
-            <td><%= community.name %></td>
+            <td><%= link_to community.name, community %>
+            <%= link_to "このコミュニティに参加する", new_community_joining_path(community), :class=>"btn btn-primary btn-xs" %></td>
             <td ><%= community.about %></td>
             <td><%= community.description %></td>
             <td class="center">
               <%= link_to '表　示', community, :class=>"btn btn-success btn-sm" %>
+	    <% if can? :manage, Community %>
               <%= link_to '編　集', edit_community_path(community), :class=>"btn btn-warning btn-sm" %>
               <%= link_to '削　除', community, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-sm" %>
+	    <% end %>
             </td>
           </tr>
         <% end %>
@@ -32,8 +36,11 @@
   </div>
 </div>
 
-<div class="space01"></div>
-<%= link_to '新しくコミュニティを作成する', new_community_path, :class=>"btn btn-info" %>
+<% if current_user %>
+  <div class="space01"></div>
+  <%= link_to '新しくコミュニティを作成する', new_community_path, :class=>"btn btn-info" %>
+<% end %>
 <div class="space01"></div>
 <%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
 <div class="space01"></div>
+</div>
