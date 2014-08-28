@@ -5,6 +5,6 @@
 <%= render 'form' %>
 <div class="space01"></div>
 <%= link_to '確認', [@community, @room, @player] %> |
-<%= link_to "Back", :back %>
+<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room) %>|<%= link_to "Back", :back %>
 <div class="space01"></div>
 </div>

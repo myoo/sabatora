@@ -29,7 +29,7 @@
             <% if user_signed_in? %>
             <li class="head">ログインなう <%= current_user.email %>. <li>
             <li><%= link_to "Chat", robby_path %></li>
-	    <% unless @community.nil? %>
+	    <% unless @community.nil? or @community.id.nil?%>
 	      <li><%= link_to "背景管理（あとでドロップダウンメニューにして項目ふやす）", community_backgrounds_path(@community) %></li>
 	     <% end %>
             <li><%= link_to "My page", edit_user_registration_path %></li>
