@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class Communities::JoiningsController < ApplicationController
   before_action :set_communities_joining, only: [:show, :edit, :update, :destroy]
+  before_action :set_community, only: [:index, :new]
   before_filter :authenticate_user!
 
   # GET /communities/joinings
@@ -71,6 +72,10 @@ class Communities::JoiningsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_communities_joining
       @communities_joining = Joining.find(params[:id])
+      @community = Community.find(params[:community_id])
+    end
+
+    def set_community
       @community = Community.find(params[:community_id])
     end
 

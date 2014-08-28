@@ -44,6 +44,10 @@ class Room < ActiveRecord::Base
     stored_dice = Marshal.dump(@dice)
   end
 
+  def owned?(user)
+    self.user_id == user.id
+  end
+
   private
   def set_system
     @system_tytle = System::TITLES.key(system_id)

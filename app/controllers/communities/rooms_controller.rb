@@ -2,7 +2,7 @@ class Communities::RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy, :playspace]
   before_action :set_community
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index]
 
   # load_and_authorize_resource :community
   # load_and_authorize_resource :room, :through => :community, :shallow => true

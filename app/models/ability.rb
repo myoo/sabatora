@@ -4,7 +4,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    can :manage, :all
+#    can :read, :all
 
     # Community
     can :read, Community
@@ -16,7 +16,7 @@ class Ability
     # Room
     can :read, Room
     can :create, Room, community: { joinings: { user_id: user.id  } } # コミュニティメンバーのみ
-    can :manage, Room, owner: { id: user.id }
+    can :manage, Room, owner: { id: user.id  }
 
     # Playspace
     can :playspace, Room, players: { user_id: user.id }
