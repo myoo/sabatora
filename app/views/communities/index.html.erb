@@ -18,7 +18,8 @@
       <tbody>
         <% @communities.each do |community| %>
           <tr>
-            <td><%= link_to community.name, community %></td>
+            <td><%= link_to community.name, community %>
+            <%= link_to "このコミュニティに参加する", new_community_joining_path(community), :class=>"btn btn-primary btn-xs" %></td>
             <td ><%= community.about %></td>
             <td><%= community.description %></td>
             <td class="center">

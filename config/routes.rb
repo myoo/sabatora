@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'help/about'
+
   get 'robby/index'
 
   get :robby, to: 'robby#index'
