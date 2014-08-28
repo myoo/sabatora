@@ -28,11 +28,12 @@ class @RoomClass
 
     message = { room_id: @room_id, user_id: @user_id, background_id: background_id }
     @dispatcher.trigger 'background_changed', message
+    console.log("background change")
 
   setBackground: (message) =>
     target = $('#background')
+    console.log(message.background_url)
     target.css "background-image", "url(#{message.background_url})"
-    $('#input-chat').css "background", "white"
 
   setRoomConfig: () =>
     @sendBackground()

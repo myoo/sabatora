@@ -20,9 +20,15 @@
         <% @rooms.each do |room| %>
           <tr>
         	<td><%= link_to room.name, [@community, room] %>
-        	<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, room), :class=>"btn btn-primary btn-xs" %></td>
+		  <% if (can? :create, Player) && !room.has_member?(current_user) %>
+        	    <%= link_to 'このセッションに参加する', new_community_room_player_path(@community, room), :class=>"btn btn-primary btn-xs" %></td>
+		<% end %>
         	<td><%= room.owner.name %></td>
-        	<td><%= room.about %> <%= link_to 'セッションルームへ', playspace_community_room_path(@community, room), :class=>"btn btn-primary btn-xs", data: { no_turbolink: true } %></td>
+        	<td><%= room.about %>
+		  <% if can? :playspace, room %>
+		    <%= link_to 'セッションルームへ', playspace_community_room_path(@community, room), :class=>"btn btn-primary btn-xs", data: { no_turbolink: true } %>
+		  <% end %>
+		</td>
           <td class="center">
             <%= link_to '表　示', [@community, room], :class=>"btn btn-success btn-sm" %>
 	    <% if can? :manage, @room %>

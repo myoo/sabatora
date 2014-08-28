@@ -22,7 +22,7 @@ WebsocketRails::EventMap.describe do
   subscribe :private_message, to: ChatController, with_method: :private_message
 
   # Room
-  subscribe :background_changed, to: RoomController, with_method: :background_changed
+  subscribe :background_changed, to: RoomConfigController, with_method: :background_changed
 
   # The :client_disconnected method is fired automatically when a client disconnects
  # subscribe :client_disconnected, to: ChatController, with_method: :delete_user
