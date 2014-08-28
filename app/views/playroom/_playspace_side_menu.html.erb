@@ -1,226 +1,110 @@
-		<div id="menu" class="hidden-phone hidden-print">
+<div id="menu" class="hidden-phone hidden-print">
 			
-			<!-- Scrollable menu wrapper with Maximum height -->
-			<div class="slim-scroll" data-scroll-height="800px">
+	<!-- Scrollable menu wrapper with Maximum height -->
+	<div class="slim-scroll" data-scroll-height="800px">
 			
-			<!-- Sidebar Profile -->
-			<span class="profile">
-			<% if @room.active_background %>
-			  <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
-			<% end %>
-				<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= current_user.name %></strong></p></a></p>
-				<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= image_tag("ergo/avatar-style-light.jpg") %></a>
-				<span>
-					<ul>
-						<li><a href="" class="glyphicons lock"><i></i>ユーザー名</a></li>
-						<li><a href="" class="glyphicons keys"><i></i>キャラクター名orROM</a></li>
-						<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
-					</ul>
-				</span>
+		<!-- Sidebar Profile -->
+		<span class="profile">
+		<% if @room.active_background %>
+		  <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
+		<% end %>
+			<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= current_user.name %></strong></p></a></p>
+			<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= image_tag("ergo/avatar-style-light.jpg") %></a>
+			<span>
+				<ul>
+					<li><a href="" class="glyphicons lock"><i></i>ユーザー名</a></li>
+					<li><a href="" class="glyphicons keys"><i></i>キャラクター名orROM</a></li>
+					<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
+				</ul>
 			</span>
-			<!-- // Sidebar Profile END -->
+		</span>
+		<!-- // Sidebar Profile END -->
 				
-			<!-- Regular Size Menu -->
-			<ul class="menu-0">
+		<!-- Regular Size Menu -->
+		<ul class="menu-0">
 				
-				<!-- Components Submenu Level 1 -->
-				<li class="hasSubmenu glyphicons user active">
-					<a data-toggle="collapse" href="#menu_components"><i></i><span>My Status</span></a>
-					<ul class="collapse in" id="menu_components">
-						
-						<!-- Components Submenu Level 2 -->
-						<li class="hasSubmenu active">
-							<a data-toggle="collapse" href="#menu_forms"><span>sample1</span></a>
-							<ul class="collapse in" id="menu_forms">
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample1-1</span></a></li>
-							</ul>
-							<span class="count">1</span>
-						</li>
-						<!-- // Components Submenu Level 2 END -->
-
-						<!-- Components Submenu Level 2 -->
-						<li class="hasSubmenu">
-							<a data-toggle="collapse" href="#menu_tables"><span>sample2</span></a>
-							<ul class="collapse" id="menu_tables">
-								<li class=""><a href="tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample2-2</span></a></li>
-							</ul>
-							<span class="count">1</span>
-						</li>
-						<!-- // Components Submenu Level 2 -->
-						
-						<!-- Components Submenu Regular Items -->
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample3</span></a></li>
-						<!-- // Components Submenu Regular Items END -->
-						
-					</ul>
-					<span class="count">test</span>
-				</li>
-				<!-- Components Submenu Level 1 END -->
-
-				<!-- Components Submenu Level 1 -->
-				<li class="hasSubmenu glyphicons group active">
-					<a data-toggle="collapse" href="#menu_member"><i></i><span>Member</span></a>
-						<ul class="collapse" id="menu_member">
-							
-							<!-- Components Submenu Regular Items -->
-							<li class="hasSubmenu"><a href="grid.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Member Name</span></a></li>
-							<!-- // Components Submenu Regular Items END -->
+			<!-- Components Submenu Level 1 -->
+			<li class="hasSubmenu glyphicons user active">
+				<a data-toggle="collapse" href="#menu_components"><i></i><span>My Status</span></a>
+				<ul class="collapse in" id="menu_components">
+					
+					<!-- Components Submenu Level 2 -->
+					<li class="hasSubmenu active">
+						<a data-toggle="collapse" href="#menu_forms"><span>sample1</span></a>
+						<ul class="collapse in" id="menu_forms">
+							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample1-1</span></a></li>
 						</ul>
-					<span class="count">1</span>
-				</li>
-				<!-- Components Submenu Level 1 END -->
+						<span class="count">1</span>
+					</li>
+					<!-- // Components Submenu Level 2 END -->
 
-				<!-- Menu Regular Item -->
-				<li class="glyphicons comments"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Member Chat</span></a></li>
-				
-				<!-- Components Submenu Level 1 -->
-				<li class="hasSubmenu glyphicons playing_dices active">
-					<a data-toggle="collapse" href="#menu_master"><i></i><span>Master Menu</span></a>
-					<ul class="collapse in" id="menu_master">
+					<!-- Components Submenu Level 2 -->
+					<li class="hasSubmenu">
+						<a data-toggle="collapse" href="#menu_tables"><span>sample2</span></a>
+						<ul class="collapse" id="menu_tables">
+							<li class=""><a href="tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample2-2</span></a></li>
+						</ul>
+						<span class="count">1</span>
+					</li>
+					<!-- // Components Submenu Level 2 -->
+					
+					<!-- Components Submenu Regular Items -->
+					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample3</span></a></li>
+					<!-- // Components Submenu Regular Items END -->
+					
+				</ul>
+				<span class="count">test</span>
+			</li>
+			<!-- Components Submenu Level 1 END -->
+
+			<!-- Components Submenu Level 1 -->
+			<li class="hasSubmenu glyphicons group active">
+				<a data-toggle="collapse" href="#menu_member"><i></i><span>Member</span></a>
+					<ul class="collapse" id="menu_member">
 						
 						<!-- Components Submenu Regular Items -->
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>シナリオ管理</span></a></li>
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>NPC管理</span></a></li>
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>マップ表示</span></a></li>
-
-						<!-- Components Submenu Level 2 -->
-						<li class="hasSubmenu">
-							<a data-toggle="collapse" href="#menu_mastersub"><span>演出</span></a>
-							<ul class="collapse in" id="menu_mastersub">
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>背景変更</span></a></li>
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>動画表示</span></a></li>
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>BGM・SE</span></a></li>
-							</ul>
-							<span class="count">3</span>
-						</li>
-						<!-- // Components Submenu Level 2 END -->
+						<li class="hasSubmenu"><a href="grid.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Member Name</span></a></li>
 						<!-- // Components Submenu Regular Items END -->
-						
 					</ul>
-					<span class="count">4</span>
-				</li>
-				<!-- Components Submenu Level 1 END -->
+				<span class="count">1</span>
+			</li>
+			<!-- Components Submenu Level 1 END -->
+
+			<!-- Menu Regular Item -->
+			<li class="glyphicons comments"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Member Chat</span></a></li>
+				
+			<!-- Components Submenu Level 1 -->
+			<li class="hasSubmenu glyphicons playing_dices active">
+				<a data-toggle="collapse" href="#menu_master"><i></i><span>Master Menu</span></a>
+				<ul class="collapse in" id="menu_master">
+					
+					<!-- Components Submenu Regular Items -->
+					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>シナリオ管理</span></a></li>
+					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>NPC管理</span></a></li>
+					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>マップ表示</span></a></li>
+
+					<!-- Components Submenu Level 2 -->
+					<li class="hasSubmenu">
+						<a data-toggle="collapse" href="#menu_mastersub"><span>演出</span></a>
+						<ul class="collapse in" id="menu_mastersub">
+							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>背景変更</span></a></li>
+							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>動画表示</span></a></li>
+							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>BGM・SE</span></a></li>
+						</ul>
+						<span class="count">3</span>
+					</li>
+					<!-- // Components Submenu Level 2 END -->
+					<!-- // Components Submenu Regular Items END -->
+					
+				</ul>
+				<span class="count">4</span>
+			</li>
+			<!-- Components Submenu Level 1 END -->
 									
-			</ul>
-			<div class="clearfix"></div>
-			<!-- // Regular Size Menu END -->				
-		</div>
-		<!-- // Scrollable Menu wrapper with Maximum Height END -->				
+		</ul>
+		<div class="clearfix"></div>
+		<!-- // Regular Size Menu END -->				
 	</div>
-	<!-- // Sidebar Menu END -->
-		<div id="menu" class="hidden-phone hidden-print">
-			
-			<!-- Scrollable menu wrapper with Maximum height -->
-			<div class="slim-scroll" data-scroll-height="800px">
-			
-			<!-- Sidebar Profile -->
-			<span class="profile">
-				<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= current_user.name %></strong></p></a>
-				<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= image_tag("ergo/avatar-style-light.jpg") %>
-				</a>
-				<span>
-					<ul>
-						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
-						<li><a href="" class="glyphicons keys"><i></i>Password</a></li>
-						<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
-					</ul>
-				</span>
-			</span>
-			<!-- // Sidebar Profile END -->
-				
-			<!-- Regular Size Menu -->
-			<ul class="menu-0">
-				
-				<!-- Components Submenu Level 1 -->
-				<li class="hasSubmenu glyphicons user active">
-					<a data-toggle="collapse" href="#menu_components"><i></i><span>My Status</span></a>
-					<ul class="collapse in" id="menu_components">
-
-						<!-- Components Submenu Regular Items -->
-						<li class=""><p class="status">ここにステータスとか書いていけないかな</p><p class="status">テストテスト</p></li>
-						<!-- // Components Submenu Regular Items END -->
-						
-						<!-- Components Submenu Level 2 -->
-						<li class="hasSubmenu active">
-							<a data-toggle="collapse" href="#menu_forms"><span>skill</span></a>
-							<ul class="collapse in" id="menu_forms">
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample1-1</span></a></li>
-							</ul>
-							<span class="count">1</span>
-						</li>
-						<!-- // Components Submenu Level 2 END -->
-
-						<!-- Components Submenu Level 2 -->
-						<li class="hasSubmenu">
-							<a data-toggle="collapse" href="#menu_tables"><span>memo</span></a>
-							<ul class="collapse" id="menu_tables">
-								<li class=""><a href="tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>sample2-2</span></a></li>
-							</ul>
-							<span class="count">1</span>
-						</li>
-						<!-- // Components Submenu Level 2 -->
-						
-					</ul>
-					<span class="count">test</span>
-				</li>
-				<!-- Components Submenu Level 1 END -->
-
-				<!-- Components Submenu Level 1 -->
-				<li class="hasSubmenu glyphicons group active">
-					<a data-toggle="collapse" href="#menu_member"><i></i><span>Member</span></a>
-						<ul class="collapse" id="menu_member">
-							
-							<!-- Components Submenu Regular Items -->
-							<li class="hasSubmenu"><a href="grid.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Member Name</span></a></li>
-							<!-- // Components Submenu Regular Items END -->
-						</ul>
-					<span class="count">1</span>
-				</li>
-				<!-- Components Submenu Level 1 END -->
-
-				<!-- Menu Regular Item -->
-				<li class="glyphicons comments"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Member Chat</span></a></li>
-				
-				<!-- Menu Regular Item -->
-				<li class="glyphicons notes"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Public Memo</span></a></li>
-
-				<!-- Components Submenu Level 1 -->
-				<li class="hasSubmenu glyphicons playing_dices active">
-					<a data-toggle="collapse" href="#menu_master"><i></i><span>Master Menu</span></a>
-					<ul class="collapse in" id="menu_master">
-						
-						<!-- Components Submenu Regular Items -->
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>シナリオ管理</span></a></li>
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>NPC管理</span></a></li>
-						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>マップ表示</span></a></li>
-
-						<!-- Components Submenu Level 2 -->
-						<li class="hasSubmenu">
-							<a data-toggle="collapse" href="#menu_mastersub"><span>演出</span></a>
-							<ul class="collapse in" id="menu_mastersub">
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>背景変更</span></a></li>
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>動画表示</span></a></li>
-								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>BGM・SE</span></a></li>
-							</ul>
-							<span class="count">3</span>
-						</li>
-						<!-- // Components Submenu Level 2 END -->
-						<!-- // Components Submenu Regular Items END -->
-						
-					</ul>
-					<span class="count">4</span>
-				</li>
-				<!-- Components Submenu Level 1 END -->
-									
-			</ul>
-	<% if @room.active_background %>
-			  <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
-			<% end %>
-						<div class="space01"></div>
-
-			<div class="clearfix"></div>
-			<!-- // Regular Size Menu END -->				
-			</div>
-			<!-- // Scrollable Menu wrapper with Maximum Height END -->				
-		</div>
-		<!-- // Sidebar Menu END -->
+	<!-- // Scrollable Menu wrapper with Maximum Height END -->					
+</div>
+<!-- // Sidebar Menu END -->
