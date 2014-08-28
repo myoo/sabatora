@@ -44,6 +44,10 @@ EOS
     Dice::CthuluDice.new
   end
 
+  def character_params
+
+  end
+
   def include_parser(room)
     room.class_eval do
       include CthuluParser
