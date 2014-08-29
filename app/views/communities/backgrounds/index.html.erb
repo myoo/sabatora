@@ -18,7 +18,7 @@
                 <% @backgrounds.each do |background| %>
                   <li class="span3">
                     <a class="thumb" data-gallery="gallery" href="../../../../common/theme/images/gallery-2/8.jpg">
-                    <%= image_tag(background.image, :size=>"228x180") %>
+                    <%= image_tag(background.image, :size=>"228x180") %><%= link_to 'Show', [@community, background] %>/<%= link_to 'Edit', edit_community_background_path(@community, background) %>/<%= link_to 'Destroy', [@community, background], method: :delete, data: { confirm: 'Are you sure?' } %>
                     </a>
                     
                   </li>         
