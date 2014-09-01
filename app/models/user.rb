@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :players
   has_many :rooms, through: :players
 
-  validates :name, :email, uniqueness: true
+  validates :name, uniqueness: true
 
   before_create :generate_channel_key
 
