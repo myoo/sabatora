@@ -75,6 +75,8 @@ class Communities::Rooms::PlayersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player
+      @community = Community.find(params[:community_id])
+      @room = Room.find(params[:room_id])
       @player = Player.find(params[:id])
     end
 
