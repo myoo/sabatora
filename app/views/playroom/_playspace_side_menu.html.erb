@@ -1,5 +1,5 @@
 <div id="menu" class="hidden-phone hidden-print">
-			
+
 	<!-- Scrollable menu wrapper with Maximum height -->
 	<div class="slim-scroll" data-scroll-height="800px">
 			
@@ -12,8 +12,8 @@
 			<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= image_tag("ergo/avatar-style-light.jpg") %></a>
 			<span>
 				<ul>
-					<li><a href="" class="glyphicons lock"><i></i>ユーザー名</a></li>
-					<li><a href="" class="glyphicons keys"><i></i>キャラクター名orROM</a></li>
+					<li><a href="" class="glyphicons lock"><i></i><%= current_user.name %></a></li>
+					<li><a href="" class="glyphicons keys"><i></i><%= play_name(current_user) %></a></li>
 					<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
 				</ul>
 			</span>
