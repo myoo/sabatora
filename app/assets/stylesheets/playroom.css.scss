@@ -100,7 +100,15 @@ section.room{
             display: none;
         }
     }
-
+//     
+// チャットログ
+// 
+    #main_chat_log {
+        dl {
+            max-height: 450px;
+            overflow: scroll;
+        }
+    }
 }
 
 /* チャット画面のプロフィール部分一旦改造 */
