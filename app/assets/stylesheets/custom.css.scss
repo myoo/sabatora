@@ -123,6 +123,10 @@ section.mypage{
 .row-fluid .span3 {
     width: 23.7288%;
 }
+/* bootstrap 改造 */
+.navbar {
+    min-height: 0!important;
+}
 
 /* 
 	Ergoからパクって来たやつここだけ改造 

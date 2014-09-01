@@ -1,6 +1,12 @@
-<h1>Editing background</h1>
+<div class="container">
+	<div class="space01"></div>
+	<h1>背景画像の編集</h1>
+	<p>登録された背景画像の情報を編集します。</p>
+	<div class="space01"></div>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+	<div class="space01"></div>
 
-<%= link_to 'Show', [@community, @background] %> |
-<%= link_to 'Back', community_backgrounds_path(@community) %>
+	<%= link_to '確認', [@community, @background] %> |
+	<%= link_to '背景画像一覧', community_backgrounds_path(@community) %>|<%= link_to "戻る", :back %>
+</div>
