@@ -4,3 +4,4 @@
 # asset 'bootstrap'
 
 asset 'bootstrap-window'
+asset 'jquery-ui-bootstrap'

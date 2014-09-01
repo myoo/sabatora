@@ -109,7 +109,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'timecop'
   gem "colorize_unpermitted_parameters"
-  gem "rack-mini-profiler"
+#  gem "rack-mini-profiler"
   gem "database_rewinder"
   gem "faker"
 
