@@ -42,6 +42,7 @@ GEM
     bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bower-rails (0.8.3)
     bson (2.3.0)
     builder (3.2.2)
     byebug (2.7.0)
@@ -390,6 +391,7 @@ DEPENDENCIES
   autoprefixer-rails
   awesome_print
   binding_of_caller
+  bower-rails (~> 0.8.3)
   cancancan
   capybara
   carrierwave

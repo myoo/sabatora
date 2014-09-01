@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-window",
+  "version": "0.2.2",
+  "dependencies": {
+    "bootstrap": "~3.0.0",
+    "qunit": "~1.12.0"
+  },
+  "exportsOverride": {
+    "bootstrap": {
+      "less": "less/*.less"
+    },
+    "qunit": {
+      "css": "qunit/*.css",
+      "js": "qunit/*.js"
+    }
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/earmbrust/bootstrap-window",
+  "_release": "0.2.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.2",
+    "commit": "199553c6118a9cf7b41fc1a072b368e3f844b3b2"
+  },
+  "_source": "git://github.com/earmbrust/bootstrap-window.git",
+  "_target": "*",
+  "_originalSource": "bootstrap-window"
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>bootstrap-window test suite</title>
+  <link rel="stylesheet" href="../lib/css/qunit/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script type="template/text" id="template">
+    <div class="window">
+      <div class="window-header">
+        <button type="button" class="close" data-dismiss="window" aria-hidden="true">x</button>
+        <h4 class="window-title"></h4>
+      </div>
+      <div class="window-body"></div>
+      <div class="window-footer"></div>
+    </div>
+  </script>
+  <script src="../lib/js/qunit/qunit.js"></script>
+  <script src="../lib/jquery/jquery.js"></script>
+  <script src="../src/js/Window.js"></script>
+  <script src="Window.test.js"></script>
+</body>
+</html>
