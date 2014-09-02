@@ -1,19 +1,15 @@
 <section class="room">
 <div id="wrapper">
 	<div class="container-fluid fluid menu-left">
-	  <%= render "playspace_side_menu" %>
-					
+	  <%= render "playspace_side_menu" %>			
 		<!-- Content -->
 		<div id="content">
 			<!-- <h1>プレイルーム</h1> -->
 			<!-- <p>セッションページです。</p> -->
 			<%= hidden_field :room, :id, value: @room.id %>
-			  <canvas id="background"></canvas>
-  
-
-			<%= render "chat/chat_form" %>
+				<canvas id="background"></canvas>
+	  			<%= render "chat/chat_form" %>
 		</div>
-
 	</div>
 </div>
 </section>
