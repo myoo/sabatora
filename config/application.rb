@@ -21,7 +21,7 @@ module Shibatora
     config.i18n.default_locale = :ja
 
     config.assets.paths << Rails.root.join("vendor", "assets", "bower_components")
-
+    config.assets.paths << Rails.root.join("vendor", "assets", "light-blue")
     # We don't want the default of everything that isn't js or css, because it pulls too many things in
     config.assets.precompile.shift
 

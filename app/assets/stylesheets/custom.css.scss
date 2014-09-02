@@ -8,20 +8,8 @@ html {
     padding: 0;
 }
 body {
-   	background: none repeat scroll 0 0 #fdfdfd;
 	color: #7c7c7c;
     height: 100%;
-}
-
-/*  */
-.navbar-static-top {
-  margin-bottom: 19px;
-}
-
-
-/* ヘッダー部分の文字の間隔調整 */
-.head{
-	padding: 16px;
 }
 
 /* テーブル調整 */
@@ -86,95 +74,4 @@ section.mypage{
     }
 
 }
-
-
-/*
-	bootstrap 補足
-*/
-.accordion {
-    margin-bottom: 20px;
-}
-.accordion-group {
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    margin-bottom: 2px;
-}
-.accordion-heading {
-    border-bottom: 0 none;
-}
-.accordion-heading .accordion-toggle {
-    display: block;
-    padding: 8px 15px;
-}
-.accordion-toggle {
-    cursor: pointer;
-}
-.accordion-inner {
-    border-top: 1px solid #e5e5e5;
-    padding: 9px 15px;
-}
-.pagination-centered {
-    text-align: center;
-}
-.pagination-right {
-    text-align: right;
-}
-
-.row-fluid .span3 {
-    width: 23.7288%;
-}
-/* bootstrap 改造 */
-.navbar {
-    min-height: 0!important;
-}
-
-/* 
-	Ergoからパクって来たやつここだけ改造 
-*/
-/* top画面のフッター */
-.widget .widget-top-footer {
-    background: none repeat scroll 0 0 #fafafa;
-    border-top: 1px solid #ebebeb;
-    height: auto;
-    line-height: 25px;
-    padding: 5px;
-   	text-align: right;
-}
-/* TOP画面ウィジェットBODY */
-.widget .widget-body.list ul li {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
-    clear: both;
-    height: auto;
-    line-height: auto;
-    padding: 0 10px;
-    text-align: left;
-}
-
-/* btn-info */
-.btn-info {
-    background-color: #93b9d8;
-    background-image: linear-gradient(to bottom, #a7ddf6, #4db8ea);
-    background-repeat: repeat-x;
-    border: 1px solid #93b9d8;
-    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #1da3e2;
-    color: #ffffff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-}
-.btn-info.glyphicons i:before {
-    color: rgba(255, 255, 255, 0.5);
-    text-shadow: none;
-}
-.btn-group.open .btn-info.dropdown-toggle, .btn-info.disabled, .btn-info[disabled], .btn-info:hover, .btn-info:focus {
-    background: none repeat scroll 0 0 #93b9d8;
-    color: #fff;
-}
-.btn-info:active, .btn-info.active {
-    background: none repeat scroll 0 0 #93b9d8;
-    color: #fff;
-}
-.btn-info .caret {
-    border-bottom-color: rgba(255, 255, 255, 0.7);
-    border-top-color: rgba(255, 255, 255, 0.7);
-}
-
 

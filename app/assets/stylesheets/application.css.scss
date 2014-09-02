@@ -4,12 +4,9 @@
  *
  *= require_self
  *= require "bootstrap_and_overrides"
- *= require "ergo/glyphicons"
- *= require "ergo/plugins/forms/pixelmatrix-uniform/css/uniform.default"
- *= require "ergo/style-light"
- *= require "bootstrap-window/dist/css/bootstrap-window"
+
  */
 
+@import "sass/application";
 @import "custom";
 @import "playroom";
-@import "ress";
