@@ -8,6 +8,7 @@
   <%= yield :head %>
 </head>
 <body>
+  <div class="container-fluid fluid menu-left">
   <%= render :partial => "/layouts/user_nav" %>
 
   <% if notice %>
@@ -24,5 +25,6 @@
 
   </div>
   <%= yield :foot %>
+</div>
 </body>
 </html>

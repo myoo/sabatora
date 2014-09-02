@@ -48,3 +48,4 @@
 //= require chat
 //= require room
 //= require playroom
+//= require bootstrap/extend/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js

@@ -1,5 +1,10 @@
-<h1>New background</h1>
+<div class="container">
+	<div class="space01"></div>
+	<h1>新しく背景を登録する</h1>
+	<p>セッションルームで使用する背景画像を登録します。</p>
+	<div class="space01"></div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', community_backgrounds_path(@community) %>
+	<%= render 'form' %>
+	<div class="space01"></div>
+	<%= link_to '背景画像一覧', community_backgrounds_path(@community) %>|<%= link_to "戻る", :back %>
+</div>

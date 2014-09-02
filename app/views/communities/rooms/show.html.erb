@@ -1,28 +1,29 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="container">
-<h1><%= @room.name %>　<small>オーナー：<%= @room.owner.name %></small>
-  <% if can? :manage, @room %>
-    <%= link_to 'ルームの編集', edit_community_room_path(@community, @room), :class=>"btn btn-warning btn-xs" %> </h1>
-<% end %>
-<p><%= @room.about %></p>
-<div class="space01"></div>
+	<h1><%= @room.name %>　<small>オーナー：<%= @room.owner.name %></small>
+	  <% if can? :manage, @room %>
+	  	<%= link_to 'ルームの編集', edit_community_room_path(@community, @room), :class=>"btn btn-warning btn-xs" %> 
+	<% end %>
+	</h1>
+	<p><%= @room.about %></p>
+	<div class="space01"></div>
 
-<div class="row">
-	<div class="col-sm-3 col-xs-12">
-  		<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room), :class=>"btn btn-default btn-block" %>
-  	</div>
-</div>
+	<div class="row">
+		<div class="col-sm-3 col-xs-12">
+	  		<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room), :class=>"btn btn-default btn-block" %>
+	  	</div>
+	</div>
 
-<div class="space01"></div>
-<div class="row">
-	<div class="col-sm-4 col-xs-12">
-  		<%= link_to "セッションルームに行く", playspace_community_room_path(@community, @room), :class=>"btn btn-primary btn-block btn-lg" %>
-  	</div>
-  	<div class="col-sm-4 col-xs-12">
-  		<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, @room), :class=>"btn btn-primary btn-lg" %>
-  	</div>
-</div>
-<div class="space01"></div>
-<%= link_to '戻る', community_rooms_path(@community) %>
-<div class="space01"></div>
+	<div class="space01"></div>
+	<div class="row">
+		<div class="col-sm-4 col-xs-12">
+	  		<%= link_to "セッションルームに行く", playspace_community_room_path(@community, @room), :class=>"btn btn-primary btn-block btn-lg" %>
+	  	</div>
+	  	<div class="col-sm-4 col-xs-12">
+	  		<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, @room), :class=>"btn btn-primary btn-lg" %>
+	  	</div>
+	</div>
+	<div class="space01"></div>
+	<%= link_to 'セッションルーム一覧', community_rooms_path(@community) %>|<%= link_to "戻る", :back %>
+	<div class="space01"></div>
 </div>

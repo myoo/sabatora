@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
 <p>
   <strong>Room:</strong>
@@ -34,6 +34,7 @@
   <strong>Community:</strong>
   <%= @background.community %>
 </p>
-
-<%= link_to 'Edit', edit_community_background_path(@community, @background) %> |
-<%= link_to 'Back', community_backgrounds_path %>
+<div class="space01"></div>
+<%= link_to '編集', edit_community_background_path(@community, @background) %> |
+<%= link_to '背景画像一覧', community_backgrounds_path %>|<%= link_to "戻る", :back %>
+</div>

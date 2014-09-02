@@ -45,7 +45,6 @@ div.field{
 	padding-bottom: 10px;
 }
 
-
 /*
 	コミュニティトップ
 */
@@ -67,6 +66,27 @@ section.community-main{
     font-size: 110%;
     padding: 15px;
 }
+
+/*
+    マイページ
+*/
+section.mypage{
+    margin-top: -20px!important;
+
+    .container-fluid{
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%; 
+    }
+
+    p.status{
+        margin: 10px;
+        color: white;
+        font-size: 80%;
+    }
+
+}
+
 
 /*
 	bootstrap 補足
@@ -98,6 +118,14 @@ section.community-main{
 }
 .pagination-right {
     text-align: right;
+}
+
+.row-fluid .span3 {
+    width: 23.7288%;
+}
+/* bootstrap 改造 */
+.navbar {
+    min-height: 0!important;
 }
 
 /* 
@@ -148,4 +176,5 @@ section.community-main{
     border-bottom-color: rgba(255, 255, 255, 0.7);
     border-top-color: rgba(255, 255, 255, 0.7);
 }
+
 
