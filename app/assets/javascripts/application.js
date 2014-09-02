@@ -18,6 +18,29 @@
 
 //= require bootstrap-window/dist/js/bootstrap-window.min
 
+//= require js/app
+//= require js/calendar
+//= require js/chat
+//= require js/forms
+//= require js/forms-article
+//= require js/forms-elemets
+//= require js/forms-validation
+//= require js/grid-live
+//= require js/inbox
+//= require js/index
+//= require js/landing
+//= require js/list-groups
+//= require js/maps
+//= require js/print
+//= require js/realtime
+//= require js/settings
+//= require js/stats
+//= require js/tables-dynamic
+//= require js/ui-buttons
+//= require js/ui-dialogs
+//= require js/ui-notifications
+//= require js/wizard
+
 //= require websocket_rails/main
 //= require jquery.scrollTo.min
 //= require chat
