@@ -47,14 +47,15 @@ section.room{
     /* チャット部分のデザイン */
     #chat{
         padding: 12px 16px;
-        margin: 15% auto 10px;  
+        margin: 10% auto 10px;  
         font-size: 120%;
         // min-height: 80%;
         // max-height: 500px;
         width: 80%;
-        height: 500px;
+        height: 70%;
         min-height: 250px;
-        overflow: scroll; 
+        overflow: scroll;
+        overflow-x: hidden;  
         border: none;
         background: #000;
         display: block;
@@ -100,15 +101,37 @@ section.room{
             display: none;
         }
     }
-//     
-// チャットログ
-// 
+    //     
+    // チャットログ
+    // 
     #main_chat_log {
-        dl {
-            max-height: 450px;
+
+        dl{
+            max-height: 250px;
             overflow: scroll;
+            overflow-x: hidden;
+            padding: 10px;
+            margin-bottom: 0px!important;
+        }
+        dd{
+            padding: 4px;
+            font-weight: bold;
+        }
+        dt{
+            float:left;
+            padding: 4px;
+            font-weight: normal;
+            color: green;
         }
     }
+
+    div.accordion{
+        margin: 0 0 0px;
+    }
+    div.accordion-heading{
+        border-bottom: 1px solid #d8d8d8;
+    }
+
 }
 
 /* チャット画面のプロフィール部分一旦改造 */
