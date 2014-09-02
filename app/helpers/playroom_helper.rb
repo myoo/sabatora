@@ -6,7 +6,7 @@ module PlayroomHelper
     when 'master'
       return 'master'
     when 'player'
-      if character = role.player.character
+      if character = @room.character(user)
         character.name
       else
         '未定'
