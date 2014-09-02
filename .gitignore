@@ -19,3 +19,4 @@
 /config/application.yml
 
 /public/uploads/
+/vender/assets/bower_components/
