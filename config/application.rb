@@ -20,6 +20,10 @@ module Shibatora
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ja
 
+    config.assets.paths << Rails.root.join("vendor", "assets", "bower_components")
+
+    # We don't want the default of everything that isn't js or css, because it pulls too many things in
+    config.assets.precompile.shift
 
     config.generators do |g|
       # g.stylesheets false

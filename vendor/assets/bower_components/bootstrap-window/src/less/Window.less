@@ -1,0 +1,99 @@
+@import "variables.less";
+@import "mixins.less";
+
+@import "common.less";
+
+@border: #e5e5e5;
+@borderRadius: 6px;
+
+.window {
+    max-width: 800px;
+    position: absolute;
+    min-width: 200px;
+    min-height: 100px;
+    background-color: @modal-content-bg;
+    border: 1px solid @modal-content-fallback-border-color;
+    border: 1px solid @modal-content-border-color;
+    border-radius: @borderRadius;
+    outline: 0;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+    .window-header {
+        cursor: move;
+        min-height: 16.428571429px;
+        padding: @modal-title-padding;
+        border-bottom: 1px solid @modal-header-border-color;
+        .disable-select;
+        .window-title {
+            margin: 0;
+            line-height: 1.428571429;
+        }
+
+    }
+    .window-body {
+        position: relative;
+        padding: @modal-inner-padding;
+        overflow: scroll;
+    }
+    .window-body.disable-scroll {
+        .disable-scroll;
+    }
+    .window-footer {
+        padding: 19px 20px 20px;
+        margin-top: 15px;
+        text-align: right;
+        border-top: 1px solid @modal-footer-border-color;
+        position: relative;
+        .disable-shade {
+            border-bottom-left-radius: @borderRadius;
+            border-bottom-right-radius: @borderRadius;
+        }
+        .btn+.btn {
+            margin-bottom: 0;
+            margin-left: 5px;
+        }
+    }
+    .window-footer.disable-scroll {
+        .disable-scroll;
+    }
+    [data-dismiss=window] {
+        visibility: visible;
+    }
+
+}
+
+.window.ns-resize {
+    cursor: ns-resize;
+}
+
+.window.ew-resize {
+    cursor: ew-resize;
+}
+
+.window.active .window-header .window-title {
+    color: #428bca;
+}
+
+.window .panel-title .close {
+    font-size: 16px;
+}
+
+[data-dismiss=window] {
+    visibility: hidden;
+}
+
+.disable-shade {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+
+.disable-scroll {
+    overflow: hidden;
+}

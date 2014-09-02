@@ -58,6 +58,12 @@ class Room < ActiveRecord::Base
     end
   end
 
+  def play_role(user)
+    if player = self.players.find_by(user_id: user.id)
+      player.player_role
+    end
+  end
+
   private
   def set_system
     @system_tytle = System::TITLES.key(system_id)

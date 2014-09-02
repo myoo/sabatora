@@ -11,7 +11,7 @@ class System
 
   attr_reader :dice, :title, :about, :help
 
-  def initialize(room, title = Titles[:plane])
+  def initialize(room, title = TITLES[:plane])
     @dice = new_dice
     include_parser(room)
 
@@ -20,4 +20,6 @@ class System
     @help = set_help
   end
 
+  def new_character_params
+  end
 end

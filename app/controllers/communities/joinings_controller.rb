@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Communities::JoiningsController < ApplicationController
   before_action :set_communities_joining, only: [:show, :edit, :update, :destroy]
-  before_action :set_community, only: [:index, :new]
+  before_action :set_community, only: [:index, :new, :create]
   before_filter :authenticate_user!
 
   # GET /communities/joinings

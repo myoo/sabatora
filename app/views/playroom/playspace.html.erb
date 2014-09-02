@@ -8,10 +8,11 @@
 			<!-- <h1>プレイルーム</h1> -->
 			<!-- <p>セッションページです。</p> -->
 			<%= hidden_field :room, :id, value: @room.id %>
+			<%= render "chat_log" %>
 			  <canvas id="background"></canvas>
-  
 
 			<%= render "chat/chat_form" %>
+
 		</div>
 
 	</div>

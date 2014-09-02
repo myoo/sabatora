@@ -40,6 +40,9 @@ gem 'less-rails'
 gem 'therubyracer'
 gem "twitter-bootstrap-rails"
 
+# javascript
+gem "bower-rails", "~> 0.8.3"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -106,7 +109,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'timecop'
   gem "colorize_unpermitted_parameters"
-  gem "rack-mini-profiler"
+#  gem "rack-mini-profiler"
   gem "database_rewinder"
   gem "faker"
 

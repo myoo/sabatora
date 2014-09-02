@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 class System::CthuluSystem < System
 
+
+  def new_character_params      # 後で別クラスに切り出し
+    params = {
+      STR: str, CON: con, SIZ: siz,
+      DEX: dex, APP: app, SAN: san,
+      INT: int, POW: pow, EDU: edu,
+      IDEA: idea, LUCK: luck, KNOW: know,
+      DB: db, MP: pow,                   # マジック・ポイントはPOWの初期値
+      HP: hp
+    }
+  end
+
   private
     ###### TRPGタイトル #####
   def set_title
@@ -42,10 +54,6 @@ EOS
 
   def new_dice
     Dice::CthuluDice.new
-  end
-
-  def character_params
-
   end
 
   def include_parser(room)

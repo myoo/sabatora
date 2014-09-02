@@ -29,7 +29,6 @@ class @ChatClass
     user_id = $('#user_id').val()
     user_name = $('#username').text()
     msg_body = $('#chat_message').val()
-
     message =  { room_id: @channelCode, user_id: user_id, user_name: user_name , body: msg_body }
 
     if at_user = $('#chat_message').val().match(/^@.+\s|^@.+$/)    # 個人チャット
@@ -64,4 +63,5 @@ class @ChatClass
 
 $ ->
   window.chatClass = new ChatClass($('#chat').data('uri'), true)
+  console.log("chat ready")
 
