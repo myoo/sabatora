@@ -29,5 +29,11 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'logs', to: "logs#index"
+  get 'logs/result'
+  get 'logs/download'
+
+
+
   resources :characters
 end
