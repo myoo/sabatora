@@ -1,0 +1,18 @@
+<h1>検索結果表示</h1>
+<p>Find me in app/views/logs/download.html.erb</p>
+
+<% if @logs.count == 0 %>
+  <p>ログなし</p>
+<% end %>
+
+<% if @display_html && @logs.count > 0%>
+<%= render :partial => "chat_log" %>
+<% end %>
+
+<%= form_tag logs_download_url , method: :get do %>
+  <%= hidden_field :log, :start_at, value: @from %>
+  <%= hidden_field :log, :end_at, value: @to %>
+  <%= hidden_field :log, :room_id, value: @room.id %>
+  <%= submit_tag "ダウンロード" %>
+<% end %>
+
