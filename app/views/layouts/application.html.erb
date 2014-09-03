@@ -7,9 +7,11 @@
   <%= csrf_meta_tags %>
   <%= yield :head %>
 </head>
-<body class="background landing">
+<body class="background-dark">
 
+    <div class="wrap">
     <%= render :partial => "/layouts/user_nav" %>
+    </div>
 
     <div class="container">   
       <% if notice %>

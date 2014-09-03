@@ -69,16 +69,9 @@ section.mypage{
 /*
     Light-blue 修正
 */
-.page-header {
-    border: medium none;
-    border-radius: 1px;
-    margin: 15px 2.5641% 0;
-    padding: 0;
-    position: relative;
-}
-.page-header .navbar {
-    border: medium none;
-    min-height: 40px;
+.carousel-landing {
+    height: auto;
+    overflow: hidden;
 }
 
 
