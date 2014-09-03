@@ -2,15 +2,6 @@
 
 $font-size-base: 13px !default;
 
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-body {
-	color: #7c7c7c;
-    height: 100%;
-}
 
 /* テーブル調整 */
 table{
@@ -74,4 +65,20 @@ section.mypage{
     }
 
 }
+
+/*
+    Light-blue 修正
+*/
+.page-header {
+    border: medium none;
+    border-radius: 1px;
+    margin: 15px 2.5641% 0;
+    padding: 0;
+    position: relative;
+}
+.page-header .navbar {
+    border: medium none;
+    min-height: 40px;
+}
+
 
