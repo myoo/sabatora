@@ -64,6 +64,9 @@ class Room < ActiveRecord::Base
     end
   end
 
+  scope :downloadable, ->(user_id) { where{created_at >= Date.today - 50.days}
+      .joins(community: :users).where{users.id.eq user_id} } # 50日以内のみログダウンロード可
+
   private
   def set_system
     @system_tytle = System::TITLES.key(system_id)

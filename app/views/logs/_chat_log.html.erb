@@ -1,0 +1,8 @@
+  <div class="well">
+    <dl>
+    <% @logs.each do |log| %>
+      <dt><%= log.user_name %></dt>
+      <dd><%= log.body %></dd>
+    <% end %>
+    </dl>
+  </div>
