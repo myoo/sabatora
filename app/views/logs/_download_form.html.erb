@@ -1,0 +1,11 @@
+<%= form_tag logs_result_path , method: :get do %>
+  <% if @room %>
+    <%= hidden_field :log, :room_id, value: @room.id %>
+  <% else %>
+    <%= collection_select :log, :room_id, Room.downloadable(current_user.id), :id, :name  %>
+  <% end %>
+  <br />
+  <%= datetime_select :log, :start_at %>　〜　<%= datetime_select :log, :end_at %>
+  <br />
+  <%= submit_tag "検索" %> <%= check_box :log, :display?, {}, true, false %>ログを表示する
+<% end %>

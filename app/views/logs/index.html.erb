@@ -5,10 +5,4 @@
 
 <h3>ダウンロード</h3>
 
-<%= form_tag logs_result_path , method: :get do %>
-  <%= collection_select :log, :room_id, Room.downloadable(current_user.id), :id, :name  %>
-  <br />
-  <%= datetime_select :log, :start_at %>　〜　<%= datetime_select :log, :end_at %>
-  <br />
-  <%= submit_tag "検索" %> <%= check_box :log, :display?, {}, true, false %>ログを表示する
-<% end %>
+<%= render :partial => "download_form" %>
