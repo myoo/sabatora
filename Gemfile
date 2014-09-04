@@ -58,6 +58,8 @@ gem "bower-rails", "~> 0.8.3"
 # db
 gem 'pg'
 
+gem 'annotate', '~> 2.6.5'
+
 gem "squeel"
 gem 'paranoia'
 
