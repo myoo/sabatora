@@ -43,24 +43,24 @@ class CharacterCreator::Cthulu
     # ダメージボーナス表 p40
     case
     when (str + siz) <= 12
-      -1 * @dice.roll(1, 6)
+      -1 * @dice.roll(1, 6).first
     when (str + siz) <= 16
-      -1 * @doce.roll(1, 4)
+      -1 * @doce.roll(1, 4).first
     when (str + siz) <= 24
       0
     when (str + siz) <= 32
-      @dice.roll(1, 4)
+      @dice.roll(1, 4).first
     when (str + siz) <= 40
-      @dice.roll(2, 6)
+      @dice.roll(2, 6).first
     when (str + siz) <= 56
-      @dice.roll(3, 6)
+      @dice.roll(3, 6).first
     when (str + siz) <= 72
-      @dice.roll(4, 6)
+      @dice.roll(4, 6).first
     when (str + siz) <= 88
-      @dice.roll(5, 6)
+      @dice.roll(5, 6).first
     else
       number_of_dice = ((str + siz - 88).to_f/16).ceil + 5 # 『これ以上は＋16(およびその端数)ごとに1d6ずつ多くなる』
-      @dice.roll(number_of_dice, 6)
+      @dice.roll(number_of_dice, 6).first
     end
   end
 end

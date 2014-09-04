@@ -35,5 +35,9 @@ Rails.application.routes.draw do
 
 
 
-  resources :characters
+  resources :characters do
+    member do
+      post :update_params
+    end
+  end
 end

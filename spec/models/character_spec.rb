@@ -2,13 +2,15 @@
 #
 # Table name: characters
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer
-#  name       :string(255)
-#  about      :string(255)
-#  system_id  :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id           :integer          not null, primary key
+#  user_id      :integer
+#  name         :string(255)
+#  about        :string(255)
+#  system_id    :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  paramaters   :text
+#  retry_number :integer
 #
 # Indexes
 #
