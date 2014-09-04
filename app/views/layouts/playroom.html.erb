@@ -8,50 +8,14 @@
   <%= yield :head %>
 </head>
 <body>
-<div id='user_nav'>
-  <div class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">ぷれいるーむのれいあうとだよSabatora</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><%= link_to "Home", welcome_index_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">How to Sabatora</a></li>
-              <li><a href="#">System</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header"><p><strong>Contact</strong></p></li>
-              <li><a href="#">メールフォーム</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-            <li class="head">ログインなう <%= current_user.email %>. <li>
-            <li><%= link_to "Chat", robby_path %></li>
-            <li><%= link_to "Communities", communities_path %></li>
-            <li><%= link_to "My page", edit_user_registration_path %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-            <% else %>           
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-            <% end %>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+  <div class="logo">
+    <h4><a href="">Saba <strong>Tora</strong></a></h4>
   </div>
+    <%= render "playspace_side_menu" %> 
 
+    <%= render :partial => "/layouts/user_nav" %>
 </div>
-
+<div class="wrap">
   <% if notice %>
   <p class="alert alert-notice"><%= notice %></p>
   <% end %>
@@ -60,6 +24,9 @@
   <% end %>
 
 <%= yield %>
+
+</div>
+
 
 
 </body>

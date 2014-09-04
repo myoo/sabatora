@@ -16,16 +16,13 @@
                             <p class="lead hidden-xs">
                                 TRPGオンラインセッション用ツール"さばとら"<br>
 						        ”さばとら”はオンラインセッションのためのツールです。<br>
-						        面倒なサーバーの用意、設置は必要ありません！<br>
-						        誰でも簡単にメンバー登録するだけで、<br>
-						        オンラインセッションが始められます。<br>
 								さばとらtwitter：<a href="https://twitter.com/sabatora_dev">sabatora_dev</a>
                             </p>
                             <p>
                                 <% if user_signed_in? %>
 							        <% else %>
 							        <div class="row">
-							    		<div class="col-xs-12 col-md-offset-4 col-md-4">           
+							    		<div class="col-xs-6 pull-right">           
 							           <%= link_to 'さばとらをはじめる', new_user_registration_path, :class=>"btn btn-block btn-lg btn-primary" %>
 							           </div>
 							   		</div>
@@ -71,11 +68,11 @@
                 <section class="widget widget-tabs">
                     <header>
                         <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#new_communities" data-toggle="tab">Communities</a>
+                        	<li class="active">
+                                <a href="#new_session" data-toggle="tab">Session</a>
                             </li>
                             <li>
-                                <a href="#new_session" data-toggle="tab">Session</a>
+                                <a href="#new_communities" data-toggle="tab">Communities</a>
                             </li>
                             <li>
                                 <a href="#new_event" data-toggle="tab">Event</a>
