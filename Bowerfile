@@ -5,3 +5,17 @@
 
 asset 'bootstrap-window'
 asset 'jquery-ui-bootstrap'
+
+asset 'jquery-pjax'
+asset 'jquery-maskedinput'
+asset 'parsleyjs'
+asset 'iCheck'
+asset 'select2'
+asset 'autogrow-textarea'
+asset 'underscore'
+asset 'backbone'
+asset 'messenger'
+
+asset 'bootstrap-datepicker'
+asset 'bootstrap-select'
+

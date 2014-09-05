@@ -1,5 +1,5 @@
-@import url(../lib/nvd3/src/nv.d3);
-@import url(./fontello/css/fontello);
+@import "lib/nvd3/src/nv.d3";
+@import "css/fontello/css/fontello";
 
 
 @import "font";
@@ -10,25 +10,24 @@
 @import "bootstrap-original/bootstrap";
 @import "bootstrap-original/_mixins";
 @import "bootstrap-override";
-@import "lib/font-awesome/font-awesome";
-@import "lib/_icheckbox";
-@import "lib/_datepicker";
-@import "lib/_select2";
-@import "lib/_bootstrap-wysihtml5";
-@import "lib/_bootstrap-switch";
-@import "lib/_bootstrap-colorpicker";
-@import "lib/_jqvmap";
-@import "lib/_fullcalendar";
-@import "lib/_jquery.fileupload-ui";
-@import "lib/_backgrid";
-@import "lib/_rickshaw";
-@import "lib/_jquery.datatables";
-@import "lib/_animate";
-@import "lib/nestable";
-@import "lib/messenger-1.4.1/messenger";
-@import "lib/messenger-1.4.1/messenger-spinner";
-@import "lib/messenger-1.4.1/messenger-theme-air";
-@import "lib/bootstrap-slider";
+@import "sass/lib/_icheckbox";
+@import "sass/lib/_datepicker";
+@import "sass/lib/_select2";
+@import "sass/lib/_bootstrap-wysihtml5";
+@import "sass/lib/_bootstrap-switch";
+@import "sass/lib/_bootstrap-colorpicker";
+@import "sass/lib/_jqvmap";
+@import "sass/lib/_fullcalendar";
+@import "sass/lib/_jquery.fileupload-ui";
+@import "sass/lib/_backgrid";
+@import "sass/lib/_rickshaw";
+@import "sass/lib/_jquery.datatables";
+@import "sass/lib/_animate";
+@import "sass/lib/nestable";
+@import "sass/lib/messenger-1.4.1/messenger";
+@import "sass/lib/messenger-1.4.1/messenger-spinner";
+@import "sass/lib/messenger-1.4.1/messenger-theme-air";
+@import "sass/lib/bootstrap-slider";
 
 @import "svg";
 

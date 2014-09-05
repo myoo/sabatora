@@ -14,35 +14,50 @@
 //= require turbolinks
 //= require jquery_ujs
 //= require jquery-ui
+
+//= require jquery-pjax/jquery.pjax
+//= require jquery-maskedinput/dist/jquery.maskedinput
+//= require parsleyjs/dist/parsley.min
+//= require iCheck/icheck.min
+//= require select2/select2.min
+//= require backbone/backbone
+//= require underscore/underscore
+//= require messenger/build/js/messenger
+
 //= require twitter/bootstrap
 
 //= require bootstrap-window/dist/js/bootstrap-window.min
-
-//= require js/app
-//= require js/calendar
-//= require js/chat
-//= require js/forms
-//= require js/forms-article
-//= require js/forms-elemets
-//= require js/forms-validation
-//= require js/grid-live
-//= require js/inbox
-//= require js/index
-//= require js/landing
-//= require js/list-groups
-//= require js/maps
-//= require js/print
-//= require js/realtime
-//= require js/settings
-//= require js/stats
-//= require js/tables-dynamic
-//= require js/ui-buttons
-//= require js/ui-dialogs
-//= require js/ui-notifications
-//= require js/wizard
 
 //= require websocket_rails/main
 //= require jquery.scrollTo.min
 //= require chat
 //= require room
 //= require playroom
+
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/ja-JP
+
+//= require bootstrap-datepicker/js/bootstrap-datepicker
+//= require bootstrap-select/js/bootstrap-select
+
+//= require lib/jquery.autogrow-textarea
+//= require lib/bootstrap-colorpicker
+//= require lib/jquery.nestable
+//= require lib/rickshaw/rickshaw
+
+//= require js/app
+//= require js/forms
+//= require js/forms-article
+//= require js/forms-elemets
+//= require js/forms-validation
+//= require js/grid-live
+//= require js/landing
+//= require js/list-groups
+//= require js/print
+//= require js/realtime
+//= require js/stats
+//= require js/ui-buttons
+//= require js/ui-dialogs
+//= require js/ui-notifications
+//= require js/wizard
+
