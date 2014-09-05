@@ -29,57 +29,76 @@
 
   <div class="space01"></div>
 
-  <div class="widget">
-    <div class="widget-head">
-      <h4 class="heading">New Event <small>新しいイベント</small></h4>
+  <section class="widget" id="shares-widget">
+    <header>
+      <h5>
+          <span class="label label-primary"><i class="fa fa-flag"></i></span> &nbsp; New Event
+      </h5>
+    </header>
+    <div class="body">
+      <div class="list-group users-list-group">
+          <a href="#" class="list-group-item">
+              <h5 class="no-margin">Maikel Basso</h5>
+          </a>
+          <a href="#" class="list-group-item">
+              <h5 class="no-margin">Ianus Arendse</h5>
+          </a>
+          <a href="#" class="list-group-item">
+              <h5 class="no-margin">Valdemar Landau</h5>
+          </a>
+          <div class="list-group-item">
+            <%= link_to "全て見る", community_rooms_path(@community), :class=>"btn btn-xs btn-info pull-right" %>
+          </div>
+      </div>
+      
     </div>
-    <div class="widget-body list">
-      <ul>
-        <li>新しいイベントのお知らせ</li>
-      </ul>
-    </div>
-  </div>
+    <div class="clearfix">
+  </section>
 
   <div class="row">
     <div class="col-sm-8 col-xs-12">
       <div class="widget">
-        <div class="widget-head">
-          <h4 class="heading">New room　<small>新しいセッションルーム</small></h4>
-        </div>
-        <div class="widget-body list">
-          <ul>
+        <header>
+          <h5>
+          <span class="label label-primary"><i class="fa fa-comments-o "></i></span> &nbsp; New room　<small>新しいセッションルーム</small>
+          </h5>
+        </header>
+        <div class="body">
+          <div class="list-group users-list-group">
             <% @community.rooms.limit(5).each do |room| %>
-              <li>
+              <div class="list-group-item">
                 <%= link_to room.name, playspace_community_room_path(@community, room), data: { no_turbolink: true } %>
                 　オーナー：<%= room.owner.name %>
-              </li>
+              </div>
             <% end %>
-          </ul>
-        </div>
-        <div class="widget-top-footer">
-          <div class="clearfix">
-          <%= link_to "全て見る", community_rooms_path(@community), :class=>"btn btn-info btn-xs"  %>
+            <div class="list-group-item">
+              <%= link_to "全て見る", community_rooms_path(@community), :class=>"btn btn-info btn-xs pull-right" %>
+            </div>
           </div>
+        <div class="clearfix"></div>  
         </div>
-      </div>  
+      </div>
     </div>
-  <div class="col-sm-4 col-xs-12">
+
+
+    <div class="col-sm-4 col-xs-12">
       <div class="widget">
-        <div class="widget-head">
-          <h4 class="heading">New member　<small>新しいメンバー</small></h4>
-        </div>
-        <div class="widget-body list">
-          <ul>
+        <header>
+          <h5>
+            <span class="label label-primary"><i class="fa fa-users "></i></span> &nbsp; New member　<small>新しいメンバー</small>
+          </h5>
+        </header>
+        <div class="body">
+          <div class="list-group users-list-group">
             <% @community.joinings.limit(5).each do |member| %>
-              <li>
+              <div class="list-group-item">
                 <%= member.user.name %>
+              </div>
             <% end %>
-          </ul>
-        </div>
-        <div class="widget-top-footer">
-          <div class="clearfix">
-          <%= link_to "全て見る", community_joinings_path(@community), :class=>"btn btn-info btn-xs" %>
+            <div class="list-group-item">
+              <%= link_to "全て見る", community_joinings_path(@community), :class=>"btn btn-info btn-xs pull-right" %></div>
           </div>
+        <div class="clearfix"></div>  
         </div>
       </div>  
     </div>
