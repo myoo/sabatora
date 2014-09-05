@@ -1,0 +1,14 @@
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: font-path "css/fonts/font-awesome/";
+  src: font-path('css/fonts/font-awesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    font-path('css/fonts/font-awesome/fontawesome-webfont.woff') format('woff'),
+    font-path('css/fonts/font-awesome/fontawesome-webfont.ttf') format('truetype'),
+    font-path('css/fonts/font-awesome/fontawesome-webfont.svg') format('svg');
+  //src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}

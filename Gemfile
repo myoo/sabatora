@@ -39,6 +39,9 @@ gem 'compass-rails'
 gem 'less-rails'
 gem 'therubyracer'
 gem "twitter-bootstrap-rails"
+gem "bootstrap-wysihtml5-rails"
+
+gem "font-awesome-rails"
 
 # javascript
 gem "bower-rails", "~> 0.8.3"

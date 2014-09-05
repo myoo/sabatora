@@ -2,6 +2,17 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap-window": "latest",
-    "jquery-ui-bootstrap": "latest"
+    "jquery-ui-bootstrap": "latest",
+    "jquery-pjax": "latest",
+    "jquery-maskedinput": "latest",
+    "parsleyjs": "latest",
+    "iCheck": "latest",
+    "select2": "latest",
+    "autogrow-textarea": "latest",
+    "underscore": "latest",
+    "backbone": "latest",
+    "messenger": "latest",
+    "bootstrap-datepicker": "latest",
+    "bootstrap-select": "latest"
   }
 }
