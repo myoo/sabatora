@@ -14,33 +14,18 @@
 //= require turbolinks
 //= require jquery_ujs
 //= require jquery-ui
-//= require twitter/bootstrap
-//= require ergo/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min
-//= require ergo/plugins/system/jquery.cookie
-//= require ergo/plugins/system/modernizr
 
-//= require ergo/plugins/other/jquery-slimScroll/jquery.slimscroll.min
-//= require ergo/plugins/other/holder/holder
-//= require ergo/plugins/forms/pixelmatrix-uniform/jquery.uniform.min
-//= require bootstrap/extend/bootstrap-select/bootstrap-select
-//= require bootstrap/extend/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons
-//= require bootstrap/extend/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min
-//= require bootstrap/extend/jasny-bootstrap/js/jasny-bootstrap.min
-//= require bootstrap/extend/jasny-bootstrap/js/bootstrap-fileupload
-//= require bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min
-//= require bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2
-//= require bootstrap/extend/bootbox.js
-//= require ergo/plugins/other/google-code-prettify/prettify.js
-//= require ergo/plugins/notifications/Gritter/js/jquery.gritter.min.js
-//= require ergo/plugins/notifications/notyfy/jquery.notyfy.js
-//= require ergo/plugins/color/jquery-miniColors/jquery.miniColors.js
-//= require ergo/plugins/forms/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js
-//= require ergo/plugins/charts/easy-pie/jquery.easy-pie-chart.js
-//= require ergo/plugins/charts/sparkline/jquery.sparkline.min.js
-//= require ergo/plugins/other/jquery.ba-resize.js
-//= require ergo/plugins/color/farbtastic/farbtastic.js
-//= require ergo/plugins/forms/select2/select2.js
-//= require ergo/demo/form_elements.js
+//= require jquery-pjax/jquery.pjax
+//= require jquery-maskedinput/dist/jquery.maskedinput
+//= require parsleyjs/dist/parsley.min
+//= require iCheck/icheck.min
+//= require select2/select2.min
+//= require backbone/backbone
+//= require underscore/underscore
+//= require messenger/build/js/messenger
+
+//= require twitter/bootstrap
+
 //= require bootstrap-window/dist/js/bootstrap-window.min
 
 //= require websocket_rails/main
@@ -48,4 +33,31 @@
 //= require chat
 //= require room
 //= require playroom
-//= require bootstrap/extend/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js
+
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/ja-JP
+
+//= require bootstrap-datepicker/js/bootstrap-datepicker
+//= require bootstrap-select/js/bootstrap-select
+
+//= require lib/jquery.autogrow-textarea
+//= require lib/bootstrap-colorpicker
+//= require lib/jquery.nestable
+//= require lib/rickshaw/rickshaw
+
+//= require js/app
+//= require js/forms
+//= require js/forms-article
+//= require js/forms-elemets
+//= require js/forms-validation
+//= require js/grid-live
+//= require js/landing
+//= require js/list-groups
+//= require js/print
+//= require js/realtime
+//= require js/stats
+//= require js/ui-buttons
+//= require js/ui-dialogs
+//= require js/ui-notifications
+//= require js/wizard
+

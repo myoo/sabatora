@@ -1,117 +1,119 @@
-<!-- Top navbar (note: add class "navbar-hidden" to close the navbar by default) -->
-<div class="navbar main hidden-print">
+<header class="page-header">
+  <div class="navbar">
+    <ul class="nav navbar-nav navbar-right pull-right">
+      <li>
+        <%= link_to root_path, :title=>"Home" do %>
+          <i class="fa fa-home"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to communities_path, :title=>"communities" do %>
+          <i class="fa fa-group"></i>
+        <% end %>
+      </li>
+      <li class="dropdown">
+        <a href="#" title="Help" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-book"></i>
+            <span class="count">2</span>
+        </a>
+        <ul id="support-menu" class="dropdown-menu support" role="menu">
+          <li role="presentation">
+            <%= link_to help_about_path, :title=>"use sabatora", :class=>"support-ticket" do %>
+              <div class="picture">
+                  <span class="label label-warning"><i class="fa fa-question-circle"></i></span>
+              </div>
+              <div class="details">
+                  Use Sabatora 
+              </div>
+            <% end %>
+          </li>
+          <li role="presentation">
+            <a href="#" class="support-ticket">
+                <div class="picture">
+                    <span class="label label-success"><i class="fa fa-envelope"></i></span>
+                </div>
+                <div class="details">
+                    Contact
+                </div>
+            </a>
+          </li>
+          <li role="presentation">
+              <a href="#" class="text-align-center see-all">
+                  See all tickets <i class="fa fa-arrow-right"></i>
+              </a>
+          </li>
+        </ul>
+      </li>
     
-  <!-- Wrapper -->
-  <div class="wrapper">      
-    <!-- Menu Toggle Button -->
-    <button type="button" class="btn btn-navbar">
-      <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-    </button>
-    <!-- // Menu Toggle Button END -->
-    <!-- Top Menu -->
-    <ul class="topnav pull-left tn1 hidden-phone">
-      <!-- Themer -->
-      <li><a href="#themer" data-toggle="collapse" class="glyphicons eyedropper single-icon"><i></i></a></li>
-      <!-- // Themer END -->
-                               
-      <li class="dropdown dd-1 dd-2">
-        <a href="" data-toggle="dropdown">Notifications <span class="count">3</span></a>
-        <ul class="dropdown-menu pull-left">
-          <li><a href="#" class="glyphicons envelope"><i></i> New Email</a></li>
-          <li><a href="#" class="glyphicons chat"><i></i> 5 Messages</a></li>
-          <li><a href="#" class="glyphicons conversation"><i></i> 1 New Reply</a></li>
-        </ul>
-      </li>
-          
-    </ul>
-    <!-- // Top Menu END -->
-                
-    <!-- Top Menu Right -->
-    <ul class="topnav pull-right">
-      <!-- Language menu -->
-      <li class="hidden-phone dropdown dd-1 dd-flags" id="lang_nav">
-        <a href="#" data-toggle="dropdown"><img src="../../../../common/theme/images/lang/en.png" alt="en" /></a>
-          <ul class="dropdown-menu pull-left">
-              <li class="active"><a href="?page=index&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=en" title="English"><img src="../../../../common/theme/images/lang/en.png" alt="English"> English</a></li>
-              <li><a href="?page=index&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=ro" title="Romanian"><img src="../../../../common/theme/images/lang/ro.png" alt="Romanian"> Romanian</a></li>
-              <li><a href="?page=index&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=it" title="Italian"><img src="../../../../common/theme/images/lang/it.png" alt="Italian"> Italian</a></li>
-              <li><a href="?page=index&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=fr" title="French"><img src="../../../../common/theme/images/lang/fr.png" alt="French"> French</a></li>
-              <li><a href="?page=index&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=pl" title="Polish"><img src="../../../../common/theme/images/lang/pl.png" alt="Polish"> Polish</a></li>
-          </ul>
-      </li>
-      <!-- // Language menu END -->
-        
-      <!-- Dropdown -->
-      <li class="dropdown dd-1 visible-desktop">
-        <a href="" data-toggle="dropdown" class="glyphicons shield"><i></i>Get Help <span class="caret"></span></a>
-        <ul class="dropdown-menu pull-right">
-              
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle glyphicons bell" data-toggle="dropdown"><i></i>Level 2</a>
-            <ul class="dropdown-menu submenu-show submenu-hide pull-left">
-              <li class="dropdown submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.1</a>
-                <ul class="dropdown-menu submenu-show submenu-hide pull-left">
-                  <li><a href="#">Level 2.1.1</a></li>
-                  <li><a href="#">Level 2.1.2</a></li>
-                  <li><a href="#">Level 2.1.3</a></li>
-                  <li><a href="#">Level 2.1.4</a></li>
-                </ul>
-              </li>
-              <li class="dropdown submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.2</a>
-                <ul class="dropdown-menu submenu-show submenu-hide pull-left">
-                  <li><a href="#">Level 2.2.1</a></li>
-                  <li><a href="#">Level 2.2.2</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li><a href="" class="glyphicons settings"><i></i>Some option</a></li>
-          <li><a href="" class="glyphicons bell"><i></i>Some other option</a></li>
-          <li><a href="" class="glyphicons bell"><i></i>Other option</a></li>
-                      
-        </ul>
-      </li>
-      <!-- // Dropdown END -->
-          
-      <!-- Profile / Logout menu -->
-      <li class="account dropdown dd-1">
-        <a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons logout lock"><span class="hidden-phone">mosaicpro</span><i></i></a>
-        
-        <ul class="dropdown-menu pull-right">
-          <li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons cogwheel">Settings<i></i></a></li>
-          <li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons camera">My Photos<i></i></a></li>
-          <li class="profile">
-            <span>
-              <span class="heading">Profile <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="pull-right">edit</a></span>
-              <span class="img"></span>
-              <span class="details">
-                <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">Mosaic Pro</a>
-                contact@mosaicpro.biz
-              </span>
-              <span class="clearfix"></span>
-            </span>
-          </li>
-          <li>
-            <span>
-              <a class="btn btn-default btn-mini pull-right" href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">Sign Out</a>
-            </span>
-          </li>
-        </ul>
-      </li>
-      <!-- // Profile / Logout menu END -->
-          
-    </ul>
-    <!-- // Top Menu Right END -->
-        
-    <div class="clearfix"></div>
-  </div>
-  <!-- // Wrapper END -->
+      <li class="divider"></li>
       
-  <span class="toggle-navbar"></span>
-</div>
+      <li class="visible-xs">
+        <a href="#" class="btn-navbar" data-toggle="collapse" data-target=".sidebar"
+           title="サイドバーメニュー">
+          <i class="fa fa-bars"></i>
+        </a>
+
+      </li>
+
+      <% if user_signed_in? %>
+
+        <li class="hidden-xs">
+          <%= link_to robby_path, :title=>"Chat"  do %>
+            <i class="fa fa-comments"></i>
+          <% end %>
+        </li>
+
+        <li class="hidden-xs dropdown">
+        <a href="#" title="My page" id="account"
+           class="dropdown-toggle"
+           data-toggle="dropdown">
+            <i class="fa fa-user"></i>
+        </a>
+          <ul id="account-menu" class="dropdown-menu account" role="menu">
+            <li role="presentation" class="account-picture"> 
+              <%= current_user.name %>.
+            </li>
+            <li role="presentation">
+              <%= link_to edit_user_registration_path, :class=>"link" do %>
+              <i class="fa fa-user"></i>
+                プロフィール変更
+              <% end %>
+            </li>
+            <% unless @community.nil? or @community.id.nil?%>
+            <li role="presentation">
+              <%= link_to community_backgrounds_path(@community), :class=>"link" do %>
+                <i class="fa fa-file-image-o "></i>
+                背景管理
+              <% end %>
+            </li>
+             <% end %>
+          </ul>
+        </li>
+        <li> 
+          <%= link_to destroy_user_session_path, :method => :delete, :title=>"Sign out"  do %>
+            <i class="fa fa-sign-out"></i>
+          <% end %>
+        </li>
+      <% else %>           
+        <li><%= link_to new_user_registration_path, :title=>"Sign up"  do %>
+            <i class="fa fa-smile-o"></i>
+          <% end %>
+        </li>
+        <li><%= link_to new_user_session_path, :title=>"Sign in" do %>
+            <i class="fa fa-sign-in"></i>
+          <% end %>
+        </li>
+      <% end %>
+    
+    </ul>
+
+    <div class="notifications pull-right">
+      <!-- 何かタイトル的な -->
+    </div>
+
+  </div>
+</header>
+
 <!--
 <div id='user_nav'>
   <div class="navbar navbar-default" role="navigation">

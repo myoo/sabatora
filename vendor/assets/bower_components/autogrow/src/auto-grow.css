@@ -1,0 +1,42 @@
+.auto-growing-editor-container {
+  position: relative;
+  display: inline-block;
+}
+
+.auto-growing-editor {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  border: 1px solid black;
+
+  background: transparent;
+
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+  word-break: break-all;
+}
+
+textarea.auto-growing-editor {
+  overflow: hidden;
+  resize: none;
+}
+
+pre.auto-growing-editor {
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: -1;
+  color: transparent;
+
+  /*
+   * Fix https://github.com/loonkwil/jquery.auto-grow/issues/1
+   * http://stackoverflow.com/questions/16487391/div-and-textarea-behave-the-same-except-in-firefox-what-to-do
+   */
+  -moz-padding-end: 6px;
+  -moz-padding-start: 6px;
+}
