@@ -1,15 +1,30 @@
 <section class="room">
+  <!-- Content -->
+  <div class="row">
+    <div class="col-md-6 widget-container ui-sortable">
+    <% unless @character.nil? %>
+      <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
+        <header>
+      <h5>キャラステータス</h5>
+      <div class="widget-controls">
+            <a data-widgster="load" title="Reload" href="#"><i class="glyphicon glyphicon-refresh"></i></a>
+            <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
+            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
+            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+         </div>
+     </header>
 
-		  		
-	<!-- Content -->
-		<!-- <h1>プレイルーム</h1> -->
-		<!-- <p>セッションページです。</p> -->
-		<%= hidden_field :room, :id, value: @room.id %>
-		
-		<!--  モバイル版のショートカットメニューがこれがあると表示されない <canvas id="background"></canvas> -->
 
-		<%= render "chat/chat_form" %>
+	<%= render :partial => "character_status" %>
+      </section>
 
+      <% end %>
+    </div>
+  </div>
+  <%= hidden_field :room, :id, value: @room.id %>
+  <%= render "chat/chat_form" %>
+
+</section>
 		<div class="session_room_bottom">
 			<button type="button" class="btn btn-danger btn-md"
 	                                data-toggle="modal" data-target="#session_log">このセッションのログをダウンロードする</button>
@@ -36,5 +51,4 @@
 			<%= render "chat_log" %>
 		</div>
 
-</section>
 

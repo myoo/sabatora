@@ -73,7 +73,6 @@ class CharactersController < ApplicationController
   end
 
   def edit_params
-    binding.pry
     @character.paramaters = params.permit(character: [:paramaters])
     if @character.save
       respond_to do |format|

@@ -5,6 +5,7 @@ class PlayroomController < ApplicationController
   # load_and_authorize_resource through: :community, class: "Room"
 
   def playspace
+    @character = @room.character(current_user)
   end
 
   def get_main_chat_log
@@ -19,6 +20,7 @@ class PlayroomController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_room
     @room =Room.find(params[:id])
+    @community = Community.find(params[:community_id])
   end
 
 end
