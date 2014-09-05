@@ -8,13 +8,22 @@
 <p><strong>キャラ作成者：</strong><%= @character.user.name %></p>
 <%= System::TITLES.key(@character.system_id) %>
 
+<%= image_tag @character.image %>
+
 <div class="well">
   パラメータ <br />
 <%= @character.paramaters %>
 </div>
-<%= form_tag update_params_character_path(@character) do %>
-  <%= submit_tag "振り直し" %> (振り直し回数<%= @character.retry_number %>)
-<% end %>
+<%= render :partial => "paramaters_edit" %>
+
+プロフィール
+<%= @character.profile %>
+
+ステータス
+<%= @character.status %>
+
+メモ
+<%= @character.memo %>
 
 <div class="space01"></div>
 <%= link_to '編集', edit_character_path(@character) %> |

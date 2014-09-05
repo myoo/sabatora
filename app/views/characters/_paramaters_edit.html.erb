@@ -1,0 +1,3 @@
+<%= form_tag update_params_character_path(@character) do %>
+  <%= submit_tag "振り直し" %> (振り直し回数<%= @character.retry_number %>)
+<% end %>

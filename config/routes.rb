@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :characters do
     member do
       post :update_params
+      post :edit_params
     end
   end
 end

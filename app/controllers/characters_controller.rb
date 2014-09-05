@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy, :update_params]
+  before_action :set_character, only: [:show, :edit, :update, :destroy, :update_params, :edit_params]
 
   # GET /characters
   # GET /characters.json
@@ -63,13 +63,21 @@ class CharactersController < ApplicationController
     end
   end
 
-
   def update_params
     @character.initialize_params
     if @character.save
       respond_to do |format|
-        format.html { render :show, notice: "パラメータを振り直しました。" }
+        format.html { render :show, notice: "パラメータを振り直しました。" } # Todo:Ajax追加
+      end
+    end
+  end
 
+  def edit_params
+    binding.pry
+    @character.paramaters = params.permit(character: [:paramaters])
+    if @character.save
+      respond_to do |format|
+        format.json { render @character.paramaters }
       end
     end
   end
@@ -82,6 +90,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :about, :user_id, :system_id)
+      params.require(:character).permit(:name, :about, :user_id, :system_id, :paramaters, :profile, :status, :memo, :image)
     end
 end

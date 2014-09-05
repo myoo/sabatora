@@ -6,6 +6,12 @@
 	    <%= f.input :name %>
 	    <%= f.input :about %>
 	    <%= f.input :system_id, collection: System::TITLES.sort.map {|k,v| [k, v]},:include_blank => false %>
+	    <%= f.input :image, as: :file %>
+	    <%= f.input :paramaters %>
+	    <%= render "paramaters_edit" %>
+	    <%= f.input :profile %>
+	    <%= f.input :status %>
+	    <%= f.input :memo %>
 	    <%= f.input :user_id, as: :hidden %>
 	  </div>
 

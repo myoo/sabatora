@@ -24,6 +24,8 @@ class Character < ActiveRecord::Base
 
   attr_reader :system
 
+  mount_uploader :image, CharacterUploader
+
   validates :user_id, :name, :system_id, presence: true
 
   after_initialize :set_system

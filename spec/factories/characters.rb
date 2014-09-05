@@ -11,6 +11,10 @@
 #  updated_at   :datetime
 #  paramaters   :text
 #  retry_number :integer
+#  profile      :text
+#  memo         :text
+#  status       :text
+#  image        :string(255)
 #
 # Indexes
 #
