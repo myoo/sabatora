@@ -12,8 +12,9 @@
   <div class="logo">
     <h4><a href="">Saba <strong>Tora</strong></a></h4>
   </div>
-    <%= render "playroom/playspace_side_menu" %> 
+  <%= render "playroom/playspace_side_menu" %> 
 
+  <div class="wrap">
     <%= render :partial => "/layouts/user_nav" %>
 </div>
 <div class="wrap">
@@ -29,9 +30,20 @@
       
     </div>
 
-<%= yield %>
+    <div class="content container">
+      <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
 
-</div>
+      <%= yield %>
+    </div>
+    <div class="loader-wrap hiding hide">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
   </div>
 
 

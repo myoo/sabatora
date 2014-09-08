@@ -17,7 +17,7 @@ class Community < ActiveRecord::Base
   has_many :backgrounds
 
   def has_member?(user)
-    self.joinings.where(user_id: user.id).length > 0
+    user.present? and self.joinings.where(user_id: user.id).length > 0
   end
 
   def is_owner?(user)

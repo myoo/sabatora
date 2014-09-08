@@ -18,47 +18,11 @@ section.room{
         font-size: 80%;
     }
 
-    /* チャット部分のデザイン */
-    #chat{
+    div.session_room_bottom{
         padding: 12px 16px;
-        margin: auto auto 10px;  
-        font-size: 120%;
-        // min-height: 80%;
-        // max-height: 500px;
-        width: 80%;
-        height: 500px;
-        min-height: 250px;
-        overflow: scroll;
-        overflow-x: hidden;  
-        border: none;
-        background: #000;
-        display: block;
-        filter:alpha(opacity=50);
-        -moz-opacity: 0.5;
-        opacity: 0.5;
-
-        dt{
-            border-bottom: none;
-            padding: 5px;
-            padding-left: 10px;
-            font-weight: normal;
-            color: green;
-        }
-
-        dd{
-            border-top: none;
-            padding: 5px 35px;
-            font-weight: bold;
-            color:white;
-        }
-
-        dt.private {
-        color: blue;
-        }
-        dt.system {
-        color: green;
-        }
-
+        margin: 10% auto 10px;  
+        width: 85%;
+        position: relative;
     }
 
     span.right{
@@ -97,15 +61,7 @@ section.room{
         }
     }
 
-    div.accordion{
-        margin: 0 0 0px;
-    }
-    div.accordion-heading{
-        border-bottom: 1px solid #d8d8d8;
-    }
-
 }
-
 
     div.session_room_bottom{
         padding: 12px 16px;
