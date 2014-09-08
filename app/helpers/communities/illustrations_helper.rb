@@ -1,0 +1,2 @@
+module Communities::IllustrationsHelper
+end

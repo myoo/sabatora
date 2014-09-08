@@ -1,0 +1,30 @@
+<h1>Listing communities_illustrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Illustration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @illustrations.each do |illustration| %>
+      <tr>
+        <td><%= illustration.name %></td>
+        <td><%= illustration.description.slice(0, 20) %></td>
+        <td><%= illustration.image %></td>
+        <td><%= illustration.access %></td>
+        <td><%= link_to 'Show', [@community, illustration] %></td>
+	<td><%= link_to 'Edit', edit_community_illustration_path(@community, illustration) %></td>
+	<td><%= link_to 'Destroy', [@community, illustration], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Illustration', new_community_illustration_path(@community) %>

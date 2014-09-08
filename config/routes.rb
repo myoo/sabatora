@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :communities do
     resources :joinings, to: "communities/joinings"
     resources :backgrounds, to: "communities/backgrounds"
+    resources :illustrations, to: "communities/illustrations"
 
     resources :rooms, to: "communities/rooms" do
       resources :players, to: "communities/rooms/players"

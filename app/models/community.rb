@@ -12,4 +12,7 @@ class Community < ActiveRecord::Base
     joinings = self.joinings.where(user: user)
     joinings.length > 0 && joinings.joins(:role).where{role.name.eq "owner"}.length > 0
   end
+
+  scope :user_joins, -> (user_id){ joins(:joinings).where{joinings.user_id.eq user_id} }
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905023132) do
+ActiveRecord::Schema.define(version: 20140908080534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(version: 20140905023132) do
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
+  create_table "characters_illustrations", id: false, force: true do |t|
+    t.integer "character_id"
+    t.integer "illustration_id"
+  end
+
   create_table "communities", force: true do |t|
     t.string   "name"
     t.text     "about"
@@ -56,6 +61,18 @@ ActiveRecord::Schema.define(version: 20140905023132) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "illustrations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "access",      default: 2
+    t.string   "name",                    null: false
+    t.text     "description"
+    t.string   "image",                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "illustrations", ["user_id"], name: "index_illustrations_on_user_id", using: :btree
 
   create_table "joinings", force: true do |t|
     t.integer  "user_id"

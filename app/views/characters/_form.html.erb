@@ -6,6 +6,7 @@
 	    <%= f.input :name %>
 	    <%= f.input :about %>
 	    <%= f.input :user_id, as: :hidden %>
+	    <%= f.association :illustrations, collection: Illustration.usables(current_user) %>
 	  </div>
 
 	  <div class="form-actions">
