@@ -50,50 +50,6 @@ section.room{
         @include box-shadow( 1px 0 5px #666, rgba(gray, 0.2) 0 0 3px 2px inset );
     }
 
-    /* チャット部分のデザイン */
-    #chat{
-        padding: 12px 16px;
-        margin: 10% auto 10px;  
-        font-size: 120%;
-        // min-height: 80%;
-        // max-height: 500px;
-        width: 80%;
-        height: 500px;
-        min-height: 250px;
-        overflow: scroll;
-        overflow-x: hidden;  
-        border: none;
-        background: #000;
-        display: block;
-        position: relative;
-        filter:alpha(opacity=50);
-        -moz-opacity: 0.5;
-        opacity: 0.5;
-
-        dt{
-            border-bottom: none;
-            padding: 5px;
-            padding-left: 10px;
-            font-weight: normal;
-            color: green;
-        }
-
-        dd{
-            border-top: none;
-            padding: 5px 35px;
-            font-weight: bold;
-            color:white;
-        }
-
-        dt.private {
-        color: blue;
-        }
-        dt.system {
-        color: green;
-        }
-
-    }
-
     span.right{
         text-align: right;
     }
@@ -128,13 +84,6 @@ section.room{
             font-weight: normal;
             color: green;
         }
-    }
-
-    div.accordion{
-        margin: 0 0 0px;
-    }
-    div.accordion-heading{
-        border-bottom: 1px solid #d8d8d8;
     }
 
 }

@@ -28,8 +28,8 @@
                 </li>
                 <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#menu-levels-collapse" href="#back_image">NPC管理</a>
-                    <ul id="back_image" class="panel-collapse collapse">
+                       data-parent="#menu-levels-collapse" href="#npc">NPC管理</a>
+                    <ul id="npc" class="panel-collapse collapse">
                         <li><a href="#">NPC新規作成</a></li>
                         <li><a href="#">NPCを選択</a></li>
                     </ul>
@@ -49,7 +49,7 @@
                     <ul id="movie" class="panel-collapse collapse">
                         <li class="panel">
                             <a class="accordion-toggle collapsed" data-toggle="collapse"
-                               data-parent="#sub-movie01" href="#sub-movie01">動画管理</a>
+                               data-parent="#sub-menu" href="#sub-movie01">動画管理</a>
                             <ul id="sub-movie01" class="panel-collapse collapse">
                                 <li><a href="#">動画新規登録</a></li>
                                 <li><a href="#">動画を選択</a></li>
@@ -57,7 +57,7 @@
                         </li>
                         <li class="panel">
                             <a class="accordion-toggle collapsed" data-toggle="collapse"
-                               data-parent="#sub-movie02" href="#sub-movie02">BGM管理</a>
+                               data-parent="#sub-menu" href="#sub-movie02">BGM管理</a>
                             <ul id="sub-movie02" class="panel-collapse collapse">
                                 <li><a href="#">BGM新規登録</a></li>
                                 <li><a href="#">BGMを選択</a></li>
@@ -65,7 +65,7 @@
                         </li>
                         <li class="panel">
                             <a class="accordion-toggle collapsed" data-toggle="collapse"
-                               data-parent="#sub-movie03" href="#sub-movie03">SE管理</a>
+                               data-parent="#sub-menu" href="#sub-movie03">SE管理</a>
                             <ul id="sub-movie03" class="panel-collapse collapse">
                                 <li><a href="#">SE新規登録</a></li>
                                 <li><a href="#">SEを選択</a></li>
@@ -75,8 +75,16 @@
                 </li>
             </ul>
         </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse"
+               data-parent="#side-nav" href="#log_dl"><i class="fa fa-arrow-circle-o-down"></i> <span class="name">Log DL</span></a>
+            <ul id="log_dl" class="panel-collapse collapse">
+                <li><button class="btn btn-block" data-target="#session_log" data-toggle="modal" type="button">セッションログ</button></li>
+                <li><a href="">その他</a></li>
+            </ul>
+        </li>
         <li class="visible-xs">
-            <a href="login.html"><i class="fa fa-sign-out"></i> <span class="name">Sign Out</span></a>
+            <a data-target="#session_log"><i class="fa fa-sign-out"></i> <span class="name">Sign Out</span></a>
         </li>
         
     </ul>
@@ -90,103 +98,21 @@
     </div>
 </nav>
 
-<!--
-<div id="menu" class="hidden-phone hidden-print">
+<%= render "main_chat_log" %>
 
-	<div class="slim-scroll" data-scroll-height="800px">
-			
-		<span class="profile">
-		<% if @room.active_background %>
-		  <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
-		<% end %>
-			<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= current_user.name %></strong></p></a></p>
-			<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><%= image_tag("ergo/avatar-style-light.jpg") %></a>
-			<span>
-				<ul>
-					<li><a href="" class="glyphicons lock"><i></i><%= current_user.name %></a></li>
-					<li><a href="" class="glyphicons keys"><i></i></a></li>
-					<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
-				</ul>
-			</span>
-		</span>
-				
-		<ul class="menu-0">
-				
-			<li class="hasSubmenu glyphicons user active">
-				<a data-toggle="collapse" href="#menu_components"><i></i><span>My Status</span></a>
-				<ul class="collapse in" id="menu_components">
-					
+<div id="session_log" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
-					<li class="hasSubmenu active">
-						<a data-toggle="collapse" href="#menu_forms"><span>Skill</span></a>
-						<ul class="collapse in" id="menu_forms">
-							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>技能リスト</span></a></li>
-						</ul>
-						<span class="count">1</span>
-					</li>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">チャットログダウンロード</h4>
+            </div>
+            <div class="modal-body">
+                <%= render "logs/download_form" %>
+            </div>
 
-					<li class="hasSubmenu">
-						<a data-toggle="collapse" href="#menu_tables"><span>Item</span></a>
-						<ul class="collapse" id="menu_tables">
-							<li class=""><a href="tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>持ち物リスト</span></a></li>
-						</ul>
-						<span class="count">1</span>
-					</li>
-	
-					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Memo</span></a></li>
-
-					
-				</ul>
-				<span class="count">test</span>
-			</li>
-
-
-			<li class="hasSubmenu glyphicons group active">
-				<a data-toggle="collapse" href="#menu_member"><i></i><span>Member</span></a>
-					<ul class="collapse" id="menu_member">
-						
-
-						<li class="hasSubmenu"><a href="grid.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Member Name</span></a></li>
-				
-					</ul>
-				<span class="count">1</span>
-			</li>
-
-			<li class="glyphicons comments"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Member Chat</span></a></li>
-
-			<li class="glyphicons notes"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Public Memo</span></a></li>
-				
-
-			<li class="hasSubmenu glyphicons playing_dices active">
-				<a data-toggle="collapse" href="#menu_master"><i></i><span>Master Menu</span></a>
-				<ul class="collapse in" id="menu_master">
-					
-
-					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>シナリオ管理</span></a></li>
-					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>NPC管理</span></a></li>
-					<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>マップ表示</span></a></li>
-
-
-					<li class="hasSubmenu">
-						<a data-toggle="collapse" href="#menu_mastersub"><span>演出</span></a>
-						<ul class="collapse in" id="menu_mastersub">
-							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>背景設定</span></a></li>
-							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>動画表示</span></a></li>
-							<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>BGM・SE</span></a></li>
-						</ul>
-						<span class="count">3</span>
-					</li>
-
-					
-				</ul>
-				<span class="count">4</span>
-			</li>
-
-									
-		</ul>
-		<div class="clearfix"></div>
-		
-	</div>
-			
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div>
- -->
+
