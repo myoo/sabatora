@@ -38,7 +38,7 @@
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
                        data-parent="#menu-levels-collapse" href="#back_image">背景画像管理</a>
                     <ul id="back_image" class="panel-collapse collapse">
-                        <li><a href="#">背景画像新規登録</a></li>
+                        <li><%= link_to "背景画像新規登録", new_community_background_path %></li>
                         <li><a href="#">背景画像を選択</a></li>
                     </ul>
                 </li>
@@ -79,7 +79,7 @@
             <a class="accordion-toggle collapsed" data-toggle="collapse"
                data-parent="#side-nav" href="#log_dl"><i class="fa fa-arrow-circle-o-down"></i> <span class="name">Log DL</span></a>
             <ul id="log_dl" class="panel-collapse collapse">
-                <li><button class="btn btn-block" data-target="#session_log" data-toggle="modal" type="button">セッションログ</button></li>
+                <li><button class="btn btn-block panel" data-target="#session_log" data-toggle="modal" type="button">セッションログ</button></li>
                 <li><a href="">その他</a></li>
             </ul>
         </li>
@@ -98,7 +98,7 @@
     </div>
 </nav>
 
-<%= render "main_chat_log" %>
+<%= render "playroom/main_chat_log" %>
 
 <div id="session_log" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">

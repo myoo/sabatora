@@ -1,38 +1,43 @@
+
+
 <section class="mypage">
-<div id="wrapper">
-  <div class="container-fluid fluid menu-left">
-    <%= render "common/mypage_side_menu" %>
           
-    <!-- Content -->
-    <div id="content">
-      <h3>背景画像一覧</h3>
-      <div data-collapse-closed="false" class="widget widget-gallery" data-toggle="collapse-widget">
-        <div class="widget-head">
-          <h4 class="heading">登録された画像一覧</h4>
-          <span><%= link_to '新しい背景を登録する', new_community_background_path, :class=>"btn  btn-info btn-xs" %></span>
-        </div>
-        <div style="height: auto;" class="widget-body in collapse">
-    
-          <!-- Gallery Layout -->
-          <div class="gallery gallery-2">
-            <ul class="row-fluid" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
-                <% @backgrounds.each do |background| %>
-                  <li class="span3">
-                    <%= link_to image_tag(background.image, :style=>"width:100%; height:100%;"), [@community, background], { :class=>"thumb", :gallery=>"gallery" } %>
-                    <%= link_to 'Edit', edit_community_background_path(@community, background) %>/<%= link_to 'Destroy', [@community, background], method: :delete, data: { confirm: 'Are you sure?' } %>     
-                  </li>         
-                <% end %>
-            </ul>
-          </div>
-          <!-- // Gallery Layout END -->
-          
-    
-        </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <section class="widget">
+            <header>
+                <h4>
+                    <i class="fa fa-font"></i>
+                    背景画像一覧
+                </h4>
+            </header>
+            <div class="body">
+                <ul class="row thumbnails">
+                  <% @backgrounds.each do |background| %>
+                    <li class="col-sm-4">
+                        <div class="thumbnail">
+                            <%= link_to image_tag(background.image, :style=>"width:100%; height:100%;"), [@community, background], { :class=>"thumb", :gallery=>"gallery" } %>
+                      
+                            <div class="caption">
+                                <h4><%= background.name %></h4>
+                                <p><%= background.about %></p>
+                                <p>
+                                <%= link_to '背景にする', [@community, background], :class=>"btn btn-info" %>
+                                <%= link_to '編集', edit_community_background_path(@community, background), :class=>"btn btn btn-inverse" %>
+                                <%= link_to '削除', [@community, background], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger" %>  
+                                  
+                            </div>
+                        </div>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </section>
       </div>
-    <div class="space01"></div>  
     </div>
-  </div>
-</div>
+
+    <div class="space01"></div>  
+
 </section>
 
 

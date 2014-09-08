@@ -1,7 +1,7 @@
 <section class="room">
   <!-- Content -->
   <div class="row">
-    <div class="col-md-6 widget-container ui-sortable">
+    <div class="col-md-3 widget-container ui-sortable">
     <% unless @character.nil? %>
       <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
         <header>
@@ -23,31 +23,11 @@
   <%= hidden_field :room, :id, value: @room.id %>
   <%= render "chat/chat_form" %>
 
+	<div class="session_room_bottom">
+		<div class="space01"></div>
+		<%= render "chat_log" %>
+	</div>
+
 </section>
-		<div class="session_room_bottom">
-			<button type="button" class="btn btn-danger btn-md"
-	                                data-toggle="modal" data-target="#session_log">このセッションのログをダウンロードする</button>
-	        <div id="session_log" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	            <div class="modal-dialog">
-	                <div class="modal-content">
-
-	                    <div class="modal-header">
-	                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	                        <h4 class="modal-title" id="myModalLabel">チャットログダウンロード</h4>
-	                    </div>
-	                    <div class="modal-body">
-	                        <%= render "logs/download_form" %>
-	                    </div>
-	                    <div class="modal-footer">
-	                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                        <button type="button" class="btn btn-primary">Save changes</button>
-	                    </div>
-
-	                </div><!-- /.modal-content -->
-	            </div><!-- /.modal-dialog -->
-	        </div>
-			<div class="space01"></div>
-			<%= render "chat_log" %>
-		</div>
-
+		
 
