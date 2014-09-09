@@ -23,7 +23,6 @@ class Ability
     can :read, Player
     can :create, Player, room: { community: { joinings: { user_id: user.id } } }
     can :update, Player, user_id: user.id
-    can :update, Player, room: { user_id: user.id }
     can :destroy, Player, user_id: user.id
     can :destroy, Player, room: { user_id: user.id }
 

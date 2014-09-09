@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: communities
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  about       :text
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Community < ActiveRecord::Base
   has_many :joinings
   has_many :users, -> { order 'joinings.created_at DESC'}, through: :joinings

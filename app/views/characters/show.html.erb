@@ -3,13 +3,45 @@
 <p>作成したキャラクターの詳細情報です。</p>
 <p id="notice"><%= notice %></p>
 <div class="space01"></div>
-<p><strong>キャラクター名：</strong><%= @character.name %></p>
-<p><strong>説明：</strong><%= @character.about %></p>
-<p><strong>キャラ作成者：</strong><%= @character.user.name %></p>
+
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-10 col-xs-12">
+			<div class="row">
+				<div class="col-sm-3 col-xs-12">
+					<p><%= image_tag @character.image %></p>
+				</div>
+				<div class="col-sm-9 col-xs-12">
+					<br />
+					<div class="well">
+					<p><strong>パラメータ</strong></p>
+					<%= @character.paramaters %>
+					</div>
+					<%= render :partial => "paramaters_edit" %>
+					<br />	
+				</div>
+			</div>
+			<br />
+			<div class="well">
+				<p><strong>キャラクター名：</strong><%= @character.name %></p>
+				<p><strong>説明：</strong><%= @character.about %></p>
+				<p><strong>システム：</strong><%= System::TITLES.key(@character.system_id) %></p>
+			</div>
+			<div class="well">		
+				<strong>プロフィール</strong><br />
+				<p><%= @character.profile.html_safe %></p>
+
+				<strong>ステータス</strong><br />
+				<p><%= @character.status.html_safe %></p>
+
+				<strong>メモ</strong><br />
+				<p><%= @character.memo.html_safe %></p>
+			</div>
+		</div>
+	</div>
 
 <div class="space01"></div>
-<%= link_to '編集', edit_character_path(@character) %> |
-<%= link_to "戻る", :back %>
+<%= link_to '編集', edit_character_path(@character) %>|
+<%= link_to 'キャラクター一覧', characters_path %>|<%= link_to "戻る", :back %>
 
 <div class="space01"></div>
 </div>
