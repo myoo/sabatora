@@ -2,12 +2,13 @@
   <!-- Content -->
   <div class="row">
     <div class="col-md-3 widget-container ui-sortable">
+
     <% unless @character.nil? %>
       <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
         <header>
 	      <h5><%= @character.name %>ステータス</h5>
 	      <div class="widget-controls">
-	            <a data-widgster="load" title="Reload" href=""><i class="glyphicon glyphicon-refresh"></i></a>
+	            <a data-widgster="load" title="Reload" href="#"><i class="glyphicon glyphicon-refresh"></i></a>
 	            <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
 	            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
 	            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
@@ -17,6 +18,7 @@
       </section>
 
       <% end %>
+      
     </div>
   </div>
   <%= hidden_field :room, :id, value: @room.id %>
