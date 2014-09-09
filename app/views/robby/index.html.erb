@@ -9,3 +9,8 @@
 <%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
 <div class="space01"></div>
 </div>
+
+<script>
+    window.chatClass = new ChatClass($('#chat').data('uri'), true);
+    console.log("chat ready");
+</script>

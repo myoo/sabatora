@@ -1,11 +1,17 @@
 <section class="room">
 
 	<%= hidden_field :room, :id, value: @room.id %>
-
+    <canvas id="playspace_container"></canvas>
 	<%= render "chat/chat_form" %>
 
 	<div class="space01"></div>
 	<%= render "chat_log" %>
 
 </section>
+
+<script>
+    window.chatLogClass = new ChatLogClass();
+    window.chatClass = new ChatClass($('#chat').data('uri'), true);
+    console.log("chat ready");
+</script>
 
