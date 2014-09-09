@@ -9,7 +9,7 @@ class PlayroomController < ApplicationController
   end
 
   def get_main_chat_log
-    @chat_log = Message.where(room_id: @room.id).desc(:created_at)
+    @chat_log = Message.where(room_id: @room.id).asc(:created_at)
     respond_to do |format|
 
       format.json { render json: @chat_log.to_json }

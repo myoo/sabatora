@@ -1,8 +1,12 @@
 <div class="body">
-<p>名前：<%= @character.name %></p>
+<p><strong>名前：</strong><%= @character.name %></p>
 <p><%= image_tag @character.image %></p>
-<p>プロフィール：<%= @character.profile %></p>
-<p>パラメータ：<%= @character.paramaters %></p>
-<p>ステータス：<%= @character.status %></p>
-<p>メモ：<%= @character.memo %></p>
+<p><strong>プロフィール：</strong><br>
+	<%= @character.profile %></p>
+<p><strong>パラメータ：</strong><br>
+	<%= @character.paramaters %></p>
+<p><strong>ステータス：</strong><br>
+	<%= @character.status %></p>
+<p><strong>メモ：</strong><br>
+	<%= @character.memo.html_safe %></p>
 </div>

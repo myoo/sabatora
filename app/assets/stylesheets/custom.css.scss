@@ -6981,7 +6981,7 @@ a.thumbnail:hover, a.thumbnail:focus {
     vertical-align: middle;
 }
 .icheckbox_square-grey, .iradio_square-grey {
-    background: url("../img/icheck/square/grey.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: image_path"icheck/square/grey.png" no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: medium none;
     cursor: pointer;
     display: block;
@@ -7024,7 +7024,7 @@ a.thumbnail:hover, a.thumbnail:focus {
 }
 @media not all, not all, not all, not all {
 .icheckbox_square-grey, .iradio_square-grey {
-    background-image: url("../img/icheck/square/grey@2x.png");
+    background-image: image_path"icheck/square/grey@2x.png";
     background-size: 240px 24px;
 }
 }

@@ -22,8 +22,7 @@
               	<td><%= player.user.name %></td>
               	<td><%= player.player_role.name %></td>
               	<td><%= player.character.name unless player.character.nil? %></td>
-                <td class="center"><%= link_to '表　示', [@community, @room, player], :class=>"btn btn-success btn-sm" %>
-                <%= link_to '編　集', edit_community_room_player_path(@community, @room, player), :class=>"btn btn-warning btn-sm" %>
+                <td class="center"><%= link_to '確　認', [@community, @room, player], :class=>"btn btn-success btn-sm" %>
                 <%= link_to '参加辞退', [@community, @room, player], method: :delete, data: { confirm: '本当に参加をやめますか？' }, :class=>"btn btn-danger btn-sm" %></td>
               </tr>
             <% end %>
