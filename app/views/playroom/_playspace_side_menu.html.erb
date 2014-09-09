@@ -79,8 +79,8 @@
             <a class="accordion-toggle collapsed" data-toggle="collapse"
                data-parent="#side-nav" href="#log_dl"><i class="fa fa-arrow-circle-o-down"></i> <span class="name">Log DL</span></a>
             <ul id="log_dl" class="panel-collapse collapse">
-                <li><button class="panel" data-target="#session_log" data-toggle="modal" type="button"><a>セッションログ</a></button></li>
-                <li><a href="">その他</a></li>
+                <li><a data-toggle="modal" href="#chat_log_dl" >セッションログ</a></li>
+                <li><a href="" >そのほか</a></li>
             </ul>
         </li>
         <li class="visible-xs">
@@ -100,19 +100,4 @@
 
 <%= render "playroom/main_chat_log" %>
 
-<div id="session_log" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">チャットログダウンロード</h4>
-            </div>
-            <div class="modal-body">
-                <%= render "logs/download_form" %>
-            </div>
-
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
-
+    

@@ -7,7 +7,9 @@
 @import "variables";
 
 @import "compass";
-@import "bootstrap";
+
+
+@import "sass/bootstrap-original/bootstrap";
 @import "sass/bootstrap-original/_mixins";
 @import "sass/bootstrap-override";
 @import "sass/lib/_icheckbox";
