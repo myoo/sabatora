@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <% if @illustration.persisted? and @illustration.user == current_user %>
-      <%= f.association :characters, collection: Character.owned.all %>
+      <%= f.association :characters, collection: Character.owned(current_user).all %>
     <% end %>
     <%= f.input :image, as: :file %>
     <%= f.input :access, collection: Illustration::ACCESS_LEVEL %>

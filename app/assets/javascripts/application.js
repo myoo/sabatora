@@ -15,6 +15,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 
+//= require json2/json2
+//= require jcanvas/jcanvas
+
 //= require jquery-pjax/jquery.pjax
 //= require jquery-maskedinput/dist/jquery.maskedinput
 //= require parsleyjs/dist/parsley.min

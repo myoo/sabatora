@@ -8,7 +8,7 @@
   <strong>description:</strong>
   <%= @illustration.description %>
 </p>
-<%= @illustration.image %>
+<%= image_tag @illustration.image %>
 <%= @illustration.access %>
 
 <%= link_to 'Edit', edit_community_illustration_path(@community, @illustration) %> |

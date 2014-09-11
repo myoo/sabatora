@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       member do
         get :playspace, to: "playroom"
         get 'playspace/main_chat_log', to: "playroom#get_main_chat_log"
+        get 'playspace/illustrations', to: "playroom#get_illustrations"
       end
     end
   end

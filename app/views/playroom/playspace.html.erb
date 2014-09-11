@@ -1,7 +1,9 @@
 <section class="room">
 
 	<%= hidden_field :room, :id, value: @room.id %>
-    <canvas id="playspace_container"></canvas>
+    <div id="playspace_container">
+    <canvas id="playspace"></canvas>
+    </div>
 	<%= render "chat/chat_form" %>
 
 	<div class="space01"></div>
@@ -11,6 +13,7 @@
 
 <script>
     window.chatLogClass = new ChatLogClass();
+    window.playRoomClass = new PlayRoomClass($('#chat').data('uri'), true);
     window.chatClass = new ChatClass($('#chat').data('uri'), true);
     console.log("chat ready");
 </script>

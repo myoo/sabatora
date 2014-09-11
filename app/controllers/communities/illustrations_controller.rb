@@ -45,7 +45,7 @@ class Communities::IllustrationsController < ApplicationController
   # PATCH/PUT /communities/illustrations/1.json
   def update
     respond_to do |format|
-      if @illustration.update(communities_illustration_params)
+      if @illustration.update(illustration_params)
         format.html { redirect_to [@community, @illustration], notice: 'Illustration was successfully updated.' }
         format.json { render :show, status: :ok, location: [@community, @illustration] }
       else
@@ -68,6 +68,7 @@ class Communities::IllustrationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_communities_illustration
+    set_community
     @illustration =Illustration.find(params[:id])
   end
 
@@ -77,6 +78,6 @@ class Communities::IllustrationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def illustration_params
-    params.require(:illustration).permit(:name, :description, :image, :access)
+    params.require(:illustration).permit(:name, :description, :image, :access, :character_id)
   end
 end
