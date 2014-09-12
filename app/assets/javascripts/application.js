@@ -27,7 +27,7 @@
 //= require underscore/underscore
 //= require messenger/build/js/messenger
 
-//= require twitter/bootstrap
+//= require bootstrap-sprockets
 
 //= require bootstrap-window/dist/js/bootstrap-window.min
 

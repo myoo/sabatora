@@ -31,14 +31,15 @@ gem 'spring',        group: :development
 
 
 # Bootstrap
-#gem 'bootstrap-sass', '~> 3.2.0'
+gem 'sprockets'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
 gem 'compass-rails'
 
 gem 'less-rails'
 gem 'therubyracer'
-gem "twitter-bootstrap-rails"
+#gem "twitter-bootstrap-rails"
 gem "bootstrap-wysihtml5-rails"
 
 gem "font-awesome-rails"
@@ -60,6 +61,8 @@ gem "bower-rails", "~> 0.8.3"
 
 # db
 gem 'pg'
+
+gem 'annotate', '~> 2.6.5'
 
 gem "squeel"
 gem 'paranoia'
