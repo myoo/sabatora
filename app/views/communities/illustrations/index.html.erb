@@ -1,30 +1,38 @@
-<h1>Listing communities_illustrations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Illustration</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <section class="widget">
+            <header>
+                <h4>
+                    <i class="fa fa-users"></i>
+                    立ち絵一覧 
+                </h4>
+            </header>
+            <div class="body">
+                <ul class="row thumbnails">
+                  <% @illustrations.each do |illustration| %>
+                    <li class="col-sm-4">
+                        <div class="thumbnail">
+                            <%= link_to image_tag(illustration.image, :style=>"width:100%; height:100%;"), [@community, illustration], { :class=>"thumb", :gallery=>"gallery" } %>
+                      
+                            <div class="caption">
+                                <h4><%= illustration.name %></h4>
+                                <p>
+                                <%= link_to '編集', edit_community_illustration_path(@community, illustration), :class=>"btn btn btn-inverse" %>
+                                <%= link_to '削除', [@community, illustration], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger" %> 
+                              </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </section>
+      </div>
+    </div>
+    <%= link_to '新しく立ち絵を登録する', new_community_illustration_path(@community) %>
+    <div class="space01"></div>  
+    <%= link_to "戻る", :back %>
 
-  <tbody>
-    <% @illustrations.each do |illustration| %>
-      <tr>
-        <td><%= illustration.name %></td>
-        <td><%= illustration.description.slice(0, 20) %></td>
-        <td><%= illustration.image %></td>
-        <td><%= illustration.access %></td>
-        <td><%= link_to 'Show', [@community, illustration] %></td>
-	<td><%= link_to 'Edit', edit_community_illustration_path(@community, illustration) %></td>
-	<td><%= link_to 'Destroy', [@community, illustration], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Illustration', new_community_illustration_path(@community) %>
