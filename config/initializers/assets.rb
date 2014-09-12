@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( css/fontello/font/fontello.eot )
