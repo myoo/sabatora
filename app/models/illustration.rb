@@ -1,6 +1,7 @@
 class Illustration < ActiveRecord::Base
   belongs_to :user
   has_and_belongs_to_many :characters
+  has_many :statuses, class_name: "Character::Status"
 
   validates :name, :image, :access, presence: true
 

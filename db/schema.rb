@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908080534) do
+ActiveRecord::Schema.define(version: 20140912055637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 20140908080534) do
   add_index "backgrounds", ["community_id"], name: "index_backgrounds_on_community_id", using: :btree
   add_index "backgrounds", ["room_id"], name: "index_backgrounds_on_room_id", using: :btree
   add_index "backgrounds", ["user_id"], name: "index_backgrounds_on_user_id", using: :btree
+
+  create_table "character_statuses", force: true do |t|
+    t.integer  "illustration_id"
+    t.integer  "character_id"
+    t.integer  "room_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "character_statuses", ["character_id"], name: "index_character_statuses_on_character_id", using: :btree
+  add_index "character_statuses", ["illustration_id"], name: "index_character_statuses_on_illustration_id", using: :btree
+  add_index "character_statuses", ["room_id"], name: "index_character_statuses_on_room_id", using: :btree
 
   create_table "characters", force: true do |t|
     t.integer  "user_id"

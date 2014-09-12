@@ -1,9 +1,21 @@
 <section class="room">
 
+
 	<%= hidden_field :room, :id, value: @room.id %>
     <div id="playspace_container">
     <canvas id="playspace"></canvas>
     </div>
+    <section id="controller">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-9">
+                <section class="widget tiny">
+                    <div class="body">
+                        <h4>立ち絵変更</h4>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
 	<%= render "chat/chat_form" %>
 
 	<div class="space01"></div>
