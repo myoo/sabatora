@@ -1,7 +1,8 @@
 <section class="room">
 
 
-	<%= hidden_field :room, :id, value: @room.id %>
+  <%= hidden_field :room, :id, value: @room.id %>
+  <%= hidden_field :character, :id, value: @character.id  %>
     <div id="playspace_container">
     <canvas id="playspace"></canvas>
     </div>
@@ -11,6 +12,7 @@
                 <section class="widget tiny">
                     <div class="body">
                         <h4>立ち絵変更</h4>
+                        <select name="illustrations" id="illustrations"></select>
                     </div>
                 </section>
             </div>

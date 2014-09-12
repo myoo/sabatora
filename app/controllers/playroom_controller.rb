@@ -1,7 +1,8 @@
 class PlayroomController < ApplicationController
-  before_action :set_room
-  before_action :set_character, only: [:change_character]
   before_filter :authenticate_user!
+
+  before_action :set_room
+  before_action :set_character, only: [:playspace]
 
   # load_and_authorize_resource through: :community, class: "Room"
 
@@ -33,13 +34,6 @@ class PlayroomController < ApplicationController
     end
   end
 
-  def change_illustration
-    @illustration = Illustration.find(params[:illustration_id])
-    @status = @character.current_status(@room.id)
-    @status.illustration = @illustration
-    @status.save!
-  end
-
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_room
@@ -47,7 +41,7 @@ class PlayroomController < ApplicationController
   end
 
   def set_character
-    @character = Room.players.find_by(current_user).character
+    @character = @room.players.find_by(user: current_user).character
     return if @character.nil?
   end
 
