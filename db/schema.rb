@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912055637) do
+ActiveRecord::Schema.define(version: 20140912071056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 20140912055637) do
     t.integer  "retry_number"
     t.text     "profile"
     t.text     "memo"
-    t.text     "status"
     t.string   "image"
   end
 

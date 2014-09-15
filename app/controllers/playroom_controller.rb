@@ -1,15 +1,17 @@
 class PlayroomController < ApplicationController
-  before_action :set_room
-  before_action :set_character, only: [:change_character]
   before_filter :authenticate_user!
+
+  before_action :set_room
+  before_action :set_character, only: [:playspace]
 
   # load_and_authorize_resource through: :community, class: "Room"
 
   def playspace
+    @character = @room.character(current_user)
   end
 
   def get_main_chat_log
-    @chat_log = Message.where(room_id: @room.id).desc(:created_at)
+    @chat_log = Message.where(room_id: @room.id).asc(:created_at)
     respond_to do |format|
       format.json { render json: @chat_log.to_json }
     end
@@ -33,21 +35,15 @@ class PlayroomController < ApplicationController
     end
   end
 
-  def change_illustration
-    @illustration = Illustration.find(params[:illustration_id])
-    @status = @character.current_status(@room.id)
-    @status.illustration = @illustration
-    @status.save!
-  end
-
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_room
     @room =Room.find(params[:id])
+    @community = Community.find(params[:community_id])
   end
 
   def set_character
-    @character = Room.players.find_by(current_user).character
+    @character = @room.players.find_by(user: current_user).character
     return if @character.nil?
   end
 

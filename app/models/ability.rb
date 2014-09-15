@@ -15,6 +15,7 @@ class Ability
 
     # Room
     can :read, Room
+    can :character_status, Room
     can :join, Room, community: { joinings: { user_id: user.id  } } # コミュニティメンバーのみ
     can :create, Room, community: { joinings: { user_id: user.id  } } # コミュニティメンバーのみ
     can :manage, Room, owner: { id: user.id  }
@@ -23,7 +24,6 @@ class Ability
     can :read, Player
     can :create, Player, room: { community: { joinings: { user_id: user.id } } }
     can :update, Player, user_id: user.id
-    can :update, Player, room: { user_id: user.id }
     can :destroy, Player, user_id: user.id
     can :destroy, Player, room: { user_id: user.id }
 

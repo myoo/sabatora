@@ -27,6 +27,7 @@ Rails.application.routes.draw do
         get :playspace, to: "playroom"
         get 'playspace/main_chat_log', to: "playroom#get_main_chat_log"
         get 'playspace/illustrations', to: "playroom#get_illustrations"
+        get :character_status
       end
     end
   end
@@ -37,5 +38,10 @@ Rails.application.routes.draw do
 
 
 
-  resources :characters
+  resources :characters do
+    member do
+      post :update_params
+      post :edit_params
+    end
+  end
 end

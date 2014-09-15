@@ -1,7 +1,9 @@
 <section class="room">
-
-
-	<%= hidden_field :room, :id, value: @room.id %>
+  <!-- Content -->
+    <%= hidden_field :room, :id, value: @room.id %>
+  <% if @character.present? %>
+      <%= hidden_field :character, :id, value: @character.id  %>
+  <% end %>
     <div id="playspace_container">
     <canvas id="playspace"></canvas>
     </div>
@@ -11,17 +13,41 @@
                 <section class="widget tiny">
                     <div class="body">
                         <h4>立ち絵変更</h4>
+                        <select name="illustrations" id="illustrations"></select>
                     </div>
                 </section>
             </div>
         </div>
     </section>
+  <div class="row">
+    <div class="col-md-3 widget-container ui-sortable">
+    <% unless @character.nil? %>
+      <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
+        <header>
+	      <h5><%= @character.name %>ステータス</h5>
+	      <div class="widget-controls">
+	            <a data-widgster="load" title="Reload" href="#"><i class="glyphicon glyphicon-refresh"></i></a>
+	            <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
+	            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
+	            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+	         </div>
+	     </header>
+		<%= render :partial => "character_status" %>
+      </section>
+
+      <% end %>
+  </div>
+</div>
+
 	<%= render "chat/chat_form" %>
 
-	<div class="space01"></div>
-	<%= render "chat_log" %>
+	<div class="session_room_bottom">
+		<div class="space01"></div>
+		<%= render "chat_log" %>
+	</div>
 
 </section>
+		
 
 <script>
     window.chatLogClass = new ChatLogClass();

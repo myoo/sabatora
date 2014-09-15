@@ -64,9 +64,10 @@ section.room{
 
 }
 
-/* チャット画面のプロフィール部分一旦改造 */
-#menu .profile {
-    box-sizing: content-box;
-    border-top: none!important;
-}
+    div.session_room_bottom{
+        padding: 12px 16px;
+        margin: 10% auto 10px;  
+        width: 85%;
+        position: relative;
+    }
 

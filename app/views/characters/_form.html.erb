@@ -5,6 +5,12 @@
 	  <div class="form-inputs">
 	    <%= f.input :name %>
 	    <%= f.input :about %>
+	    <%= f.input :system_id, collection: System::TITLES.sort.map {|k,v| [k, v]},:include_blank => false %>
+	    <%= f.input :image, as: :file %>
+	    <%= f.input :paramaters %>
+	    <%= f.input :profile %>
+	    <%= f.input :status %>
+	    <%= f.input :memo %>
 	    <%= f.input :user_id, as: :hidden %>
 	    <%= f.association :illustrations, collection: Illustration.usables(current_user) %>
 	  </div>
