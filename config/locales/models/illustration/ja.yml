@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      illustration: 立ち絵
+
+
+    attributes:
+      illustration:
+        name: 名前
+        image: 画像
+        access: 公開範囲
+        description: 説明
+
