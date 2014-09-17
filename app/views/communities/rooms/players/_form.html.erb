@@ -1,6 +1,6 @@
 <%= simple_form_for([@community, @room, @player]) do |f| %>
   <%= f.error_notification %>
-
+<%= render 'common/error_messages', object: f.object %>
 <div class="space01"></div>
 <div class="row">
   <div class="col-md-offset-1 col-md-10">

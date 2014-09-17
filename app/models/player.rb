@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # == Schema Information
 #
 # Table name: players
@@ -24,4 +25,12 @@ class Player < ActiveRecord::Base
   belongs_to :room, inverse_of: :players
 
   validates :user, :room, :player_role, presence: true
+  validates :user, :character, uniqueness: { scope: :room }
+  validate :only_player_has_character
+
+  def only_player_has_character
+    player_role = PlayerRole.find(player_role_id)
+
+    errors.add(:character_id, "：　キャラクターを使用できるのはプレイヤーのみです") if player_role.name != 'player' && character_id.present?
+  end
 end
