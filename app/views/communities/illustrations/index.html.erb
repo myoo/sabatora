@@ -1,4 +1,6 @@
-
+<h1>立ち絵一覧</h1>
+<p>登録された立ち絵の一覧です。</p>
+<div class="space01"></div>  
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <section class="widget">
@@ -6,6 +8,7 @@
                 <h4>
                     <i class="fa fa-users"></i>
                     立ち絵一覧 
+                    <%= link_to '新しく立ち絵を登録する', new_community_illustration_path(@community), :class=>"btn btn-xs btn-info pull-right" %>
                 </h4>
             </header>
             <div class="body">
@@ -30,7 +33,7 @@
         </section>
       </div>
     </div>
-    <%= link_to '新しく立ち絵を登録する', new_community_illustration_path(@community) %>
+    
     <div class="space01"></div>  
     <%= link_to "戻る", :back %>
 
