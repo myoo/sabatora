@@ -2,7 +2,13 @@
 <h1>セッションルームの編集</h1>
 <p>セッションルームの編集を行います。</p>
 <div class="space01"></div>
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
 <div class="space01"></div>
 <%= link_to '確認', [@community, @room] %> |
 <%= link_to "Back", :back %>

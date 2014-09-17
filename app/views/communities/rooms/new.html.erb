@@ -2,8 +2,13 @@
 <h1>新しくセッションルームを作成する</h1>
 <p>新しいセッションルームを作成します。</p>
 <div class="space01"></div>
-
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
 
 <div class="space01"></div>
 <%= link_to 'セッションルーム一覧', community_rooms_path(@community) %>｜<%= link_to "戻る", :back %>
