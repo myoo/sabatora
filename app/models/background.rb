@@ -31,7 +31,7 @@ class Background < ActiveRecord::Base
 
   ACCESS_LEVEL = {
     PUBLIC: 0,
-    COMMUNITY_ONLY: 1
+    COMMUNITY_ONLY: 1,
     USER_ONLY: 2
   }
 

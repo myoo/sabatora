@@ -7,18 +7,7 @@
     <div id="playspace_container">
     <canvas id="playspace"></canvas>
     </div>
-    <section id="controller">
-        <div class="row">
-            <div class="col-md-3 col-md-offset-9">
-                <section class="widget tiny">
-                    <div class="body">
-                        <h4>立ち絵変更</h4>
-                        <select name="illustrations" id="illustrations"></select>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </section>
+    
   <div class="row">
     <div class="col-md-3 widget-container ui-sortable">
     <% unless @character.nil? %>
@@ -45,6 +34,19 @@
 		<div class="space01"></div>
 		<%= render "chat_log" %>
 	</div>
+  <section id="controller">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-9">
+                <section class="widget tiny">
+                    <div class="body">
+                        <h4>立ち絵変更</h4>
+                        <select name="illustrations" id="illustrations"></select>
+                        <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
 
 </section>
 		
