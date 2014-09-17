@@ -9,7 +9,7 @@
 	    <%= f.input :image, as: :file %>
 	    <%= f.input :paramaters %>
 	    <%= f.input :profile %>
-	    <%= f.input :status %>
+	
 	    <%= f.input :memo %>
 	    <%= f.input :user_id, as: :hidden %>
 	    <%= f.association :illustrations, collection: Illustration.usables(current_user) %>
