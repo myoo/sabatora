@@ -1,14 +1,14 @@
-
-
 <section class="mypage">
-          
+<h1>背景画像一覧</h1>
+<p>登録された背景の一覧です。</p>
+<div class="space01"></div>          
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <section class="widget">
             <header>
                 <h4>
                     <i class="fa fa-font"></i>
-                    背景画像一覧
+                    使用可能画像一覧
                 </h4>
             </header>
             <div class="body">
@@ -22,9 +22,12 @@
                                 <h4><%= background.name %></h4>
                                 <p><%= background.about %></p>
                                 <p>
-                                <%= link_to '背景にする', [@community, background], :class=>"btn btn-info" %>
-                                <%= link_to '編集', edit_community_background_path(@community, background), :class=>"btn btn btn-inverse" %>
-                                <%= link_to '削除', [@community, background], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger" %>  
+                                    <!-- セッションルームから遷移してきたときに表示する -->
+                                    <%= link_to '背景にする', [@community, background], :class=>"btn btn-info" %>
+                                    <!-- セッションルームから遷移してきたときに表示するここまで -->
+
+                                    <%= link_to '編集', edit_community_background_path(@community, background), :class=>"btn btn btn-inverse" %>
+                                    <%= link_to '削除', [@community, background], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger" %>  
                             </div>
                         </div>
                     </li>
