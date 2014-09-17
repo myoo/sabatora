@@ -26,6 +26,11 @@
 				<p><strong>説明：</strong><%= @character.about %></p>
 				<p><strong>システム：</strong><%= System::TITLES.key(@character.system_id) %></p>
 			</div>
+			<% if @character.illustrations.count > 0 %>
+				<div class="well">
+					
+				</div>
+			<% end %>
 			<div class="well">		
 				<strong>プロフィール</strong><br />
 				<p><%= @character.profile.html_safe %></p>
