@@ -36,7 +36,15 @@ section.room{
     span.right{
         text-align: right;
     }
+    
+    /*
+    チャット
+    */
 
+    #chat{ 
+        margin-top: calc(12%);
+        height: calc(70% - 150px) !important;
+    }
 
     //     
     // チャットログ
