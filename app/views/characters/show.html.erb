@@ -26,11 +26,15 @@
 				<p><strong>説明：</strong><%= @character.about %></p>
 				<p><strong>システム：</strong><%= System::TITLES.key(@character.system_id) %></p>
 			</div>
-			<% if @character.illustrations.count > 0 %>
-				<div class="well">
-					
-				</div>
-			<% end %>
+
+			<div class="well">
+				<p><strong>立ち絵</strong></p>
+				<% if @character.illustrations.count > 0 %>
+					<% @character.illustrations.each do |illust| %>
+						<%= image_tag illust.image_url(:thumb) %>
+					<% end %>
+				<% end %>
+			</div>
 			<div class="well">		
 				<strong>プロフィール</strong><br />
 				<p><%= @character.profile.html_safe %></p>
