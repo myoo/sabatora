@@ -1,4 +1,0 @@
-{
-    "strict"        : true,     // true: Requires all functions run in ES5 Strict Mode
-    "trailing"      : false,    // true: Prohibit trailing whitespaces
-}
