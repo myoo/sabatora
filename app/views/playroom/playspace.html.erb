@@ -48,7 +48,9 @@
                     <div class="body">
                         <h4>立ち絵変更</h4>
                         <select name="illustrations" id="illustrations"></select>
-                        <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
+                        <% if @room.backgrounds.count > 0 %>
+                          <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
+                        <% end %>
                     </div>
                 </section>
             </div>

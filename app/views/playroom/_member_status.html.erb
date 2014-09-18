@@ -1,5 +1,6 @@
 <div class="panel-group" id="status_list">
     <% @room.players.each do |player| %>
+        <% if player.user != current_user && player.character.present? %> 
         <div class="panel">
             <div class="panel-heading">
                 <%= link_to player.character.name, "#character_#{player.character.id}", data: { toggle: "collapse" }, class: "accordion-toggle collapsed" %>
@@ -8,5 +9,6 @@
                 <%= render partial: "character_status", locals: { character: player.character} %>
             </div>
         </div>
+        <% end %>
     <% end %>
 </div>
