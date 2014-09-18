@@ -1,6 +1,13 @@
 <h1>新しく立ち絵を登録する</h1>
 <p>新しく立ち絵を登録します。</p>
+<div class="space01"></div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<section class="widget"> 
+				<%= render 'form' %>
+			</section>
+		</div>
+	</div>
 <div class="space01"></div>  
-<%= render 'form' %>
-<div class="space01"></div>  
+<%= link_to '立ち絵一覧', community_illustrations_path(@community) %>|
 <%= link_to '戻る', community_illustrations_path(@community) %>
