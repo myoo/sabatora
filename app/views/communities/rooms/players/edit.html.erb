@@ -1,10 +1,16 @@
 <div class="container">
 <h1>プレイヤーの編集</h1>
 <p>参加するキャラクターを変更したり、役割を変えたりします。</p>
-
-<%= render 'form' %>
+<div class="space01"></div>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
 <div class="space01"></div>
 <%= link_to '確認', [@community, @room, @player] %> |
-<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room) %>|<%= link_to "Back", :back %>
+<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room) %>|<%= link_to "戻る", :back %>
 <div class="space01"></div>
 </div>

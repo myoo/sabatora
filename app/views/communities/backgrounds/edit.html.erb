@@ -3,8 +3,13 @@
 	<h1>背景画像の編集</h1>
 	<p>登録された背景画像の情報を編集します。</p>
 	<div class="space01"></div>
-
-	<%= render 'form' %>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<section class="widget">
+				<%= render 'form' %>
+			<section>
+		</div>
+	</div>
 	<div class="space01"></div>
 
 	<%= link_to '確認', [@community, @background] %> |
