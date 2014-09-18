@@ -28,6 +28,7 @@ Rails.application.routes.draw do
         get 'playspace/main_chat_log', to: "playroom#get_main_chat_log"
         get 'playspace/illustrations', to: "playroom#get_illustrations"
         get :character_status
+        get :member_statuses, to: "playroom#get_member_statuses"
       end
     end
   end

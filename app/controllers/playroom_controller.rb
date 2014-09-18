@@ -35,6 +35,11 @@ class PlayroomController < ApplicationController
     end
   end
 
+  def get_member_statuses
+    html = render_to_string(partial: "member_status")
+    render html: html
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_room

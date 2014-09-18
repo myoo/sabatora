@@ -10,21 +10,28 @@
 
   <div class="row">
     <div class="col-md-3 widget-container ui-sortable">
-    <% unless @character.nil? %>
-      <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
-        <header>
-	      <h5><%= @character.name %>ステータス</h5>
-	      <div class="widget-controls">
-	            <a data-widgster="load" title="Reload" href="#"><i class="glyphicon glyphicon-refresh"></i></a>
-	            <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
-	            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
-	            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
-	         </div>
-	     </header>
-		<%= render :partial => "character_status" %>
-      </section>
-
+        <% unless @character.nil? %>
+          <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
+            <header>
+    	      <h5>My Status</h5>
+                <%= render "widget_controls" %>
+    	     </header>
+             <div class="body">
+        		<%= render :partial => "character_status", locals: { character: @character} %>
+            </div>
+          </section>
       <% end %>
+  </div>
+  <div class="col-md-3 widget-container ui-sortable">
+      <section id="member_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= member_statuses_community_room_path(@community, @room) %>">
+            <header>
+              <h5>Member Status</h5>
+             <%= render "widget_controls" %>
+             </header>
+             <div class="body">
+            <%= render "member_status" %>
+             </div>
+      </section>
   </div>
 </div>
 
