@@ -1,11 +1,42 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
 <h1><%= @room.name %>参加キャラクター詳細</h1>
 <p>セッションで使用する参加キャラクターの詳細です。</p>
 <div class="space01"></div>
 
-<p><strong>キャラクター名：</strong><%= @player.character.name unless @player.character.nil? %></p>
-<p><strong>役割：</strong><%= @player.player_role.name %></p>
+
+
+<div class="row">
+		<div class="col-sm-offset-1 col-sm-10 col-xs-12">
+			<div class="row">
+				<div class="col-sm-3 col-xs-12">
+					<p><%= image_tag @player.character.image %></p>
+				</div>
+				<div class="col-sm-9 col-xs-12">
+					<div class="well">
+						<p><strong>キャラクター名：</strong><%= @player.character.name unless @player.character.nil? %></p>
+						<p><strong>キャラ作成者：</strong><%= @player.character.user.name %></p>
+						<p><strong>役割：</strong><%= @player.player_role.name %></p>
+					</div>
+					<div class="well">
+						<p><strong>パラメータ</strong></p>
+						<%= @player.character.paramaters %>
+					</div>
+				</div>
+			</div>
+			<div class="well">
+				<p><strong>説明：</strong><%= @player.character.about %></p>					
+				<strong>プロフィール</strong><br />
+				<p><%= @player.character.profile.html_safe %></p>
+
+				<strong>ステータス</strong><br />
+				<p><%= @player.character.status.html_safe %></p>
+
+				<strong>メモ</strong><br />
+				<p><%= @player.character.memo.html_safe %></p>
+			</div>
+		</div>
+	</div>
+
 
 <div class="space01"></div>
 <%= link_to '編集', edit_community_room_player_path(@community, @room, @player) %> |

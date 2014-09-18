@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>Sabatora</title>
+  <meta charset="UTF-8" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= yield :head %>
 </head>
-<body class="background-dark">
+<body>
 
     <div class="wrap">
     <%= render :partial => "/layouts/user_nav" %>

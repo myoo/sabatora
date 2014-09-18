@@ -40,7 +40,7 @@ section.community-main{
 
 #chat{
     padding: 12px 16px;
-    margin: 10% auto 10px;  
+    margin: 5% auto 10px;  
     font-size: 120%;
     // min-height: 80%;
     // max-height: 500px;
@@ -109,4 +109,14 @@ section.mypage{
     overflow: hidden;
 }
 
+.widget {
+    h1, h2, h3, h4, h5, h6 {
+	color: white;
+    }
+    color: white;
+}
+
+/*
+    ごり押しで直す。同じCSSをここにコピペします
+*/
 

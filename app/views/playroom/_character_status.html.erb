@@ -1,0 +1,11 @@
+<div class="body">
+<p><%= image_tag @character.image %></p>
+<p><strong>プロフィール：</strong><br>
+	<%= @character.profile %></p>
+<p><strong>パラメータ：</strong><br>
+	<%= @character.paramaters %></p>
+<p><strong>ステータス：</strong><br>
+	<%= @character.status %></p>
+<p><strong>メモ：</strong><br>
+	<%= @character.memo.html_safe %></p>
+</div>

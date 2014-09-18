@@ -11,9 +11,9 @@ class System
 
   attr_reader :dice, :title, :about, :help
 
-  def initialize(room, title = TITLES[:plane])
+  def initialize(room = nil, title = TITLES[:plane])
     @dice = new_dice
-    include_parser(room)
+    include_parser(room) if room
 
     @title = set_title
     @about = set_about
@@ -21,5 +21,6 @@ class System
   end
 
   def new_character_params
+    create_character_params
   end
 end

@@ -7,9 +7,11 @@
 @import "variables";
 
 @import "compass";
-@import "bootstrap-original/bootstrap";
-@import "bootstrap-original/_mixins";
-@import "bootstrap-override";
+
+
+@import "sass/bootstrap-original/bootstrap";
+@import "sass/bootstrap-original/_mixins";
+@import "sass/bootstrap-override";
 @import "sass/lib/_icheckbox";
 @import "sass/lib/_datepicker";
 @import "sass/lib/_select2";

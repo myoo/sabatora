@@ -1,5 +1,5 @@
 class Communities::RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy, :playspace]
+  before_action :set_room, only: [:show, :edit, :update, :destroy, :playspace, :character_status]
   before_action :set_community
 
   before_filter :authenticate_user!, except: [:index]
@@ -68,6 +68,17 @@ class Communities::RoomsController < ApplicationController
       format.html { redirect_to community_rooms_path(@community), notice: 'Room was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def character_status
+    if params[:user_id]
+      @character = @room.character(User.find(params[:user_id]))
+    else
+      @character = @room.character(current_user)
+    end
+
+        html = render_to_string partial: 'playroom/character_status', collection: [@character]
+        render html: html
   end
 
   private
