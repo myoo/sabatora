@@ -44,5 +44,3 @@ class @RoomClass
     $('#chat').css "height", $(window).height() * 0.6
     $(window).scrollTop = $(window).scrollHeight
 
-$ ->
-  window.roomClass = new RoomClass($('#chat').data('uri'), true)

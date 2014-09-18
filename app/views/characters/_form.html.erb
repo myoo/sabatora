@@ -12,7 +12,10 @@
 	
 	    <%= f.input :memo %>
 	    <%= f.input :user_id, as: :hidden %>
-	    <%= f.association :illustrations, collection: Illustration.usables(current_user) %>
+	    <%= f.input :illustration do %>
+		    <%= f.select :illustration_ids, Illustration.usables(current_user).map { |f| [f.name, f.id, { 'data-img-src' => f.image_url(:thumb) }] }, { prompt: "立ち絵を選択してください" }, { multiple: true, limit: 20, class: "image-picker show-labels show-html" } %>
+	    <% end %>
+
 	  </div>
 
 	  <div class="form-actions">
@@ -21,3 +24,10 @@
 	</div>
 </div
 <% end %>
+
+<script>
+$('#character_illustration_ids').imagepicker({
+	hide_select: false,
+	show_label: true
+	});
+</script>

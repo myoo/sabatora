@@ -48,6 +48,9 @@
 //= require lib/jquery.nestable
 //= require lib/rickshaw/rickshaw
 
+// non-bower-install
+//= require image-picker/image-picker
+
 //= require js/app
 //= require js/forms
 //= require js/forms-article
