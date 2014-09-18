@@ -5,7 +5,15 @@
 	  <div class="form-inputs">
 	    <%= f.input :name %>
 	    <%= f.input :about %>
+	    <%= f.hint '簡単な説明を入力してください' %>
 	    <%= f.input :system_id, collection: System::TITLES.sort.map {|k,v| [k, v]},:include_blank => false %>
+	    <% if @character.image? %>
+		    <%= image_tag  @character.image_url %>
+		    <%= f.input :remove_image, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
+		    	<%= f.check_box :remove_image %>
+	    	<% end %>
+		    <%= f.hidden :character_cache if @character.image_cache %>
+	    <% end %>
 	    <%= f.input :image, as: :file %>
 	    <%= f.input :paramaters %>
 	    <%= f.input :profile %>
@@ -15,7 +23,7 @@
 	    <%= f.input :illustration do %>
 		    <%= f.select :illustration_ids, Illustration.usables(current_user).map { |f| [f.name, f.id, { 'data-img-src' => f.image_url(:thumb) }] }, { prompt: "立ち絵を選択してください" }, { multiple: true, limit: 20, class: "image-picker show-labels show-html" } %>
 	    <% end %>
-
+	    <%= f.hint '立ち絵を選択してください' %>
 	  </div>
 
 	  <div class="form-actions">
