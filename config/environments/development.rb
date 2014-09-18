@@ -39,5 +39,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # for websocket_rails
-  config.middleware.delete Rack::Lock
+  config.middleware.delete Rack::Lock 
+
+  # Slim : no minify
+  Slim::Engine.default_options[:pretty] = true
 end
