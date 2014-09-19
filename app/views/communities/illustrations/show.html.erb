@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>name:</strong>
+  <strong>名前:</strong>
   <%= @illustration.name %>
 </p>
 <p>
-  <strong>description:</strong>
+  <strong>説明:</strong>
   <%= @illustration.description %>
 </p>
 <%= image_tag @illustration.image %>
 <%= @illustration.access %>
 
-<%= link_to 'Edit', edit_community_illustration_path(@community, @illustration) %> |
-<%= link_to 'Back', community_illustrations_path(@community) %>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '編集', edit_community_illustration_path(@community, @illustration) %></li>
+		<li><%= link_to '戻る', community_illustrations_path(@community) %></li>
+	</ol>
+</section>

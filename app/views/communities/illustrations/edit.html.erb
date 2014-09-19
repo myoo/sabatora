@@ -8,6 +8,10 @@
 			</section>
 		</div>
 	</div>
-<div class="space01"></div> 
-<%= link_to '確認', [@community, @illustration] %> |
-<%= link_to '戻る', community_illustrations_path(@community) %>
+<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '確認', [@community, @illustration] %></li>
+		<li><%= link_to '戻る', community_illustrations_path(@community) %></li>
+	</ol>
+</section>

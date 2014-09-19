@@ -12,6 +12,11 @@
 	</div>
 	<div class="space01"></div>
 
-	<%= link_to '確認', [@community, @background] %> |
-	<%= link_to '背景画像一覧', community_backgrounds_path(@community) %>|<%= link_to "戻る", :back %>
+	<section class="widget">
+  		<ol class="breadcrumb">
+    		<li><%= link_to '確認', [@community, @background] %></li>
+    		<li><%= link_to '背景画像一覧', community_backgrounds_path(@community) %></li>
+    		<li><%= link_to "戻る", :back %></li>
+    	</ol>
+    </section>
 </div>
