@@ -25,15 +25,18 @@ class @RoomClass
 
   sendBackground: (event) =>
     background_id = $('#background_select').val()
+    console.log background_id
 
     message = { room_id: @room_id, user_id: @user_id, background_id: background_id }
     @dispatcher.trigger 'background_changed', message
     console.log("background change")
 
   setBackground: (message) =>
-    target = $('#background')
+    target = $('body')
     console.log(message.background_url)
-    target.css "background-image", "url(#{message.background_url})"
+    target.css
+      background: "url(#{message.background_url})"
+      backgroundSize: "cover"
 
   setRoomConfig: () =>
     @sendBackground()

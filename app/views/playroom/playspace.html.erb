@@ -65,6 +65,7 @@
 
 <script>
     window.chatLogClass = new ChatLogClass();
+    window.RoomClass = new RoomClass($('#chat').data('uri'), true);
     window.playRoomClass = new PlayRoomClass($('#chat').data('uri'), true);
     window.chatClass = new ChatClass($('#chat').data('uri'), true);
     console.log("chat ready");
