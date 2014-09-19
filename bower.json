@@ -1,15 +1,18 @@
 {
-  "lib": {
-    "name": "bower-rails generated lib assets",
-    "dependencies": {
-      // "threex"      : "git@github.com:rharriso/threex.git",
-      // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
-    }
-  },
-  "vendor": {
-    "name": "bower-rails generated vendor assets",
-    "dependencies": {
-      // "three.js"    : "https://raw.github.com/mrdoob/three.js/master/build/three.js"
-    }
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap-window": "latest",
+    "jquery-ui-bootstrap": "latest",
+    "jquery-pjax": "latest",
+    "jquery-maskedinput": "latest",
+    "parsleyjs": "latest",
+    "iCheck": "latest",
+    "select2": "latest",
+    "autogrow-textarea": "latest",
+    "underscore": "latest",
+    "backbone": "latest",
+    "messenger": "latest",
+    "bootstrap-datepicker": "latest",
+    "bootstrap-select": "latest"
   }
 }
