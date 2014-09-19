@@ -40,25 +40,22 @@ section.community-main{
 
 #chat{
     padding: 12px 16px;
-
     margin: 5% auto 10px;  
 
     font-size: 120%;
-    // min-height: 80%;
+    // min-height: 85%;
     // max-height: 500px;
     width: 80%;
-    //height: calc(80% - 60px);
+    //height: calc(85% - 50px);
     min-height: 200px;
     overflow: scroll;
     overflow-x: hidden;  
     border: none;
-    background: #000;
     display: block;
     position: relative;
-    filter:alpha(opacity=50);
-    -moz-opacity: 0.5;
-    opacity: 0.5;
     z-index: 999;
+    background: none repeat scroll 0 0 rgba(51, 51, 51, 0.5);
+    color: #f8f8f8;
 
     dt{
         border-bottom: none;

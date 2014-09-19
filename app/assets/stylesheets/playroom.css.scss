@@ -30,8 +30,12 @@ section.room{
         width: 100%;
         min-height: calc(100% - 75px);
         position: absolute;
-        border: solid red 1px;  //あとでけす
-    }
+        /* box-shadow */
+        box-shadow:rgba(68, 52, 71, 0.54) 3px 8px 8px -2px;
+        -webkit-box-shadow:rgba(68, 52, 71, 0.54) 3px 8px 8px -2px;
+        -moz-box-shadow:rgba(68, 52, 71, 0.54) 3px 8px 8px -2px;
+
+     }
 
     span.right{
         text-align: right;
@@ -42,8 +46,8 @@ section.room{
     */
 
     #chat{ 
-        margin-top: calc(12%);
-        height: calc(70% - 150px) !important;
+        margin-top: calc(5%);
+        height: calc(80% - 150px) !important;
     }
 
     //     
