@@ -2,8 +2,18 @@
 <h1>エントリー</h1>
 <p>セッションに参加します。</p>
 <div class="space01"></div>
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
 <div class="space01"></div>
-<%= link_to '参加者一覧', community_room_players_path(@community, @room) %>｜<%= link_to "戻る", :back %>
-<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '参加者一覧', community_room_players_path(@community, @room) %></li>
+		<li><%= link_to "戻る", :back %></li>
+	</ol>
+</section>
 </div>

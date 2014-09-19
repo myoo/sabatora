@@ -3,8 +3,13 @@
 <p>コミュニティを作成します。</p>
 
 <div class="space01"></div>
-
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
 
 <div class="space01"></div>
 <%= link_to 'コミュニティ一覧', communities_path %>|<%= link_to "戻る", :back %>

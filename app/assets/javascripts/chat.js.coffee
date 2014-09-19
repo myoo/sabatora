@@ -1,3 +1,6 @@
+#
+# メインチャット
+#
 class @ChatClass
   constructor: (url, useWebsocket) ->
     # これがソケットのディスパッチャー
@@ -15,6 +18,7 @@ class @ChatClass
     $('form#chat_form').on 'submit', (e) =>
       e.preventDefault()
       @sendMessage()
+
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行
     @dispatcher.bind 'new_message', @receiveSystemMessage
     @channel.bind 'room_message', @receiveMessage
@@ -61,7 +65,31 @@ class @ChatClass
     $('#chat').append "<dt class='system'>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
     $('#chat').stop().scrollTo('100%', 1500)
 
-$ ->
-  window.chatClass = new ChatClass($('#chat').data('uri'), true)
-  console.log("chat ready")
 
+#
+# チャットログの取得
+#
+class @ChatLogClass
+  constructor: () ->
+    # wm = new WindowManager({
+    #   container: "#windowPane",
+    #   windowTemplate: $('#basic_window_template').html()
+    # })
+    # window.wm = wm
+    @bindEvents()
+
+  bindEvents: () =>
+    @setMainChatLog()
+
+  setMainChatLog: () =>
+    $("#main_chat_log").on 'show.bs.collapse', (e) =>
+      $.ajax "#{$(location).attr('pathname')}/main_chat_log",
+        type: 'get',
+        success: (data) =>
+          $("#main_chat_log").html @parseLog(data)
+
+  parseLog: (data) ->
+    buf = "<dl>"
+    for line in data
+      buf += "<dt>#{line.user_name}</dt><dd>#{line.body}</dd>"
+    buf += "</dl>"

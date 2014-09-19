@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
   has_many :communities, through: :joinings
   has_many :players
   has_many :rooms, through: :players
+  has_many :illustrations
 
   validates :name, uniqueness: true
 

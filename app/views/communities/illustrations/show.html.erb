@@ -1,0 +1,17 @@
+<p>
+  <strong>名前:</strong>
+  <%= @illustration.name %>
+</p>
+<p>
+  <strong>説明:</strong>
+  <%= @illustration.description %>
+</p>
+<%= image_tag @illustration.image %>
+<%= @illustration.access %>
+
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '編集', edit_community_illustration_path(@community, @illustration) %></li>
+		<li><%= link_to '戻る', community_illustrations_path(@community) %></li>
+	</ol>
+</section>

@@ -1,22 +1,40 @@
 <%= simple_form_for(@character) do |f| %>
   <%= f.error_notification %>
-<div class="row">
-	<div class="col-sm-offset-1 col-sm-10">
+
 	  <div class="form-inputs">
 	    <%= f.input :name %>
 	    <%= f.input :about %>
+	    <%= f.hint '※簡単な説明を入力してください' %>
 	    <%= f.input :system_id, collection: System::TITLES.sort.map {|k,v| [k, v]},:include_blank => false %>
-	    <%= f.input :image, as: :file %>
+	    <% if @character.image? %>
+		    <%= image_tag  @character.image_url %>
+		    <%= f.input :remove_image, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
+		    	<%= f.check_box :remove_image %>
+	    	<% end %>
+		    <%= f.hidden :character_cache if @character.image_cache %>
+	    <% end %>
+	    <%= f.input :image, as: :file, input_html: { class: 'image_load_form' } %>
 	    <%= f.input :paramaters %>
+	    <%= f.hint '※自動的に作成されます。内容を変更したい場合、キャラ作成後、キャラを編集し、データを上書きして保存してください。' %>
 	    <%= f.input :profile %>
-	    <%= f.input :status %>
+	
 	    <%= f.input :memo %>
 	    <%= f.input :user_id, as: :hidden %>
+	    <%= f.input :illustration do %>
+		    <%= f.select :illustration_ids, Illustration.usables(current_user).map { |f| [f.name, f.id, { 'data-img-src' => f.image_url(:thumb) }] }, { prompt: "立ち絵を選択してください" }, { multiple: true, limit: 20, class: "image-picker show-labels show-html" } %>
+	    <% end %>
+	    <%= f.hint '※立ち絵を選択してください。' %>
 	  </div>
 
 	  <div class="form-actions">
 	    <%= f.button :submit %>
 	  </div>
-	</div>
-</div
+
 <% end %>
+
+<script>
+$('#character_illustration_ids').imagepicker({
+	hide_select: false,
+	show_label: true
+	});
+</script>

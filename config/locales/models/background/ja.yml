@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      background: 背景画像
+
+
+    attributes:
+      background:
+        name: 名前
+        about: 説明
+        image: 画像
+        access: 公開範囲
+

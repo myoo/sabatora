@@ -6,6 +6,9 @@
 asset 'bootstrap-window'
 asset 'jquery-ui-bootstrap'
 
+asset 'json2'
+asset 'jcanvas'
+
 asset 'jquery-pjax'
 asset 'jquery-maskedinput'
 asset 'parsleyjs'

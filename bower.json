@@ -3,6 +3,8 @@
   "dependencies": {
     "bootstrap-window": "latest",
     "jquery-ui-bootstrap": "latest",
+    "json2": "latest",
+    "jcanvas": "latest",
     "jquery-pjax": "latest",
     "jquery-maskedinput": "latest",
     "parsleyjs": "latest",

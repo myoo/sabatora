@@ -15,13 +15,16 @@
 //= require jquery_ujs
 //= require jquery-ui
 
+//= require json2/json2
+//= require jcanvas/jcanvas
+
 //= require jquery-pjax/jquery.pjax
 //= require jquery-maskedinput/dist/jquery.maskedinput
 //= require parsleyjs/dist/parsley.min
 //= require iCheck/icheck.min
 //= require select2/select2.min
-//= require backbone/backbone
 //= require underscore/underscore
+//= require backbone/backbone
 //= require messenger/build/js/messenger
 
 //= require bootstrap-sprockets
@@ -44,6 +47,9 @@
 //= require lib/bootstrap-colorpicker
 //= require lib/jquery.nestable
 //= require lib/rickshaw/rickshaw
+
+// non-bower-install
+//= require image-picker/image-picker
 
 //= require js/app
 //= require js/forms

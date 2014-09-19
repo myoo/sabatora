@@ -1,0 +1,17 @@
+<%= simple_form_for([@community, @illustration]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <% if @illustration.persisted? and @illustration.user == current_user %>
+      <%= f.association :characters, collection: Character.owned(current_user).all %>
+    <% end %>
+    <%= f.input :image, as: :file, input_html: { class: 'image_load_form' } %>
+    <%= f.input :access, collection: Illustration::ACCESS_LEVEL %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
