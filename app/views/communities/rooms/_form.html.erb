@@ -18,7 +18,7 @@
     <%= f.input :about %>
 	  <%= f.input :system_id, collection: System::TITLES %>
 	  <%= f.input :active_background_id, collection: Background.where(room: @room) %>
-    <%= f.input :started_at %>
+    <%= f.input :started_at, input_html: { class: 'size_days' }, label_html: { class: 'size_lavel' }  %>
   </div>
   <div class="space01"></div>
   <div class="form-actions">

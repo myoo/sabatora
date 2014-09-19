@@ -8,3 +8,9 @@ ja:
       character:
         name: キャラクター名
         about: キャラクター説明
+        system_id: システム
+        image: キャラクターイメージ（200x200）
+        paramaters: パラメーター
+        profile: プロフィール
+        memo: メモ
+        illustration: 立ち絵

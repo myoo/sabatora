@@ -4,9 +4,9 @@
   <% if @character.present? %>
       <%= hidden_field :character, :id, value: @character.id  %>
   <% end %>
-    <div id="playspace_container">
+  <div id="playspace_container">
     <canvas id="playspace"></canvas>
-    </div>
+  </div>
 
   <div class="row">
     <div class="col-md-3 widget-container ui-sortable">
@@ -21,8 +21,8 @@
             </div>
           </section>
       <% end %>
-  </div>
-  <div class="col-md-3 widget-container ui-sortable">
+    </div>
+    <div class="col-md-3 widget-container ui-sortable">
       <section id="member_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= member_statuses_community_room_path(@community, @room) %>">
             <header>
               <h5>Member Status</h5>
@@ -32,33 +32,44 @@
             <%= render "member_status" %>
              </div>
       </section>
+    </div>
   </div>
-</div>
 
-	<%= render "chat/chat_form" %>
+	<%= render "chat/room_chat_form" %>
 
 	<div class="session_room_bottom">
 		<div class="space01"></div>
 		<%= render "chat_log" %>
-	</div>
-  <section id="controller">
-        <div class="row">
-            <div class="col-md-3 col-md-offset-9">
-                <section class="widget tiny">
-                    <div class="body">
-                        <h4>立ち絵変更</h4>
-                        <select name="illustrations" id="illustrations"></select>
-                        <% if @room.backgrounds.count > 0 %>
-                          <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
-                        <% end %>
-                    </div>
-                </section>
-            </div>
+    <section id="controller">
+    <div class="row">
+        <div class="col-md-12">
+            <select name="illustrations" id="illustrations" class="form-control size_lavel" ></select>
         </div>
-    </section>
+    </div>
+  </section>
+	</div>
 
 </section>
 		
+<div class="modal" id="back_change">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h4 class="modal-title">背景変更</h4>
+        </div>
+        <div class="modal-body">
+            <% if @room.backgrounds.count > 0 %>
+            <%= collection_select :background, :select, @room.backgrounds, :id, :name, selected: @room.active_background.id %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-default" data-dismiss="modal">閉じる</a>
+        </div>
+    </div>
+  </div>
+</div>
+
 
 <script>
     window.chatLogClass = new ChatLogClass();
