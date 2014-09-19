@@ -8,6 +8,10 @@
 			</section>
 		</div>
 	</div>
-<div class="space01"></div>  
-<%= link_to '立ち絵一覧', community_illustrations_path(@community) %>|
-<%= link_to '戻る', community_illustrations_path(@community) %>
+<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '立ち絵一覧', community_illustrations_path(@community) %></li>
+		<li><%= link_to '戻る', community_illustrations_path(@community) %></li>
+	</ol>
+</section>

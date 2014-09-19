@@ -1,4 +1,5 @@
 
+
 <dl id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></dl>
 <%= form_tag('#', {id: :chat_form}) do %>
   <%= hidden_field :user, :id, value: current_user.id %>

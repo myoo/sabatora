@@ -10,7 +10,10 @@
 	</div>
 </div>
 <div class="space01"></div>
-<%= link_to '確認', [@community, @room] %> |
-<%= link_to "Back", :back %>
-<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '確認', [@community, @room] %></li>
+		<li><%= link_to "戻る", :back %></li>
+	</ol>
+</section>
 </div>

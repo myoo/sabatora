@@ -10,7 +10,11 @@
 	</div>
 </div>
 <div class="space01"></div>
-<%= link_to '確認', [@community, @room, @player] %> |
-<%= link_to "セッション参加者一覧", community_room_players_path(@community, @room) %>|<%= link_to "戻る", :back %>
-<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '確認', [@community, @room, @player] %></li>
+		<li><%= link_to "セッション参加者一覧", community_room_players_path(@community, @room) %></li>
+		<li><%= link_to "戻る", :back %></li>
+	</ol>
+</section>
 </div>

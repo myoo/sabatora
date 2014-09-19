@@ -4,7 +4,10 @@
 <div class="space01"></div>
 <%= render 'form' %>
 <div class="space01"></div>
-<%= link_to '確認', [@communities_joining.community, @communities_joining] %> |
-<%= link_to '戻る', community_joinings_path %>
-<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '確認', [@communities_joining.community, @communities_joining] %></li>
+		<li><%= link_to '戻る', community_joinings_path %></li>
+	</ol>
+</section>
 </div>
