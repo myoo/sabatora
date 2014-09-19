@@ -25,7 +25,7 @@ class Player < ActiveRecord::Base
   belongs_to :room, inverse_of: :players
 
   validates :user, :room, :player_role, presence: true
-  validates :user, :character, uniqueness: { scope: :room }
+  validates :user,  uniqueness: { scope: :room }
   validate :only_player_has_character
 
   def only_player_has_character

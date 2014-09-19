@@ -1,24 +1,29 @@
 <div class="container">
-<h1><%= @room.name %>参加キャラクター詳細</h1>
+		<% if @player.character %>
+		<h1><%= @room.name %>参加キャラクター詳細</h1>
 <p>セッションで使用する参加キャラクターの詳細です。</p>
 <div class="space01"></div>
 
 <div class="row">
 	<div class="col-sm-offset-1 col-sm-10 col-xs-12">
 		<div class="row">
+
 			<div class="col-sm-3 col-xs-12">
 				<p><%= image_tag @player.character.image %></p>
 			</div>
+
 			<div class="col-sm-9 col-xs-12">
 				<div class="well">
 					<p><strong>キャラクター名：</strong><%= @player.character.name unless @player.character.nil? %></p>
 					<p><strong>キャラ作成者：</strong><%= @player.character.user.name %></p>
 					<p><strong>役割：</strong><%= @player.player_role.name %></p>
 				</div>
+
 				<div class="well">
 					<p><strong>パラメータ</strong></p>
 					<%= @player.character.paramaters %>
 				</div>
+
 			</div>
 		</div>
 		<div class="well">
@@ -34,7 +39,10 @@
 		</div>
 	</div>
 </div>
-
+<% else %>
+	セッションに参加しました<br>
+	<%= @player.player_role %>
+<% end %>
 
 <div class="space01"></div>
 <section class="widget">
