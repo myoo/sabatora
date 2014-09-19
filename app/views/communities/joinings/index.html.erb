@@ -33,6 +33,9 @@
   <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-primary btn-lg" %>
 <% end %>
 <div class="space01"></div>
-<%= link_to '戻る', @community %>
-<div class="space01"></div>
+<section class="widget">
+  <ol class="breadcrumb">
+    <li><%= link_to '戻る', @community %></li>
+  </ol>
+</section>
 </div>
