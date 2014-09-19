@@ -23,8 +23,8 @@
 //= require parsleyjs/dist/parsley.min
 //= require iCheck/icheck.min
 //= require select2/select2.min
-//= require backbone/backbone
 //= require underscore/underscore
+//= require backbone/backbone
 //= require messenger/build/js/messenger
 
 //= require bootstrap-sprockets
