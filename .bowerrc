@@ -1,3 +1,4 @@
 {
-  "directory": "vendor/assets/components"
+  "cwd": "vendor/assets",
+  "directory": "components"
 }
