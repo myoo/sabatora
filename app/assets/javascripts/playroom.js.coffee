@@ -27,8 +27,6 @@ class @PlayRoomClass
       , 600
 
     # 立ち絵
-    $('#illustrations').on "change", () ->
-      window.playRoomClass.changeIllustration($(this).val())
     @channel.bind 'illustration_changed', @illustrationChanged
 
   setChannelCode: () =>
@@ -62,7 +60,6 @@ class @PlayRoomClass
 class @IllustrationClass
   constructor: () ->
     @container = $('#playspace')
-    @select = $('#illustrations')
     @character_id = $('#character_id').val()
     @illustNumber = 4    #一度に表示する立ち絵の数
     @getIllustrationsUrl = $(location).attr('pathname') + "/illustrations"
@@ -90,12 +87,22 @@ class @IllustrationClass
       console.log @character_list
 
   setSelectBox: () =>
-    @select.children().remove()
+    $('#illustration_list').children('li').remove()
     layer_name = @_layer_name(@character_id)
     for id, illust of @character_list[layer_name]
       unless id == 'id'     # キャラクターIDが含まれているので避ける
-        @select.append($('<option />').html(illust.name).val(id))
-    @select.val(@active_illusts[layer_name])
+        $('#illustration_list').append($('<li />').append($('<a />', {
+          'href': '#'
+          'data-val': id
+          'text': illust.name
+          })))
+    $('#illustration_list a').on "click", (e) ->
+      e.preventDefault()
+      window.playRoomClass.changeIllustration($(this).data('val'))
+      $('#illustration_list a').removeClass('active')
+      $(this).addClass('active')
+    $('[data-val="' + @active_illusts[layer_name] + '"]').addClass('active')
+
 
   prepareIllustrations: (id, data) =>
     @container.drawImage({

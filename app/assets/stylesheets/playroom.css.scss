@@ -50,6 +50,14 @@ section.room{
         height: calc(80% - 150px) !important;
     }
 
+    // 立ち絵セレクタ
+
+    #illustration_list {
+        a.active {
+            background-color: $orange;
+        }
+    }
+
     //     
     // チャットログ
     // 
