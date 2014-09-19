@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Sabatora
+    meta charset="UTF-8" /
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = yield :head
+  body
+    .wrap
+      = render partial: "/layouts/user_nav"
+    .container
+      - if notice
+        p.alert.alert-notice= notice
+      - if alert
+        p.alert.alert-error= alert
+      .space01
+      = yield
+    = yield :foot
+

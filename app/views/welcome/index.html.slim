@@ -1,0 +1,188 @@
+.row
+  #carousel-landing.carousel.slide.carousel-landing.carousel-fade
+    .carousel-inner
+      .item.active
+        .row
+          .col-xs-12.col-sm-6
+            .animated.fadeInLeftBig
+              h1.slide-one-header
+                strong Sabatora
+                br
+                  small Online Session Tool
+              .alert.alert-primary
+                button.close data-dismiss="alert" type="button"  ×
+                strong Warning!
+                | 現在テスト中です。
+              p.lead.hidden-xs
+                | TRPGオンラインセッション用ツール"さばとら"
+                br
+                  | ”さばとら”はオンラインセッションのためのツールです。
+                  br
+                    | さばとらtwitter：
+                    a href="https://twitter.com/sabatora_dev"  sabatora_dev
+              p
+                - if user_signed_in?
+                - else
+                  .row
+                    .col-xs-6.pull-right
+                      = link_to 'さばとらをはじめる', new_user_registration_path, :class=>"btn btn-block btn-lg btn-primary"
+          .col-xs-12.col-sm-5
+            .text-align-center.animated.fadeInRightBig
+              = image_tag 'sabatora_top.png', :class=>"img-responsive", :alt=>"sabatora"
+    .clearfix
+  .space01
+  .col-md-offset-1.col-md-10
+    .row
+      .col-sm-12
+        section.widget
+          .body.no-margin
+            i.fa.fa-info-circle
+            span
+              strong 2014.9.3
+              | テンプレート変更　あれこれ適合中
+    .row
+      .col-md-12
+        h2.page-title What's new
+        p 新しいコミュニティやセッションのおしらせ
+    .row
+      .col-sm-12
+        section.widget.widget-tabs
+          header
+            ul.nav.nav-tabs
+              li.active
+                a data-toggle="tab" href="#new_session"  Session
+              li
+                a data-toggle="tab" href="#new_communities"  Communities
+              li
+                a data-toggle="tab" href="#new_event"  Event
+          .body.tab-content
+            #new_communities.tab-pane
+              h4 新しいコミュニティ
+              ul
+                li 新しいコミュニティのお知らせ１
+              .pull-right
+                = link_to "コミュニティを全て見る", communities_path, :class=>"btn btn-primary btn-xs"
+                button.btn.btn-inverse.btn-xs Cancel
+            #new_session.tab-pane.active.clearfix
+              h4 新しいセッション
+              ul
+                li 新しいセッションのお知らせ１
+              .pull-right
+                = link_to "セッションを全て見る", communities_path, :class=>"btn btn-primary btn-xs"
+            #new_event.tab-pane
+              h4 新しいイベント
+              ul
+                li 新しいイベントのお知らせ１
+              .pull-right
+                = link_to "イベントを全て見る", communities_path, :class=>"btn btn-primary btn-xs"
+    .row
+      .col-sm-12
+        section.widget
+          header
+            h5
+              i.fa.fa-tasks
+              | Sabatora 開発進捗
+          .body
+            #accordion2.panel-group
+              .panel
+                .panel-heading
+                  a.accordion-toggle data-parent="#accordion2" data-toggle="collapse" href="#collapseOne" 
+                    | 現在できることリスト
+                #collapseOne.panel-collapse.in.collapse style=("height: auto;") 
+                  .panel-body
+                    p
+                      | ・ユーザー登録　
+                      span.label.label-success 済
+                    p
+                      | ・マイページが作成される　
+                      span.label.label-success 済
+                    p ・セッション参加記録がつく
+                    p ・アバターが登録できる
+                    p
+                      | ・コミュニティに登録できる　
+                      span.label.label-success 済
+                    p ・コミュニティページが作成できる
+                    p ・コミュニティページにメンバーページが作成できる
+                    p
+                      | ・セッション部屋が作成できる　
+                      span.label.label-success 済
+                    p ・作成したキャラを登録できる
+                    p
+                      | ・背景が登録できる　
+                      span.label.label-success 済
+                    p ・マップが作成できる
+                    p ・シーン管理ができる
+                    p
+                      | ・キャラが作成できる　
+                      span.label.label-success 済
+                    p
+                      | ・キャラシートに画像がアップロードできる　
+                      span.label.label-success 済
+                    p
+                      | ・キャラシートに能力値を記録できる　
+                      span.label.label-success 済
+                    p
+                      | ・キャラシートにメモ欄がある　
+                      span.label.label-success 済
+                    p
+                      | ・セッション部屋内でチャットができる　
+                      span.label.label-success 済
+                    p
+                      | ・ロビーでチャットができる　
+                      span.label.label-success 済
+                    p
+                      | ・個人チャットができる　
+                      span.label.label-success 済
+                    p
+                      | ・チャットでダイスが振れる（値に偏りがない）　
+                      span.label.label-success 済
+                    p
+                      | ・ダイスを振ると、成功・失敗したかの判定が出る　
+                      span.label.label-success 済
+                    p
+                      | ・システム上でキャラの能力値を最低限作成できる　
+                      span.label.label-success 済
+                    p
+                      | ・セッションログがダウンロードできる　
+                      span.label.label-success 済
+                    p ・セッションログのHTML出力ができる
+              .panel
+                .panel-heading
+                  a.accordion-toggle data-parent="#accordion2" data-toggle="collapse" href="#collapseTwo" 
+                    | 将来的に実装する仕様リスト
+                #collapseTwo.panel-collapse.collapse
+                  .panel-body
+                    p ・コミュニティを公開・非公開設定ができる
+                    p ・コミュニティ掲示板作成
+                    p ・コミュニティ専用スケジュールの作成
+                    p ・コミュニティ専用wikiの作成
+                    p ・セッション部屋に立ち絵・BGM・効果音実装
+                    p ・セッション部屋にアバターアイコン・エモーションアイコン実装
+                    p ・セッションを動画記録できるようにする
+                    p ・セッション部屋でNPCを作成できる
+                    p ・背景設定に動画を使用できる
+                    p ・セッション部屋で動画が再生できる
+                    p ・セッションをROMできる（ROMメンバーは参加中メンバーには見えない）
+                    p ・セッションログの長期保存（半年〜１年ほど）
+                    p ・ユーザー用スケジュール作成
+                    p ・ユーザー同士で送り合えるメッセージ機能
+                    p ・フレンド機能
+                    p ・称号ページ作成
+                    p ・シナリオ管理機能作成
+                    p ・デフォルトシナリオを用意する
+                    p ・公開シナリオを作れる
+                    p ・作成されたシナリオをダウンロードできる
+    /! スペシャルサンクス
+    .row
+      .col-sm-offset-6.col-sm-6.col-xs-12
+        .well.margin-none
+          address.margin-none
+            h2.margin-none Special Thanks
+            br
+              strong> 黒色さま
+              | (TOP画像)
+              abbr title=("Work email")  twitter:
+              a href="https://twitter.com/popopokko"  @popopokko
+              br
+.space01
+
