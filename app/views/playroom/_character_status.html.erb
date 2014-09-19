@@ -1,8 +1,18 @@
-<p><%= image_tag character.image %></p>
-<p><strong>プロフィール：</strong><br>
-	<%= character.profile %></p>
-<p><strong>パラメータ：</strong><br>
-	<%= character.paramaters %></p>
-<p><strong>メモ：</strong><br>
-	<%= character.memo.html_safe %></p>
+<div class="row">
+	<div class="col-sm-6 col-xs-12 status">
+		<%= image_tag character.image, :class=>"img-responsive" %>
+	</div>
+	<div class="col-sm-6 col-xs-12 status">
+		<p>HP:  NOW / MAX </p>
+		<p>MP:  NOW / MAX </p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12 status">
+		<p><strong>パラメータ：</strong><br>
+			<%= character.paramaters %></p>
+		<p><strong>メモ：</strong><br>
+			<%= character.memo.html_safe %></p>
+	</div>
+</div>
 
