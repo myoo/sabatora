@@ -3,7 +3,8 @@
 <div class="space01"></div>
 
 <div class="row">
-  <div class="col-sm-offset-1 col-sm-10">
+  <div class="col-md-offset-1 col-md-10">
+    <section class="widget">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
@@ -23,6 +24,7 @@
         <%= f.button :submit, "更新する" %>
       </div>
     <% end %>
+  </section>
   </div>
 </div>
 
@@ -39,6 +41,15 @@
 <p><%= link_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, :class=>"btn btn-danger btn-md" %></p>
 <div class="space01"></div>
 
-<%= link_to "Home", welcome_index_path %>｜<%= link_to "Back", :back %>
+<section class="widget">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to "Home", welcome_index_path %>
+    </li>
+    <li>
+      <%= link_to "Back", :back %>
+    </li>
+  </ol>
+</section>
 
 <div class="space01"></div>

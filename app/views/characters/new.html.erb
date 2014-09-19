@@ -2,7 +2,14 @@
 <h1>新しくキャラクターを登録する</h1>
 <p>キャラクターを新規に作成し、登録します。</p>
 <div class="space01"></div>
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
+
 <div class="space01"></div>
 <%= link_to 'キャラクター一覧', characters_path %>|<%= link_to "Back", :back %>
 <div class="space01"></div>
