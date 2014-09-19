@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :communities do
     resources :joinings, to: "communities/joinings"
     resources :backgrounds, to: "communities/backgrounds"
+    resources :illustrations, to: "communities/illustrations"
 
     resources :rooms, to: "communities/rooms" do
       resources :players, to: "communities/rooms/players"
@@ -25,7 +26,9 @@ Rails.application.routes.draw do
       member do
         get :playspace, to: "playroom"
         get 'playspace/main_chat_log', to: "playroom#get_main_chat_log"
+        get 'playspace/illustrations', to: "playroom#get_illustrations"
         get :character_status
+        get :member_statuses, to: "playroom#get_member_statuses"
       end
     end
   end

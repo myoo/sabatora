@@ -13,7 +13,6 @@
 #  retry_number :integer
 #  profile      :text
 #  memo         :text
-#  status       :text
 #  image        :string(255)
 #
 # Indexes
@@ -25,7 +24,7 @@
 
 FactoryGirl.define do
   factory :character do
-    user nil
+    user
     name "MyString"
     about "MyString"
     system_id 1

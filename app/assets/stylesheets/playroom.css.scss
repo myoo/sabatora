@@ -2,21 +2,15 @@
 
 /* セッションルーム */
 section.room{
+    margin-top: -20px !important;
+    margin-left: 0;
+    margin-right: 8%;
+    margin-bottom: 0;
     min-height: 100%;
     height: 100%;
-    position: relative;
-
-    .container-fluid{
-        padding-left: 0;
-        padding-right: 0;
-        width: 100%; 
-    }
-
-    p.status{
-        margin: 10px;
-        color: white;
-        font-size: 80%;
-    }
+    position: absolute;
+    width: calc(87.5349% - 160px);
+    @include box-sizing(content-box);
 
     div.session_room_bottom{
         padding: 12px 16px;
@@ -25,18 +19,45 @@ section.room{
         position: relative;
     }
 
+    /* コントローラ */
+    #controller {
+        margin-right: -4%;
+    }
+
+    /* 背景 */
+
+    #playspace_container {
+        width: 100%;
+        min-height: calc(100% - 75px);
+        position: absolute;
+        /* box-shadow */
+        box-shadow:rgba(68, 52, 71, 0.54) 3px 8px 8px -2px;
+        -webkit-box-shadow:rgba(68, 52, 71, 0.54) 3px 8px 8px -2px;
+        -moz-box-shadow:rgba(68, 52, 71, 0.54) 3px 8px 8px -2px;
+
+     }
+
     span.right{
         text-align: right;
     }
+    
+    /*
+    チャット
+    */
 
-    #input-chat{
-        margin: 0 auto 2%;  
-        width: 80%;
+    #chat{ 
+        margin-top: calc(5%);
+        height: calc(80% - 150px) !important;
+    }
 
-        #username {
-            display: none;
+    // 立ち絵セレクタ
+
+    #illustration_list {
+        a.active {
+            background-color: $orange;
         }
     }
+
     //     
     // チャットログ
     // 
@@ -63,10 +84,16 @@ section.room{
 
 }
 
-    div.session_room_bottom{
-        padding: 12px 16px;
-        margin: 10% auto 10px;  
-        width: 85%;
-        position: relative;
-    }
+/* セッションルーム下部 */
+div.session_room_bottom{
+    padding: 12px 16px;
+    margin: 10% auto 10px;  
+    width: 85%;
+    position: relative;
+}
 
+
+/* キャラステータス */
+.status{
+    padding: 24px;
+}

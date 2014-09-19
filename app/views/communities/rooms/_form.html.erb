@@ -11,20 +11,18 @@
     </div>
 
   <% end %>
-    <div class="row">
-      <div class="col-sm-offset-1 col-sm-10">
-        <div class="form-inputs">
-          <%= f.input :name %>
-          <%= f.input :community_id, as: :hidden %>
-          <%= f.input :about %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :community_id, as: :hidden %>
+    <%= f.input :about %>
 	  <%= f.input :system_id, collection: System::TITLES %>
 	  <%= f.input :active_background_id, collection: Background.where(room: @room) %>
-          <%= f.input :started_at %>
-        </div>
-        <div class="space01"></div>
-        <div class="form-actions">
-          <%= f.button :submit, :class=>"btn btn-default" %>
-        </div>
-        <% end %>
-      </div>
-    </div>
+    <%= f.input :started_at, input_html: { class: 'size_days' }, label_html: { class: 'size_lavel' }  %>
+  </div>
+  <div class="space01"></div>
+  <div class="form-actions">
+    <%= f.button :submit, :class=>"btn btn-default" %>
+  </div>
+  <% end %>
+

@@ -22,10 +22,12 @@ class Ability
 
     # Player
     can :read, Player
-    can :create, Player, room: { community: { joinings: { user_id: user.id } } }
+    can :create, Player do |player|
+      player.room.community.has_member? user
+    end
     can :update, Player, user_id: user.id
     can :destroy, Player, user_id: user.id
-    can :destroy, Player, room: { user_id: user.id }
+    can :destroy, Player, room: { owner_id: user.id }
 
     # Playspace
     can :playspace, Room do |room|

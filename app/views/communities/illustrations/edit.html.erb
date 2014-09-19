@@ -1,0 +1,17 @@
+<h1>立ち絵を編集する</h1>
+<p>すでに登録された立ち絵の編集を行います。</p>
+<div class="space01"></div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<section class="widget">
+				<%= render 'form' %>
+			</section>
+		</div>
+	</div>
+<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '確認', [@community, @illustration] %></li>
+		<li><%= link_to '戻る', community_illustrations_path(@community) %></li>
+	</ol>
+</section>

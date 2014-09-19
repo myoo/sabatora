@@ -20,3 +20,6 @@
 
 /public/uploads/
 /vendor/assets/bower_components/
+
+database.yml
+dump.rdb

@@ -1,15 +1,15 @@
-<%= form_tag('#', {id: :chat_form}) do %>
-  <%= hidden_field :user, :id, value: current_user.id %>
+
 
 <dl id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket"></dl>
-
+<%= form_tag('#', {id: :chat_form}) do %>
+  <%= hidden_field :user, :id, value: current_user.id %>
   <%= hidden_field :user, :channel_key, value: current_user.channel_key %>
   	<div id="input-chat">
   		<div class="row">
 			<div class="col-sm-2 col-xs-12">
 				<p id="username"><strong><%= current_user.name %></strong></p>
 				<% if @room && @room.character(current_user) %>
-				  <p id="username2"><strong><%= current_user.name %></strong></p>
+				  <p id="username2"><strong><%= @room.character(current_user).name%></strong></p>
 				<% end %>
 			</div>
 		</div>
@@ -23,4 +23,4 @@
 			</div>
 		</div>
 	</div>
-	<% end %>
+<% end %>

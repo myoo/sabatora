@@ -21,6 +21,14 @@
   <div class="pagination">
     <a href="#" class="btn btn-default btn-xs"><%= @community.name %>掲示板</a>
     <a href="#" class="btn btn-default btn-xs"><%= @community.name %>Wiki</a>
+    <%= link_to community_backgrounds_path(@community), :class=>"link btn btn-primary btn-xs" do %>
+      <i class="fa fa-file-image-o "></i>
+      背景管理
+    <% end %>
+    <%= link_to community_illustrations_path(@community), :class=>"link btn btn-primary btn-xs" do %>
+      <i class="fa fa-users"></i>
+      立ち絵管理
+    <% end %>
   </div>
 
   <% unless current_user && @community.has_member?(current_user) %>
@@ -67,8 +75,11 @@
           <div class="list-group users-list-group">
             <% @community.rooms.limit(5).each do |room| %>
               <div class="list-group-item">
-                <%= link_to room.name, playspace_community_room_path(@community, room), data: { no_turbolink: true } %>
-                　オーナー：<%= room.owner.name %>
+                <%= link_to room.name, community_room_path(@community, room)%>
+                &nbsp;
+                <%= link_to 'セッションルームに飛ぶ', playspace_community_room_path(@community, room), data: { no_turbolink: true } , :class=>"btn btn-success btn-xs" %>
+                &nbsp;
+                オーナー：<%= room.owner.name %>
               </div>
             <% end %>
             <div class="list-group-item">
@@ -106,5 +117,9 @@
 
 </section>
 <div class="space01"></div>
-<%= link_to 'コミュニティ一覧', communities_path %>|<%= link_to "戻る", :back %>
-<div class="space01"></div>
+<section class="widget">
+  <ol class="breadcrumb">
+    <li><%= link_to 'コミュニティ一覧', communities_path %></li>
+    <li><%= link_to "戻る", :back %></li>
+  </ol>
+</section>

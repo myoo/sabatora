@@ -9,7 +9,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>メールアドレス</th>
+          <th>名前</th>
           <th></th>
         </tr>
       </thead>
@@ -17,7 +17,7 @@
       <tbody>
         <% @communities_joinings.each do |community_joining| %>
         <tr>
-          <td><%= community_joining.user.email %></td>
+          <td><%= community_joining.user.name %></td>
           <td class="center"><%= link_to '修　正', edit_community_joining_path(community_joining.community, community_joining), :class=>"btn btn-warning btn-sm" %>
           <%= link_to '削　除', [community_joining.community, community_joining], method: :delete, data: { confirm: '削除してよろしいですか？'}, :class=>"btn btn-danger btn-sm" %></td>
         </tr>
@@ -33,6 +33,9 @@
   <%= link_to 'このコミュニティに参加する', new_community_joining_path, :class=>"btn btn-primary btn-lg" %>
 <% end %>
 <div class="space01"></div>
-<%= link_to '戻る', @community %>
-<div class="space01"></div>
+<section class="widget">
+  <ol class="breadcrumb">
+    <li><%= link_to '戻る', @community %></li>
+  </ol>
+</section>
 </div>

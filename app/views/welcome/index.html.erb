@@ -20,7 +20,8 @@
                             </p>
                             <p>
                                 <% if user_signed_in? %>
-							        <% else %>
+                                        ログインしています
+						        <% else %>
 							        <div class="row">
 							    		<div class="col-xs-6 pull-right">           
 							           <%= link_to 'さばとらをはじめる', new_user_registration_path, :class=>"btn btn-block btn-lg btn-primary" %>
@@ -57,6 +58,37 @@
 			</div>
 		</div>
 
+    <% if current_user %>
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="widget">
+                    <div class="div">
+                                参加中のコミュニティ<br>
+
+                                    <% current_user.communities.each do |community| %>
+                                        <%= link_to community.name, community_path(community) %>
+                                    <% end %>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="widget">
+                    <div class="div">
+                                参加中のセッション<br>
+
+                                    <% current_user.rooms.each do |room| %>
+                                        <%= link_to room.name, community_room_path(room.community, room) %>
+                                    <% end %>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+     <% end %>
 		<div class="row">
             <div class="col-md-12">
                 <h2 class="page-title">What's new</h2>

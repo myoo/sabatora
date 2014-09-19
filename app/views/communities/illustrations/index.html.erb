@@ -1,0 +1,42 @@
+<h1>立ち絵一覧</h1>
+<p>登録された立ち絵の一覧です。</p>
+<div class="space01"></div>  
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <section class="widget">
+            <header>
+                <h4>
+                    <i class="fa fa-users"></i>
+                    立ち絵一覧 
+                    <%= link_to '新しく立ち絵を登録する', new_community_illustration_path(@community), :class=>"btn btn-xs btn-info pull-right" %>
+                </h4>
+            </header>
+            <div class="body">
+                <ul class="row thumbnails">
+                  <% @illustrations.each do |illustration| %>
+                    <li class="col-sm-4">
+                        <div class="thumbnail">
+                            <%= link_to image_tag(illustration.image, :style=>"width:100%; height:100%;"), [@community, illustration], { :class=>"thumb", :gallery=>"gallery" } %>
+                      
+                            <div class="caption">
+                                <h4><%= illustration.name %></h4>
+                                <p>
+                                <%= link_to '編集', edit_community_illustration_path(@community, illustration), :class=>"btn btn btn-inverse" %>
+                                <%= link_to '削除', [@community, illustration], method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger" %> 
+                              </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </section>
+      </div>
+    </div>
+    
+    <div class="space01"></div>
+    <section class="widget">
+        <ol class="breadcrumb">
+            <li><%= link_to "戻る", :back %></li>
+        </ol>
+    </section>
