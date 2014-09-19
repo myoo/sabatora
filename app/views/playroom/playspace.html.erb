@@ -13,11 +13,11 @@
     <% unless @character.nil? %>
       <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
         <header>
-        <h5>My Status</h5>
-            <%= render "widget_controls" %>
-       </header>
-         <div class="body">
-        <%= render :partial => "character_status", locals: { character: @character} %>
+          <h5>My Status</h5>
+              <%= render "widget_controls" %>
+        </header>
+        <div class="body">
+          <%= render :partial => "character_status", locals: { character: @character} %>
         </div>
       </section>
     <% end %>
