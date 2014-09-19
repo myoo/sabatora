@@ -73,6 +73,12 @@
                 プロフィール変更
               <% end %>
             </li>
+            <li role="presentation">
+            <%= link_to new_character_path, :class=>"link" do %>
+            <i class="fa fa-magic"></i>
+              キャラクターの新規作成
+              <% end %>
+            </li>
             <% unless @community.nil? or @community.id.nil?%>
             <li role="presentation">
               <%= link_to community_backgrounds_path(@community), :class=>"link" do %>
