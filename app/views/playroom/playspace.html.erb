@@ -4,23 +4,23 @@
   <% if @character.present? %>
       <%= hidden_field :character, :id, value: @character.id  %>
   <% end %>
-  <div id="playspace_container">
+    <div id="playspace_container">
     <canvas id="playspace"></canvas>
-  </div>
-
+    </div>
+    
   <div class="row">
     <div class="col-md-3 widget-container ui-sortable">
-        <% unless @character.nil? %>
-          <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
-            <header>
-    	      <h5>My Status</h5>
-                <%= render "widget_controls" %>
-    	     </header>
-             <div class="body">
-        		<%= render :partial => "character_status", locals: { character: @character} %>
-            </div>
-          </section>
-      <% end %>
+    <% unless @character.nil? %>
+      <section id="my_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= character_status_community_room_path(@community, @room) %>">
+        <header>
+        <h5>My Status</h5>
+            <%= render "widget_controls" %>
+       </header>
+         <div class="body">
+        <%= render :partial => "character_status", locals: { character: @character} %>
+        </div>
+      </section>
+    <% end %>
     </div>
     <div class="col-md-3 widget-container ui-sortable">
       <section id="member_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= member_statuses_community_room_path(@community, @room) %>">
@@ -35,11 +35,11 @@
     </div>
   </div>
 
-	<%= render "chat/room_chat_form" %>
+  <%= render "chat/chat_form" %>
 
-	<div class="session_room_bottom">
-		<div class="space01"></div>
-		<%= render "chat_log" %>
+  <div class="session_room_bottom">
+    <div class="space01"></div>
+    <%= render "chat_log" %>
     <section id="controller">
       <div class="row">
           <div class="col-md-12">
@@ -47,10 +47,10 @@
           </div>
       </div>
     </section>
-	</div>
+  </div>
 
 </section>
-		
+    
 <div class="modal" id="back_change">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -76,4 +76,3 @@
     window.chatClass = new ChatClass($('#chat').data('uri'), true);
     console.log("chat ready");
 </script>
-
