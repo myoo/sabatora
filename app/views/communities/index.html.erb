@@ -26,7 +26,7 @@
             <td><%= community.description %></td>
             <td class="center">
               <%= link_to '表　示', community, :class=>"btn btn-success btn-sm" %>
-	    <% if can? :manage, Community %>
+	    <% if can? :manage, community %>
               <%= link_to '編　集', edit_community_path(community), :class=>"btn btn-warning btn-sm" %>
               <%= link_to '削　除', community, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, :class=>"btn btn-danger btn-sm" %>
 	    <% end %>

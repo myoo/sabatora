@@ -1,4 +1,4 @@
-<section class="community-top bottom">
+<section class="community-top bottom" style="background-image: url(<%= @community.header_url %>)">
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="row">
   <div class="col-sm-1 col-xs-12">
@@ -44,6 +44,7 @@
       </h5>
     </header>
     <div class="body">
+    <%= image_tag @community.icon_url %>
       <div class="list-group users-list-group">
           <a href="#" class="list-group-item">
               <h5 class="no-margin">Maikel Basso</h5>

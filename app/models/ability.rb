@@ -8,7 +8,7 @@ class Ability
 
     # Community
     can :read, Community
-    can :manage, Community.all do |community|
+    can :manage, Community do |community|
       community.is_owner?(user)
     end
     can :create, Community      # あとで制限追加

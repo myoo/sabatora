@@ -8,6 +8,8 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  header      :string(255)
+#  icon        :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
