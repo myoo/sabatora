@@ -5,9 +5,9 @@
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
-
 <div class="row">
-  <div class="col-sm-offset-1 col-sm-10">
+  <div class="col-md-offset-2 col-md-8 col-xs-12">
+    <section class="widget">
       <%= f.input :reset_password_token, as: :hidden %>
       <%= f.full_error :reset_password_token %>
       <div class="form-inputs">
@@ -17,6 +17,7 @@
       <div class="form-actions">
         <%= f.button :submit, "パスワードを変更する", :class=>"btn btn-default btn-lg" %>
       </div>
+    </section>
   </div>
 </div>
 <% end %>
