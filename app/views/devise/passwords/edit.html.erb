@@ -14,6 +14,7 @@
         <%= f.input :password, label: "新しいパスワード", required: true, autofocus: true %>
         <%= f.input :password_confirmation, label: "新しいパスワードをもう一度入力してください", required: true %>
       </div>
+      <%= render "devise/shared/links" %>
       <div class="form-actions">
         <%= f.button :submit, "パスワードを変更する", :class=>"btn btn-default btn-lg" %>
       </div>
@@ -21,7 +22,5 @@
   </div>
 </div>
 <% end %>
-<div class="space01"></div>
-<%= render "devise/shared/links" %>
 <div class="space01"></div>
 </div>
