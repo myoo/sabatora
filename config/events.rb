@@ -23,7 +23,7 @@ WebsocketRails::EventMap.describe do
   subscribe :private_message, to: ChatController, with_method: :private_message
 
   # Room
-  #  subscribe :background_changed, to: RoomConfigController, with_method: :background_changed
+  subscribe :background_changed, to: RoomConfigController, with_method: :background_changed
   # 一旦停止
 
   subscribe :illustration_changed, to: PlayspaceController, with_method: :illustration_changed

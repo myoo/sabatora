@@ -115,19 +115,26 @@ group :development, :test do
   gem 'awesome_print'
   gem 'timecop'
   gem "colorize_unpermitted_parameters"
-#  gem "rack-mini-profiler"
-  gem "database_rewinder"
+  #  gem "rack-mini-profiler"
+  gem 'database_cleaner'
   gem "faker"
 
   gem 'poltergeist'
   gem "capybara"
   gem 'webmock'
 
+  gem 'email_spec'
+  gem "turnip"
+
   gem 'did_you_mean'
 end
 
 group :development do
   gem "letter_opener"
+end
+
+group :test do
+  gem 'spork'
 end
 
 gem 'rails_12factor', group: :production
