@@ -4,16 +4,18 @@
 <div class="space01"></div>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="row">
-	<div class="col-sm-offset-1 col-sm-10">
-	  <div class="form-inputs">
-	    <%= f.input :email, required: false, autofocus: true %>
-	    <%= f.input :password, required: false %>
-	    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-	  </div>
-	  <div class="space01"></div>
-	  <div class="form-actions">
-	    <%= f.button :submit, "ログイン", :class=>"btn btn-info btn-lg" %>
-	  </div>
+	<div class="col-md-offset-2 col-md-8 col-xs-12">
+		<section class="widget">
+		  <div class="form-inputs">
+		    <%= f.input :email, required: false, autofocus: true %>
+		    <%= f.input :password, required: false %>
+		    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+		  </div>
+		  <div class="space01"></div>
+		  <div class="form-actions">
+		    <%= f.button :submit, "ログイン", :class=>"btn btn-info btn-lg" %>
+		  </div>
+		</section>
 	</div>
 </div>
 <% end %>
