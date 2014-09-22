@@ -12,7 +12,7 @@
 		  <div class="form-inputs">
 		    <%= f.input :email, required: true, autofocus: true %>
 		  </div>
-			<div class="space01"></div>
+		<%= render "devise/shared/links" %>
 		  <div class="form-actions">
 		    <%= f.button :submit, "ロックを解除する", :class=>"btn btn-default" %>
 		  </div>
@@ -21,7 +21,5 @@
 </div>
 <% end %>
 
-<div class="space01"></div>
-<%= render "devise/shared/links" %>
 <div class="space01"></div>
 </div>

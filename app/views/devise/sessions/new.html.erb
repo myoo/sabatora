@@ -11,7 +11,7 @@
 		    <%= f.input :password, required: false %>
 		    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 		  </div>
-		  <div class="space01"></div>
+		  <%= render "devise/shared/links" %>
 		  <div class="form-actions">
 		    <%= f.button :submit, "ログイン", :class=>"btn btn-info btn-lg" %>
 		  </div>
@@ -20,7 +20,5 @@
 </div>
 <% end %>
 
-<div class="space01"></div>
-<%= render "devise/shared/links" %>
 <div class="space01"></div>
 </div>

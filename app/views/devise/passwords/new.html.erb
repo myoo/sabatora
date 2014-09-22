@@ -10,6 +10,7 @@
 		  <div class="form-inputs">
 		    <%= f.input :email, required: true, autofocus: true %>
 		  </div>
+		  <%= render "devise/shared/links" %>
 		  <div class="form-actions">
 		    <%= f.button :submit, "パスワード再設定メールの送信" %>
 		  </div>
@@ -17,7 +18,5 @@
 	</div>
 </div>  
 <% end %>
-<div class="space01"></div>
-<%= render "devise/shared/links" %>
 <div class="space01"></div>
 </div>
