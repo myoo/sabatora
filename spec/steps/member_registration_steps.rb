@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 module MemberRegistrationSteps
+  
   step "トップページを表示する" do
     visit root_path
     expect(page).to have_css('h1', text: "Sabatora")
@@ -55,6 +56,39 @@ module MemberRegistrationSteps
     fill_in "user[password]", with: @password
     click_button "ログイン"
     expect(page).to have_content("ログインしました")
+  end
+
+  step "会員登録ページが表示されている" do
+    visit new_user_registration_path
+    send "会員登録ページが表示される"
+  end
+
+  step "会員登録ページが表示される" do
+    expect(page).to have_content("さばとらをはじめる")
+  end
+
+  step "画面上部にエラーがあることが表示される" do
+    expect(page).to have_css('div.alert')
+  end
+
+  step "メールアドレスフィールド下部に「を入力してください」と表示される" do
+    expect(page).to have_css('input[name="user[email]"] + .help-block', text: "を入力してください。")
+  end
+
+  step "名前フィールド下部に「を入力してください」と表示される" do
+    expect(page).to have_css('input[name="user[name]"] + .help-block', text: "を入力してください。")
+  end
+
+  step "パスワードフィールド下部に「を入力してください」と表示される" do
+    expect(page).to have_css('input[name="user[password]"] + .help-block', text: "を入力してください。")
+  end
+
+  step "ユーザー名フィールド下部に「ユーザー名は20文字以内で入力してください。」と表示される" do
+    expect(page).to have_css('input[name="user[name]"] + .help-block', text: "は20文字以内で入力してください。")
+  end
+
+  step "パスワード確認フィールド下部に「とパスワードの入力が一致しません。」と表示される" do
+    expect(page).to have_css('input[name="user[password_confirmation]"] + .help-block', text: "とパスワードの入力が一致しません。")
   end
 end
 

@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   has_many :rooms, through: :players
   has_many :illustrations
 
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true, length: { maximum: 20 }
 
   before_create :generate_channel_key
 

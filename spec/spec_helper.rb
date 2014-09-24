@@ -37,6 +37,9 @@ Spork.prefork do
     config.include(EmailSpec::Helpers)
     config.include(EmailSpec::Matchers)
 
+    config.before(:type => :feature) do
+      reset_mailer
+    end
 
     # ## Mock Framework
     #
