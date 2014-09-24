@@ -38,7 +38,7 @@ ja:
     confirmations:
       send_instructions: '登録方法を数分以内にメールでご連絡します。'
 #      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'アカウントを登録しました。'
+      confirmed: '会員登録が完了しました！'
 #      confirmed: 'Your account was successfully confirmed. You are now signed in.'
     registrations:
       signed_up: 'アカウント登録を受け付けました。確認のメールをお送りします。'
