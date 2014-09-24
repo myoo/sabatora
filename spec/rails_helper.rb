@@ -13,17 +13,6 @@ require 'rspec/rails'
 # option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
-  Dir.glob("spec/**/*steps.rb") { |f| load f, true }
-
-  require 'capybara/dsl'
-  require 'capybara/rspec'
-  require 'capybara/webkit'
-  require 'capybara/poltergeist'
-  require 'rspec/rails'
-  require 'rspec/autorun'
-  require 'turnip'
-  require 'turnip/capybara'
-
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 # ActiveRecord::Migration.maintain_test_schema!
@@ -37,9 +26,6 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
-
-  config.include(EmailSpec::Helpers)
-  config.include(EmailSpec::Matchers)
 
 
   config.infer_spec_type_from_file_location!
