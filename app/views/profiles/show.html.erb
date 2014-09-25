@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @profile.user.name %></h2>
+<%= image_tag @profile.avatar_url %>
+<%= Profile::SEX_TYPE.key(@profile.sex) %>
+<%= @profile.introduction.html_safe %>
+<%= @profile.birth %>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

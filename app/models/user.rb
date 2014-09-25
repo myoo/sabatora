@@ -35,11 +35,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :joinings
+  has_many :joinings, dependent: :destroy
   has_many :communities, through: :joinings
-  has_many :players
+  has_many :players, dependent: :destroy
   has_many :rooms, through: :players
-  has_many :illustrations
+  has_many :illustrations, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true, length: { maximum: 20 }
 
