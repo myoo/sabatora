@@ -60,6 +60,33 @@ module UserProfileSteps
     expect(page).to have_content("1984-01-01")
     expect(page).to have_content("テストのプロフィール")
   end
+
+  step ":name というユーザーがプロフィール登録されている" do |name|
+    @password = "password"
+    @profiled_user = FactoryGirl.create(:user, name: name, password: @password, password_confirmation: @password, confirmed_at: Time.now)
+    @profile = FactoryGirl.create(:profile, user: @profiled_user)
+  end
+
+  step ":name でログインしている" do |name|
+    user = User.find_by(name: name)
+    visit new_user_session_path
+    fill_in "user[email]", with: user.email
+    fill_in "user[password]", with: @password
+    click_button "ログイン"
+    expect(page).to have_content("ログインしました")
+  end
+
+  step "プロフィール登録画面にアクセスする" do
+    visit new_profile_path
+  end
+
+  step "トップページにリダイレクトされる" do
+    expect(page).to have_css("h1", text: "Sabatora")
+  end
+
+  step "エラーメッセージが表示される" do
+    expect(page).to have_content("既にプロフィールが登録されています")
+  end
 end
 
 require "steps/member_registration_steps.rb"

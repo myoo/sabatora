@@ -20,7 +20,8 @@ class ApplicationController < ActionController::Base
     if resource.profile.nil?
       new_profile_path
     else
-      stored_location_for(resource) || request.referer || root_path
+      super
+#      stored_location_for(resource) || request.referer || root_path
     end
   end
 

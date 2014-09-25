@@ -20,10 +20,10 @@
 
 FactoryGirl.define do
   factory :profile do
-    avater "MyString"
+    avatar { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'testfiles','flower.jpg')) }
     introduction "MyText"
     sex 1
     birth "2014-09-25"
-    user nil
+    user
   end
 end

@@ -41,6 +41,9 @@ Spork.prefork do
       reset_mailer
     end
 
+    config.before do
+      FactoryGirl.reload
+    end
     # ## Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
