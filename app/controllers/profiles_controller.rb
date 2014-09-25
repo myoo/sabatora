@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 class ProfilesController < ApplicationController
   before_filter :authenticate_user!, except: [:show]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :already_profiled, only: [:new]
 
   # GET /profiles/1
   # GET /profiles/1.json
@@ -22,6 +24,15 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
+    # プレビュー画面を挿入
+    if params[:preview]
+      unless @profile.valid?
+        render :new
+      else
+        render :preview
+      end
+      return
+    end
 
     respond_to do |format|
       if @profile.save
@@ -37,6 +48,16 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    # プレビュー画面を挿入
+    if params[:preview]
+      unless @profile.valid?
+        render :edit
+      else
+        render :preview
+      end
+      return
+    end
+
     respond_to do |format|
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
@@ -66,6 +87,13 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :introduction, :sex, :avatar, :birth)
+      params.require(:profile).permit(:user_id, :introduction, :sex, :avatar, :birth, :remove_avatar, :avatar_cache)
+    end
+
+    def already_profiled
+      if current_user.profile.present?
+       flash[:alert] = "既にプロフィールが登録されています"
+        redirect_to root_path
+      end
     end
 end
