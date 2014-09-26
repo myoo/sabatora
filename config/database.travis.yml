@@ -2,7 +2,7 @@ postgresql: &postgresql
   adapter: postgresql
   username: postgres
   password:
-  database: sabatra_<%= Rails.env %>
+  database: sabatora_<%= Rails.env %>
   min_messages: ERROR
 
 defaults: &defaults
