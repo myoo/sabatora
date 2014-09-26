@@ -24,8 +24,14 @@ module UserProfileSteps
     expect(page).to have_content("プロフィールを登録してください")
   end
 
-  step "プロフィールを入力する" do
-    within "#new_profile" do
+  step "プロフィールを :action する" do |action|
+    case  action
+    when "登録"
+      class_text = ".new_profile"
+    when "編集"
+      class_text = ".edit_profile"
+    end
+    within class_text do
       attach_file "profile[avatar]", File.expand_path("spec/support/testfiles/flower.jpg")
       choose "female"
       select "1984", from: 'profile[birth(1i)]'
@@ -87,6 +93,21 @@ module UserProfileSteps
   step "エラーメッセージが表示される" do
     expect(page).to have_content("既にプロフィールが登録されています")
   end
+
+  step "プロフィール編集画面を表示する" do
+    find(:xpath, '//a[@title="My page"]').click
+    click_link "プロフィール変更"
+    expect(page).to have_css("h1", text: "プロフィール編集")
+  end
+
+  step "プロフィールを編集する" do
+    send "プロフィールを入力する"
+  end
+
+  step "更新ボタンを押す" do
+    click_button "更新する"
+  end
+
 end
 
 require "steps/member_registration_steps.rb"

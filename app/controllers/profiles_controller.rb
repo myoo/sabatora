@@ -48,6 +48,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile.attributes = profile_params.reject { |k,v| v.blank? }
     # プレビュー画面を挿入
     if params[:preview]
       unless @profile.valid?
@@ -59,7 +60,7 @@ class ProfilesController < ApplicationController
     end
 
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else

@@ -67,10 +67,18 @@
             <li role="presentation" class="account-picture"> 
               <%= current_user.name %>.
             </li>
+            <% if current_user.profile && current_user.profile.persisted? %>
+              <li role="presentation">
+                <%= link_to edit_profile_path(current_user.profile), :class=>"link" do %>
+                <i class="fa fa-user"></i>
+                  プロフィール変更
+                <% end %>
+              </li>
+            <% end %>
             <li role="presentation">
               <%= link_to edit_user_registration_path, :class=>"link" do %>
               <i class="fa fa-user"></i>
-                プロフィール変更
+                アカウント変更
               <% end %>
             </li>
             <li role="presentation">
