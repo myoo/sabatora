@@ -5,7 +5,7 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  require 'rspec/autorun'
+#  require 'rspec/autorun'
 
   Dir.glob("spec/**/*steps.rb") { |f| load f, true }
 
@@ -13,7 +13,7 @@ Spork.prefork do
   require 'capybara/rspec'
   require 'capybara/poltergeist'
   require 'rspec/rails'
-  require 'rspec/autorun'
+#  require 'rspec/autorun'
   require 'turnip'
   require 'turnip/capybara'
 
