@@ -1,15 +1,20 @@
 language: ruby
+
 rvm:
   - 2.1.2
+
 services:
   - redis-server
   - mongodb
+
 env:
   - DB=postgresql
+  
 script:
   - bundle exec rake bower:install
   - bundle exec rake
+
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database sabatora_test' -U postgres
+
 cache: bundler
