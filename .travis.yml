@@ -14,6 +14,7 @@ bundler_args: --without production
 
 script:
   - bundle exec rake bower:install
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake
 
 before_script:
