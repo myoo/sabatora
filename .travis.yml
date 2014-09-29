@@ -9,12 +9,15 @@ services:
 
 env:
   - DB=postgresql
-  
+
+bundler_args: --without production
+
 script:
   - bundle exec rake bower:install
   - bundle exec rake
 
 before_script:
   - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 cache: bundler
