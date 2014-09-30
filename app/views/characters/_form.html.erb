@@ -11,8 +11,9 @@
 		    <%= f.input :remove_image, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
 		    	<%= f.check_box :remove_image %>
 	    	<% end %>
-		    <%= f.hidden :character_cache if @character.image_cache %>
 	    <% end %>
+	    		    <%= f.hidden :image_cache if @character.image_cache %>
+
 	    <%= f.input :image, as: :file, input_html: { class: 'image_load_form' } %>
 	    <%= f.input :paramaters %>
 	    <%= f.hint '※自動的に作成されます。内容を変更したい場合、キャラ作成後、キャラを編集し、データを上書きして保存してください。' %>

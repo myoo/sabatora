@@ -5,7 +5,21 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  require 'rspec/autorun'
+#  require 'rspec/autorun'
+
+  Dir.glob("spec/**/*steps.rb") { |f| load f, true }
+
+  require 'capybara/dsl'
+  require 'capybara/rspec'
+  require 'capybara/poltergeist'
+  require 'rspec/rails'
+#  require 'rspec/autorun'
+  require 'turnip'
+  require 'turnip/capybara'
+
+  require 'action_mailer'
+  require 'email_spec'
+
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -16,6 +30,20 @@ Spork.prefork do
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
   RSpec.configure do |config|
+
+    config.include Devise::TestHelpers, :type => :controller
+    config.include Warden::Test::Helpers, :type => :acceptance
+    config.after(:each, :type => :acceptance) { Warden.test_reset! }
+    config.include(EmailSpec::Helpers)
+    config.include(EmailSpec::Matchers)
+
+    config.before(:type => :feature) do
+      reset_mailer
+    end
+
+    config.before do
+      FactoryGirl.reload
+    end
     # ## Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -30,7 +58,7 @@ Spork.prefork do
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, remove the following line or assign false
     # instead of true.
-    config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false
 
     # If true, the base class of anonymous controllers will be inferred
     # automatically. This will be the default behavior in future versions of

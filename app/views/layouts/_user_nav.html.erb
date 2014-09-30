@@ -67,10 +67,18 @@
             <li role="presentation" class="account-picture"> 
               <%= current_user.name %>.
             </li>
+            <% if current_user.profile && current_user.profile.persisted? %>
+              <li role="presentation">
+                <%= link_to edit_profile_path(current_user.profile), :class=>"link" do %>
+                <i class="fa fa-user"></i>
+                  プロフィール変更
+                <% end %>
+              </li>
+            <% end %>
             <li role="presentation">
               <%= link_to edit_user_registration_path, :class=>"link" do %>
               <i class="fa fa-user"></i>
-                プロフィール変更
+                アカウント変更
               <% end %>
             </li>
             <li role="presentation">
@@ -101,11 +109,11 @@
           <% end %>
         </li>
       <% else %>           
-        <li><%= link_to new_user_registration_path, :title=>"Sign up"  do %>
+        <li><%= link_to new_user_registration_path, :title=>"ユーザー登録"  do %>
             <i class="fa fa-smile-o"></i>
           <% end %>
         </li>
-        <li><%= link_to new_user_session_path, :title=>"Sign in" do %>
+        <li><%= link_to new_user_session_path, :title=>"ログイン" do %>
             <i class="fa fa-sign-in"></i>
           <% end %>
         </li>

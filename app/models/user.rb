@@ -35,13 +35,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :joinings
+  has_many :joinings, dependent: :destroy
   has_many :communities, through: :joinings
-  has_many :players
+  has_many :players, dependent: :destroy
   has_many :rooms, through: :players
-  has_many :illustrations
+  has_many :illustrations, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true, length: { maximum: 20 }
 
   before_create :generate_channel_key
 
@@ -50,8 +51,12 @@ class User < ActiveRecord::Base
   end
 
   def has_room_role?(room, name)
-    self_as = self.players.find(room.id)
-    self_as.player_role.name == name
+    role = self.players.find_by(room: room).player_role
+    if role.nil?
+      false
+    else
+      role.name == name
+    end
   rescue ActiveRecord::RecordNotFound
     return false
   end

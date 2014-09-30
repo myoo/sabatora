@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe CharactersController, :type => :routing do
+  pending
   describe "routing" do
 
     it "routes to #index" do

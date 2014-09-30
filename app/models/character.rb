@@ -45,6 +45,7 @@ class Character < ActiveRecord::Base
   end
 
   def initialize_params
+    return if @system.nil?
     self.paramaters = @system.new_character_params.to_s # 後でもう少しくらいきれいに出力する
     update_retry_number
   end

@@ -11,6 +11,6 @@ end
 #   context "when included in a class" do
 #     subject(:with_parse) { TestTemps::ParseDouble.new }
 
-#     it_behaves_like "parse chat" 
+#     it_behaves_like "parse chat"
 #   end
 # end

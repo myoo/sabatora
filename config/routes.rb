@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get 'logs/result'
   get 'logs/download'
 
-
+  resources :profiles, except: [:index]
 
   resources :characters do
     member do
