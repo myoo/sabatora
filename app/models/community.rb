@@ -22,6 +22,11 @@ class Community < ActiveRecord::Base
     user.present? and self.joinings.where(user_id: user.id).length > 0
   end
 
+  def is_admin?(user)
+    return false unless has_member?(user)
+     self.joinings.where(user: user).joins(:role).where{role.name.in %w(owner administrator)}.length > 0
+  end
+
   def is_owner?(user)
     joinings = self.joinings.where(user: user)
     joinings.length > 0 && joinings.joins(:role).where{role.name.eq "owner"}.length > 0
