@@ -30,6 +30,7 @@ class CommunitiesController < ApplicationController
 
     respond_to do |format|
       if @community.save
+        @community.joinings.create(user: current_user, role: Role.find_by(name: "owner"))
         format.html { redirect_to @community, notice: 'Community was successfully created.' }
         format.json { render :show, status: :created, location: @community }
       else
@@ -71,6 +72,6 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :about, :description)
+      params.require(:community).permit(:name, :about, :description, :header, :icon, :header_remove, :header_cache, :icon_remove, :icon_cache)
     end
 end

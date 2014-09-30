@@ -1,29 +1,37 @@
-<%= form_for(@community) do |f| %>
-  <% if @community.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@community.errors.count, "error") %> prohibited this community from being saved:</h2>
-
-      <ul>
-      <% @community.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<%= simple_form_for(@community) do |f| %>
+      <div class="field">
+        <%= f.input :name %><br>
+      </div>
+      <div class="field">
+        <%= f.input :about %>
+      </div>
+      <div class="field">
+      <% if @community.header? %>
+        <%= image_tag  @community.header_url %>
+        <%= f.input :remove_header, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
+          <%= f.check_box :remove_header %>
+        <% end %>
+        <%= f.hidden :header_cache if @community.header_cache %>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-      <div class="field">
-        <%= f.label 'コミュニティ名' %><br>
-        <%= f.text_field :name, :class=>"form-control" %>
+        <%= f.input :header, as: :file %>
+        <%= f.hint "800x200サイズで登録してください。Max5MB" %>
       </div>
+      
+      <% if @community.icon? %>
+        <%= image_tag  @community.icon_url %>
+        <%= f.input :remove_icon, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
+          <%= f.check_box :remove_icon %>
+        <% end %>
+        <%= f.hidden :icon_cache if @community.icon_cache %>
+      <% end %>
+      <%= f.input :icon, as: :file %>
+      <%= f.hint "50x50サイズで登録して下さい" %>
+      
       <div class="field">
-        <%= f.label 'コミュニティ概要' %><br>
-        <%= f.text_area :about, :class=>"form-control" %>
-      </div>
-      <div class="field">
-        <%= f.label '説明' %><br>
-        <%= f.text_area :description, :class=>"form-control" %>
+        <%= f.input :description %>
       </div>
 
       <div class="form-actions">
-        <%= f.submit :class=>"btn btn-default" %>
+        <%= f.button :submit %>
       </div>
 <% end %>

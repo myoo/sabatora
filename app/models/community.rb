@@ -18,6 +18,12 @@ class Community < ActiveRecord::Base
   has_many :rooms, -> { order(created_at: :desc) }
   has_many :backgrounds
 
+  mount_uploader :header, HeaderUploader
+  mount_uploader :icon, IconUploader
+
+  validates :header, file_size: { maximum: 5.megabytes.to_i }
+  validates :icon, file_size: { maximum: 0.5.megabytes.to_i }
+
   def has_member?(user)
     user.present? and self.joinings.where(user_id: user.id).length > 0
   end
