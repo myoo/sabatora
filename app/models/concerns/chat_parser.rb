@@ -10,7 +10,7 @@ module ChatParser
                     ]
   end
 
-  def parse(str, dice)
+  def parse(str, dice=nil)
     lines = str.rstrip.split(/\r?\n/).map {|line| line.chomp }
     buf = []
     until lines.empty?

@@ -5,7 +5,7 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  require 'rspec/autorun'
+#  require 'rspec/autorun'
 
   Dir.glob("spec/**/*steps.rb") { |f| load f, true }
 
@@ -13,7 +13,7 @@ Spork.prefork do
   require 'capybara/rspec'
   require 'capybara/poltergeist'
   require 'rspec/rails'
-  require 'rspec/autorun'
+#  require 'rspec/autorun'
   require 'turnip'
   require 'turnip/capybara'
 
@@ -58,7 +58,7 @@ Spork.prefork do
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, remove the following line or assign false
     # instead of true.
-    config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false
 
     # If true, the base class of anonymous controllers will be inferred
     # automatically. This will be the default behavior in future versions of

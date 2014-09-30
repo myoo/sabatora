@@ -21,7 +21,7 @@ EOS
     end
 
     it "指定した文字列をフィルタリングすること" do
-      expect(sample.parse(lines)).to eq(["****しれないなこの***は", "この行は問題ありませんよ"])
+      expect(sample.parse(lines)).to eq("****しれないなこの***は\nこの行は問題ありませんよ")
     end
   end
 

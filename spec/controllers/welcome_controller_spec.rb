@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WelcomeController, :type => :controller do
 
+  pending
   describe "GET index" do
     it "returns http success" do
       get :index

@@ -51,8 +51,12 @@ class User < ActiveRecord::Base
   end
 
   def has_room_role?(room, name)
-    self_as = self.players.find(room.id)
-    self_as.player_role.name == name
+    role = self.players.find_by(room: room).player_role
+    if role.nil?
+      false
+    else
+      role.name == name
+    end
   rescue ActiveRecord::RecordNotFound
     return false
   end
