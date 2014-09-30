@@ -1,26 +1,26 @@
 <div class="container">
-<h2>Sign up</h2>
-<p>さばとらをはじめる</p>
-<div class="space01"></div>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-<div class="row">
-  <div class="col-md-offset-2 col-md-8 col-xs-12">
-    <section class="widget">
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :name, required: true %>
-          <%= f.input :password, required: true %>
-          <%= f.input :password_confirmation, required: true %>
+<div class="single-widget-container">
+  <section class="widget login-widget">
+      <header>
+        <h2>Sign up <small>さばとらをはじめる</small></h2>
+      </header>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :name, required: true %>
+        <%= f.input :password, required: true %>
+        <%= f.input :password_confirmation, required: true %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "新規登録", :class=>"btn btn-info btn-lg btn-block" %>
+        <div class="forgot">
+          <%= render "devise/shared/links" %>
         </div>
-        <div class="form-actions">
-          <%= f.button :submit, "新規登録", :class=>"btn btn-info btn-lg" %>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
 </div>
 <% end %>
-<div class="space01"></div>
-<%= render "devise/shared/links" %>
 <div class="space01"></div>
 </div>
