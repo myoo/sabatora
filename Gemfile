@@ -114,7 +114,7 @@ group :development, :test do
   gem 'tapp'
   gem 'awesome_print'
   gem 'timecop'
-  gem "colorize_unpermitted_parameters"
+  # gem "colorize_unpermitted_parameters"
   #  gem "rack-mini-profiler"
   gem 'database_cleaner'
   gem "faker"
