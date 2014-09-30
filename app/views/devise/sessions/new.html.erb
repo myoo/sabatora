@@ -1,19 +1,22 @@
 <div class="container">
-<h2>Sign in</h2>
-<p>ログイン</p>
-<div class="space01"></div>
+
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="row">
-	<div class="col-md-offset-2 col-md-8 col-xs-12">
-		<section class="widget">
+<div class="single-widget-container">
+  <section class="widget login-widget">
+      <header>
+        <h2>Sign in <small>ログイン</small></h2>
+      </header>
 		  <div class="form-inputs">
 		    <%= f.input :email, required: false, autofocus: true %>
 		    <%= f.input :password, required: false %>
 		    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 		  </div>
-		  <%= render "devise/shared/links" %>
+		  	
 		  <div class="form-actions">
-		    <%= f.button :submit, "ログイン", :class=>"btn btn-info btn-lg" %>
+		    <%= f.button :submit, "ログイン", :class=>"btn btn-info btn-lg btn-block" %>
+		    <div class="forgot">
+		  		<%= render "devise/shared/links" %>
+			</div>
 		  </div>
 		</section>
 	</div>
