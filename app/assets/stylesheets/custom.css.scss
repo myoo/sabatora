@@ -5,27 +5,27 @@ $font-size-base: 13px !default;
 
 /* テーブル調整 */
 table{
-	.center{ text-align: center;}
+    .center{ text-align: center;}
 }
 
 /* 改行でなくスペースをとりたい時用 */
 .space-top{
-	margin: 125px
+    margin: 125px
 }
 .space01{
-	padding: 16px;
+    padding: 16px;
 }
 .space02{
-	padding: 32px;
+    padding: 32px;
 }
 
 /* formの間隔調整 */
 div.field{
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 /*
-	コミュニティトップ
+    コミュニティトップ
 */
 section.community-top{
 
@@ -126,6 +126,19 @@ section.mypage{
     box-shadow: none!important;
     color: white;
 }
+/*
+    Helpページ用
+*/
+.help_page{
+    padding: 16px;
+
+    p{
+        font-size: 110%;
+    }
+    i{
+        font-size: 150%;
+    }
+}
 
 /* 
     image-picker
@@ -147,8 +160,9 @@ section.mypage{
 
 .widget {
     h1, h2, h3, h4, h5, h6 {
-	color: white;
+    color: white;
     }
     color: white;
 }
+
 
