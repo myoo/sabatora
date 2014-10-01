@@ -43,11 +43,13 @@ class @ChatClass
 
     $('#chat_message').val('')
  
-  
-
   receiveMessage: (message) =>
     # 受け取ったデータをappend
     $('#chat').append "<dt>#{message.user_name} :</dt> <dd>#{message.body}</dd>"
+    if $('#chat dt').length > 500
+      $('#chat dt').first().remove()
+      $('#chat dd').first().remove()
+
     height = 0
     $('#chat dd').each ->
       height += $(this).height()
