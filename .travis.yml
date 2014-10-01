@@ -10,7 +10,9 @@ services:
 env:
   - DB=postgresql
 
-bundler_args: --without production
+bundler_args:
+  --without production
+  --retry 3
 
 script:
   - bundle exec rake bower:install
