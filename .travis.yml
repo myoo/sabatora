@@ -12,7 +12,7 @@ env:
 
 bundler_args:
   --without production
-  --retry 3
+  --retry 5
 
 script:
   - bundle exec rake bower:install
