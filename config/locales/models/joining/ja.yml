@@ -3,10 +3,6 @@ ja:
     models:
       joining: コミュニティメンバー
 
-
     attributes:
       joining:
-      	role_id: 役割
         comment: コメント
-        
-

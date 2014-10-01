@@ -3,7 +3,7 @@ ja:
     models:
       illustration: 立ち絵
 
-
+      
     attributes:
       illustration:
         name: 名前

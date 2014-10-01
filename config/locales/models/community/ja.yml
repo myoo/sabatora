@@ -3,7 +3,7 @@ ja:
     models:
       community: コミュニティ
 
-
+      
     attributes:
       community:
         name: コミュニティ名
