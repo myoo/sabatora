@@ -6,5 +6,7 @@ ja:
 
     attributes:
       joining:
+      	role_id: 役割
         comment: コメント
-        role_id: 役割
+        
+
