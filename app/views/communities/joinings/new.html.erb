@@ -1,6 +1,10 @@
 <div class="container">
 <h1>コミュニティに参加する</h1>
-<p>コミュニティメンバーになります。</p>
+<p>【<%= @community.name %>】のコミュニティメンバーになります。</p>
+<p><%= @community.about %></p>
+<section class="description">
+    <%= @community.description.html_safe %>
+</section>
 <div class="space01"></div>
 <%= render 'form' %>
 <div class="space01"></div>

@@ -32,10 +32,11 @@ class Communities::JoiningsController < ApplicationController
 
     @communities_joining.community_id = params[:community_id]
     @communities_joining.user_id = current_user.id
+    @communities_joining.role = Role.find_by(name: 'member')
 
     respond_to do |format|
       if @communities_joining.save
-        format.html { redirect_to [@communities_joining.community, @communities_joining], notice: 'Joining was successfully created.' }
+        format.html { redirect_to @community, notice: "#{@community.name}に参加を申し込みました！" }
         format.json { render :show, status: :created, location: @communities_joining }
       else
         @community = Community.find params[:community_id]

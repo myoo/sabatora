@@ -44,7 +44,7 @@
       </h5>
     </header>
     <div class="body">
-      <div class="list-group users-list-group">
+      <div class="list-group events-list-group">
           <a href="#" class="list-group-item">
               <h5 class="no-margin">Maikel Basso</h5>
           </a>
@@ -72,7 +72,7 @@
           </h5>
         </header>
         <div class="body">
-          <div class="list-group users-list-group">
+          <div class="list-group rooms-list-group">
             <% @community.rooms.limit(5).each do |room| %>
               <div class="list-group-item">
                 <%= link_to room.name, community_room_path(@community, room)%>

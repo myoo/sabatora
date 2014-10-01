@@ -10,6 +10,8 @@
       <thead>
         <tr>
           <th>名前</th>
+          <th>コメント</th>
+          <th>種別</th>
           <th></th>
         </tr>
       </thead>
@@ -18,6 +20,8 @@
         <% @communities_joinings.each do |community_joining| %>
         <tr>
           <td><%= community_joining.user.name %></td>
+          <td><%= community_joining.comment %></td>
+          <td><%= community_joining.role.name %></td>
           <td class="center"><%= link_to '修　正', edit_community_joining_path(community_joining.community, community_joining), :class=>"btn btn-warning btn-sm" %>
           <%= link_to '削　除', [community_joining.community, community_joining], method: :delete, data: { confirm: '削除してよろしいですか？'}, :class=>"btn btn-danger btn-sm" %></td>
         </tr>
