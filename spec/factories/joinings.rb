@@ -32,6 +32,10 @@ FactoryGirl.define do
       association :role, factory: [:role, :administrator]
       comment "admin comment"
     end
+
+    trait :owner do
+      association :role, factory: [:role, :owner]
+    end
   end
 
 end
