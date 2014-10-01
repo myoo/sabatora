@@ -126,6 +126,19 @@ section.mypage{
     box-shadow: none!important;
     color: white;
 }
+/*
+    Helpページ用
+*/
+.help_page{
+    padding: 16px;
+
+    p{
+        font-size: 110%;
+    }
+    i{
+        font-size: 150%;
+    }
+}
 
 /* 
     image-picker
@@ -151,4 +164,5 @@ section.mypage{
     }
     color: white;
 }
+
 
