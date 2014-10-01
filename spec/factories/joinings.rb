@@ -21,9 +21,17 @@
 
 FactoryGirl.define do
   factory :joining do
-    user nil
-    communitiy nil
-    role nil
+    user
+    community
+    association :role, factory: [:role, :member]
     comment "MyText"
+
+    factory :admin do
+      user
+      community
+      association :role, factory: [:role, :administrator]
+      comment "admin comment"
+    end
   end
+
 end

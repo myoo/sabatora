@@ -1,4 +1,5 @@
 <div class="container">
+<h1><%= current_user.name %></h1>
 <h1>【<%= @community.name %>】メンバーリスト</h1>
 <p>コミュニティ『<%= @community.name %>』のメンバー一覧です。</p>
 
@@ -22,8 +23,12 @@
           <td><%= community_joining.user.name %></td>
           <td><%= community_joining.comment %></td>
           <td><%= community_joining.role.name %></td>
-          <td class="center"><%= link_to '修　正', edit_community_joining_path(community_joining.community, community_joining), :class=>"btn btn-warning btn-sm" %>
-          <%= link_to '削　除', [community_joining.community, community_joining], method: :delete, data: { confirm: '削除してよろしいですか？'}, :class=>"btn btn-danger btn-sm" %></td>
+          <% if can? :update, community_joining %>
+            <td class="center"><%= link_to '変　更', edit_community_joining_path(community_joining.community, community_joining), :class=>"btn btn-warning btn-sm" %>
+          <% end %>
+          <% if can? :destroy, community_joining %>
+            <%= link_to '削　除', [community_joining.community, community_joining], method: :delete, data: { confirm: '削除してよろしいですか？'}, :class=>"btn btn-danger btn-sm" %></td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
