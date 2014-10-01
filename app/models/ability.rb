@@ -8,10 +8,18 @@ class Ability
 
     # Community
     can :read, Community
-    can :manage, Community do |community|
-      community.is_owner?(user)
+    can :manage, Community.all do |community|
+      community.is_admin?(user)
     end
     can :create, Community      # あとで制限追加
+
+    # Joining
+    can :read, Joining
+    can :create, Joining
+    can :manage, Joining.all do |joining|
+      joining.community.is_admin?(user)
+    end
+    can [:update, :destroy], Joining, user_id: user.id
 
     # Room
     can :read, Room

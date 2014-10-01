@@ -115,7 +115,9 @@
                         <div id="new_communities" class="tab-pane ">
                             <h4>新しいコミュニティ</h4>
                            	<ul>
-								<li>新しいコミュニティのお知らせ１</li>
+                                <% @newbie_communities.each do |community| %>
+								<li><%= link_to community.name, community_path(community) %> <span class="small"><%= truncate community.about, length: 15, omission: '... ' %></span> <span class="small">(<%= community.created_at.to_s(:short) %>)</span></li>
+                                <% end %>
 							</ul>
                             <div class="pull-right">
                             	<%= link_to "コミュニティを全て見る", communities_path, :class=>"btn btn-primary btn-xs" %>

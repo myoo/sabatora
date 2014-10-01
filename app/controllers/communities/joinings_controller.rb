@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 class Communities::JoiningsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_communities_joining, only: [:show, :edit, :update, :destroy]
   before_action :set_community, only: [:index, :new, :create]
-  before_filter :authenticate_user!
+
+  # cancanを入れたらcreateでひっかかったので、https://github.com/ryanb/cancan/issues/835の方法で回避
+  load_and_authorize_resource through: :community, except: [:create]
 
   # GET /communities/joinings
   # GET /communities/joinings.json
@@ -30,12 +33,13 @@ class Communities::JoiningsController < ApplicationController
   def create
     @communities_joining = Joining.new(communities_joining_params)
 
-    @communities_joining.community_id = params[:community_id]
+    @communities_joining.community = @community
     @communities_joining.user_id = current_user.id
+    @communities_joining.role = Role.find_by(name: 'member')
 
     respond_to do |format|
       if @communities_joining.save
-        format.html { redirect_to [@communities_joining.community, @communities_joining], notice: 'Joining was successfully created.' }
+        format.html { redirect_to @community, notice: "#{@community.name}に参加を申し込みました！" }
         format.json { render :show, status: :created, location: @communities_joining }
       else
         @community = Community.find params[:community_id]
@@ -50,7 +54,7 @@ class Communities::JoiningsController < ApplicationController
   def update
     respond_to do |format|
       if @communities_joining.update(communities_joining_params)
-        format.html { redirect_to [@community, @communities_joining], notice: 'Joining was successfully updated.' }
+        format.html { redirect_to @community, notice: 'メンバーを変更しました' }
         format.json { render :show, status: :ok, location: @communities_joining }
       else
         format.html { render :edit }

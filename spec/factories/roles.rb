@@ -13,5 +13,17 @@
 FactoryGirl.define do
   factory :role do
     name "MyString"
+
+    trait :member do
+      name "member"
+    end
+
+    trait :administrator do
+      name "administrator"
+    end
+
+    trait :owner do
+      name "owner"
+    end
   end
 end
