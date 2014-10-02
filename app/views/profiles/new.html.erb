@@ -1,9 +1,18 @@
+<div class="container">
 <h1>New profile</h1>
-
-<p>プロフィールを登録してください</p>
-はじめてログインしたときに自動的に表示されるようになっているので、
-ここに説明を書いておいてください
-
-<%= render 'form' %>
-
-<%= link_to 'トップページへ', root_path %>
+<p>あなたのプロフィールを入力してください</p>
+<div class="space01"></div>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
+<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to 'トップページへ', root_path %></li>
+	</ol>
+</section>
+</div>

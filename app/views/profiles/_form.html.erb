@@ -9,10 +9,10 @@
       <% end %>
     <% end %>
     <%= f.hidden :avatar_cache if @profile.avatar_cache %>
-    <%= f.input :avatar, as: :file %>
+    <%= f.input :avatar, as: :file, input_html: { class: 'image_load_form' } %>
 
     <%= f.input :birth, :as => :date, start_year: Date.today.year - 12, end_year: 1900 %>
-    <%= f.input :sex, collection: Profile::SEX_TYPE, as: :radio_buttons %>
+    <%= f.input :sex, collection: Profile::SEX_TYPE, as: :radio_buttons, label_html: { class: 'radio-inline' }, input_html: { class: 'form-control-none' }  %>
     <%= f.input :introduction %>
   </div>
 

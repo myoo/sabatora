@@ -1,6 +1,18 @@
 <h1>プロフィール編集</h1>
+<p>あなたのプロフィールを編集します。</p>
+<div class="space01"></div>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<section class="widget">
+			<%= render 'form' %>
+		</section>
+	</div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
+<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '確認', @profile %></li>
+		<li><%= link_to '戻る', profiles_path %></li>
+	</ol>
+</section>
