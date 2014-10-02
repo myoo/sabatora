@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   has_many :players, dependent: :destroy
   has_many :rooms, through: :players
   has_many :illustrations, dependent: :destroy
+  has_many :scenarios
   has_one :profile, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true, length: { maximum: 20 }

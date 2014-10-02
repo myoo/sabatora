@@ -67,7 +67,7 @@ class Room < ActiveRecord::Base
   end
 
   def owned?(user)
-    self.user_id == user.id
+    self.owner == user
   end
 
   def has_member?(user)
