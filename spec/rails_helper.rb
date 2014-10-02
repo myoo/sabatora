@@ -26,7 +26,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
-
+  config.extend DeviseMacros, :type => :controller
 
   config.infer_spec_type_from_file_location!
 end
