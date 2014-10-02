@@ -8,7 +8,7 @@ class Communities::ScenariosController < ApplicationController
   # GET /communities/scenarios
   # GET /communities/scenarios.json
   def index
-    @scenarios =Scenario.all
+    @scenarios =Scenario.available.all
   end
 
   # GET /communities/scenarios/1

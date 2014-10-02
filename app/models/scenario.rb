@@ -25,4 +25,12 @@ class Scenario < ActiveRecord::Base
   belongs_to :room
 
   validates :name, :about, :system_id, :community, :user, presence: true
+
+  def self.available(user)
+     where{
+      (access.eq ACCESS_LEVEL[:USER_ONLY]) & (user_id.eq user.id) |
+      (access.eq ACCESS_LEVEL[:COMMUNITY_ONLY]) & (community_id.in user.communities.pluck(:id)) |
+      (access.eq ACCESS_LEVEL[:PUBLIC])
+    }
+  end
 end
