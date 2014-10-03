@@ -2,20 +2,27 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <% if @profile.avatar %>
-      <%= image_tag @profile.avatar_url %>
-      <%= f.input :remove_avatar, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
-            <%= f.check_box :remove_avatar %>
+    <div class="row">
+      <div class="col-sm-3">
+      <% if @profile.avatar %>
+        <%= image_tag @profile.avatar_url %>
+        <%= f.input :remove_avatar, label: "画像を削除", checked_value: true, unchecked_value: false, label_html: { class: 'radio-inline' }   do %>
+              <%= f.check_box :remove_avatar %>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= f.hidden :avatar_cache if @profile.avatar_cache %>
-    <%= f.input :avatar, as: :file, input_html: { class: 'image_load_form' } %>
+      <%= f.hidden :avatar_cache if @profile.avatar_cache %>
+      </div>
 
-    <%= f.input :birth, :as => :date, start_year: Date.today.year - 12, end_year: 1900 %>
-    <%= f.input :sex, collection: Profile::SEX_TYPE, as: :radio_buttons, label_html: { class: 'radio-inline' }, input_html: { class: 'form-control-none' }  %>
-    <%= f.input :introduction %>
+      <div class="col-sm-9">
+        <%= f.input :avatar, as: :file, input_html: { class: 'image_load_form' } %>
+      </div>
+    </div>
+
+      <%= f.input :birth, :as => :date, start_year: Date.today.year - 12, end_year: 1900 %><br>
+      <%= f.input :sex, collection: Profile::SEX_TYPE, as: :radio_buttons, label_html: { class: 'radio-inline' }, input_html: { class: 'form-control-none' } %><br>
+      <%= f.input :introduction %>
+
   </div>
-
 
   <div class="form-actions">
     <%= f.button :submit, name: "preview" %>

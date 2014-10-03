@@ -166,11 +166,17 @@ section.mypage{
     color: white;
 }
 
-
 /*
     formカスタム
 */
 .form-control-none {
     width: auto;
     height: auto;
+}
+
+.text-center{
+    position: absolute!important;
+    vertical-align: middle;
+    display: inline-block;
+
 }

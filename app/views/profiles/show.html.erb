@@ -6,10 +6,10 @@
 		<section class="widget">
 			<div class="body">
 				<div class="row">
-					<div class="col-sm-4 col-xs-12">
+					<div class="col-sm-5 col-xs-12">
 						<%= image_tag @profile.avatar_url %>
 					</div>
-					<div class="col-sm-8 col-xs-12">
+					<div class="col-sm-7 col-xs-12">
 						名前：<%= @profile.user.name %><br>
 						性別：<%= Profile::SEX_TYPE.key(@profile.sex) %><br>
 						生年月日；<%= @profile.birth %><br>
@@ -26,6 +26,7 @@
 <section class="widget">
  	<ol class="breadcrumb">
 		<li><%= link_to '編集', edit_profile_path(@profile) %></li>
+		<li><%= link_to 'TOPページ', root_path%></li>
 	</ol>
 </section>
 

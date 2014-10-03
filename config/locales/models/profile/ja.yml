@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      profile: プロフィール
+
+
+    attributes:
+      profile:
+        avatar: アバター画像
+        birth: 生年月日
+        sex: 性別
+        introduction: 自己紹介

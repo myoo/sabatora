@@ -9,10 +9,10 @@
 			</header>
 			<div class="body">
 				<div class="row">
-					<div class="col-sm-4 col-xs-12">
+					<div class="col-sm-5 col-xs-12">
 						<%= image_tag @profile.avatar_url %>
 					</div>
-					<div class="col-sm-8 col-xs-12">
+					<div class="col-sm-7 col-xs-12">
 						<p>名前：<%= @profile.user.name %></p>
 						<p>性別：<%= Profile::SEX_TYPE.key(@profile.sex) %><br>
 						<p>生年月日：<%= @profile.birth %></p>
