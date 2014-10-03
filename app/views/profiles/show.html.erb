@@ -1,10 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @profile.user.name %>さんのプロフィール</h1>
+<p>登録されているプロフィールです。</p>
+<div class="space01"></div>
+<div class="row">
+	<div class="col-sm-offset-3 col-sm-6">
+		<section class="widget">
+			<div class="body">
+				<div class="row">
+					<div class="col-sm-5 col-xs-12">
+						<%= image_tag @profile.avatar_url %>
+					</div>
+					<div class="col-sm-7 col-xs-12">
+						名前：<%= @profile.user.name %><br>
+						性別：<%= Profile::SEX_TYPE.key(@profile.sex) %><br>
+						生年月日；<%= @profile.birth %><br>
+						自己紹介：<br>
+						<%= @profile.introduction.html_safe %><br>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
 
-<h2><%= @profile.user.name %>さんのプロフィール</h2>
-<%= image_tag @profile.avatar_url %>
-<%= Profile::SEX_TYPE.key(@profile.sex) %>
-<%= @profile.introduction.html_safe %>
-<%= @profile.birth %>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<div class="space01"></div>
+<section class="widget">
+ 	<ol class="breadcrumb">
+		<li><%= link_to '編集', edit_profile_path(@profile) %></li>
+		<li><%= link_to 'TOPページ', root_path%></li>
+	</ol>
+</section>
 

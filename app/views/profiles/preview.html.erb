@@ -1,20 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h1> プロフィール確認</h1>
+<p>これで間違いがないか、確認してください。</p>
+<div class="space01"></div>
+<div class="row">
+	<div class="col-sm-offset-3 col-sm-6">
+		<section class="widget">
+			<header>
+				<h4><i class="fa fa-info-circle"> </i> 問題がなければ「実行する」ボタンを押してください。</h4>
+			</header>
+			<div class="body">
+				<div class="row">
+					<div class="col-sm-5 col-xs-12">
+						<%= image_tag @profile.avatar_url %>
+					</div>
+					<div class="col-sm-7 col-xs-12">
+						<p>名前：<%= @profile.user.name %></p>
+						<p>性別：<%= Profile::SEX_TYPE.key(@profile.sex) %><br>
+						<p>生年月日：<%= @profile.birth %></p>
+						<p>自己紹介：<br><%= @profile.introduction.html_safe %></p>
 
-<h1> 確認してください</h1>
-<p> 確認してください</p>
-
-<h2><%= @profile.user.name %></h2>
-<%= image_tag @profile.avatar_url %>
-<%= Profile::SEX_TYPE.key(@profile.sex) %>
-<%= @profile.introduction.html_safe %>
-<%= @profile.birth %>
-
-<%= form_for @profile do |f| %>
-    <%= f.hidden_field :avatar_cache %>
-    <%= f.hidden_field :avatar %>
-    <%= f.hidden_field :sex %>
-    <%= f.hidden_field :introduction %>
-    <%= f.hidden_field :birth %>
-    <%= link_to 'キャンセル', :back, class: "btn btn-default" %>
-    <%= f.submit "実行する", name: "confirm" %>
-<% end %>
+						<%= form_for @profile do |f| %>
+						    <%= f.hidden_field :avatar_cache %>
+						    <%= f.hidden_field :avatar %>
+						    <%= f.hidden_field :sex %>
+						    <%= f.hidden_field :introduction %>
+						    <%= f.hidden_field :birth %>
+					</div>
+				 </div>
+				    <div class="form-actions">
+					    <%= link_to 'キャンセル', :back, class: "btn btn-default" %>
+					    <%= f.submit "実行する", name: "confirm", class: "btn btn-primary" %>
+					</div>
+				<% end %>
+			</div>
+		</section>
+	</div>
+</div>
