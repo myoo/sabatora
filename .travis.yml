@@ -22,3 +22,5 @@ deploy:
   app: sabatora
   on:
     repo: myoo/sabatora
+  run:
+    - rake db:migrate
