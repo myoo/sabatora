@@ -18,10 +18,7 @@ cache: bundler
 deploy:
   provider: heroku
   api_key:
-    secure: KowFJ/meQQMRC1dT05itF/WtQ7//OHPSFjrMVPAm19alKuR9arifZD09Rj9ivrmtX78pX8dCv1oYzjBcNymcO06u0F0QEHhDUvrMfBqr4NQnjY5tPnPMm9hrVg3PJHhD8aGxOW+txfVhQ6oO6RPGc90L0a3miS3/76p4MFlby8k=
+    secure: TkgVcI/aOu8iVJljRFIbgIGifugdFW58mmaZ8HJV7XqH62HUrye02p9H0lRX+GT6e9xcTSRmcECqSQFJZfkIOBEDCjkW5TtxIsFr8p1OnK0xSqBwwtARLwP7PD4Nz7HQffvMDIGimk18p21oJ6roSYEhtDY82NJZ2SfQiHM/KeM=
   app: sabatora
   on:
     repo: myoo/sabatora
-  run:
-    - "rake db:migrate"
-    - "rake cleanup"
