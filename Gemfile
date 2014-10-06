@@ -126,6 +126,7 @@ group :development, :test do
   gem 'email_spec'
   gem "turnip"
 
+  gem "teaspoon"
 #  gem 'did_you_mean'
 end
 
