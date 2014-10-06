@@ -1,26 +1,27 @@
 language: ruby
-
 rvm:
-  - 2.1.2
-
+- 2.1.2
 services:
-  - redis-server
-  - mongodb
-
+- redis-server
+- mongodb
 env:
-  - DB=postgresql
-
-bundler_args:
-  --without production
-  --retry 5
-
+- DB=postgresql
+bundler_args: "--without production --retry 5"
 script:
-  - bundle exec rake bower:install
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake
-
+- bundle exec rake bower:install
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
-
+- cp config/database.travis.yml config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
 cache: bundler
+deploy:
+  provider: heroku
+  api_key:
+    secure: KowFJ/meQQMRC1dT05itF/WtQ7//OHPSFjrMVPAm19alKuR9arifZD09Rj9ivrmtX78pX8dCv1oYzjBcNymcO06u0F0QEHhDUvrMfBqr4NQnjY5tPnPMm9hrVg3PJHhD8aGxOW+txfVhQ6oO6RPGc90L0a3miS3/76p4MFlby8k=
+  app: sabatora
+  on:
+    repo: myoo/sabatora
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
