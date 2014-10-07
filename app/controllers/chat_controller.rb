@@ -18,7 +18,7 @@ class ChatController < WebsocketRails::BaseController
   def enter_room
     puts "enter room: #{message}"
     # 過去ログ表示
-    Message.recent_logs(message[:room_id]).each do |log|
+    Message.recent_logs(message[:room_id]).reverse_each do |log| # .ascするとlimitが逆転するため取って来たのをreverse_eachしている
       send_message :new_message, log
     end
   end
