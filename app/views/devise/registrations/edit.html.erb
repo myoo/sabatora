@@ -5,7 +5,8 @@
 <div class="row">
   <div class="col-md-offset-2 col-md-8 col-xs-12">
     <section class="widget">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <legend>アカウント情報変更</legend>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -24,21 +25,34 @@
         <%= f.button :submit, "更新する" %>
       </div>
     <% end %>
-  </section>
+      </section>
   </div>
 </div>
 
 <div class="space01"></div>
 
-<h3>キャラクター管理</h3>
-<%= link_to "キャラクター一覧", characters_path, :class=>"btn btn-default btn-md" %>
-<%= link_to "新規キャラクター作成", new_character_path, :class=>"btn btn-info btn-md" %>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8 col-xs-12">
+    <section class="widget">
+      <legend>キャラクター管理</legend>
+      <%= link_to "キャラクター一覧", characters_path, :class=>"btn btn-default btn-md" %>
+      <%= link_to "新規キャラクター作成", new_character_path, :class=>"btn btn-info btn-md" %>
+    </section>
+  </div>
+</div>
 
 <div class="space01"></div>
 
-<h3>アカウントの削除</h3>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8 col-xs-12">
+    <section class="widget">
+      <legend>アカウントの削除</legend>
 
-<p><%= link_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, :class=>"btn btn-danger btn-md" %></p>
+      <p><%= link_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, :class=>"btn btn-danger btn-md" %></p>
+    </section>
+  </div>
+</div>
+
 <div class="space01"></div>
 
 <section class="widget">
