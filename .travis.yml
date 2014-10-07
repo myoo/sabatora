@@ -6,7 +6,7 @@ services:
 - mongodb
 env:
 - DB=postgresql
-bundler_args: "--without production --retry 10"
+bundler_args: "--without production --retry 5"
 script:
 - bundle exec rake bower:install
 - RAILS_ENV=test bundle exec rake db:migrate --trace
@@ -17,9 +17,10 @@ before_script:
 cache: bundler
 deploy:
   provider: heroku
-  api_key: d8e75801-fe0b-404b-94b8-ff0b11fdda4e
+  api_key:
+    secure: jsxnSeLUChxdNFOz08IqHplE8Cqyjg0+jC8vOdWYm9xpJabwkgMMrG/eGIbW0r7kQnelPuDsPEWl+MbbbJhZNAEUbpJeJRbuamtdq/jo795md78dpdJivy6zp/07nIzodCjNYIrO//edi+jXSymuS6GBlYYO+F6I9bV9XIJlSfE=
   app: sabatora
   on:
     repo: myoo/sabatora
   run:
-    - rake db:migrate
+  - rake db:migrate
