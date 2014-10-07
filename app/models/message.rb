@@ -8,5 +8,5 @@ class Message
   field :body, type: String
 
   scope :logs, ->(room_id, from, to) { where(:room_id => room_id, :created_at.gte => from, :created_at.lte => to) }
-  scope :recent_logs, ->(room_id) { where(room_id: room_id).desc(:created_at).limit(500)}
+  scope :recent_logs, ->(room_id) { where(room_id: room_id).desc(:created_at, :_id).limit(500)}
 end

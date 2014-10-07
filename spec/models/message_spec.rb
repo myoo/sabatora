@@ -9,7 +9,7 @@ RSpec.describe Message, :type => :model do
 
     it "最新500件が表示されること" do
       expect(Array(Message.recent_logs(1)).count).to be 500
-      expect(Message.recent_logs(1).last.body).to match(/510|509/)
+      expect(Message.recent_logs(1).first.body).to include("510")
 #      expect(Message.recent_logs(1).first.body).to include(/10|9/)
     end
   end
