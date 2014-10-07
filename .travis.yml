@@ -6,7 +6,7 @@ services:
 - mongodb
 env:
 - DB=postgresql
-bundler_args: "--without production --retry 10"
+bundler_args: "--without production --retry 5"
 script:
 - bundle exec rake bower:install
 - RAILS_ENV=test bundle exec rake db:migrate --trace
@@ -23,3 +23,6 @@ deploy:
     repo: myoo/sabatora
   run:
     - rake db:migrate
+before_deploy:
+- cp -f .heroku.bowerrc .bowerrc
+  
