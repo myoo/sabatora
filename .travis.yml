@@ -20,6 +20,7 @@ deploy:
   api_key:
     secure: YJPymYh7A0xJj/L6ZKgA4My47GgW0ZuoE49lElO4oUT0c+ibcnIVgMGBy2/4H4xzM0BARSxRl9Db6OJPcTE0rdfqm2E6PHJwuWZc/8wIAvNPB64ASaKEbpBC+DV0aBs4TfqgQxULFXq3sPJHsyqvOEizqD3k5lXXGRWUMCCCD/s=
   app: sabatora
+  strategy: git
   on:
     repo: myoo/sabatora
   run:
