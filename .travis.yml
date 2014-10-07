@@ -17,8 +17,7 @@ before_script:
 cache: bundler
 deploy:
   provider: heroku
-  api_key:
-    secure: LzHe5qRhi+sfhvr9MDYknTvO6LVHKEYW7u3svNGAwDVbW5PEUQMeuJv15C0sk/X/aFRyzMr3k/okRy8EZUcv1PcI64wv8miYR9k51ZXA4cF2hp4gBxiB6BY4HG45ndUhvUfJDXbIq7jClQXu0CCui+TQpVAbV34xtcRceahO6jM=
+  api_key: d8e75801-fe0b-404b-94b8-ff0b11fdda4e
   app: sabatora
   on:
     repo: myoo/sabatora
