@@ -18,7 +18,7 @@ cache: bundler
 deploy:
   provider: heroku
   api_key:
-    secure: jsxnSeLUChxdNFOz08IqHplE8Cqyjg0+jC8vOdWYm9xpJabwkgMMrG/eGIbW0r7kQnelPuDsPEWl+MbbbJhZNAEUbpJeJRbuamtdq/jo795md78dpdJivy6zp/07nIzodCjNYIrO//edi+jXSymuS6GBlYYO+F6I9bV9XIJlSfE=
+    secure: YJPymYh7A0xJj/L6ZKgA4My47GgW0ZuoE49lElO4oUT0c+ibcnIVgMGBy2/4H4xzM0BARSxRl9Db6OJPcTE0rdfqm2E6PHJwuWZc/8wIAvNPB64ASaKEbpBC+DV0aBs4TfqgQxULFXq3sPJHsyqvOEizqD3k5lXXGRWUMCCCD/s=
   app: sabatora
   on:
     repo: myoo/sabatora
