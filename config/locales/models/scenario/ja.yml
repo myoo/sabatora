@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      scenario: シナリオ
+
+
+    attributes:
+      scenario:
+        name: タイトル
+        about: 説明
+        description: 詳細
+        community: コミュニティ
+        user: 作者
+        access: 公開範囲
+        system_id: システム
