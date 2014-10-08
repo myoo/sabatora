@@ -93,6 +93,9 @@ gem 'carrierwave'
 gem 'fog'
 gem "mini_magick"
 
+# autolink
+gem 'rinku'
+
 # config
 gem 'figaro'
 
