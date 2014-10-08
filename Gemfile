@@ -93,6 +93,9 @@ gem 'carrierwave'
 gem 'fog'
 gem "mini_magick"
 
+# autolink
+gem 'rinku'
+
 # config
 gem 'figaro'
 
@@ -126,6 +129,7 @@ group :development, :test do
   gem 'email_spec'
   gem "turnip"
 
+  gem "teaspoon"
 #  gem 'did_you_mean'
 end
 

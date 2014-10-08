@@ -22,8 +22,12 @@ module ChatParser
   private
   def parse_line(line, dice)
     line = line.html_safe       # エスケープ
+    line = Rinku.auto_link(line, mode=:all, link_attr='target="_blank"', skip_tags=nil) do |url|
+      url[0..39] + (url.length > 40 ? "..." :  "")
+    end
     Obscenity.sanitize(line)
     parse_command(line, dice)
+
   end
 
   def parse_command(line, dice)
