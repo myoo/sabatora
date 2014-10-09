@@ -1,12 +1,12 @@
 <div class="container">
-<h1><%= current_user.name %></h1>
 <h1>【<%= @community.name %>】メンバーリスト</h1>
 <p>コミュニティ『<%= @community.name %>』のメンバー一覧です。</p>
 
 <div class="space01"></div>
 
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-offset-1 col-md-10">
+    <section class="widget">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -33,6 +33,7 @@
         <% end %>
       </tbody>
     </table>
+  </section>
   </div>
 </div>
 

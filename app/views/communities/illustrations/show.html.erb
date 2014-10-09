@@ -1,14 +1,25 @@
-<p>
-  <strong>名前:</strong>
-  <%= @illustration.name %>
-</p>
-<p>
-  <strong>説明:</strong>
-  <%= @illustration.description %>
-</p>
-<%= image_tag @illustration.image %>
-<%= @illustration.access %>
+<div class="row">
+	<div class="col-md-offset-4 col-md-4">
+		<section class="widget"> 
+		<%= image_tag @illustration.image %>
+		<br>
+		<p>
+		  <strong>名前:</strong>
+		  <%= @illustration.name %>
+		</p>
+		<p>
+		  <strong>説明:</strong>
+		  <%= @illustration.description %>
+		</p>
+		<p>
+		  <strong>アクセス数:</strong>
+		<%= @illustration.access %>
+		</p>
+		</section>
+	</div>
+</div>
 
+<div class="space01"></div>
 <section class="widget">
  	<ol class="breadcrumb">
 		<li><%= link_to '編集', edit_community_illustration_path(@community, @illustration) %></li>
