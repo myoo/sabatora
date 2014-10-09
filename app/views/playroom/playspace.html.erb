@@ -33,6 +33,17 @@
              </div>
       </section>
     </div>
+    <div class="col-md-3 widget-container ui-sortable">
+      <section id="member_status" class="widget" data-widgster-collapsed="true" data-widgster-load="<%= member_statuses_community_room_path(@community, @room) %>">
+            <header>
+              <h5>Map</h5>
+             <%= render "widget_controls" %>
+             </header>
+             <div class="body">
+             ここにマップ縮小画像
+             </div>
+      </section>
+    </div>
   </div>
 
   <%= render "chat/room_chat_form" %>
