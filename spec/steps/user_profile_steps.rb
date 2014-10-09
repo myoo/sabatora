@@ -21,7 +21,7 @@ module UserProfileSteps
   end
 
   step "プロフィール設定画面が表示される" do
-    expect(page).to have_content("プロフィールを登録してください")
+    expect(page).to have_content("あなたのプロフィールを入力してください")
   end
 
   step "プロフィールを :action する" do |action|
@@ -57,7 +57,7 @@ module UserProfileSteps
   end
 
   step "プロフィール画面が表示される" do
-    expect(page).to have_content("#{@name}さんのプロフィール")
+    expect(page).to have_content("プロフィール確認")
   end
 
   step "変更内容が反映されている" do

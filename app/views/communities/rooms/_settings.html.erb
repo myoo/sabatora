@@ -1,3 +1,2 @@
 <!-- シナリオ等 -->
-aaaaaaa
-<%= link_to "新規シナリオを作成する", new_community_scenarios_path(@community) %>
+<%= link_to "新規シナリオを作成する", new_community_scenario_path(@community, room_id: @room.id, system: @room.system_id) %>

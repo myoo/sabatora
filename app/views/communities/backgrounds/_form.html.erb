@@ -6,7 +6,7 @@
     <%= f.input :name %>
     <%= f.input :image, as: :file, input_html: { class: 'image_load_form' } %>
     <%= f.input :about %>
-    <%= f.input :access, collection: Background::ACCESS_LEVEL %>
+    <%= f.input :access, collection: ACCESS_LEVEL %>
   </div>
 
   <div class="form-actions">

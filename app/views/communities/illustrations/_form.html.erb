@@ -8,7 +8,7 @@
       <%= f.association :characters, collection: Character.owned(current_user).all %>
     <% end %>
     <%= f.input :image, as: :file, input_html: { class: 'image_load_form' } %>
-    <%= f.input :access, collection: Illustration::ACCESS_LEVEL %>
+    <%= f.input :access, collection: ACCESS_LEVEL %>
   </div>
 
   <div class="form-actions">

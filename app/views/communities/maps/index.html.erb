@@ -1,0 +1,23 @@
+<h1>Listing communities_maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @communities_maps.each do |communities_map| %>
+      <tr>
+        <td><%= link_to 'Show', [@community, map] %></td>
+        <td><%= link_to 'Edit', edit_community_map_path(@community, map) %></td>
+        <td><%= link_to 'Destroy', [@community, map], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Map', new_community_map_path(@community) %>

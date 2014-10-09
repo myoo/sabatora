@@ -20,17 +20,14 @@
 #
 
 class Scenario < ActiveRecord::Base
+  include SessionComponents
+
+  has_many :rooms
+  has_many :map_lists
+  has_many :maps, through: :map_lists
   belongs_to :community
   belongs_to :user
-  belongs_to :room
 
-  validates :name, :about, :system_id, :community, :user, presence: true
+  validates :name, :system_id, :community, :user, presence: true
 
-  def self.available(user)
-     where{
-      (access.eq ACCESS_LEVEL[:USER_ONLY]) & (user_id.eq user.id) |
-      (access.eq ACCESS_LEVEL[:COMMUNITY_ONLY]) & (community_id.in user.communities.pluck(:id)) |
-      (access.eq ACCESS_LEVEL[:PUBLIC])
-    }
-  end
 end

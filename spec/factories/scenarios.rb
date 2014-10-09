@@ -30,5 +30,9 @@ FactoryGirl.define do
     name "MyString"
     about "MyString"
     description "MyText"
+
+    trait :public do
+      access ACCESS_LEVEL[:PUBLIC]
+    end
   end
 end

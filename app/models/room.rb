@@ -14,11 +14,13 @@
 #  created_at           :datetime
 #  updated_at           :datetime
 #  active_background_id :integer
+#  scenario_id          :integer
 #
 # Indexes
 #
 #  index_rooms_on_community_id  (community_id)
 #  index_rooms_on_owner_id      (owner_id)
+#  index_rooms_on_scenario_id   (scenario_id)
 #
 
 class Room < ActiveRecord::Base
@@ -29,6 +31,7 @@ class Room < ActiveRecord::Base
   has_many :players
   has_many :users, through: :players
   has_many :backgrounds
+  belongs_to :scenario
   belongs_to :active_background, class_name: "Background", foreign_key: :active_background_id
 
   value :stored_dice

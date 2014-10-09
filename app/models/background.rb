@@ -36,7 +36,7 @@ class Background < ActiveRecord::Base
   }
 
   after_create do
-    if room.active_background.nil?
+    if room.present? && room.active_background.nil?
       room.active_background = self
       room.save
     end

@@ -1,10 +1,21 @@
-<%= simple_form_for(@communities_scenario) do |f| %>
+<%= simple_form_for([@community, @scenario]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :about %>
+    <%= f.input :description %>
+    <% if params[:system] && @scenario.system_id.present? %>
+        <%= f.input :system_id, collection: System::TITLES, disabled: true %>
+        <%= f.input :system_id, as: :hidden %>
+        <%= hidden_field :room, :id %>
+    <% else %>
+        <%= f.input :system_id, collection: System::TITLES, include_blank: false %>
+    <% end %>
+    <%= f.input :access, collection: ACCESS_LEVEL, selected: ACCESS_LEVEL[:USER_ONLY], include_blank: false %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "作成する"  %>
   </div>
 <% end %>

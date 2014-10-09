@@ -8,7 +8,7 @@ class Communities::ScenariosController < ApplicationController
   # GET /communities/scenarios
   # GET /communities/scenarios.json
   def index
-    @scenarios =Scenario.available.all
+    @scenarios = Scenario.available(current_user)
   end
 
   # GET /communities/scenarios/1
@@ -19,6 +19,9 @@ class Communities::ScenariosController < ApplicationController
   # GET /communities/scenarios/new
   def new
     @scenario =Scenario.new
+    # roomから遷移してきた場合はsystemのデフォルトをroomに揃える
+    @scenario.system_id = params[:system] if params[:system] && System::TITLES.key(params[:system].to_i).present?
+    @room = Room.find(params[:room_id]) if params[:room_id].present?
   end
 
   # GET /communities/scenarios/1/edit
@@ -32,9 +35,17 @@ class Communities::ScenariosController < ApplicationController
     @scenario.user = current_user
     @scenario.community = @community
 
+    room = Room.find_by(id: params[:room][:id]) if params[:room] && params[:room][:id].present?
+
     respond_to do |format|
       if @scenario.save
-        format.html { redirect_to [@community, @scenario], notice: 'Scenario was successfully created.' }
+        if room.present?
+          room.scenario = @scenario
+          room.save
+          format.html { redirect_to edit_community_room_path(@community, room), notice: 'シナリオを作成しました'  }
+        else
+          format.html { redirect_to [@community, @scenario], notice: 'シナリオを作成しました' }
+        end
 #        format.json { render :show, status: :created, location: @scenario }
       else
         format.html { render :new }

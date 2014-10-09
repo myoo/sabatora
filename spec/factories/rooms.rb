@@ -13,11 +13,13 @@
 #  created_at           :datetime
 #  updated_at           :datetime
 #  active_background_id :integer
+#  scenario_id          :integer
 #
 # Indexes
 #
 #  index_rooms_on_community_id  (community_id)
 #  index_rooms_on_owner_id      (owner_id)
+#  index_rooms_on_scenario_id   (scenario_id)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

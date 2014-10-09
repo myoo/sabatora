@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002072557) do
+ActiveRecord::Schema.define(version: 20141009051834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,33 @@ ActiveRecord::Schema.define(version: 20141002072557) do
   add_index "joinings", ["role_id"], name: "index_joinings_on_role_id", using: :btree
   add_index "joinings", ["user_id"], name: "index_joinings_on_user_id", using: :btree
 
+  create_table "map_lists", force: true do |t|
+    t.integer  "map_id",      null: false
+    t.integer  "scenario_id", null: false
+    t.integer  "order_no"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "map_lists", ["map_id"], name: "index_map_lists_on_map_id", using: :btree
+  add_index "map_lists", ["scenario_id"], name: "index_map_lists_on_scenario_id", using: :btree
+
+  create_table "maps", force: true do |t|
+    t.string   "title",                  null: false
+    t.string   "about"
+    t.text     "description"
+    t.string   "image",                  null: false
+    t.integer  "access",       limit: 2, null: false
+    t.integer  "user_id",                null: false
+    t.integer  "community_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "maps", ["community_id"], name: "index_maps_on_community_id", using: :btree
+  add_index "maps", ["user_id"], name: "index_maps_on_user_id", using: :btree
+
   create_table "player_roles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -148,10 +175,12 @@ ActiveRecord::Schema.define(version: 20141002072557) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "active_background_id"
+    t.integer  "scenario_id"
   end
 
   add_index "rooms", ["community_id"], name: "index_rooms_on_community_id", using: :btree
   add_index "rooms", ["owner_id"], name: "index_rooms_on_owner_id", using: :btree
+  add_index "rooms", ["scenario_id"], name: "index_rooms_on_scenario_id", using: :btree
 
   create_table "scenarios", force: true do |t|
     t.integer  "community_id"
