@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      map: マップ
+
+
+    attributes:
+      map:
+        title: タイトル
+        about: 説明
+        description: 詳細
+        image: 画像
+        access: 公開範囲

@@ -24,3 +24,5 @@
 database.yml
 dump.rdb
 /TAGS
+
+.DS_Store

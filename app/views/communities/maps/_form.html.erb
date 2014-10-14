@@ -2,6 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :about %>
+    <%= f.input :description %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :access, collection: ACCESS_LEVEL, selected: ACCESS_LEVEL[:COMMUNITY_ONLY] %>
   </div>
 
   <div class="form-actions">
