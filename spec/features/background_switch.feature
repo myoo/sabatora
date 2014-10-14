@@ -1,4 +1,4 @@
-Feature: 立ち絵切り替え
+Feature: 背景切り替え
   Background:
     Given ユーザーが登録されている
     And コミュニティが存在している
