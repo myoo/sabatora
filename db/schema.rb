@@ -197,6 +197,20 @@ ActiveRecord::Schema.define(version: 20141009051834) do
   add_index "scenarios", ["community_id"], name: "index_scenarios_on_community_id", using: :btree
   add_index "scenarios", ["user_id"], name: "index_scenarios_on_user_id", using: :btree
 
+  create_table "scenarios", force: true do |t|
+    t.integer  "community_id"
+    t.integer  "user_id"
+    t.integer  "access",       limit: 2
+    t.string   "name"
+    t.string   "about"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scenarios", ["community_id"], name: "index_scenarios_on_community_id", using: :btree
+  add_index "scenarios", ["user_id"], name: "index_scenarios_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
