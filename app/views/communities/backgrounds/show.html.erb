@@ -1,39 +1,45 @@
 <div class="container">
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <section class="widget">
+      <p>
+        <strong>ルーム名:</strong>
+        <%= @background.room.name %>
+      </p>
 
-<p>
-  <strong>ルーム名:</strong>
-  <%= @background.room %>
-</p>
+      <p>
+        <%= image_tag @background.image_url(:thumb) %>
+      </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @background.image_url(:thumb) %>
-</p>
+      <p>
+        <strong>名前:</strong>
+        <%= @background.name %>
+      </p>
 
-<p>
-  <strong>名前:</strong>
-  <%= @background.name %>
-</p>
+      <p>
+        <strong>説明:</strong>
+        <%= @background.about %>
+      </p>
 
-<p>
-  <strong>About:</strong>
-  <%= @background.about %>
-</p>
+      <p>
+        <strong>登録ユーザー:</strong>
+        <%= @background.user.name %>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @background.user %>
-</p>
+      <p>
+        <strong>Access:</strong>
+        <%= @background.access %>
+      </p>
 
-<p>
-  <strong>Access:</strong>
-  <%= @background.access %>
-</p>
+      <p>
+        <strong>コミュニティ:</strong>
+        <%= @background.community.name %>
+      </p>
+    </section>
+  </div>
+</div>
 
-<p>
-  <strong>コミュニティ:</strong>
-  <%= @background.community %>
-</p>
+
 <div class="space01"></div>
 <section class="widget">
   <ol class="breadcrumb">

@@ -1,16 +1,14 @@
 <section class="community-top bottom" style="background-image: url(<%= @community.header_url %>)">
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="row">
-  <div class="col-sm-1 col-xs-12">
-     <%= image_tag 'sabatora_top.png', :class=>"img-responsive center-block", :alt=>"sabatora" %>
-  </div>
-  <div class="col-sm-9 col-xs-12">
-    <h1><%= @community.name %></h1>
+  <div class="col-sm-10 col-xs-12">
+    <h1><%= image_tag @community.icon_url, :class=>"img-responsive img_commu" %>
+      <%= @community.name %></h1>
     <p><%= @community.about %></p>
   </div>
   <% if can? :manage, @community %>
     <div class="col-sm-2 col-xs-12">
-      <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs" %>
+      <%= link_to 'コミュニティの編集', edit_community_path(@community), :class=>"btn btn-warning btn-xs btn-block" %>
     </div>
   <% end %>
 </div>
@@ -44,7 +42,7 @@
       </h5>
     </header>
     <div class="body">
-    <%= image_tag @community.icon_url %>
+    
       <div class="list-group rooms-list-group">
           <a href="#" class="list-group-item">
               <h5 class="no-margin">Maikel Basso</h5>

@@ -1,6 +1,6 @@
 <%= simple_form_for(@community) do |f| %>
       <div class="field">
-        <%= f.input :name %><br>
+        <%= f.input :name %>
       </div>
       <div class="field">
         <%= f.input :about %>
@@ -13,7 +13,7 @@
         <% end %>
         <%= f.hidden :header_cache if @community.header_cache %>
       <% end %>
-        <%= f.input :header, as: :file %>
+        <%= f.input :header, as: :file, input_html: { class: 'image_load_form' }  %>
         <%= f.hint "800x200サイズで登録してください。Max5MB" %>
       </div>
       
@@ -24,7 +24,7 @@
         <% end %>
         <%= f.hidden :icon_cache if @community.icon_cache %>
       <% end %>
-      <%= f.input :icon, as: :file %>
+      <%= f.input :icon, as: :file, input_html: { class: 'image_load_form' }  %>
       <%= f.hint "50x50サイズで登録して下さい" %>
       
       <div class="field">

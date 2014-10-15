@@ -17,6 +17,7 @@
     <%= f.input :community_id, as: :hidden %>
     <%= f.input :about %>
 	  <%= f.input :system_id, collection: System::TITLES %>
+    <%= f.hint '※ダイスシステムを選択してください。', :class=>'margin-hint' %>
 	  <%= f.input :active_background_id, collection: Background.where(room: @room) %>
     <%= f.input :started_at, input_html: { class: 'size_days' }, label_html: { class: 'size_lavel' }  %>
   </div>

@@ -7,7 +7,7 @@
         <section class="widget">
             <header>
                 <h4>
-                    <i class="fa fa-font"></i>
+                    <i class="fa fa-film"></i>
                     使用可能画像一覧
                     <%= link_to '新しく背景を登録する', new_community_background_path(@community, @background), :class=>"btn btn-xs btn-info pull-right" %>
                 </h4>
@@ -38,9 +38,12 @@
         </section>
       </div>
     </div>
-
-    <div class="space01"></div>  
-    <%= link_to "戻る", :back %>
+    <div class="space01"></div>
+    <section class="widget">
+      <ol class="breadcrumb">
+        <li><%= link_to "戻る", :back %></li>
+    </ol>
+    </section>
 </section>
 
 
