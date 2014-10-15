@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925031035) do
+ActiveRecord::Schema.define(version: 20141002031124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,20 @@ ActiveRecord::Schema.define(version: 20140925031035) do
 
   add_index "rooms", ["community_id"], name: "index_rooms_on_community_id", using: :btree
   add_index "rooms", ["owner_id"], name: "index_rooms_on_owner_id", using: :btree
+
+  create_table "scenarios", force: true do |t|
+    t.integer  "community_id"
+    t.integer  "user_id"
+    t.integer  "access",       limit: 2
+    t.string   "name"
+    t.string   "about"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scenarios", ["community_id"], name: "index_scenarios_on_community_id", using: :btree
+  add_index "scenarios", ["user_id"], name: "index_scenarios_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

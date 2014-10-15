@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 class ProfilesController < ApplicationController
+  layout 'mypage'
+  
   before_filter :authenticate_user!, except: [:show]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :already_profiled, only: [:new]
+
+
 
   # GET /profiles/1
   # GET /profiles/1.json
