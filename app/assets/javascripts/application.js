@@ -11,14 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require turbolinks
+// 一旦turbolinksとめる
+// require turbolinks
 //= require jquery_ujs
 //= require jquery-ui
 
 //= require json2/json2
 //= require jcanvas/jcanvas
 
-//= require jquery-pjax/jquery.pjax
+// require jquery-pjax/jquery.pjax
 //= require jquery-maskedinput/dist/jquery.maskedinput
 //= require parsleyjs/dist/parsley.min
 //= require iCheck/icheck.min
@@ -52,18 +53,17 @@
 //= require image-picker/image-picker
 
 //= require js/app
-//= require js/forms
-//= require js/forms-article
-//= require js/forms-elemets
-//= require js/forms-validation
+// require js/forms
+// require js/forms-article
+// require js/forms-elemets
+// require js/forms-validation
 //= require js/grid-live
 //= require js/landing
-//= require js/list-groups
-//= require js/print
-//= require js/realtime
-//= require js/stats
-//= require js/ui-buttons
-//= require js/ui-dialogs
-//= require js/ui-notifications
-//= require js/wizard
+// require js/print
+// require js/realtime
+// require js/stats
+// require js/ui-buttons
+// require js/ui-dialogs
+// require js/ui-notifications
+// require js/wizard
 

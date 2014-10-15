@@ -31,7 +31,7 @@
 		<legend class="section">セッションを始める時はここから</legend>
 		<div class="row">
   			<div class="col-md-offset-2 col-md-8 col-xs-12">
-				<%= link_to "セッションルームへ", playspace_community_room_path(@community, @room), :class=>"btn btn-success btn-block" %>
+				<%= link_to "セッションルームへ", playspace_community_room_path(@community, @room), :class=>"btn btn-success btn-block", data: {no_turbo_link: true} %>
 			</div>
 		</div>
 
