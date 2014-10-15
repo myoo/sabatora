@@ -1,4 +1,4 @@
-window.PJAX_ENABLED = true;
+window.PJAX_ENABLED = false;
 window.DEBUG        = true;
 
 //colors
