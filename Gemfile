@@ -40,7 +40,7 @@ gem 'compass-rails'
 gem 'less-rails'
 gem 'therubyracer'
 #gem "twitter-bootstrap-rails"
-gem "bootstrap-wysihtml5-rails"
+gem "bootstrap-wysihtml5-rails", :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
 
 gem "font-awesome-rails"
 

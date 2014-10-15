@@ -17,9 +17,9 @@
 	    <%= f.input :image, as: :file, input_html: { class: 'image_load_form' } %>
 	    <%= f.input :paramaters %>
 	    <%= f.hint '※自動的に作成されます。内容を変更したい場合、キャラ作成後、キャラを編集し、データを上書きして保存してください。', :class=>'margin-hint' %>
-	    <%= f.input :profile %>
+	    <%= f.input :profile, as: :wysihtml5 , :input_html => {:rows => 10, cols: 100}  %>
 		<%= f.hint '※簡単なHTMLタグなら有効です。', :class=>'margin-hint' %>
-	    <%= f.input :memo %>
+	    <%= f.input :memo, as: :wysihtml5 , :input_html => {:rows => 10, cols: 100}   %>
 	    <%= f.hint '※簡単なHTMLタグなら有効です。', :class=>'margin-hint' %>
 	    <%= f.input :user_id, as: :hidden %>
 	    <%= f.input :illustration do %>
