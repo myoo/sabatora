@@ -1,80 +1,50 @@
 <nav id="sidebar" class="sidebar nav-collapse collapse">
     <ul id="side-nav" class="side-nav">
         <li class="panel">
-            <a href=""><i class="fa fa-edit"></i> <span class="name">My status</span></a>
+            <%= link_to edit_profile_path(current_user.profile), :class=>"link" do %>
+              <i class="fa fa-user"></i> <span class="name">プロフィール編集</span>
+            <% end %>
         </li>
+
         <li class="panel">
             <a class="accordion-toggle collapsed" data-toggle="collapse"
-               data-parent="#side-nav" href="#member"><i class="fa fa-eye "></i> <span class="name">Members</span></a>
-            <ul id="member" class="panel-collapse collapse">
-                <li><a href="">Member1</a></li>
-                <li><a href="">Member2</a></li>
-            </ul>
-        </li>
-        <li class="panel">
-            <a href=""><i class="fa fa-file-text"></i> <span class="name">Public Memo</span></a>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse"
-               data-parent="#side-nav" href="#master_menu"><i class="fa fa-gamepad"></i> <span class="name">Master menu</span></a>
-            <ul id="master_menu" class="panel-collapse collapse">
-                <li class="panel">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#menu-levels-collapse" href="#scenario">シナリオ管理</a>
-                    <ul id="scenario" class="panel-collapse collapse">
-                        <li><a href="#">シナリオ新規作成</a></li>
-                        <li><a href="#">シナリオを選択</a></li>
-                    </ul>
+               data-parent="#side-nav" href="#chara"><i class="fa fa-users "></i> <span class="name">キャラクター管理</span></a>
+            <ul id="chara" class="panel-collapse collapse">
+                <li>
+                    <%= link_to new_character_path, :class=>"link" do %>
+                        <span class="name">キャラクターの<br>新規作成</span>
+                    <% end %>
                 </li>
-                <li class="panel">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#menu-levels-collapse" href="#npc">NPC管理</a>
-                    <ul id="npc" class="panel-collapse collapse">
-                        <li><a href="#">NPC新規作成</a></li>
-                        <li><a href="#">NPCを選択</a></li>
-                    </ul>
-                </li>
-                <li class="panel">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#menu-levels-collapse" href="#movie">
-                    動画・BGM・SE管理</a>
-                    <ul id="movie" class="panel-collapse collapse">
-                        <li class="panel">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse"
-                               data-parent="#sub-menu" href="#sub-movie01">動画管理</a>
-                            <ul id="sub-movie01" class="panel-collapse collapse">
-                                <li><a href="#">動画新規登録</a></li>
-                                <li><a href="#">動画を選択</a></li>
-                            </ul>
-                        </li>
-                        <li class="panel">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse"
-                               data-parent="#sub-menu" href="#sub-movie02">BGM管理</a>
-                            <ul id="sub-movie02" class="panel-collapse collapse">
-                                <li><a href="#">BGM新規登録</a></li>
-                                <li><a href="#">BGMを選択</a></li>
-                            </ul>
-                        </li>
-                        <li class="panel">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse"
-                               data-parent="#sub-menu" href="#sub-movie03">SE管理</a>
-                            <ul id="sub-movie03" class="panel-collapse collapse">
-                                <li><a href="#">SE新規登録</a></li>
-                                <li><a href="#">SEを選択</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <li>
+                    <%= link_to characters_path, :class=>"link" do %>
+                        <span class="name">キャラクター一覧</span>
+                    <% end %>
                 </li>
             </ul>
         </li>
         <li class="panel">
+            <a href=""><i class="fa fa-calendar"></i> <span class="name">スケジュール</span></a>
+        </li>
+        <li class="panel">
             <a class="accordion-toggle collapsed" data-toggle="collapse"
-               data-parent="#side-nav" href="#log_dl"><i class="fa fa-arrow-circle-o-down"></i> <span class="name">Log DL</span></a>
-            <ul id="log_dl" class="panel-collapse collapse">
-                <li><a data-toggle="modal" href="#chat_log_dl" >セッションログ</a></li>
-                <li><a href="" >そのほか</a></li>
+               data-parent="#side-nav" href="#friends"><i class="fa fa-heart"></i> <span class="name">フレンド</span></a>
+            <ul id="friends" class="panel-collapse collapse">
+                <li><a href="#">フレンド登録</a></li>
+                <li><a href="#">フレンド一覧</a></li>
             </ul>
         </li>
+        <li class="panel">
+            <a href=""><i class="fa fa-trophy"></i> <span class="name">称号一覧</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse"
+               data-parent="#side-nav" href="#message"><i class="fa fa-envelope"></i> <span class="name">メッセージ</span></a>
+            <ul id="message" class="panel-collapse collapse">
+                <li><a href="#">メッセージ作成</a></li>
+                <li><a href="#">メッセージ一覧</a></li>
+            </ul>
+        </li>
+
         <li class="visible-xs">
             <a data-target="#session_log"><i class="fa fa-sign-out"></i> <span class="name">Sign Out</span></a>
         </li>

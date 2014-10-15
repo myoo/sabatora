@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class CharactersController < ApplicationController
+  layout 'mypage'
+  
   before_action :set_character, only: [:show, :edit, :update, :destroy, :update_params, :edit_params]
 
   # GET /characters
