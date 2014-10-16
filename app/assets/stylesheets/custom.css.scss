@@ -185,6 +185,9 @@ section.mypage{
   float:left;
 }
 
+/*
+    テキストエリアの横拡大をなしにする
+*/
 textarea {
-resize: vertical;
+    resize: vertical;
 }

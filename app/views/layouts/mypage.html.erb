@@ -16,36 +16,29 @@
 
   <div class="wrap">
     <%= render :partial => "/layouts/user_nav" %>
-</div>
-<div class="wrap">
-  <div class="content container">
-
-    <div class="row">
-      <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-      <% end %>
-     </div>
-
-    <div class="content container">
-      <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-      <% end %>
-
-      <%= yield %>
-    </div>
-    <div class="loader-wrap hiding hide">
-        <i class="fa fa-spinner fa-spin"></i>
-    </div>
-
   </div>
-</div>
+  <div class="wrap">
+    <div class="content container">
 
+      <div class="row">
+        <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-error"><%= alert %></p>
+        <% end %>
+      </div>
+
+      <div class="content container">
+      <%= yield %>
+      </div>
+
+      <div class="loader-wrap hiding hide">
+          <i class="fa fa-spinner fa-spin"></i>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>
