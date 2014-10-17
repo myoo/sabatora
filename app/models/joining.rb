@@ -41,6 +41,7 @@ class Joining < ActiveRecord::Base
   def transfer_owner
     if community.is_owner?(user)
       first_user = community.joinings.where.not(user_id: user.id).order(created_at: :asc).first
+      return if first_user.nil?
       first_user.role = Role.find_by(name: "owner")
       Joining.skip_callback(:save, :before, :confirm_owner) # オーナーの確認をスキップ
       first_user.save

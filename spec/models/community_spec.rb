@@ -16,6 +16,12 @@
 require 'rails_helper'
 
 RSpec.describe Community, :type => :model do
+  describe "association" do
+    it { should have_many(:rooms).dependent(:destroy) }
+    it { should have_many(:backgrounds).dependent(:destroy)}
+    it { should have_many(:joinings).dependent(:delete_all) }
+  end
+
   describe "owner" do
     let(:owner) { FactoryGirl.create(:user) }
     let(:community) { FactoryGirl.create(:community) }
@@ -38,4 +44,5 @@ RSpec.describe Community, :type => :model do
       end
     end
   end
+
 end

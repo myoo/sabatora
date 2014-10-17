@@ -102,6 +102,7 @@ gem 'figaro'
 group :development, :test do
   gem "rspec"
   gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
   gem "guard-rspec", require: false
   gem "spring-commands-rspec"
   gem 'factory_girl_rails'

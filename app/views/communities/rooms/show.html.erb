@@ -10,14 +10,16 @@
 		<% end %>
 		</legend>
 		<p><%= @room.about %></p>
-		<div class="space01"></div>
+		<% if cannot? :playspace, @room %>
+			<div class="space01"></div>
+			<legend class="section">セッションを始める・見るにはまずここからメンバー登録！</legend>
+			<div class="row">
+	  			<div class="col-md-offset-2 col-md-8 col-xs-12">
+					<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, @room), :class=>"btn btn-primary btn-block" %>
+				</div>
+			</div>			
+		<% end %>
 
-		<legend class="section">セッションを始める・見るにはまずここからメンバー登録！</legend>
-		<div class="row">
-  			<div class="col-md-offset-2 col-md-8 col-xs-12">
-				<%= link_to 'このセッションに参加する', new_community_room_player_path(@community, @room), :class=>"btn btn-primary btn-block" %>
-			</div>
-		</div>
 
 		<div class="space01"></div>
 		<legend class="section">セッション参加者の確認、キャラシートの確認はここから</legend>
@@ -26,14 +28,16 @@
 				<%= link_to "参加者一覧", community_room_players_path(@community, @room), :class=>"btn btn-inverse btn-block" %>
 			</div>
 		</div>
+		<% if  can? :playspace, @room %>
+			<div class="space01"></div>
+			<legend class="section">セッションを始める時はここから</legend>
+			<div class="row">
+	  			<div class="col-md-offset-2 col-md-8 col-xs-12">
+					<%= link_to "セッションルームへ", playspace_community_room_path(@community, @room), :class=>"btn btn-success btn-block", data: {no_turbo_link: true} %>
+				</div>
+			</div>			
+		<% end %>
 
-		<div class="space01"></div>
-		<legend class="section">セッションを始める時はここから</legend>
-		<div class="row">
-  			<div class="col-md-offset-2 col-md-8 col-xs-12">
-				<%= link_to "セッションルームへ", playspace_community_room_path(@community, @room), :class=>"btn btn-success btn-block", data: {no_turbo_link: true} %>
-			</div>
-		</div>
 
 		<div class="space01"></div>
 	</section>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # == Schema Information
 #
 # Table name: communities
@@ -13,10 +14,10 @@
 #
 
 class Community < ActiveRecord::Base
-  has_many :joinings
+  has_many :joinings, dependent: :delete_all # transfer_ownerを呼び出さないように
   has_many :users, -> { order 'joinings.created_at DESC'}, through: :joinings
-  has_many :rooms, -> { order(created_at: :desc) }
-  has_many :backgrounds
+  has_many :rooms, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :backgrounds, dependent: :destroy
 
   mount_uploader :header, HeaderUploader
   mount_uploader :icon, IconUploader
