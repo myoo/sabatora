@@ -28,7 +28,7 @@
       <%= f.hint "50x50サイズで登録して下さい" %>
       
       <div class="field">
-        <%= f.input :description %>
+        <%= f.input :description, as: :wysihtml5 , :input_html => {:rows => 10, cols: 100}  %>
       </div>
 
       <div class="form-actions">

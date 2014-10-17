@@ -19,7 +19,7 @@
 	  <%= f.input :system_id, collection: System::TITLES %>
     <%= f.hint '※ダイスシステムを選択してください。', :class=>'margin-hint' %>
 	  <%= f.input :active_background_id, collection: Background.where(room: @room) %>
-    <%= f.input :started_at, input_html: { class: 'size_days' }, label_html: { class: 'size_lavel' }  %>
+    <%= f.input :started_at,  as: :date, input_html: { class: 'size_days' }, label_html: { class: 'size_lavel' }  %>
   </div>
   <div class="space01"></div>
   <div class="form-actions">

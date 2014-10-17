@@ -14,7 +14,7 @@
 </div>
 </section>
 <section class="community-main">
-  <%= @community.description %>
+  <%= @community.description.html_safe %>
   <br>
   <div class="pagination">
     <a href="#" class="btn btn-default btn-xs"><%= @community.name %>掲示板</a>
@@ -45,7 +45,7 @@
     
       <div class="list-group rooms-list-group">
           <a href="#" class="list-group-item">
-              <h5 class="no-margin">Maikel Basso</h5>
+              <h5 class="no-margin">ここはまだダミー</h5>
           </a>
           <a href="#" class="list-group-item">
               <h5 class="no-margin">Ianus Arendse</h5>
