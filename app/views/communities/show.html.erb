@@ -76,8 +76,10 @@
               <div class="list-group-item">
                 <%= link_to room.name, community_room_path(@community, room)%>
                 &nbsp;
-                <%= link_to 'セッションルームに飛ぶ', playspace_community_room_path(@community, room), data: { no_turbolink: true } , :class=>"btn btn-success btn-xs" %>
-                &nbsp;
+                <% if can? :playspace, room %>
+                  <%= link_to 'セッションルームに飛ぶ', playspace_community_room_path(@community, room), data: { no_turbolink: true } , :class=>"btn btn-success btn-xs" %>
+                  &nbsp;
+                <% end %>
                 オーナー：<%= room.owner.name %>
               </div>
             <% end %>
