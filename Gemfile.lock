@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/Nerian/bootstrap-wysihtml5-rails.git
+  revision: 1c7cb98c6aafbf4e67125c1dea1c9c910319c9be
+  specs:
+    bootstrap-wysihtml5-rails (0.3.3.1)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/myoo/obscenity.git
   revision: 1439a4c3a3309abf92caf73cbeb3f352643b03fb
   branch: custom_for_japanese
@@ -47,8 +54,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
-    bootstrap-wysihtml5-rails (0.3.2.100)
-      railties (>= 3.0)
     bower-rails (0.8.3)
     bson (2.3.0)
     builder (3.2.2)
@@ -400,7 +405,7 @@ DEPENDENCIES
   awesome_print
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
-  bootstrap-wysihtml5-rails
+  bootstrap-wysihtml5-rails!
   bower-rails (~> 0.8.3)
   cancancan
   capybara
