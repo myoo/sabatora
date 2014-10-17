@@ -11,7 +11,7 @@ class Communities::RoomsController < ApplicationController
   # GET /communities/rooms
   # GET /communities/rooms.json
   def index
-    @rooms =Room.all
+    @rooms =Room.where(community: @community)
   end
 
   # GET /communities/rooms/1
