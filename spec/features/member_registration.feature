@@ -4,7 +4,7 @@ Feature: 会員登録
     Given トップページを表示する
     When 画面右上会員登録アイコンをクリックする
     And 会員登録ページに飛ぶ
-    And "arupaka@test.com" とメールアドレスフィールドに入力する
+    And "test@test.com" とメールアドレスフィールドに入力する
     And "あるぱか" とユーザー名フィールドに入力する
     And "password" とパスワードフィールドに入力する
     And "password" とパスワード確認フィールドに入力する
