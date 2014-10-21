@@ -7,7 +7,7 @@
       </div>
       <div class="field">
       <% if @community.header? %>
-        <%= image_tag  @community.header_url %>
+        <%= image_tag  @community.header_url, :class=>"img-responsive" %>
         <%= f.input :remove_header, label: "画像を削除", checked_value: true, unchecked_value: false  do %>
           <%= f.check_box :remove_header %>
         <% end %>
