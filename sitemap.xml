@@ -19,33 +19,33 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://myoo.github.io/sabatora//2014/10/24/sass.html</loc>
+    <loc>http://myoo.github.io/sabatora//sabatora/2014/10/24/sass.html</loc>
     <lastmod>2014-10-24</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://myoo.github.io/sabatora//2014/10/24/start.html</loc>
+    <loc>http://myoo.github.io/sabatora//sabatora/2014/10/24/start.html</loc>
     <lastmod>2014-10-24</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://myoo.github.io/sabatora//2014.html</loc>
-    <lastmod>2014-10-22</lastmod>
-    <priority>1.0</priority>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://myoo.github.io/sabatora//2014/10.html</loc>
+    <loc>http://myoo.github.io/sabatora//sabatora/2014.html</loc>
     <lastmod>2014-10-22</lastmod>
     <priority>0.9</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://myoo.github.io/sabatora//2014/10/24.html</loc>
+    <loc>http://myoo.github.io/sabatora//sabatora/2014/10.html</loc>
     <lastmod>2014-10-22</lastmod>
     <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://myoo.github.io/sabatora//sabatora/2014/10/24.html</loc>
+    <lastmod>2014-10-22</lastmod>
+    <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
 </urlset>
