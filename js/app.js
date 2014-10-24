@@ -1,0 +1,1 @@
+(function(){!function(n){return n(window).on("load",function(){})}(jQuery)}).call(this);

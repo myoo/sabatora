@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sabatora Note</title>
+  <subtitle>さばとらの開発メモ</subtitle>
+  <id>http://myoo.github.io/sabatora/</id>
+  <link href="http://myoo.github.io/sabatora/"/>
+  <link href="http://myoo.github.io/sabatora/feed.xml" rel="self"/>
+  <updated>2014-10-24T03:35:00Z</updated>
+  <author>
+    <name>myoo</name>
+  </author>
+  <entry>
+    <title>開発日誌的な</title>
+    <link rel="alternate" href="http://myoo.github.io/2014/10/24/start.html"/>
+    <id>http://myoo.github.io/2014/10/24/start.html</id>
+    <published>2014-10-24T03:35:00Z</published>
+    <updated>2014-10-24T12:36:52+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;実験的にmiddlemanでブログメモ。&lt;/p&gt;
+
+&lt;p&gt;多少勉強したかったので、テンプレートはslimを使用しています（といってもデフォルトからほぼいじっていない）&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>sass syntax error</title>
+    <link rel="alternate" href="http://myoo.github.io/2014/10/24/sass.html"/>
+    <id>http://myoo.github.io/2014/10/24/sass.html</id>
+    <published>2014-10-24T03:10:00Z</published>
+    <updated>2014-10-24T12:43:07+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;さばとら環境じゃないんだけどcompassのアップデートしたらエラーが出たのでメモ。&lt;/p&gt;
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;compass watch
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;したら、これまで通っていたlight-blueのsassがコンパイルできなくなった。&lt;/p&gt;
+
+&lt;p&gt;詳細は
+&lt;a href="https://github.com/sass/sass/issues/1476"&gt;https://github.com/sass/sass/issues/1476&lt;/a&gt;
+の通り。&lt;/p&gt;
+
+&lt;p&gt;sassのバージョンが上がって今までWarningが出ていた&lt;/p&gt;
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="s1"&gt;'specificity'&lt;/span&gt; &lt;span class="nt"&gt;for&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nd"&gt;:not&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;old&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;&lt;span class="nd"&gt;:Array&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;を受け付けてくれないみたい。&lt;/p&gt;
+
+&lt;p&gt;回避方法はsassのダウングレードしかない(か、scssの方を修正する)&lt;/p&gt;
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'sass-rails'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'~&amp;gt; 5.0.0.beta1'&lt;/span&gt;
+&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'sass'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'3.4.5'&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;さばとらで使用している&lt;a href="https://wrapbootstrap.com/theme/light-blue-responsive-admin-web-app-WB0T41TX4"&gt;light-blue&lt;/a&gt; だと_base.scssがひっかかる。&lt;/p&gt;
+</content>
+  </entry>
+</feed>
