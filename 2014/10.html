@@ -105,24 +105,16 @@
     <span class="glyphicon glyphicon-time"></span> Posted on Oct 24
   </p>
   <hr /><p>さばとら環境じゃないんだけどcompassのアップデートしたらエラーが出たのでメモ。</p>
-<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr>
-<td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td>
-<td class="code"><pre>compass watch
-</pre></td>
-</tr></tbody></table></div>
 
-<p>したら、これまで通っていたlight-blueのsassがコンパイルできなくなった。</p>
+<p>compass watchしようとしたら、これまで通っていたlight-blueのsassがコンパイルできなくなった。</p>
 
 <p>詳細は
 <a href="https://github.com/sass/sass/issues/1476">https://github.com/sass/sass/issues/1476</a>
 の通り。</p>
 
 <p>sassのバージョンが上がって今までWarningが出ていた</p>
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr>
-<td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td>
-<td class="code"><pre><span class="s1">'specificity'</span> <span class="nt">for</span> <span class="o">[</span><span class="nd">:not</span><span class="o">(</span><span class="nt">old</span><span class="o">)]</span><span class="nd">:Array</span>
-</pre></td>
-</tr></tbody></table></div>
+<pre><code class="highlight scss"><span class="s1">'specificity'</span> <span class="nt">for</span> <span class="o">[</span><span class="nd">:not</span><span class="o">(</span><span class="nt">old</span><span class="o">)]</span><span class="nd">:Array</span>
+</code></pre>
 
 <p>を受け付けてくれないみたい。</p>
 
