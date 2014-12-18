@@ -21,6 +21,10 @@ class Illustration < ActiveRecord::Base
   has_and_belongs_to_many :characters
   has_many :statuses, class_name: "Character::Status"
 
+  after_initialize ->{
+    self.name ||= "new file"
+  }
+
   validates :name, :image, :access, presence: true
 
   mount_uploader :image, IllustrationImageUploader

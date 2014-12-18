@@ -7,17 +7,13 @@ class Communities::IllustrationsController < ApplicationController
   # GET /communities/illustrations
   # GET /communities/illustrations.json
   def index
+    @illustration =Illustration.new
     @illustrations =Illustration.all
   end
 
   # GET /communities/illustrations/1
   # GET /communities/illustrations/1.json
   def show
-  end
-
-  # GET /communities/illustrations/new
-  def new
-    @illustration =Illustration.new
   end
 
   # GET /communities/illustrations/1/edit
@@ -33,7 +29,7 @@ class Communities::IllustrationsController < ApplicationController
     respond_to do |format|
       if @illustration.save
         format.html { redirect_to [@community, @illustration], notice: 'Illustration was successfully created.' }
-        format.json { render :show, status: :created, location: [@community, @illustration] }
+        format.json { render :show, status: :created }
       else
         format.html { render :new }
         format.json { render json: @illustration.errors, status: :unprocessable_entity }

@@ -1,1 +1,2 @@
-json.extract! @communities_illustration, :id, :Illustration, :created_at, :updated_at
+json.extract! @illustration, :id, :name
+json.image_url @illustration.image.url

@@ -79,8 +79,8 @@ ActiveRecord::Schema.define(version: 20140925031035) do
     t.integer  "user_id"
     t.integer  "access",      default: 2
     t.string   "name",                    null: false
+    t.string    "image",                   null: false
     t.text     "description"
-    t.string   "image",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

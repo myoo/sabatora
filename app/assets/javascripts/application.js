@@ -49,6 +49,8 @@
 //= require lib/jquery.nestable
 //= require lib/rickshaw/rickshaw
 
+//= require lib/jquery.fileupload.js
+
 // non-bower-install
 //= require image-picker/image-picker
 
